@@ -2,8 +2,8 @@
 #Ignorer les modifications du serveur local:
 serveur\
 
-#Et n'envoyer que les modifications sur les fichiers dans www
+#Et n nvoyer que les modifications sur les fichiers dans www
 !serveur\www
 
-#Ainsi que les modifications de la base de données SQL:
+#Ainsi que les modifications de la base de donnes SQL:
 !serveur\core\mysql\data\sosprema
