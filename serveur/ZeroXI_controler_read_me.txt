@@ -5,7 +5,7 @@
 #############################################################################
 
 -----------
-Introuctio
+Introuction
 -----------
  The Uniform Server Zero is designed for portability, emphasis is
  given to reducing code size. The Uniform Server Zero achieves this
