@@ -56,3 +56,7 @@
 ::1 - - [17/Nov/2015:01:09:41 +0100] "-" 408 - "-" "-"
 ::1 - - [17/Nov/2015:01:09:41 +0100] "-" 408 - "-" "-"
 ::1 - - [17/Nov/2015:01:23:26 +0100] "GET / HTTP/1.1" 200 48 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240"
+::1 - - [17/Nov/2015:02:10:45 +0100] "GET /index.php HTTP/1.1" 200 48 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240"
+::1 - - [17/Nov/2015:02:10:50 +0100] "GET /us_splash/index.php HTTP/1.1" 200 1457 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240"
+::1 - - [17/Nov/2015:02:18:17 +0100] "GET /index.php HTTP/1.1" 200 48 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240"
+::1 - - [17/Nov/2015:02:18:22 +0100] "GET /us_splash/index.php HTTP/1.1" 200 1457 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240"
