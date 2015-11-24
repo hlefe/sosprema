@@ -125,3 +125,25 @@ Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
 151124  8:51:15  InnoDB: Shutdown completed; log sequence number 1595675
 151124  8:51:15 [Note] C:\Users\Nico\Documents\GitHub\sosprema\serveur\core\mysql\bin\mysqld_z.exe: Shutdown complete
 
+151124 12:48:07 [Note] Plugin 'FEDERATED' is disabled.
+151124 12:48:07 InnoDB: The InnoDB memory heap is disabled
+151124 12:48:07 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151124 12:48:07 InnoDB: Compressed tables use zlib 1.2.3
+151124 12:48:07 InnoDB: Initializing buffer pool, size = 16.0M
+151124 12:48:07 InnoDB: Completed initialization of buffer pool
+151124 12:48:07 InnoDB: highest supported file format is Barracuda.
+151124 12:48:07  InnoDB: Waiting for the background threads to start
+151124 12:48:08 InnoDB: 5.5.46 started; log sequence number 1595675
+151124 12:48:08 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151124 12:48:08 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151124 12:48:08 [Note] Server socket created on IP: '127.0.0.1'.
+151124 12:48:08 [Note] Event Scheduler: Loaded 0 events
+151124 12:48:08 [Note] C:\projet\sosprema\sosprema\serveur\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151124 12:48:09 [Note] C:\projet\sosprema\sosprema\serveur\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+151124 12:48:09 [Note] Event Scheduler: Purging the queue. 0 events
+151124 12:48:09  InnoDB: Starting shutdown...
+151124 12:48:09  InnoDB: Shutdown completed; log sequence number 1595675
+151124 12:48:09 [Note] C:\projet\sosprema\sosprema\serveur\core\mysql\bin\mysqld_z.exe: Shutdown complete
+

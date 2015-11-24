@@ -1,1 +1,7 @@
-<?php include('header.php') ?>
+<?php 
+/**
+ * Vue: Page de connexion
+ *
+ *
+ */
+  include('header.php') ?>
