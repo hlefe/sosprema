@@ -27,3 +27,9 @@
 [Tue Nov 17 02:18:16.184306 2015] [core:notice] [pid 1204:tid 124] AH00094: Command line: 'C:\\projet\\sosprema\\serveur\\core\\apache2\\bin\\httpd_z.exe -d C:/projet/sosprema/serveur/core/apache2 -f C:\\projet\\sosprema\\serveur\\core\\apache2\\conf\\httpd.conf -d C:\\projet\\sosprema\\serveur\\core\\apache2'
 [Tue Nov 17 02:18:16.186785 2015] [mpm_winnt:notice] [pid 1204:tid 124] AH00418: Parent: Created child process 8712
 [Tue Nov 17 02:18:16.547287 2015] [mpm_winnt:notice] [pid 8712:tid 780] AH00354: Child: Starting 150 worker threads.
+[Mon Nov 23 08:19:59.399681 2015] [core:warn] [pid 4916:tid 360] AH00098: pid file C:/Users/Valentin/Documents/GitHub/sosprema/serveur/core/apache2/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Nov 23 08:19:59.635928 2015] [mpm_winnt:notice] [pid 4916:tid 360] AH00455: Apache/2.4.16 (Win32) PHP/5.4.45 configured -- resuming normal operations
+[Mon Nov 23 08:19:59.635928 2015] [mpm_winnt:notice] [pid 4916:tid 360] AH00456: Apache Lounge VC10 Server built: Jul 12 2015 13:26:53
+[Mon Nov 23 08:19:59.635928 2015] [core:notice] [pid 4916:tid 360] AH00094: Command line: 'C:\\Users\\Valentin\\Documents\\GitHub\\sosprema\\serveur\\core\\apache2\\bin\\httpd_z.exe -d C:/Users/Valentin/Documents/GitHub/sosprema/serveur/core/apache2 -f C:\\Users\\Valentin\\Documents\\GitHub\\sosprema\\serveur\\core\\apache2\\conf\\httpd.conf -d C:\\Users\\Valentin\\Documents\\GitHub\\sosprema\\serveur\\core\\apache2'
+[Mon Nov 23 08:19:59.646939 2015] [mpm_winnt:notice] [pid 4916:tid 360] AH00418: Parent: Created child process 6368
+[Mon Nov 23 08:20:00.700737 2015] [mpm_winnt:notice] [pid 6368:tid 664] AH00354: Child: Starting 150 worker threads.
