@@ -1,2 +1,0 @@
-//validation des données
-
