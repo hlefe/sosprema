@@ -8,7 +8,6 @@
  *
  */
 include_once('header.php');
-include_once('sidebar.php');
 ?>
 <h2> En construction </h2>
 <?php
