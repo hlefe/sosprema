@@ -1,40 +1,24 @@
 <?php
 
-public class validation {
+class validation {
 	
-	//valide une adresse email donné en paramétre, et retourne l'email valider ou affiche une erreur.
+	//valide une adresse email donné en paramétre, et retourne true si elle est valide ou false sinon.
 	public static function validerEmail($email){
-		if(isset($email)){
-			return filter_var($email, FILTER_VAR_EMAIL);
-		}
-		else
-			echo "ceci n'est pas une adresse email valide";
+		return filter_var($email, FILTER_VALIDATE_EMAIL)==false?false:true;
 	}
 
-	//valide une chaine de caractére donné en paramétre, et retourne la chaine de caractére valider ou affiche une erreur.
-	public static function validerChaine($chaine){
-		if(isset($chaine)){
-			return filter_var($chaine, FILTER_VAR_STRING);
-		}
-		else
-			echo "ceci n'est pas une chaîne de caractère valide";
+	//valide un nombre entier donné en paramétre, et retourne true si il est valide ou false sinon.
+	public static function validerNombreEntier($nombre){
+		return filter_var($nombre, FILTER_VALIDATE_INT)==false?false:true;
 	}
 
-	//valide un nombre donné en paramétre, et retourne le nombre valider ou affiche une erreur.
-	public static function validerNombre($nombre){
-		if(isset($nombre)){
-			return filter_var($nombre, FILTER_VAR_INT);
-		}
-		else
-			echo "ceci n'est pas un nombre valide";
-	}
-
-	//valide une adresse url donné en paramétre, et retourne l'url valider ou affiche une erreur.
+	//valide une adresse url donné en paramétre, et retourne true si elle est valide ou false sinon.
 	public static function validerURL($url){
-		if(isset($url)){
-			return filter_var($url, FILTER_VAR_URL);
-		}
-		else
-			echo "ceci n'est pas une url valide";
+		return filter_var($url, FILTER_VALIDATE_URL)==false?false:true;
+	}
+
+	//valide un nombre réel donné en paramétre, et retourne true si il est valide ou false sinon.
+	public static function validerNombreReel($url){
+		return filter_var($url, FILTER_VALIDATE_FLOAT)==false?false:true;
 	}
 }
