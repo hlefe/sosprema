@@ -54,7 +54,7 @@
 							<ul>
 								<li class="item-menu-avec-enfants">
 									<?php if ( 'utilisateur_connecté' ){ ?>
-										<a href="/">Bienvenue, <?php 'nom_utilisateur' ?></a>
+										<a href="/">Bienvenue, <?php echo 'Louise Dupont' ?></a>
 										<ul class="enfants">
 											<li>
 												<a href="/">Mon profil</a>
