@@ -13,7 +13,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title></title>
+        <title>SOS Pr&eacutema - Espace b&eacuten&eacutevoles</title>
+<link rel="icon" type="image/png" href="/vue/images/favicon.png">
 	<link href="/vue/style/style.css" rel="stylesheet" /> 
     </head>
     <body>
