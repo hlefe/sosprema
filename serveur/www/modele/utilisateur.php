@@ -92,8 +92,6 @@ class utilisateur {
                 $this->avatar = $value;
             } elseif ('telephones' === $key) {
                 $this->telephones[] = $value;
-            } else {
-                throw new Exception('Propriété invalide !');
             }
         }
     }
