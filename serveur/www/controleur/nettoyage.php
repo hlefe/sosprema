@@ -1,12 +1,22 @@
 <?php
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of nettoyage
+ *
+ * @author Nico
+ */
 class nettoyage {
-	
-	//nettoie une adresse email donné en paramétre, et retourne true si elle est valide ou false sinon.
+    //nettoie une adresse email donné en paramétre, et retourne true si elle est valide ou false sinon.
 	public static function nettoyerEmail($email){
 		return filter_var($email, FILTER_SANITIZE_EMAIL)==false?false:true;
-	}
-
+        }
+        
 	//nettoie une chaine de caractére donné en paramétre, et retourne true si elle est valide ou false sinon.
 	public static function nettoyerChaine($chaine){
 		return filter_var($chaine, FILTER_SANITIZE_STRING)==false?false:true;
