@@ -17,7 +17,7 @@ class utilisateurGateway {
 
     public static function rechercheUtilisateurConnexion($email, $password) {
         //connexion à la base utiliser classe connexion
-        $bd = new PDO('mysql:host=localhost;dbname=sosprema', 'root', 'root');
+        $bd = new PDO('mysql:host=localhost;dbname=sosprema', 'root', 'sosprema');
         $query = 'SELECT * FROM utilisateur WHERE email=:email AND mot_de_passe=:password';
         $smtp = $bd->prepare($query);
         $smtp->bindValue(':email', $email, PDO::PARAM_STR);

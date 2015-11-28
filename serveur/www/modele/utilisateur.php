@@ -69,7 +69,7 @@ class utilisateur {
 
     public function __construct($param) {
 
-        foreach ($param as $key->$value){
+        foreach ($param as $key=>$value){
             if ('email' == $key) {
                 $this->email = $value;
             } elseif ('nom' == $key) {
