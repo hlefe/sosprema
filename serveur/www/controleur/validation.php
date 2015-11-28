@@ -15,7 +15,7 @@ class validation {
 
     //valide une adresse email donné en paramétre, et retourne true si elle est valide ou false sinon.
     public static function validerEmail($email) {
-        return filter_var($email, FILTER_VALIDATE_EMAIL) == false ? false : true;
+        return filter_var($email, FILTER_VALIDATE_EMAIL) === false ? false : true;
     }
 
     //valide un nombre entier donné en paramétre, et retourne true si il est valide ou false sinon.
@@ -35,7 +35,8 @@ class validation {
 
     //valide un mot de passe donné en paramétre, et retourne true si il est valide ou false sinon.
     public static function validerPassword($password) {
-        return filter_var($password, "/([:alnum:]|[:punct:]){8,20}/") == false ? false : true; //à vérifier
+        return $password;
+        //return filter_var($password, "/([:alnum:]|[:punct:]){8,20}/") == false ? false : true; //à vérifier
     }
 
     public static function validerTelephone($telephone) {
