@@ -9,11 +9,7 @@
  */
 include_once('header.php');
 ?>
-<body>
-        <h1>Sos Préma</h1>
- 
-
-</body>
+<h2> En construction </h2>
 <?php
 include_once('footer.php');
 ?>

@@ -4,9 +4,6 @@
  *
  *
  */
-<<<<<<< HEAD
-  include('header.php') ?>
-=======
   include('header.php');
   ?>
 <h1> Affichage moche qui va bientôt changer </h1>
@@ -19,4 +16,3 @@
 </form>
   <?php
     include('footer.php'); ?>
->>>>>>> origin/master
