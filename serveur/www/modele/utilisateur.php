@@ -26,19 +26,19 @@ class utilisateur {
     public function __get($property) {
         if ('userId' == $property) {
             return $this->userId;
-        } if ('email' == $property) {
+        } elseif ('email' == $property) {
             return $this->email;
-        } if ('nom' == $property) {
+        } elseif ('nom' == $property) {
             return $this->nom;
-        } if ('prenom' == $property) {
+        } elseif ('prenom' == $property) {
             return $this->prenom;
-        } if ('adresse' == $property) {
+        } elseif ('adresse' == $property) {
             return $this->adresse;
-        } if ('id_groupe' == $property) {
+        } elseif ('id_groupe' == $property) {
             return $this->id_groupe;
-        } if ('avatar' == $property) {
+        } elseif ('avatar' == $property) {
             return $this->avatar;
-        } if ('telephones' == $property) {
+        } elseif ('telephones' == $property) {
             return $this->telephones;
         } else {
             throw new Exception('Propriété invalide !');
@@ -48,19 +48,19 @@ class utilisateur {
     public function __set($property, $value) {
         if ('email' == $property) {
             $this->email = $value;
-        } if ('nom' == $property) {
+        } elseif ('nom' == $property) {
             $this->nom = $value;
-        } if ('prenom' == $property) {
+        } elseif ('prenom' == $property) {
             $this->prenom = $value;
-        } if ('mot_de_passe' == $property) {
+        } elseif ('mot_de_passe' == $property) {
             $this->mot_de_passe = $value;
-        } if ('adresse' == $property) {
+        } elseif ('adresse' == $property) {
             $this->adresse = $value;
-        } if ('id_groupe' === $property) {
+        } elseif ('id_groupe' === $property) {
             $this->id_groupe = $value;
-        } if ('avatar' === $property) {
+        } elseif ('avatar' === $property) {
             $this->avatar = $value;
-        } if ('telephones' === $property) {
+        } elseif ('telephones' === $property) {
             $this->telephones[] = $value;
         } else {
             throw new Exception('Propriété invalide !');
@@ -69,33 +69,33 @@ class utilisateur {
 
     public function __construct($param) {
 
-        foreach ($param as $key->$value) {
+        foreach ($param as $key->$value){
             if ('email' == $key) {
                 $this->email = $value;
-            } if ('nom' == $key) {
+            } elseif ('nom' == $key) {
                 $this->nom = $value;
-            } if ('prenom' == $key) {
+            } elseif ('prenom' == $key) {
                 $this->prenom = $value;
-            } if ('mot_de_passe' == $key) {
+            } elseif ('mot_de_passe' == $key) {
                 $this->mot_de_passe = $value;
-            } if ('num_rue' == $key) {
+            } elseif ('num_rue' == $key) {
                 $this->adresse->num_rue = $value;
-            }}if ('nom_rue' == $key) {
+            } elseif ('nom_rue' == $key) {
                 $this->adresse->nom_rue = $value;
-            } if ('code_postal' == $key) {
+            } elseif ('code_postal' == $key) {
                 $this->adresse->code_postal = $value;
-            } if ('ville' == $key) {
+            } elseif ('ville' == $key) {
                 $this->adresse->ville = $value;
-            } if ('id_groupe' === $key) {
+            } elseif ('id_groupe' === $key) {
                 $this->id_groupe = $value;
-            } if ('avatar' === $key) {
+            } elseif ('avatar' === $key) {
                 $this->avatar = $value;
-            } if ('telephones' === $key) {
+            } elseif ('telephones' === $key) {
                 $this->telephones[] = $value;
             } else {
                 throw new Exception('Propriété invalide !');
             }
         }
     }
-
 }
+

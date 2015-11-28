@@ -19,7 +19,7 @@ class telephone {
     public function __get($property) {
         if ('type' == $property) {
             return $this->type;
-        } if ('numero' == $property) {
+        } elseif ('numero' == $property) {
             return $this->numero;
         } else {
             throw new Exception('Propriété invalide !');
@@ -29,7 +29,7 @@ class telephone {
     public function __set($property, $value) {
         if ('type' == $property) {
             $this->type = $value;
-        } if ('numero' == $property) {
+        } elseif ('numero' == $property) {
             $this->numero = $value;
         } else {
             throw new Exception('Propriété invalide !');

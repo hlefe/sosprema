@@ -21,11 +21,11 @@ class adresse {
     public function __get($property) {
         if ('num_rue' == $property) {
             return $this->num_rue;
-        } if ('nom_rue' == $property) {
+        } elseif ('nom_rue' == $property) {
             return $this->nom_rue;
-        } if ('code_postal' == $property) {
+        } elseif ('code_postal' == $property) {
             return $this->code_postal;
-        } if ('ville' == $property) {
+        } elseif ('ville' == $property) {
             return $this->ville;
         } else {
             throw new Exception('Propriété invalide !');
@@ -35,11 +35,11 @@ class adresse {
     public function __set($property, $value) {
         if ('num_rue' == $property) {
             $this->num_rue = $value;
-        }if ('nom_rue' == $property) {
+        } elseif ('nom_rue' == $property) {
             $this->nom_rue = $value;
-        }if ('code_postal' == $property) {
+        } elseif ('code_postal' == $property) {
             $this->code_postal = $value;
-        }if ('ville' == $property) {
+        } elseif ('ville' == $property) {
             $this->ville = $value;
         } else {
             throw new Exception('Propriété invalide !');

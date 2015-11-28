@@ -9,6 +9,7 @@ class sessionUtilisateur {
     public static function creationSessionUtilisateur() {
 
         if (isset($_POST['emailConnexion'])) {
+            
             $emailConnexion = nettoyage::nettoyerEmail($_POST['emailConnexion']);
 
             if (validation::validerEmail($emailConnexion)) {
@@ -18,16 +19,16 @@ class sessionUtilisateur {
                     if (validation::validerPassword($passwordConnexion)) {
                         $utilisateur = utilisateurGateway::rechercherUtilisateurConnexion($emailConnexion, $passwordConnexion);
                         if ($utilisateur != false) {
-                            $_SESSION(['sessionUtilisateur']) = $utilisateur;
+                            $_SESSION['sessionUtilisateur'] = $utilisateur;
                             return true;
                         } else {
-                            return FALSE;
+                            return false;
                         }
                     }
                 }
             }
         } else {
-            return FALSE;
+            return false;
         }
     }
 
