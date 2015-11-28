@@ -1,33 +1,34 @@
 <?php
 
-require_once(nettoyage.php);
-require_once(validation.php);
+/**
+ * cette classe permettra de gérer l'utilisateur qui est connecté
+ * @author Nico
+ */
+class sessionUtilisateur {
 
-class sessionUtilisateur{
+    public static function creationSessionUtilisateur() {
 
-	public static function creationSessionUtilisateur(){
+        if (isset($_POST['emailConnexion'])) {
+            $emailConnexion = nettoyage::nettoyerEmail($_POST['emailConnexion']);
 
-		if(isset($_POST['emailConnexion'])){
+            if (validation::validerEmail($emailConnexion)) {
 
-			$emailConnexion = nettoyage::nettoyerEmail($_POST['emailConnexion']);
+                if (isset($_POST['passwordConnexion'])) {
+                    $passwordConnexion = nettoyage::nettoyerChaine($_POST['passwordConnexion']);
+                    if (validation::validerPassword($passwordConnexion)) {
+                        $utilisateur = utilisateurGateway::rechercherUtilisateurConnexion($emailConnexion, $passwordConnexion);
+                        if ($utilisateur != false) {
+                            $_SESSION(['utilisateurConnecter']) = $utilisateur;
+                            return true;
+                        } else {
+                            return FALSE;
+                        }
+                    }
+                }
+            }
+        } else {
+            return FALSE;
+        }
+    }
 
-			if(validation::validerEmail($emailConnexion)){
-
-				if(isset($_POST['passwordConnexion'])){
-
-					$passwordConnexion = nettoyage::nettoyerChaine($_POST['passwordConnexion']);
-
-					if(validation::validerPassword($passwordConnexion)){
-						try{
-							$utilisateur = new utilisateur($emailConnexion, $passwordConnexion);//a corriger selon le model de valentin
-							$_SESSION(['utilisateurConnecter']) = $utilisateur;
-						}catch(Exception $e){
-							//a corriger
-						}			
-					}
-				}
-			}
-		}
-		//ajouter un code d'erreur
-	}
 }
