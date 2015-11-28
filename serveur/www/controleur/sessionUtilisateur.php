@@ -18,7 +18,7 @@ class sessionUtilisateur {
                     if (validation::validerPassword($passwordConnexion)) {
                         $utilisateur = utilisateurGateway::rechercherUtilisateurConnexion($emailConnexion, $passwordConnexion);
                         if ($utilisateur != false) {
-                            $_SESSION(['utilisateurConnecter']) = $utilisateur;
+                            $_SESSION(['sessionUtilisateur']) = $utilisateur;
                             return true;
                         } else {
                             return FALSE;
