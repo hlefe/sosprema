@@ -46,7 +46,7 @@ body
 }
 .sidebar
 {
-    background-color: #85248C;
+    background-color: #B698FF;
     color: #dbd8e9;
     width: 170px;
 }
@@ -76,7 +76,7 @@ body
 }
 #sidebar-navigation li>a
 {
-	color: #bdb8d7;
+	color: #2F2F31;
 	padding: 15px 15px;
     position: relative;
     font-weight: bold;
@@ -104,14 +104,16 @@ body
 	color: white;
 	font-weight: bold;
 }
+
 #titre-site
 {
-	background-color: rgba(0, 0, 0, 0.17);;
+    background-color: rgba(242, 218, 255, 0.61);
     float: left;
     margin: 0 0 0 0px;
     padding: 0 16px 0 10px;
     text-decoration: none;
 }
+
 #titre-site img
 {
 	height: 60px;
