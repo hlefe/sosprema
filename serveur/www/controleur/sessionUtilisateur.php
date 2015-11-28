@@ -4,7 +4,8 @@ require_once(nettoyage.php);
 require_once(validation.php);
 
 class sessionUtilisateur{
-	public static creationSessionUtilisateur(){
+
+	public static function creationSessionUtilisateur(){
 
 		if(isset($_POST['emailConnexion'])){
 
@@ -17,12 +18,10 @@ class sessionUtilisateur{
 					$passwordConnexion = nettoyage::nettoyerChaine($_POST['passwordConnexion']);
 
 					if(validation::validerPassword($passwordConnexion)){
-
-						session_start();
 						try{
 							$utilisateur = new utilisateur($emailConnexion, $passwordConnexion);//a corriger selon le model de valentin
 							$_SESSION(['utilisateurConnecter']) = $utilisateur;
-						}catch(Exception e){
+						}catch(Exception $e){
 							//a corriger
 						}			
 					}
@@ -31,6 +30,4 @@ class sessionUtilisateur{
 		}
 		//ajouter un code d'erreur
 	}
-
-
 }

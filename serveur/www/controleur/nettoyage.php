@@ -5,6 +5,7 @@ class nettoyage {
 	//nettoie une adresse email donné en paramétre, et retourne true si elle est valide ou false sinon.
 	public static function nettoyerEmail($email){
 		return filter_var($email, FILTER_SANITIZE_EMAIL)==false?false:true;
+	}
 
 	//nettoie une chaine de caractére donné en paramétre, et retourne true si elle est valide ou false sinon.
 	public static function nettoyerChaine($chaine){

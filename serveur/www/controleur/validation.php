@@ -18,7 +18,12 @@ class validation {
 	}
 
 	//valide un nombre réel donné en paramétre, et retourne true si il est valide ou false sinon.
-	public static function validerNombreReel($url){
-		return filter_var($url, FILTER_VALIDATE_FLOAT)==false?false:true;
+	public static function validerNombreReel($nombre){
+		return filter_var($nombre, FILTER_VALIDATE_FLOAT)==false?false:true;
+	}
+
+	//valide un mot de passe donné en paramétre, et retourne true si il est valide ou false sinon.
+	public static function validerPassword($password){
+		return filter_var($password, "/([:alnum:]|[:punct:]){8,20}/")==false?false:true;//à vérifier
 	}
 }
