@@ -183,3 +183,84 @@ doesn't support.
 See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
 how you can resolve the problem.
 
+151129 10:35:23 [Note] Plugin 'FEDERATED' is disabled.
+151129 10:35:23 InnoDB: The InnoDB memory heap is disabled
+151129 10:35:23 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151129 10:35:23 InnoDB: Compressed tables use zlib 1.2.3
+151129 10:35:23 InnoDB: Initializing buffer pool, size = 16.0M
+151129 10:35:23 InnoDB: Completed initialization of buffer pool
+151129 10:35:23 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+151129 10:35:23  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+151129 10:35:24  InnoDB: Waiting for the background threads to start
+151129 10:35:25 InnoDB: 5.5.46 started; log sequence number 1607481
+151129 10:35:25 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151129 10:35:25 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151129 10:35:25 [Note] Server socket created on IP: '127.0.0.1'.
+151129 10:35:26 [Note] Event Scheduler: Loaded 0 events
+151129 10:35:26 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151129 10:35:50 [ERROR] Cannot find or open table sosprema/test from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+151129 10:35:53 [ERROR] Cannot find or open table sosprema/test from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+151129 10:35:58 [ERROR] Cannot find or open table sosprema/test from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+151129 10:36:42 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+151129 10:36:42 [Note] Event Scheduler: Purging the queue. 0 events
+151129 10:36:42  InnoDB: Starting shutdown...
+151129 10:36:44  InnoDB: Shutdown completed; log sequence number 1607491
+151129 10:36:44 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+
+151129 10:36:46 [Note] Plugin 'FEDERATED' is disabled.
+151129 10:36:46 InnoDB: The InnoDB memory heap is disabled
+151129 10:36:46 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151129 10:36:46 InnoDB: Compressed tables use zlib 1.2.3
+151129 10:36:46 InnoDB: Initializing buffer pool, size = 16.0M
+151129 10:36:46 InnoDB: Completed initialization of buffer pool
+151129 10:36:46 InnoDB: highest supported file format is Barracuda.
+151129 10:36:46  InnoDB: Waiting for the background threads to start
+151129 10:36:47 InnoDB: 5.5.46 started; log sequence number 1607491
+151129 10:36:47 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151129 10:36:47 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151129 10:36:47 [Note] Server socket created on IP: '127.0.0.1'.
+151129 10:36:47 [Note] Event Scheduler: Loaded 0 events
+151129 10:36:47 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151129 10:36:50 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+151129 10:36:50 [Note] Event Scheduler: Purging the queue. 0 events
+151129 10:36:50  InnoDB: Starting shutdown...
+151129 10:36:51  InnoDB: Shutdown completed; log sequence number 1607491
+151129 10:36:51 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+
