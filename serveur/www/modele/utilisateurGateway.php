@@ -14,44 +14,42 @@
 
 
 class utilisateurGateway {
+    
+    private $bd;
+    
+    public function __construct()
+    {
+        $this->bd = Connexion::getInstance();
+    }
 
-    public static function rechercheUtilisateurConnexion($email, $password) {
-        //connexion à la base utiliser classe connexion
-        $bd = new PDO('mysql:host=localhost;dbname=sosprema', 'root', 'sosprema');
+    public function rechercheUtilisateurConnexion($email, $password) {
+        
         $query = 'SELECT * FROM utilisateur WHERE email=:email AND mot_de_passe=:password';
-        $smtp = $bd->prepare($query);
-        $smtp->bindValue(':email', $email, PDO::PARAM_STR);
-        $smtp->bindValue(':password', $password);
-        $smtp->execute();
-        $result = $smtp->fetch();
+        $this->bd->executeQuerry($querry, array(
+                                            ':email'=>array($email,PDO::PARAM_STR),
+                                            ':password'=>array($password,PDO::PARAM_STR)));
+        $result = $this->bd->getResult();
         if ($result == false){
             return false;
         }
 
         $query = 'SELECT * FROM telephone WHERE id_utilisateur_tel=:id_utilisateur';
-        $smtp = $bd->prepare($query);
-        $smtp->bindValue(':id_utilisateur', $result['id_utilisateur']);
-        $smtp->execute();
-        $result += $smtp->fetchall();
+        $this->bd->executeQuerry($querry, array(':id_utilisateur'=>array($result['id_utilisateur'],PDO::PARAM_STR)));
+        $result += $this->bd->getResults();
         return new utilisateur($result);
     }
 
-    public static function rechercheUtilisateurNom($nom) {
-        //connexion a la base
-        $bd = new PDO();
+    public function rechercheUtilisateurNom($nom)
+    {        
         $query = 'SELECT * FROM utilisateur WHERE nom=:nom';
-        $smtp = $bd->prepare($query);
-        $smtp->bindValue(':nom', $nom, PDO::PARAM_STR);
-        $smtp->execute();
-        $result = $smtp->fetch();
+        $this->bd->executeQuerry($querry, array(':nom'=>array($nom,PDO::PARAM_STR)));
+        $result = $this->bd->getResult();
         if ($result == false){
             return false;
         }
 
         $query = 'SELECT * FROM telephone WHERE id_utilisateur_tel=:id_utilisateur';
-        $smtp = $bd->prepare($query);
-        $smtp->bindValue(':id_utilisateur', $result['id_utilisateur']);
-        $smtp->execute();
+        $this->bd->executeQuerry($querry, array(':nom'=>array($result['id_utilisateur'],PDO::PARAM_STR)));
         $result += $smtp->fetchall();
 
         return $utilisateur = new utilisateur($result);

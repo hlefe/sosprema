@@ -11,19 +11,32 @@
  *
  * @author Nicolas
  */
-class connexion extends PDO
+class Connexion extends PDO
 {
     private $stmt = null;
+    private static $instance = null;
     
     public function __construct($dsn, $user, $pswd) 
     {
-        try{
+        try
+        {
            parent::__construct($dsn, $user, $pswd); //il me faut les paramètres de Valentin
            $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-        } catch (PDOException $e) {
+        }
+        catch (PDOException $e)
+        {
             echo $e->getMessage();
         }
+    }
+    
+    public static function getInstance()
+    {
+        if(is_null(self::$instance))
+        {
+            return self::$instance = new Connexion($dsn, $user, $pswd);
+        }
+        return self::$instance;
     }
     
     public function executeQuerry($querry, array $parameters = [])
@@ -35,6 +48,12 @@ class connexion extends PDO
         }
         return $this->stmt->execute();
     }
+    
+    public function getResult()
+    {
+        return $this->stmt->fetch();
+    }
+    
     
     public function getResults()
     {
