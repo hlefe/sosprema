@@ -4,7 +4,7 @@
  *
  *
  */
-if(sessionUtilisateur::creationSessionUtilisateur()) {
+if(controleurBenevol::creationSessionUtilisateur()) {
     header('Location: /');
   	exit();
 }
