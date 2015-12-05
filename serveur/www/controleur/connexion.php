@@ -20,7 +20,7 @@ class Connexion extends PDO
     {
         try
         {
-           parent::__construct($dsn, $user, $pswd); //il me faut les paramètres de Valentin
+           self::$instance = parent::__construct($dsn, $user, $pswd); //il me faut les paramètres de Valentin
            $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
         }
@@ -34,7 +34,7 @@ class Connexion extends PDO
     {
         if(is_null(self::$instance))
         {
-            return self::$instance = new Connexion($dsn, $user, $pswd);
+            //return self::$instance = new Connexion($dsn, $user, $pswd);
         }
         return self::$instance;
     }

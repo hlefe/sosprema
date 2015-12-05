@@ -15,10 +15,15 @@ class modelUtilisateur {
     }
 
     public static function creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $adresse, $id_groupe, $avatar, $telephones){
-        $utilisateur = utilisateurGateway::insererUtilisateur($prenom, $nom, $email, $mot_de_passe, $adresse, $id_groupe, $avatar);
+        $utilisateurGateway = new utilisateurGateway();
+        $utilisateur = $utilisateurGateway->insererUtilisateur($prenom, $nom, $email, $mot_de_passe, $adresse, $id_groupe, $avatar);
         foreach ($telephones as $key => $value) {
-            telephonesGateway::isererTelephone($utilisateur->id_utilisateur, $values);
+            telephonesGateway::insererTelephone($utilisateur->id_utilisateur, $values);
         }
-        
+    }
+
+    public static function supprimerUtilisateur($emailConnexion) {
+        $utilisateurGateway = new utilisateurGateway();
+        $utilisateurGateway = $utilisateurGateway->supprimerUtilisateur($emailConnexion);
     }
 }
