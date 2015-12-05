@@ -76,7 +76,7 @@ body
 }
 #sidebar-navigation li>a
 {
-	color: #2F2F31;
+	color: rgba(0, 0, 0, 0.59);
 	padding: 15px 15px;
     position: relative;
     font-weight: bold;
@@ -84,6 +84,10 @@ body
     border-top: 1px solid rgba(255,255,255,0.05) ;
     display: block;
     text-decoration: none;
+
+}
+#sidebar-navigation li:hover {
+    background-color: RGBA(0, 0, 0, 0.16); ; 
 }
 #header-navigation
 {
