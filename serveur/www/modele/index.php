@@ -8,9 +8,9 @@
 ini_set('display_errors', 1);
 
 
-include_once('utilisateurGateway.php');
-include_once('adresse.php');
-include_once('telephone.php');
-include_once('utilisateur.php');
+include_once('/metier/DAL/utilisateurGateway.php');
+include_once('/metier/adresse.php');
+include_once('/metier/telephone.php');
+include_once('/metier/utilisateur.php');
 
 ?>
