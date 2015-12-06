@@ -46,7 +46,7 @@ class adresse {
         }
     }
 
-    public function __construc($numRue, $nomRue, $codePostal, $ville) {
+    public function __construct($numRue, $nomRue, $codePostal, $ville) {
         $this->num_rue = $numRue;
         $this->nom_rue = $nomRue;
         $this->code_postal = $codePostal;
