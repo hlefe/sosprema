@@ -34,7 +34,7 @@ class Connexion extends PDO
     {
         if(is_null(self::$instance))
         {
-            //return self::$instance = new Connexion($dsn, $user, $pswd);
+            return self::$instance = new Connexion($dsn, $user, $pswd);
         }
         return self::$instance;
     }

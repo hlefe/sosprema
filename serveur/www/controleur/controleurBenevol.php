@@ -7,7 +7,7 @@ class controleurBenevol {
 	
 	function __construct()
 	{
-		new connexion('mysql:host=localhost;dbname=sosprema','root','sosprema');
+		
 	}
 
 	public static function creationSessionUtilisateur(){
