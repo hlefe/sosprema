@@ -295,6 +295,496 @@ Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
 151129 10:46:06 [Note] C:\Users\Nico\Documents\Informatique\sospremaPerso\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
 >>>>>>> origin/master
 
+<<<<<<< HEAD
+151203 17:24:07 [Note] Plugin 'FEDERATED' is disabled.
+151203 17:24:07 InnoDB: The InnoDB memory heap is disabled
+151203 17:24:07 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151203 17:24:07 InnoDB: Compressed tables use zlib 1.2.3
+151203 17:24:07 InnoDB: Initializing buffer pool, size = 16.0M
+151203 17:24:07 InnoDB: Completed initialization of buffer pool
+151203 17:24:08 InnoDB: highest supported file format is Barracuda.
+151203 17:24:08  InnoDB: Waiting for the background threads to start
+151203 17:24:09 InnoDB: 5.5.46 started; log sequence number 1607491
+151203 17:24:09 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151203 17:24:09 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151203 17:24:09 [Note] Server socket created on IP: '127.0.0.1'.
+151203 17:24:09 [Note] Event Scheduler: Loaded 0 events
+151203 17:24:09 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151203 17:24:15  InnoDB: Error: page 1 log sequence number 1608507
+InnoDB: is in the future! Current system log sequence number 1607491.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:24:15  InnoDB: Error: page 2 log sequence number 1609595
+InnoDB: is in the future! Current system log sequence number 1607491.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:24:15 [ERROR] Build InnoDB index translation table for Table .\sosprema\niveau failed
+151203 17:24:15 [ERROR] Table sosprema/niveau contains 1 indexes inside InnoDB, which is different from the number of indexes 2 defined in the MySQL 
+151203 17:24:15 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151203 17:24:15 [ERROR] Table sosprema/niveau contains fewer indexes inside InnoDB than are defined in the MySQL .frm file. Have you mixed up .frm files from different installations? See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+
+151203 17:24:15  InnoDB: Error: page 0 log sequence number 1609595
+InnoDB: is in the future! Current system log sequence number 1607491.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:24:15  InnoDB: Error: page 1 log sequence number 1610858
+InnoDB: is in the future! Current system log sequence number 1607491.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:24:15  InnoDB: Error: page 2 log sequence number 1611946
+InnoDB: is in the future! Current system log sequence number 1607491.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:24:15 [ERROR] Build InnoDB index translation table for Table .\sosprema\utilisateur failed
+151203 17:24:15 [ERROR] Table sosprema/utilisateur contains 1 indexes inside InnoDB, which is different from the number of indexes 2 defined in the MySQL 
+151203 17:24:15 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151203 17:24:15 [ERROR] Table sosprema/utilisateur contains fewer indexes inside InnoDB than are defined in the MySQL .frm file. Have you mixed up .frm files from different installations? See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+
+151203 17:24:15  InnoDB: Error: page 0 log sequence number 1611946
+InnoDB: is in the future! Current system log sequence number 1607491.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:24:15 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151203 17:24:15 [Warning] InnoDB: change_active_index(1) failed
+151203 17:24:15 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151203 17:24:15 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151203 17:24:15 [Warning] InnoDB: change_active_index(1) failed
+151203 17:24:15 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151203 17:24:23 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151203 17:24:23 [Warning] InnoDB: change_active_index(1) failed
+151203 17:24:23 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151203 17:24:23 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151203 17:24:23 [Warning] InnoDB: change_active_index(1) failed
+151203 17:24:23 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151203 17:24:23 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151203 17:24:23 [Warning] InnoDB: change_active_index(1) failed
+151203 17:24:23 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151203 17:24:30 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151203 17:24:30 [Warning] InnoDB: change_active_index(1) failed
+151203 17:24:30 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151203 17:24:30 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151203 17:24:30 [Warning] InnoDB: change_active_index(1) failed
+151203 17:24:30 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151203 17:25:27 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151203 17:25:27 [Warning] InnoDB: change_active_index(1) failed
+151203 17:25:27 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151203 17:27:32 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+151203 17:27:32 [Note] Event Scheduler: Purging the queue. 0 events
+151203 17:27:32  InnoDB: Starting shutdown...
+151203 17:27:33  InnoDB: Shutdown completed; log sequence number 1607501
+151203 17:27:33 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+
+151203 17:29:16 [Note] Plugin 'FEDERATED' is disabled.
+151203 17:29:16 InnoDB: The InnoDB memory heap is disabled
+151203 17:29:16 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151203 17:29:16 InnoDB: Compressed tables use zlib 1.2.3
+151203 17:29:16 InnoDB: Initializing buffer pool, size = 16.0M
+151203 17:29:16 InnoDB: Completed initialization of buffer pool
+151203 17:29:16 InnoDB: highest supported file format is Barracuda.
+151203 17:29:16  InnoDB: Waiting for the background threads to start
+151203 17:29:17 InnoDB: 5.5.46 started; log sequence number 1607501
+151203 17:29:17 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151203 17:29:17 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151203 17:29:17 [Note] Server socket created on IP: '127.0.0.1'.
+151203 17:29:17 [Note] Event Scheduler: Loaded 0 events
+151203 17:29:17 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151203 17:29:39  InnoDB: Error: page 1 log sequence number 1608507
+InnoDB: is in the future! Current system log sequence number 1607501.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:29:39  InnoDB: Error: page 2 log sequence number 1609595
+InnoDB: is in the future! Current system log sequence number 1607501.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:29:39 [ERROR] Build InnoDB index translation table for Table .\sosprema\niveau failed
+151203 17:29:39 [ERROR] Table sosprema/niveau contains 1 indexes inside InnoDB, which is different from the number of indexes 2 defined in the MySQL 
+151203 17:29:39 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151203 17:29:39 [ERROR] Table sosprema/niveau contains fewer indexes inside InnoDB than are defined in the MySQL .frm file. Have you mixed up .frm files from different installations? See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+
+151203 17:29:39  InnoDB: Error: page 0 log sequence number 1609595
+InnoDB: is in the future! Current system log sequence number 1607501.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:29:39  InnoDB: Error: page 1 log sequence number 1610858
+InnoDB: is in the future! Current system log sequence number 1607501.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:29:39  InnoDB: Error: page 2 log sequence number 1611946
+InnoDB: is in the future! Current system log sequence number 1607501.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:29:39 [ERROR] Build InnoDB index translation table for Table .\sosprema\utilisateur failed
+151203 17:29:39 [ERROR] Table sosprema/utilisateur contains 1 indexes inside InnoDB, which is different from the number of indexes 2 defined in the MySQL 
+151203 17:29:39 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151203 17:29:39 [ERROR] Table sosprema/utilisateur contains fewer indexes inside InnoDB than are defined in the MySQL .frm file. Have you mixed up .frm files from different installations? See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+
+151203 17:29:39  InnoDB: Error: page 0 log sequence number 1611946
+InnoDB: is in the future! Current system log sequence number 1607501.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151203 17:29:39 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151203 17:29:39 [Warning] InnoDB: change_active_index(1) failed
+151203 17:29:39 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151203 17:29:39 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151203 17:29:39 [Warning] InnoDB: change_active_index(1) failed
+151203 17:29:39 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151203 17:29:49 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+151203 17:29:49 [Note] Event Scheduler: Purging the queue. 0 events
+151203 17:29:49  InnoDB: Starting shutdown...
+151203 17:29:49  InnoDB: Shutdown completed; log sequence number 1607511
+151203 17:29:49 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+
+151207  8:15:33 [Note] Plugin 'FEDERATED' is disabled.
+151207  8:15:33 InnoDB: The InnoDB memory heap is disabled
+151207  8:15:33 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151207  8:15:33 InnoDB: Compressed tables use zlib 1.2.3
+151207  8:15:33 InnoDB: Initializing buffer pool, size = 16.0M
+151207  8:15:33 InnoDB: Completed initialization of buffer pool
+151207  8:15:34 InnoDB: highest supported file format is Barracuda.
+151207  8:15:34  InnoDB: Waiting for the background threads to start
+151207  8:15:35 InnoDB: 5.5.46 started; log sequence number 1607511
+151207  8:15:35 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151207  8:15:35 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151207  8:15:35 [Note] Server socket created on IP: '127.0.0.1'.
+151207  8:15:36 [Note] Event Scheduler: Loaded 0 events
+151207  8:15:36 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151207  8:15:56  InnoDB: Error: page 1 log sequence number 1608507
+InnoDB: is in the future! Current system log sequence number 1607511.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:15:56  InnoDB: Error: page 2 log sequence number 1609595
+InnoDB: is in the future! Current system log sequence number 1607511.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:15:56 [ERROR] Build InnoDB index translation table for Table .\sosprema\niveau failed
+151207  8:15:56 [ERROR] Table sosprema/niveau contains 1 indexes inside InnoDB, which is different from the number of indexes 2 defined in the MySQL 
+151207  8:15:56 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207  8:15:56 [ERROR] Table sosprema/niveau contains fewer indexes inside InnoDB than are defined in the MySQL .frm file. Have you mixed up .frm files from different installations? See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+
+151207  8:15:56  InnoDB: Error: page 0 log sequence number 1609595
+InnoDB: is in the future! Current system log sequence number 1607511.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:15:56  InnoDB: Error: page 1 log sequence number 1610858
+InnoDB: is in the future! Current system log sequence number 1607511.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:15:56  InnoDB: Error: page 2 log sequence number 1611946
+InnoDB: is in the future! Current system log sequence number 1607511.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:15:56 [ERROR] Build InnoDB index translation table for Table .\sosprema\utilisateur failed
+151207  8:15:56 [ERROR] Table sosprema/utilisateur contains 1 indexes inside InnoDB, which is different from the number of indexes 2 defined in the MySQL 
+151207  8:15:56 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207  8:15:56 [ERROR] Table sosprema/utilisateur contains fewer indexes inside InnoDB than are defined in the MySQL .frm file. Have you mixed up .frm files from different installations? See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+
+151207  8:15:56  InnoDB: Error: page 0 log sequence number 1611946
+InnoDB: is in the future! Current system log sequence number 1607511.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:15:56 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207  8:15:56 [Warning] InnoDB: change_active_index(1) failed
+151207  8:15:56 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207  8:15:56 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207  8:15:56 [Warning] InnoDB: change_active_index(1) failed
+151207  8:15:56 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207  8:33:35 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+151207  8:33:35 [Note] Event Scheduler: Purging the queue. 0 events
+151207  8:33:35  InnoDB: Starting shutdown...
+151207  8:33:36  InnoDB: Shutdown completed; log sequence number 1607521
+151207  8:33:36 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+
+151207  8:52:15 [Note] Plugin 'FEDERATED' is disabled.
+151207  8:52:15 InnoDB: The InnoDB memory heap is disabled
+151207  8:52:15 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151207  8:52:15 InnoDB: Compressed tables use zlib 1.2.3
+151207  8:52:15 InnoDB: Initializing buffer pool, size = 16.0M
+151207  8:52:15 InnoDB: Completed initialization of buffer pool
+151207  8:52:15 InnoDB: highest supported file format is Barracuda.
+151207  8:52:16  InnoDB: Waiting for the background threads to start
+151207  8:52:17 InnoDB: 5.5.46 started; log sequence number 1607521
+151207  8:52:17 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151207  8:52:17 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151207  8:52:17 [Note] Server socket created on IP: '127.0.0.1'.
+151207  8:52:17 [Note] Event Scheduler: Loaded 0 events
+151207  8:52:17 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151207  8:52:26  InnoDB: Error: page 1 log sequence number 1608507
+InnoDB: is in the future! Current system log sequence number 1607521.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:52:26  InnoDB: Error: page 2 log sequence number 1609595
+InnoDB: is in the future! Current system log sequence number 1607521.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:52:26 [ERROR] Build InnoDB index translation table for Table .\sosprema\niveau failed
+151207  8:52:26 [ERROR] Table sosprema/niveau contains 1 indexes inside InnoDB, which is different from the number of indexes 2 defined in the MySQL 
+151207  8:52:26 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207  8:52:26 [ERROR] Table sosprema/niveau contains fewer indexes inside InnoDB than are defined in the MySQL .frm file. Have you mixed up .frm files from different installations? See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+
+151207  8:52:26  InnoDB: Error: page 0 log sequence number 1609595
+InnoDB: is in the future! Current system log sequence number 1607521.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:52:26  InnoDB: Error: page 1 log sequence number 1610858
+InnoDB: is in the future! Current system log sequence number 1607521.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:52:26  InnoDB: Error: page 2 log sequence number 1611946
+InnoDB: is in the future! Current system log sequence number 1607521.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:52:26 [ERROR] Build InnoDB index translation table for Table .\sosprema\utilisateur failed
+151207  8:52:26 [ERROR] Table sosprema/utilisateur contains 1 indexes inside InnoDB, which is different from the number of indexes 2 defined in the MySQL 
+151207  8:52:26 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207  8:52:26 [ERROR] Table sosprema/utilisateur contains fewer indexes inside InnoDB than are defined in the MySQL .frm file. Have you mixed up .frm files from different installations? See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+
+151207  8:52:26  InnoDB: Error: page 0 log sequence number 1611946
+InnoDB: is in the future! Current system log sequence number 1607521.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207  8:52:26 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207  8:52:26 [Warning] InnoDB: change_active_index(1) failed
+151207  8:52:26 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207  8:52:26 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207  8:52:26 [Warning] InnoDB: change_active_index(1) failed
+151207  8:52:26 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207  9:05:07 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+151207  9:05:07 [Note] Event Scheduler: Purging the queue. 0 events
+151207  9:05:07  InnoDB: Starting shutdown...
+151207  9:05:08  InnoDB: Shutdown completed; log sequence number 1607531
+151207  9:05:08 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+
+151207 10:00:32 [Note] Plugin 'FEDERATED' is disabled.
+151207 10:00:32 InnoDB: The InnoDB memory heap is disabled
+151207 10:00:32 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151207 10:00:32 InnoDB: Compressed tables use zlib 1.2.3
+151207 10:00:32 InnoDB: Initializing buffer pool, size = 16.0M
+151207 10:00:32 InnoDB: Completed initialization of buffer pool
+151207 10:00:32 InnoDB: highest supported file format is Barracuda.
+151207 10:00:33  InnoDB: Waiting for the background threads to start
+151207 10:00:34 InnoDB: 5.5.46 started; log sequence number 1607531
+151207 10:00:34 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151207 10:00:34 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151207 10:00:34 [Note] Server socket created on IP: '127.0.0.1'.
+151207 10:00:34 [Note] Event Scheduler: Loaded 0 events
+151207 10:00:34 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151207 10:00:36 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+151207 10:00:36 [Note] Event Scheduler: Purging the queue. 0 events
+151207 10:00:36  InnoDB: Starting shutdown...
+151207 10:00:36  InnoDB: Shutdown completed; log sequence number 1607531
+151207 10:00:36 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+
+151207 10:00:47 [Note] Plugin 'FEDERATED' is disabled.
+151207 10:00:47 InnoDB: The InnoDB memory heap is disabled
+151207 10:00:47 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151207 10:00:47 InnoDB: Compressed tables use zlib 1.2.3
+151207 10:00:47 InnoDB: Initializing buffer pool, size = 16.0M
+151207 10:00:47 InnoDB: Completed initialization of buffer pool
+151207 10:00:47 InnoDB: highest supported file format is Barracuda.
+151207 10:00:47  InnoDB: Waiting for the background threads to start
+151207 10:00:48 InnoDB: 5.5.46 started; log sequence number 1607531
+151207 10:00:48 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151207 10:00:48 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151207 10:00:48 [Note] Server socket created on IP: '127.0.0.1'.
+151207 10:00:48 [Note] Event Scheduler: Loaded 0 events
+151207 10:00:48 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151207 10:00:54  InnoDB: Error: page 1 log sequence number 1608507
+InnoDB: is in the future! Current system log sequence number 1607531.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207 10:00:54  InnoDB: Error: page 2 log sequence number 1609595
+InnoDB: is in the future! Current system log sequence number 1607531.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207 10:00:54 [ERROR] Build InnoDB index translation table for Table .\sosprema\niveau failed
+151207 10:00:54 [ERROR] Table sosprema/niveau contains 1 indexes inside InnoDB, which is different from the number of indexes 2 defined in the MySQL 
+151207 10:00:54 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:00:54 [ERROR] Table sosprema/niveau contains fewer indexes inside InnoDB than are defined in the MySQL .frm file. Have you mixed up .frm files from different installations? See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+
+151207 10:00:54  InnoDB: Error: page 0 log sequence number 1609595
+InnoDB: is in the future! Current system log sequence number 1607531.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207 10:00:54  InnoDB: Error: page 1 log sequence number 1610858
+InnoDB: is in the future! Current system log sequence number 1607531.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207 10:00:54  InnoDB: Error: page 2 log sequence number 1611946
+InnoDB: is in the future! Current system log sequence number 1607531.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207 10:00:54 [ERROR] Build InnoDB index translation table for Table .\sosprema\utilisateur failed
+151207 10:00:54 [ERROR] Table sosprema/utilisateur contains 1 indexes inside InnoDB, which is different from the number of indexes 2 defined in the MySQL 
+151207 10:00:54 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:00:54 [ERROR] Table sosprema/utilisateur contains fewer indexes inside InnoDB than are defined in the MySQL .frm file. Have you mixed up .frm files from different installations? See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+
+151207 10:00:54  InnoDB: Error: page 0 log sequence number 1611946
+InnoDB: is in the future! Current system log sequence number 1607531.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+151207 10:00:55 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:00:55 [Warning] InnoDB: change_active_index(1) failed
+151207 10:00:55 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:00:55 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:00:55 [Warning] InnoDB: change_active_index(1) failed
+151207 10:00:55 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:08:57 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:08:57 [Warning] InnoDB: change_active_index(1) failed
+151207 10:08:57 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:08:57 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:08:57 [Warning] InnoDB: change_active_index(1) failed
+151207 10:08:57 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:09:22 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:09:22 [Warning] InnoDB: change_active_index(1) failed
+151207 10:09:22 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:09:26 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:09:26 [Warning] InnoDB: change_active_index(1) failed
+151207 10:09:26 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:09:32 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:09:32 [Warning] InnoDB: change_active_index(1) failed
+151207 10:09:32 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:09:32 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:09:32 [Warning] InnoDB: change_active_index(1) failed
+151207 10:09:32 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:09:32 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:09:32 [Warning] InnoDB: change_active_index(1) failed
+151207 10:09:32 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:09:47 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:09:47 [Warning] InnoDB: change_active_index(1) failed
+151207 10:09:47 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:10:10 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:10:10 [Warning] InnoDB: change_active_index(1) failed
+151207 10:10:10 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:14:18 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:14:18 [Warning] InnoDB: change_active_index(1) failed
+151207 10:14:18 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:14:21 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:14:22 [Warning] InnoDB: change_active_index(1) failed
+151207 10:14:22 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:14:22 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:14:22 [Warning] InnoDB: change_active_index(1) failed
+151207 10:14:22 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:14:22 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:14:22 [Warning] InnoDB: change_active_index(1) failed
+151207 10:14:22 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:14:24 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:14:24 [Warning] InnoDB: change_active_index(1) failed
+151207 10:14:24 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:14:24 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:14:24 [Warning] InnoDB: change_active_index(1) failed
+151207 10:14:24 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:15:42 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:15:42 [Warning] InnoDB: change_active_index(1) failed
+151207 10:15:42 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:15:42 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:15:42 [Warning] InnoDB: change_active_index(1) failed
+151207 10:15:42 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:17:07 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:17:07 [Warning] InnoDB: change_active_index(1) failed
+151207 10:17:07 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:17:07 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:17:07 [Warning] InnoDB: change_active_index(1) failed
+151207 10:17:07 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:17:07 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:17:07 [Warning] InnoDB: change_active_index(1) failed
+151207 10:17:07 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:17:16 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:17:16 [Warning] InnoDB: change_active_index(1) failed
+151207 10:17:16 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:17:16 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:17:16 [Warning] InnoDB: change_active_index(1) failed
+151207 10:17:16 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:17:26 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:17:26 [Warning] InnoDB: change_active_index(1) failed
+151207 10:17:26 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:17:26 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:17:26 [Warning] InnoDB: change_active_index(1) failed
+151207 10:17:26 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:17:40 [ERROR] Innodb could not find key n:o 1 with name libelle from dict cache for table sosprema/niveau
+151207 10:17:40 [Warning] InnoDB: change_active_index(1) failed
+151207 10:17:40 [ERROR] Got error 1 when reading table '.\sosprema\niveau'
+151207 10:17:40 [ERROR] Innodb could not find key n:o 1 with name email from dict cache for table sosprema/utilisateur
+151207 10:17:40 [Warning] InnoDB: change_active_index(1) failed
+151207 10:17:40 [ERROR] Got error 1 when reading table '.\sosprema\utilisateur'
+151207 10:29:47 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+151207 10:29:47 [Note] Event Scheduler: Purging the queue. 0 events
+151207 10:29:47  InnoDB: Starting shutdown...
+151207 10:29:48  InnoDB: Shutdown completed; log sequence number 1636324
+151207 10:29:48 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+
+=======
 151207  9:16:43 [Note] Plugin 'FEDERATED' is disabled.
 151207  9:16:43 InnoDB: The InnoDB memory heap is disabled
 151207  9:16:43 InnoDB: Mutexes and rw_locks use Windows interlocked functions
@@ -310,3 +800,4 @@ Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
 151207  9:16:45 [Note] Event Scheduler: Loaded 0 events
 151207  9:16:45 [Note] C:\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
 Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+>>>>>>> origin/master
