@@ -10,7 +10,6 @@ class controleurBenevol {
         try {
         $vueErreur = array();
         session_start();
-        echo 'controleur';
         //if (!isset($_SESSION['utilisateurConnecte'])) {
            include_once('vue/login.php');
         //} else {

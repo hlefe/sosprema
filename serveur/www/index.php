@@ -16,6 +16,7 @@
     require_once('config/Autoload.php');
     Autoload::charger();
     $controleur = new controleurBenevol();
+    require_once('vue/login.php');
 
 
  ?>
