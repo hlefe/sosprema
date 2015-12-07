@@ -8,6 +8,7 @@
 class modelUtilisateur {
 
     public static function creationUtilisateurConnecter($emailConnexion, $passwordConnexion) {
+        echo 'entrer creation modele';
         $utilisateurGateway = new utilisateurGateway();
         $utilisateur = $utilisateurGateway->rechercheUtilisateurConnexion($emailConnexion, $passwordConnexion);
         return $utilisateur;
