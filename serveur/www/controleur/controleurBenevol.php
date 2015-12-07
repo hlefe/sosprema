@@ -7,11 +7,31 @@ class controleurBenevol {
 	
 	function __construct()
 	{
-		
-	}
+            $vueErreur=array();
+            session_start();
+        
+        try{
+            $action = $_REQUEST['action'];
+            
+            switch($action){
+                case "validationFormulaire":
+                    $this->validationFormulaireConnexion();
+                    break;
+                    
+                default :
+                    $vueErreur[]="Problème authentification";
+                    require ("../vue/erreur.php");
+            }
+        }
+        catch (Exception $ex) {
+            $vueErreur[]="Erreur inattendue";
+            require ("../vue/erreur.php");
+        }
+    }
 
-	public static function creationSessionUtilisateur(){
-		if (isset($_POST['emailConnexion'])) {
+	static function validationFormulaireConnexion()
+        {
+            if (isset($_POST['emailConnexion'])) {
             $emailConnexion = nettoyage::nettoyerEmail($_POST['emailConnexion']);
 
             if (validation::validerEmail($emailConnexion)) {

@@ -11,6 +11,9 @@
  *
  * @author Nicolas
  */
+
+include_once '../../config/config.php';
+
 class Connexion extends PDO
 {
     private $stmt = null;
