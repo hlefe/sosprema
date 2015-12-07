@@ -45,7 +45,7 @@ class Autoload {
     {
         global $rep;
         $filename = $class.'.php';
-        $dir =array('modele/','./','config/','controleur/', 'DAL/');
+        $dir =array('modele/','./','config/','controleur/', 'DAL/', 'metier/');
         foreach ($dir as $d)
         {
             $file=$rep.$d.$filename; 

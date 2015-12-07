@@ -49,7 +49,6 @@ class controleurBenevol {
             $emailConnexion = nettoyage::nettoyerEmail($_POST['emailConnexion']);
 
             if (validation::validerEmail($emailConnexion)) {
-
                 if (isset($_POST['passwordConnexion'])) {
                     $passwordConnexion = nettoyage::nettoyerChaine($_POST['passwordConnexion']);
                     if (validation::validerPassword($passwordConnexion)) {
