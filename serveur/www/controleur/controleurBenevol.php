@@ -1,37 +1,41 @@
 <?php
 
 /**
-* 
-*/
+ * 
+ */
 class controleurBenevol {
-	
-	function __construct()
-	{
-            $vueErreur=array();
-            session_start();
-        
-        try{
+
+    public function __construct() {
+        $vueErreur = array();
+        session_start();
+        if (!isset($_SESSION['sessionUtilisateur'])) {
+            include_once('vue/login.php');
+        } else {
+            include_once('vue/accueil.php');
+        }
+
+        try {
             $action = $_REQUEST['action'];
-            
-            switch($action){
+
+            switch ($action) {
                 case "validationFormulaire":
-                    $this->validationFormulaireConnexion();
+                    echo 'validation du formulaire';
+                    if($this->validationFormulaireConnexion())
+                        echo 'Ca marche';
                     break;
-                    
+
                 default :
-                    $vueErreur[]="Problème authentification";
+                    $vueErreur[] = "Problème authentification";
                     require ("../vue/erreur.php");
             }
-        }
-        catch (Exception $ex) {
-            $vueErreur[]="Erreur inattendue";
+        } catch (Exception $ex) {
+            $vueErreur[] = "Erreur inattendue";
             require ("../vue/erreur.php");
         }
     }
 
-	static function validationFormulaireConnexion()
-        {
-            if (isset($_POST['emailConnexion'])) {
+    static function validationFormulaireConnexion() {
+        if (isset($_POST['emailConnexion'])) {
             $emailConnexion = nettoyage::nettoyerEmail($_POST['emailConnexion']);
 
             if (validation::validerEmail($emailConnexion)) {
@@ -52,5 +56,6 @@ class controleurBenevol {
         } else {
             return FALSE;
         }
-	}
+    }
+
 }

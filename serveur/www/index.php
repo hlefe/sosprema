@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Cntrôleur global du site
  *
@@ -7,15 +7,15 @@
  *
  *
  */
+    //affiche les erreurs à l'écran
+    ini_set('display_errors', 1);
 
-	
-	require_once('/config/config.php');
+
+    require_once('/config/config.php');
 
     require_once('/config/Autoload.php');
     Autoload::charger();
     $controleur = new controleurBenevol();
 
-	include_once('/modele/index.php');  
-    include_once('/controleur/index.php');
 
  ?>

@@ -12,8 +12,6 @@
  * @author Nicolas
  */
 
-include_once '../../config/config.php';
-
 class Connexion extends PDO
 {
     private $stmt = null;
@@ -21,9 +19,14 @@ class Connexion extends PDO
     
     public function __construct($dsn, $user, $pswd) 
     {
+        
+        global $dsn;
+        global $pswd;
+        global $user;
+        
         try
         {
-           self::$instance = parent::__construct($dsn, $user, $pswd); //il me faut les paramètres de Valentin
+            $this->stmt = parent::__construct($dsn, $user, $pswd); //il me faut les paramètres de Valentin
            $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
         }
