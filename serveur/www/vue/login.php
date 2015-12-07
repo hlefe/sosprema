@@ -4,18 +4,20 @@
  *
  *
  */
-  include('header.php');
+  include('header-connexion.php');
   ?>
-<h1> Affichage moche qui va bientôt changer </h1>
-  <form method="post">
-    Adresse mail: <input type="text" name="emailConnexion" value="" />
-     
-    Mot de passe: <input type="password" name="passwordConnexion" value="" />
-     
-    <input type="submit" name="connexion" value="Connexion" />
-    <!-- action envoyée au contrôleur -->
-    <input type="hidden" name="action" value="validationFormulaire">
+<form action="">
+  <h2><span class="entypo-login"></span> Connexion</h2>
+  <button class="submit" name="action" type="hidden" value="validationFormulaire"><span class="entypo-lock"></span></button>
+  <span class="entypo-user inputUserIcon"></span>
+  <input type="text" class="user" name="emailConnexion" value="" placeholder="mail"/>
+  <span class="entypo-key inputPassIcon"></span>
+  <input type="password" name="passwordConnexion" class="pass"placeholder="mot de passe"/>
 </form>
   <?php
     include('footer.php'); 
+
+
+?>
+
 
