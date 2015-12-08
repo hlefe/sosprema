@@ -3,6 +3,6 @@
 		<header>
 			<h1 id="titre-site"><a href="/" rel="home"><img src="vue/images/logo.png"></a></h1>
 		</header>
-        <?php include_once('sidebar-navigation.php'); ?>
+        <?php require_once('sidebar-navigation.php'); ?>
 	</section>
 </aside>

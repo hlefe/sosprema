@@ -32,6 +32,6 @@
     <section id="wrapper">
     	<section id="contenu">
     		<section class="box">
-    			<?php include_once('content-header.php'); ?>
+    			<?php require_once('content-header.php'); ?>
 				<section class="content">
 

@@ -19,10 +19,10 @@
     </head>
     <body>
     <section id="wrapper">
-    	<?php include_once('sidebar.php'); ?>
+    	<?php require_once('sidebar.php'); ?>
     	<section id="contenu">
     		<section class="box">
-    			<?php include_once('content-header.php'); ?>
+    			<?php require_once('content-header.php'); ?>
 				<section class="content">
 
 

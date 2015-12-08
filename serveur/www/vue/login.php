@@ -4,7 +4,7 @@
  *
  *
  */
-  include('header-connexion.php');
+  require_once('header-connexion.php');
   ?>
 <form method="post">
   <h2><span class="entypo-login"></span> Connexion</h2>
@@ -15,4 +15,4 @@
   <input type="password" name="passwordConnexion" class="pass"placeholder="mot de passe"/>
 </form>
   <?php
- //include('footer.php'); 
+ //require_once('footer.php'); 

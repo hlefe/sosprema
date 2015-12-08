@@ -8,16 +8,15 @@
 class modelUtilisateur {
 
     public static function creationUtilisateurConnecter($emailConnexion, $passwordConnexion) {
-        echo 'entrer creation modele';
         $utilisateurGateway = new utilisateurGateway();
         $utilisateur = $utilisateurGateway->rechercheUtilisateurConnexion($emailConnexion, $passwordConnexion);
         return $utilisateur;
 
     }
 
-    public static function creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $adresse, $id_groupe, $avatar, $telephones){
+    public static function creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_groupe, $avatar, $telephones){
         $utilisateurGateway = new utilisateurGateway();
-        $utilisateur = $utilisateurGateway->insererUtilisateur($prenom, $nom, $email, $mot_de_passe, $adresse, $id_groupe, $avatar);
+        $utilisateur = $utilisateurGateway->insererUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_groupe, $avatar);
         foreach ($telephones as $key => $value) {
             telephonesGateway::insererTelephone($utilisateur->id_utilisateur, $values);
         }
