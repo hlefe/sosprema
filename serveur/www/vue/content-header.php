@@ -4,8 +4,8 @@
 		<div id="menu-utilisateur">
 			<ul>
 				<li class="item-menu-avec-enfants">
-					<?php if(isset($_SESSION['sessionUtilisateur'])){ ?>
-						<a href="/">Bienvenue, <?php printf("%s %s", $_SESSION['sessionUtilisateur']->prenom, $_SESSION['sessionUtilisateur']->nom); ?>
+					<?php if(isset($_SESSION['utilisateurConnecter'])){ ?>
+						<a href="/">Bienvenue, <?php printf("%s %s", $_SESSION['utilisateurConnecter']->prenom, $_SESSION['utilisateurConnecter']->nom); ?>
 													</a>
 						<ul class="enfants">
 							<li>
