@@ -10,13 +10,12 @@ class controleurBenevol {
         try {
         $vueErreur = array();
         session_start();
-        //if (!isset($_SESSION['utilisateurConnecte'])) {
+        if (!isset($_SESSION['utilisateurConnecte'])) {
            include_once('vue/login.php');
-        //} else {
-        //    include_once('vue/accueil.php');
-        //}
+        } else {
+            include_once('vue/accueil.php');
+        }
         
-        echo 'test';
         $action = $_REQUEST['action'];
             
         switch ($action) {
@@ -25,9 +24,9 @@ class controleurBenevol {
                 break;
             
             case "validationFormulaire":
-                echo 'validation du formulaire';
                 if(self::validationFormulaireConnexion())
-                    header('Location: vue/accueil.php');                    
+                   
+                    include('vue/accueil.php');                    
                 break;
 
             default :
