@@ -10,30 +10,33 @@ class controleurBenevol {
         try {
             $vueErreur = array();
             session_start();
-            //if (!isset($_SESSION['utilisateurConnecte'])) {
-               require_once('vue/login.php');
-            //} else {
-            //    include_once('vue/accueil.php');
-            //}
-            
             $action = $_REQUEST['action'];
                 
             switch ($action) {
                 
                 case NULL :
+                    $vueErreur[] = "Probleme pas d'action";
                     break;
                 
                 case "validationFormulaire":
-                    if(self::validationFormulaireConnexion())
-                        header('Location:vue/accueil.php');                    
+                    if($this->validationFormulaireConnexion())
+                        header('Location:index.php?vueAppeller=accueil');                    
                     break;
 
                 case "ajouterUtilisateur":
-                    if(self::ajouterUtilisateur())
-                        echo 'utilisateur ajouté';
-                        header('Location:vue/accueil.php');                    
+                    $this->ajouterUtilisateur();
+                    echo 'utilisateur ajouté';
+                    header('Location:index.php?vueAppeller=accueil');                    
                     break;
-
+                case "supprimerUtilisateur":
+                    if($this->supprimerUtilisateur()!=FALSE)
+                        echo 'utilisateur supprimer';
+                        header('Location:index.php?vueAppeller=accueil');                    
+                    break;
+                case "afficherToutUtilisateur":
+                    $listesUsers = $this->afficherToutUtilisateur();
+                        //header('Location:vue/accueil.php');       // vue qui affiche la liste des utilisateurs.             
+                    break;
                 default :
                     $vueErreur[] = "Probleme authentification";
                     header("vue/erreur.php");
@@ -77,7 +80,7 @@ class controleurBenevol {
             echo "veuiller renseigner un nom";
         else
             $nom = nettoyage::nettoyerChaine($_POST['nom']);
-        
+
         if(!isset($_POST['prenom']))
             echo "veuiller renseigner un prenom";
         else
@@ -108,11 +111,30 @@ class controleurBenevol {
         else
             $ville=NULL;
 
+        if(isset($_POST['id_groupe']))
+            $id_groupe=nettoyage::nettoyerChaine($_POST['ville']);
+        else
+            $id_groupe=NULL;
+
         $avatar = NULL;
 
         $mot_de_passe = 'SosPrema';
 
         modelUtilisateur::creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_groupe, $avatar);
 
+    }
+
+    public function supprimerUtilisateur(){
+        
+        if(!isset($_POST['email']))
+            echo "veuiller renseigner une adresse mail";
+        else
+        $email = nettoyage::nettoyerChaine($_POST['email']);
+
+        modelUtilisateur::supprimerUtilisateur($email);
+    }
+
+    public function afficherToutUtilisateur(){
+        return modelUtilisateur::afficherToutUtilisateur();
     }
 }

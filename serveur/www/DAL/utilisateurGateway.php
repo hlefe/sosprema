@@ -50,10 +50,6 @@ class utilisateurGateway {
             return false;
         }
 
-        $querry = 'SELECT * FROM telephone WHERE id_utilisateur_tel=:id_utilisateur';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($result['id_utilisateur'],PDO::PARAM_STR)));
-        $result += $smtp->fetchall();
-
         return $utilisateur = new utilisateur($result);
     }
 
@@ -77,6 +73,15 @@ class utilisateurGateway {
     public function supprimerUtilisateur($email){        
         $querry = 'DELETE FROM utilisateur WHERE email=:email';
         $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
+        $result = $this->bd->getResult();
+        if ($result == false){
+            return false;
+        }
+    }
+
+    public function afficherToutUtilisateur(){        
+        $querry = 'SELECT * FROM utilisateur';
+        $this->bd->executeQuerry($querry, NULL);
         $result = $this->bd->getResult();
         if ($result == false){
             return false;

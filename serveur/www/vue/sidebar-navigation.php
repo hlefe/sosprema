@@ -1,7 +1,7 @@
 <nav id="sidebar-navigation">
 	<ul class="nav">
 		<li>
-			<a href="accueil.php"><img src="vue/images/home.png"><span>Accueil</span></a>
+			<a href="index.php?vueAppeller=accueil"><img src="vue/images/home.png"><span>Accueil</span></a>
 		</li>
 		<li class="active">
 			<a href="/"><img src="vue/images/hospital-icon.png"><span>Hôpitaux</span></a>
@@ -13,7 +13,7 @@
 			<a href="/"><img src="vue/images/settings.png"><span>Mon compte</span></a>
 		</li>
 		<li>
-			<a href="gestion.php"><img src="vue/images/users.png"><span>Gestion</span></a>
+			<a href="index.php?vueAppeller=gestion"><img src="vue/images/users.png"><span>Gestion</span></a>
 		</li>
 
 	</ul>

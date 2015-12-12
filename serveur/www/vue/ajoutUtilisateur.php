@@ -1,7 +1,7 @@
 <?php require_once('header.php'); ?>
 
 <h1> Ajouter un utilisateur </h1>
-  <form action="/controleur/controleurBenevol.php?action = ajouterUtilisateur" method="post">
+  <form method="post" action="index.php?controleur=controleurBenevol&action=ajouterUtilisateur">
     Nom: <input type="text" name="nom" placeholder="nom" />
     Prenom: <input type="text" name="prenom" placeholder="prenom" />
     Adresse mail: <input type="text" name="email" placeholder="exemple@gmail.com" />
@@ -11,7 +11,7 @@
     Code postal: <input type="text" name="code_postal" placeholder="63000" />
     Nom de la ville: <input type="text" name="ville" placeholder="ville" />
      
-    <input type="submit" name="ajouter" value="Ajouter" />
+    <button class="submit" name="boutonAjouter" value="ajouterUtilisateur">Ajouter</button>
 </form>
   
 <?php require_once('footer.php'); ?>

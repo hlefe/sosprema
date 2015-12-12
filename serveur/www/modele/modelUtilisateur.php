@@ -14,7 +14,7 @@ class modelUtilisateur {
 
     }
 
-    public static function creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_groupe, $avatar, $telephones){
+    public static function creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_groupe, $avatar){
         $utilisateurGateway = new utilisateurGateway();
         $utilisateur = $utilisateurGateway->insererUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_groupe, $avatar);
         foreach ($telephones as $key => $value) {
@@ -25,5 +25,10 @@ class modelUtilisateur {
     public static function supprimerUtilisateur($emailConnexion) {
         $utilisateurGateway = new utilisateurGateway();
         $utilisateurGateway = $utilisateurGateway->supprimerUtilisateur($emailConnexion);
+    }
+
+    public static function afficherToutUtilisateur() {
+        $utilisateurGateway = new utilisateurGateway();
+        $utilisateurGateway = $utilisateurGateway->afficherToutUtilisateur($emailConnexion);
     }
 }
