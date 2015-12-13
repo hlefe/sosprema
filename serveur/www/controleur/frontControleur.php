@@ -29,7 +29,12 @@ if(isset($_REQUEST['controleur'])){
 			require_once('vue/profil.php');
 			break;
 		case 'gestion':
-			require_once('vue/gestion.php');
+		if(controleurAdmin::verifierDroit()){
+				require_once('vue/gestion.php');;
+			}else{
+				$vueErreur[] = "vous ne possédez pas les droits appopriées.";
+            	require_once ("/vue/erreur.php");
+			}
 			break;
 
 		case 'erreur':

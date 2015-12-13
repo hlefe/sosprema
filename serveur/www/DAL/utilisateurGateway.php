@@ -117,4 +117,12 @@ class utilisateurGateway {
         $this->bd->executeQuerry($querry, array(':mot_de_passe'=>array($newMDP,PDO::PARAM_STR),
                                                 ':id_utilisateur'=>array($idUser,PDO::PARAM_STR)));
     }
+
+    public function modifierNiveau($user, $newNiveau){
+        $querry = 'UPDATE utilisateur SET id_niveau_utilisateur=:id_niveau_utilisateur WHERE id_utilisateur=:id_utilisateur';
+        $this->bd->executeQuerry($querry, array(':id_niveau_utilisateur'=>array($newNiveau,PDO::PARAM_INT),
+                                                ':id_utilisateur'=>array($user->userId,PDO::PARAM_STR)));
+        $user->id_groupe= $newNiveau;
+        return $user;
+    }
 }

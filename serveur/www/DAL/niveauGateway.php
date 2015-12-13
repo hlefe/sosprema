@@ -18,4 +18,14 @@ class niveauGateway {
         $libelle = $result['libelle'];
         return $libelle;
     }
+
+    public function getAll(){
+    	$querry = 'SELECT * FROM niveau';
+        $this->bd->executeQuerry($querry, NULL);
+        $results = $this->bd->getResults();
+        if ($result == false){
+            return false;
+        }
+        return $results;
+    }
 }

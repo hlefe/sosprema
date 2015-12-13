@@ -40,4 +40,9 @@ class modelUtilisateur {
         $utilisateurGateway = new utilisateurGateway();
         $utilisateur = $utilisateurGateway->modifierMotDePasse($idUser, $newMDR);
     }
+
+    public static function modifierNiveau($user, $newNiveau){
+        $utilisateurGateway = new utilisateurGateway();
+        $utilisateur = $utilisateurGateway->modifierNiveau($user, $newNiveau);
+    }
 }
