@@ -1088,3 +1088,32 @@ InnoDB: buffer...
 151213  9:40:07 [Note] Event Scheduler: Loaded 0 events
 151213  9:40:07 [Note] C:\Users\Nico\Documents\Informatique\sospremaPerso\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
 Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151213 14:10:18 [Note] Plugin 'FEDERATED' is disabled.
+151213 14:10:18 InnoDB: The InnoDB memory heap is disabled
+151213 14:10:18 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151213 14:10:18 InnoDB: Compressed tables use zlib 1.2.3
+151213 14:10:18 InnoDB: Initializing buffer pool, size = 16.0M
+151213 14:10:18 InnoDB: Completed initialization of buffer pool
+151213 14:10:18 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+151213 14:10:18  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+151213 14:10:18  InnoDB: Waiting for the background threads to start
+151213 14:10:19 InnoDB: 5.5.46 started; log sequence number 1645940
+151213 14:10:19 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151213 14:10:19 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151213 14:10:20 [Note] Server socket created on IP: '127.0.0.1'.
+151213 14:10:20 [Note] Event Scheduler: Loaded 0 events
+151213 14:10:20 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+151213 14:18:30 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+151213 14:18:30 [Note] Event Scheduler: Purging the queue. 0 events
+151213 14:18:31  InnoDB: Starting shutdown...
+151213 14:18:32  InnoDB: Shutdown completed; log sequence number 1653910
+151213 14:18:32 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+
