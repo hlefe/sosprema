@@ -21,7 +21,7 @@ class controleurAdmin {
                     try {
                         $this->ajouterUtilisateur();
                         $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
-                        header('Location:index.php?vueAppeller=confirmation');
+                        header('Location:index.php?vueAppeller=confirmation&vueConfirmation[]=L\'utilisateur à bien été ajouté.');
                     } catch(PDOException $ex){
                         $vueErreur[] = "Erreur base de donnée, PDOException";
                         header('Location:index.php?vueAppeller=erreur');

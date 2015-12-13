@@ -138,10 +138,7 @@ class controleurBenevol {
         else
             $ville=NULL;
 
-        if(isset($_POST['id_niveau_utilisateur']))
-            $id_niveau_utilisateur=nettoyage::nettoyerChaine($_POST['id_niveau_utilisateur']);
-        else
-            $id_niveau_utilisateur=NULL;
+        $id_niveau_utilisateur=$_SESSION['utilisateurConnecter']->id_groupe;
         $avatar = NULL;
 
         $_SESSION['utilisateurConnecter'] = modelUtilisateur::modifierUtilisateur($_SESSION['utilisateurConnecter']->userId, $prenom, $nom, $email, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
