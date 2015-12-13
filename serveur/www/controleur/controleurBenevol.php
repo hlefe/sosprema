@@ -47,7 +47,7 @@ class controleurBenevol {
                     try {
                         $this->modifierMotDePasse();
                         $vueConfirmation[] = "votre mot de passe à bien été modifié.";
-                        header('Location:index.php?vueAppeller=confirmation');
+                        header('Location:index.php?vueAppeller=confirmation&message='.$vueConfirmation[].'');
                     } catch(PDOException $ex){
                         $vueErreur[] = "Erreur base de donnée, PDOException";
                         header('Location:index.php?vueAppeller=erreur');
