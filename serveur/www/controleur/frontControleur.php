@@ -38,10 +38,12 @@ if(isset($_REQUEST['controleur'])){
 			break;
 
 		case 'erreur':
+			$vueErreur = $_REQUEST['erreur'];
 			require_once('vue/erreur.php');
 			break;
 
 		case 'confirmation':
+			$vueConfirmation = $_REQUEST['message'];
 			require_once('vue/confirmation.php');
 			break;
 
