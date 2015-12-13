@@ -21,10 +21,16 @@ class controleurAdmin {
                     try {
                         $this->ajouterUtilisateur();
                         $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
-                        header('Location:index.php?vueAppeller=confirmation');
+                        foreach ($vueConfirmation as $key => $value) {
+                            $message .= "&message[]=".$value."";
+                        }
+                        header('Location:index.php?vueAppeller=confirmation'.$message.'');
                     } catch(PDOException $ex){
                         $vueErreur[] = "Erreur base de donnée, PDOException";
-                        header('Location:index.php?vueAppeller=erreur');
+                        foreach ($vueErreur as $key => $value) {
+                            $message .= "&erreur[]=".$value."";
+                        }
+                        header('Location:index.php?vueAppeller=erreur'.$message.'');
                     }
                     break;
 
