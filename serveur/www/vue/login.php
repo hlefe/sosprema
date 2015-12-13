@@ -9,7 +9,7 @@
 <form method="post" action="index.php?controleur=controleurBenevol">
   <h2><span class="entypo-login"></span> Connexion</h2>
 
-  <button id="boutonConnexion" class="submit" name="action" type="hidden" value="validationFormulaire"><span class="entypo-lock"></span></button>
+  <button id="boutonConnexion" class="submit" name="action" type="hidden" value="connexion"><span class="entypo-lock"></span></button>
   
   <span class="entypo-user inputUserIcon"></span>
   <input type="text" class="user" name="emailConnexion" value="" placeholder="mail"/>

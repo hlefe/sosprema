@@ -5,14 +5,14 @@
 			<ul>
 				<li class="item-menu-avec-enfants">
 					<?php if(isset($utilisateurConnecter)){ ?>
-						<a href="/">Bienvenue, <?php printf("%s %s", $utilisateurConnecter->prenom, $utilisateurConnecter->nom); ?>
+						<a href="index.php?vueAppeller=profil">Bienvenue, <?php printf("%s %s", $utilisateurConnecter->prenom, $utilisateurConnecter->nom); ?>
 													</a>
 						<ul class="enfants">
 							<li>
-								<a href="/">Mon profil</a>
+								<a href="index.php?vueAppeller=profil">Mon profil</a>
 							</li>
 							<li>
-								<a href="/">Déconnexion</a>
+								<a href="index.php?controleur=controleurBenevol&action=deconnexion">Déconnexion</a>
 							</li>
 						</ul>
 					<?php } else { ?>

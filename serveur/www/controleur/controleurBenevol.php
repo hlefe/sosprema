@@ -9,7 +9,6 @@ class controleurBenevol {
     {
         try {
             $vueErreur = array();
-            session_start();
             $action = $_REQUEST['action'];
                 
             switch ($action) {
@@ -18,7 +17,7 @@ class controleurBenevol {
                     $vueErreur[] = "Probleme pas d'action";
                     break;
                 
-                case "validationFormulaire":
+                case "connexion":
                     try {
                         if($this->validationFormulaireConnexion())
                         header('Location:index.php?vueAppeller=accueil');
@@ -27,38 +26,46 @@ class controleurBenevol {
                     }                 
                     break;
 
-                case "ajouterUtilisateur":
+                case "deconnexion":
+                    $this->detruireSession();
+                    header('Location:index.php');             
+                    break;
+
+                case "modifierUtilisateur":
                     try {
-                        $this->ajouterUtilisateur();
-                        echo "utilisateur ajouté";
-                        header('Location:index.php?vueAppeller=accueil');
+                        $this->modifierUtilisateur();
+                        header('Location:index.php?vueAppeller=profil');
                     } catch(PDOException $ex){
-                        echo $ex;
+                        $vueErreur[] = "Erreur base de donnée, PDOException";
+                        header('Location:index.php?vueAppeller=erreur');
                     }
                     break;
-                case "supprimerUtilisateur":
-                    if($this->supprimerUtilisateur()!=FALSE)
-                        echo 'utilisateur supprimer';
-                        header('Location:index.php?vueAppeller=accueil');                    
+
+                case "modifierMotDePasse":
+                    try {
+                        $this->modifierMotDePasse();
+                        $vueConfirmation[] = "votre mot de passe à bien été modifié.";
+                        header('Location:index.php?vueAppeller=confirmation');
+                    } catch(PDOException $ex){
+                        $vueErreur[] = "Erreur base de donnée, PDOException";
+                        header('Location:index.php?vueAppeller=erreur');
+                    }
                     break;
-                case "afficherToutUtilisateur":
-                    $listesUsers = $this->afficherToutUtilisateur();
-                        //header('Location:vue/accueil.php');       // vue qui affiche la liste des utilisateurs.             
-                    break;
+
                 default :
                     $vueErreur[] = "Probleme authentification";
-                    header("vue/erreur.php");
+                    header('Location:index.php?vueAppeller=erreur');
             }
         } catch(PDOException $ex){
             $vueErreur[] = "Erreur base de donnée, PDOException";
-            require_once ("/vue/erreur.php");
+            header('Location:index.php?vueAppeller=erreur');
         } catch (Exception $ex) {
             $vueErreur[] = "Erreur inattendue";
-            require_once ("/vue/erreur.php");
+            header('Location:index.php?vueAppeller=erreur');
         }
     }
 
-    static function validationFormulaireConnexion() {
+    public function validationFormulaireConnexion() {
                 
         if (isset($_POST['emailConnexion'])) {
             
@@ -83,22 +90,32 @@ class controleurBenevol {
         }
     }
 
-    static function ajouterUtilisateur() {
-        if(!isset($_POST['nom']))
+    public function modifierUtilisateur() {
+        if(!isset($_POST['nom'])|| $_POST['nom']==""){
             echo "veuiller renseigner un nom";
+            header('Location:index.php?vueAppeller=ajoutUtilisateur');
+        }
         else
             $nom = nettoyage::nettoyerChaine($_POST['nom']);
 
-        if(!isset($_POST['prenom']))
+        if(!isset($_POST['prenom'])|| $_POST['prenom']==""){
             echo "veuiller renseigner un prenom";
+            header('Location:index.php?vueAppeller=ajoutUtilisateur');
+        }
         else
             $prenom = nettoyage::nettoyerChaine($_POST['prenom']);
         
-        if(!isset($_POST['email']))
+        if(!isset($_POST['email'])|| $_POST['email']==""){
             echo "veuiller renseigner une adresse mail";
+            header('Location:index.php?vueAppeller=ajoutUtilisateur');
+        }
         else
-            $email = nettoyage::nettoyerChaine($_POST['email']);
-        
+            if(validation::validerEmail($_POST['email']))
+                $email = nettoyage::nettoyerChaine($_POST['email']);
+            else{
+                echo "veuiller renseigner une adresse mail valide";
+                header('Location:index.php?vueAppeller=ajoutUtilisateur');
+            }
         if(isset($_POST['num_rue']))
             $num_rue=nettoyage::nettoyerChaine($_POST['num_rue']);
         else
@@ -123,26 +140,56 @@ class controleurBenevol {
             $id_niveau_utilisateur=nettoyage::nettoyerChaine($_POST['id_niveau_utilisateur']);
         else
             $id_niveau_utilisateur=NULL;
-
         $avatar = NULL;
 
-        $mot_de_passe = 'SosPrema';
-
-        return modelUtilisateur::creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
+        $_SESSION['utilisateurConnecter'] = modelUtilisateur::modifierUtilisateur($_SESSION['utilisateurConnecter']->userId, $prenom, $nom, $email, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
 
     }
 
-    public function supprimerUtilisateur(){
-        
-        if(!isset($_POST['email']))
-            echo "veuiller renseigner une adresse mail";
-        else
-        $email = nettoyage::nettoyerChaine($_POST['email']);
+    public function modifierMotDePasse(){
 
-        modelUtilisateur::supprimerUtilisateur($email);
+        if(isset($_POST['oldMDP'])){
+            $oldMDP = nettoyage::nettoyerChaine($_POST['oldMDP']);
+            if($_SESSION['utilisateurConnecter']->verifierMotDePasse($oldMDP)){
+
+                if(isset($_POST['newMDP'])){
+                    $newMDP = nettoyage::nettoyerChaine($_POST['newMDP']);
+                    if (isset($_POST['newMDPVerif'])){
+                        $newMDPVerif = nettoyage::nettoyerChaine($_POST['newMDPVerif']);
+                        if($newMDP==$newMDPVerif){
+                            $mot_de_passe=nettoyage::nettoyerChaine($_POST['newMDP']);
+
+                            if(validation::validerPassword($mot_de_passe)){
+                                modelUtilisateur::modifierMotDePasse($_SESSION['utilisateurConnecter']->userId, $mot_de_passe);
+                            }else{
+                                echo "mot de passe invalide.";
+                            }
+                        }else{
+                            echo "le mot de passe de vérification ne correspond pas au mot de passe.";
+                        }
+                    }else{
+                        echo "veuiller renseigner le champ de vérification du nouveau mot de passe.";
+                    }
+                }else{
+                    echo "veuiller renseigner le champ pour le nouveau mot de passe.";
+                }
+            } else{
+                echo "l'ancien mot de passe est invalide.";
+            }
+        }else{
+            echo "veuiller renseigner votre ancien mot de passe";
+        }
     }
 
-    public function afficherToutUtilisateur(){
-        return modelUtilisateur::afficherToutUtilisateur();
+    public function detruireSession(){
+        session_destroy();
+    }
+
+    public static function verifierDroit(){
+        if(modelNiveau::rechercherLibelle($_SESSION['utilisateurConnecter']->id_groupe) == NULL){
+            return true;
+        }else{
+            return true;
+        }
     }
 }

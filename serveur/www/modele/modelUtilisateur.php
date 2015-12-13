@@ -28,4 +28,16 @@ class modelUtilisateur {
         $utilisateurGateway = new utilisateurGateway();
         $utilisateurGateway = $utilisateurGateway->afficherToutUtilisateur($emailConnexion);
     }
+
+    public static function modifierUtilisateur($id_utilisateur, $prenom, $nom, $email, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar){
+        $utilisateurGateway = new utilisateurGateway();
+        $utilisateurGateway->modifierUtilisateur($id_utilisateur, $prenom, $nom, $email, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
+        $utilisateur = $utilisateurGateway->rechercheUtilisateurId($id_utilisateur);
+        return $utilisateur;
+    }
+
+    public static function modifierMotDePasse($idUser, $newMDR){
+        $utilisateurGateway = new utilisateurGateway();
+        $utilisateur = $utilisateurGateway->modifierMotDePasse($idUser, $newMDR);
+    }
 }

@@ -72,6 +72,8 @@ class utilisateur {
         foreach ($param as $key=>$value){
             if ('email' == $key) {
                 $this->email = $value;
+            } elseif ('id_utilisateur' == $key) {
+                $this->userId = $value;
             } elseif ('nom' == $key) {
                 $this->nom = $value;
             } elseif ('prenom' == $key) {
@@ -86,14 +88,19 @@ class utilisateur {
                 $this->adresse->code_postal = $value;
             } elseif ('ville' == $key) {
                 $this->adresse->ville = $value;
-            } elseif ('id_groupe' === $key) {
+            } elseif ('id_niveau_utilisateur' == $key) {
                 $this->id_groupe = $value;
-            } elseif ('avatar' === $key) {
+            } elseif ('avatar' == $key) {
                 $this->avatar = $value;
-            } elseif ('telephones' === $key) {
-                $this->telephones[] = $value;
             }
         }
+    }
+
+    public function verifierMotDePasse($mot_de_passe){
+        if($this->mot_de_passe == $mot_de_passe){
+            return true;
+        }
+        return false;
     }
 }
 
