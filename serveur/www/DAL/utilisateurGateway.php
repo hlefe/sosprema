@@ -23,8 +23,7 @@ class utilisateurGateway {
     }
 
     public function rechercheUtilisateurConnexion($email, $password)
-    {
-        try {
+    {   
             $querry = 'SELECT * FROM utilisateur WHERE email=:email AND mot_de_passe=:password';
             $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
                                                     ':password'=>array($password,PDO::PARAM_STR)));
@@ -33,11 +32,7 @@ class utilisateurGateway {
                 return false;
             }
             $utilisateur = new utilisateur($result);
-            return $utilisateur;
-        } catch (PDOException $ex) {
-            echo $ex;            
-        }
-        
+            return $utilisateur;       
         
     }
 

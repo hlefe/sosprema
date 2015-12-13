@@ -19,8 +19,10 @@ class controleurBenevol {
                 
                 case "connexion":
                     try {
-                        if($this->validationFormulaireConnexion())
-                        header('Location:index.php?vueAppeller=accueil');
+                        if($this->validationFormulaireConnexion()){
+                            header('Location:index.php?vueAppeller=accueil');
+                        }else
+                            header('Location:index.php');
                     }catch(PDOException $ex){
                         echo $ex;
                     }                 
