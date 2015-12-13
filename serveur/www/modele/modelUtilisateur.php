@@ -14,12 +14,9 @@ class modelUtilisateur {
 
     }
 
-    public static function creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_groupe, $avatar){
+    public static function creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar){
         $utilisateurGateway = new utilisateurGateway();
-        $utilisateur = $utilisateurGateway->insererUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_groupe, $avatar);
-        foreach ($telephones as $key => $value) {
-            telephonesGateway::insererTelephone($utilisateur->id_utilisateur, $values);
-        }
+        $utilisateur = $utilisateurGateway->insererUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
     }
 
     public static function supprimerUtilisateur($emailConnexion) {

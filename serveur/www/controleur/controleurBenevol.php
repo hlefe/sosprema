@@ -19,14 +19,22 @@ class controleurBenevol {
                     break;
                 
                 case "validationFormulaire":
-                    if($this->validationFormulaireConnexion())
-                        header('Location:index.php?vueAppeller=accueil');                    
+                    try {
+                        if($this->validationFormulaireConnexion())
+                        header('Location:index.php?vueAppeller=accueil');
+                    }catch(PDOException $ex){
+                        echo $ex;
+                    }                 
                     break;
 
                 case "ajouterUtilisateur":
-                    $this->ajouterUtilisateur();
-                    echo 'utilisateur ajouté';
-                    header('Location:index.php?vueAppeller=accueil');                    
+                    try {
+                        $this->ajouterUtilisateur();
+                        echo "utilisateur ajouté";
+                        header('Location:index.php?vueAppeller=accueil');
+                    } catch(PDOException $ex){
+                        echo $ex;
+                    }
                     break;
                 case "supprimerUtilisateur":
                     if($this->supprimerUtilisateur()!=FALSE)
@@ -111,16 +119,16 @@ class controleurBenevol {
         else
             $ville=NULL;
 
-        if(isset($_POST['id_groupe']))
-            $id_groupe=nettoyage::nettoyerChaine($_POST['ville']);
+        if(isset($_POST['id_niveau_utilisateur']))
+            $id_niveau_utilisateur=nettoyage::nettoyerChaine($_POST['id_niveau_utilisateur']);
         else
-            $id_groupe=NULL;
+            $id_niveau_utilisateur=NULL;
 
         $avatar = NULL;
 
         $mot_de_passe = 'SosPrema';
 
-        modelUtilisateur::creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_groupe, $avatar);
+        return modelUtilisateur::creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
 
     }
 

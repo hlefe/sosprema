@@ -21,18 +21,9 @@ class Connexion extends PDO
     
     public function __construct($dsn, $user, $pswd) 
     {
-        
-        
-        try
-        {
-            $this->stmt = parent::__construct($dsn, $user, $pswd); //il me faut les paramètres de Valentin
-           $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-        }
-        catch (PDOException $e)
-        {
-            echo $e->getMessage();
-        }
+        $this->stmt = parent::__construct($dsn, $user, $pswd); //il me faut les paramètres de Valentin
+        $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+         
     }
     
     public static function getInstance()
@@ -52,9 +43,9 @@ class Connexion extends PDO
     public function executeQuerry($querry, array $parameters = [])
     {
         $this->stmt=parent::prepare($querry);
-        foreach($parameters as $name=>$value)
+        foreach($parameters as $key=>$value)
         {
-            $this->stmt->bindValue($name, $value[0], $value[1]);
+            $this->stmt->bindValue($key, $value[0], $value[1]);
         }
         return $this->stmt->execute();
     }
