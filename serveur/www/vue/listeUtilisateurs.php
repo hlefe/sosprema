@@ -2,7 +2,7 @@
 require_once('header.php');
 
 ?>
-
+<div id="contenute">
 <table class="table table-hover" align=center>
 	<thead>
 		<tr>
@@ -10,6 +10,7 @@ require_once('header.php');
 			<th>Mail</th>
 			<th>Nom</th>
 			<th>Prénom</th>
+                        <th>Modifier</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -24,10 +25,12 @@ require_once('header.php');
 				</td>
 				<td align=center><?php echo $user["nom"]; ?></td>
 				<td align=center><?php echo $user["prenom"]; ?></td>
+                                <td align=center><a href="index.php?controleur=controleurAdmin&action=supprimerUtilisateur&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
 			</tr>
 		<?php } ?>
 	<tbody>
 </table>
+</div>
 <?php
 require_once('footer.php');
 ?>

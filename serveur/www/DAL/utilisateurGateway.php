@@ -78,10 +78,7 @@ class utilisateurGateway {
     public function supprimerUtilisateur($email){        
         $querry = 'DELETE FROM utilisateur WHERE email=:email';
         $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
-        $result = $this->bd->getResult();
-        if ($result == false){
-            return false;
-        }
+        return true;
     }
 
     public function afficherToutUtilisateur(){        

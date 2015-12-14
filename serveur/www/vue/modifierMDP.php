@@ -1,5 +1,5 @@
 <?php require_once('header.php'); ?>
-
+<div id="contenute">
 <h1> Profil </h1>
   <form method="post" action="index.php?controleur=controleurBenevol&action=modifierMotDePasse">
     <label for="oldMDP">Mot de passe actuel</label>
@@ -14,5 +14,5 @@
     <button class="submit" name="boutonModifier" value="modifierMDP">Modifier</button>
 
 </form>
-  
+</div>
 <?php require_once('footer.php'); ?>

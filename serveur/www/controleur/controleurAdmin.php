@@ -35,10 +35,11 @@ class controleurAdmin {
                     break;
 
                 case "supprimerUtilisateur":
-                    if($this->supprimerUtilisateur()!=FALSE)
-                        echo 'utilisateur supprimer';
-                        header('Location:index.php?vueAppeller=accueil');                    
-                    break;
+                    if($this->supprimerUtilisateur()!=false){   
+                        $listeUsers = controleurAdmin::afficherToutUtilisateur();
+                        require_once('vue/listeUtilisateurs.php');
+                        break;
+                    }
 
                 case "afficherToutUtilisateur":
                     $listesUsers = $this->afficherToutUtilisateur();
@@ -52,11 +53,14 @@ class controleurAdmin {
                     header('Location:index.php?vueAppeller=erreur'.$message.'');
             }
         } catch(PDOException $ex){
-            $vueErreur[] = "Erreur base de donnée, PDOException";
+            /*$vueErreur[] = "Erreur base de donnée, PDOException";
             foreach ($vueErreur as $key => $value) {
                             $message .= "&erreur[]=".$value."";
                         }
-            header('Location:index.php?vueAppeller=erreur'.$message.'');
+             
+             
+            header('Location:index.php?vueAppeller=erreur'.$message.'');*/
+            echo $ex;
         } catch (Exception $ex) {
             $vueErreur[] = "Erreur inattendue";
             foreach ($vueErreur as $key => $value) {
@@ -128,12 +132,12 @@ class controleurAdmin {
 
     public function supprimerUtilisateur(){
         
-        if(!isset($_POST['email']))
+        if(!isset($_GET['mail']))
             echo "veuiller renseigner une adresse mail";
         else
-        $email = nettoyage::nettoyerChaine($_POST['email']);
+        $email = nettoyage::nettoyerChaine($_GET['mail']);
 
-        modelUtilisateur::supprimerUtilisateur($email);
+        return modelUtilisateur::supprimerUtilisateur($email);
     }
 
     public function afficherToutUtilisateur(){

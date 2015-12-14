@@ -1,5 +1,5 @@
 <?php require_once('header.php'); ?>
-
+<div id="contenute">
 <h1> Ajouter un utilisateur </h1>
   <form method="post" action="index.php?controleur=controleurAdmin&action=ajouterUtilisateur">
     <label for="nom">Nom</label>
@@ -27,5 +27,5 @@
      
     <button class="submit" name="boutonAjouter" value="ajouterUtilisateur">Ajouter</button>
 </form>
-  
+</div> 
 <?php require_once('footer.php'); ?>

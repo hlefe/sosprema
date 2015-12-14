@@ -21,7 +21,7 @@ class modelUtilisateur {
 
     public static function supprimerUtilisateur($emailConnexion) {
         $utilisateurGateway = new utilisateurGateway();
-        $utilisateurGateway = $utilisateurGateway->supprimerUtilisateur($emailConnexion);
+        return $utilisateurGateway->supprimerUtilisateur($emailConnexion);
     }
 
     public static function afficherToutUtilisateur() {

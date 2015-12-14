@@ -290,3 +290,8 @@ thead tr{
   color:white;
   font-weight: bold;
 }
+#contenute{
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+}

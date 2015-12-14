@@ -1,5 +1,5 @@
 <?php require_once('header.php'); ?>
-
+<div id="contenute">
 <h1> Profil </h1>
   <form method="post" action="index.php?controleur=controleurBenevol&action=modifierUtilisateur">
     <label for="nom">Nom</label>
@@ -31,5 +31,5 @@
 <form method="post" action="index.php?vueAppeller=modifierMDP">
     <button class="submit" name="boutonAjouter" value="modifierUtilisateur">Modifier mot de passe</button>
 </form>
-
+</div>
 <?php require_once('footer.php'); ?>
