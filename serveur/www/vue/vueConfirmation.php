@@ -1,4 +1,7 @@
-<?php if(isset($vueConfirmation)) { ?>
+<?php 
+
+require_once('header.php');
+?>
 <div id="contenute">
 <h2> Confirmation :</h2>
 <?php
@@ -7,4 +10,6 @@ foreach ($vueConfirmation as $key => $value) {
 }
 ?>
 </div>
-<?php } ?>
+<?php
+require_once('footer.php');
+?>

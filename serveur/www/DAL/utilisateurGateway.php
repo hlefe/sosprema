@@ -36,6 +36,19 @@ class utilisateurGateway {
         
     }
 
+    public function rechercheUtilisateurEmail($email)
+    {   
+            $querry = 'SELECT * FROM utilisateur WHERE email=:email';
+            $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
+            $result = $this->bd->getResult();
+            if ($result == false){
+                return false;
+            }
+            $utilisateur = new utilisateur($result);
+            return $utilisateur;       
+        
+    }
+
     public function rechercheUtilisateurNom($nom)
     {        
         $querry = 'SELECT * FROM utilisateur WHERE nom=:nom';

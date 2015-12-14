@@ -1,7 +1,11 @@
-<?php require_once('header.php'); ?>
+<?php require_once('header.php');
+require_once('erreur.php');
+require_once('confirmation.php');
+?>
 <div id="contenute">
 <h1> Ajouter un utilisateur </h1>
-  <form method="post" action="index.php?controleur=controleurAdmin&action=ajouterUtilisateur">
+<p>mot de passe par défaut: SosPrema, il est conseillé à l'utilisateur de le modifier à la suite de la première connexion.</p>
+  <form method="post" action="index.php?action=ajouterUtilisateur">
     <label for="nom">Nom</label>
     <input required type="text" name="nom" placeholder="nom" />
     

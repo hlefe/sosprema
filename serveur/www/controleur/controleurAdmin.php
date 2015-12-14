@@ -8,93 +8,93 @@ class controleurAdmin {
     public function __construct()
     {
         try {
-            $vueErreur = array();
             $action = $_REQUEST['action'];
                 
             switch ($action) {
                 
-                case NULL :
-                    $vueErreur[] = "Probleme pas d'action";
+                case 'gestion':
+
+                    $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+                    require_once('vue/gestion.php');
                     break;
 
-                case "ajouterUtilisateur":
-                    try {
-                        $this->ajouterUtilisateur();
-                        $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
-                        foreach ($vueConfirmation as $key => $value) {
-                            $message .= "&message[]=".$value."";
-                        }
-                        header('Location:index.php?vueAppeller=confirmation'.$message.'');
-                    } catch(PDOException $ex){
-                        $vueErreur[] = "Erreur base de donnée, PDOException";
-                        foreach ($vueErreur as $key => $value) {
-                            $message .= "&erreur[]=".$value."";
-                        }
-                        header('Location:index.php?vueAppeller=erreur'.$message.'');
-                    }
+                case 'vueAjoutUtilisateur':
+                        
+                    $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+                    require_once('vue/ajoutUtilisateur.php');
+                    
                     break;
 
-                case "supprimerUtilisateur":
-                    if($this->supprimerUtilisateur()!=false){   
-                        $listeUsers = controleurAdmin::afficherToutUtilisateur();
-                        require_once('vue/listeUtilisateurs.php');
-                        break;
-                    }
-
-                case "afficherToutUtilisateur":
-                    $listesUsers = $this->afficherToutUtilisateur();
-                    header('Location:vue/listeUtilisateurs.php?liste='.$listeUsers.'');       // vue qui affiche la liste des utilisateurs.             
+                case 'listeUtilisateurs':
+                    
+                    $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+                    $listeUsers = controleurAdmin::afficherToutUtilisateur();
+                    require_once('vue/listeUtilisateurs.php');
+                    
                     break;
+
+                case 'ajouterUtilisateur':
+                     $this->ajouterUtilisateur();
+                    
+                    break;
+
+                case 'supprimerUtilisateur':
+                    $this->supprimerUtilisateur();
+                    break;
+
+                case 'afficherToutUtilisateur':
+                    $listesUsers = $this->afficherToutUtilisateur();      
+                    break;
+
                 default :
-                    $vueErreur[] = "Probleme authentification";
-                    foreach ($vueErreur as $key => $value) {
-                            $message .= "&erreur[]=".$value."";
-                        }
-                    header('Location:index.php?vueAppeller=erreur'.$message.'');
+                    $vueErreur[] = "Probleme pas d'action valide.";
+                    require_once('vue/vueErreur.php');
             }
         } catch(PDOException $ex){
-            /*$vueErreur[] = "Erreur base de donnée, PDOException";
-            foreach ($vueErreur as $key => $value) {
-                            $message .= "&erreur[]=".$value."";
-                        }
-             
-             
-            header('Location:index.php?vueAppeller=erreur'.$message.'');*/
-            echo $ex;
+            $vueErreur[] = "Erreur base de donnée, PDOException";
+            require_once('vue/vueErreur.php');
         } catch (Exception $ex) {
             $vueErreur[] = "Erreur inattendue";
-            foreach ($vueErreur as $key => $value) {
-                            $message .= "&erreur[]=".$value."";
-                        }
-            header('Location:index.php?vueAppeller=erreur'.$message.'');
+            require_once('vue/vueErreur.php');
         }
     }
 
     public function ajouterUtilisateur() {
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+
         if(!isset($_POST['nom'])|| $_POST['nom']==""){
-            echo "veuiller renseigner un nom";
-            header('Location:index.php?vueAppeller=ajoutUtilisateur');
+            $vueErreur[] = "Veuiller renseigner un nom.";
+            require_once('vue/ajoutUtilisateur.php');
+            return;
         }
         else
             $nom = nettoyage::nettoyerChaine($_POST['nom']);
 
         if(!isset($_POST['prenom'])|| $_POST['prenom']==""){
-            echo "veuiller renseigner un prenom";
-            header('Location:index.php?vueAppeller=ajoutUtilisateur');
+            $vueErreur[] = "Veuiller renseigner un prenom.";
+            require_once('vue/ajoutUtilisateur.php');
+            return;
         }
         else
             $prenom = nettoyage::nettoyerChaine($_POST['prenom']);
         
         if(!isset($_POST['email'])|| $_POST['email']==""){
-            echo "veuiller renseigner une adresse mail";
-            header('Location:index.php?vueAppeller=ajoutUtilisateur');
+            $vueErreur[] = "Veuiller renseigner une adresse mail.";
+            require_once('vue/ajoutUtilisateur.php');
+            return;
         }
         else
-            if(validation::validerEmail($_POST['email']))
+            if(validation::validerEmail($_POST['email'])){
                 $email = nettoyage::nettoyerChaine($_POST['email']);
-            else{
-                echo "veuiller renseigner une adresse mail valide";
-                header('Location:index.php?vueAppeller=ajoutUtilisateur');
+                if(modelUtilisateur::verifierEmailNonPresent($email)){
+                    $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
+                    require_once('vue/ajoutUtilisateur.php');
+                    return;
+                }
+            }else{
+                $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
+                require_once('vue/ajoutUtilisateur.php');
+                return;
             }
         
         if(isset($_POST['num_rue']))
@@ -126,25 +126,49 @@ class controleurAdmin {
 
         $mot_de_passe = 'SosPrema';
 
-        return modelUtilisateur::creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
+        try{
+            modelUtilisateur::creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
+            
+            $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
+            require_once('vue/ajoutUtilisateur.php');
+        } catch(PDOException $ex){
+            $vueErreur[] = "Erreur base de donnée, PDOException";
+            require_once('vue/ajoutUtilisateur.php');
+        }
 
     }
 
     public function supprimerUtilisateur(){
-        
-        if(!isset($_GET['mail']))
-            echo "veuiller renseigner une adresse mail";
-        else
+         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+
+        if(!isset($_GET['mail'])){
+            $vueErreur[] = "Veuiller renseigner une adresse mail.";
+            require_once('vue/vueErreur.php');
+            return;
+        }
         $email = nettoyage::nettoyerChaine($_GET['mail']);
 
-        return modelUtilisateur::supprimerUtilisateur($email);
+        
+        try{
+
+            return modelUtilisateur::supprimerUtilisateur($email);
+            $vueConfirmation[] = "L'utilisateur à bien été suprimé.";
+            require_once('vue/vueConfirmation.php');
+
+        } catch(PDOException $ex){
+            $vueErreur[] = "Erreur base de donnée, PDOException";
+            require_once('vue/erreur.php');
+        }
     }
 
     public function afficherToutUtilisateur(){
-        return modelUtilisateur::afficherToutUtilisateur();
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        $listeUsers = modelUtilisateur::afficherToutUtilisateur();
+        require_once('vue/listeUtilisateurs.php');
     }
 
      public static function verifierDroit(){
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try{
             if(isset($_SESSION['utilisateurConnecter']->id_groupe)) echo "string";
             $libelle = modelNiveau::rechercherLibelle($_SESSION['utilisateurConnecter']->id_groupe);
@@ -154,7 +178,8 @@ class controleurAdmin {
                 return false;
             }
         }catch(PDOException $ex){
-            echo $ex;
+            $vueErreur[]="erreur PDOException ressus.";
+            require_once('vue/vueErreur.php');
         }
     }
 

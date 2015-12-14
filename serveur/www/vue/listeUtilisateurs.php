@@ -1,6 +1,7 @@
 <?php
 require_once('header.php');
-
+require_once('erreur.php');
+require_once('confirmation.php');
 ?>
 <div id="contenute">
 <table class="table table-hover" align=center>
@@ -25,7 +26,7 @@ require_once('header.php');
 				</td>
 				<td align=center><?php echo $user["nom"]; ?></td>
 				<td align=center><?php echo $user["prenom"]; ?></td>
-                                <td align=center><a href="index.php?controleur=controleurAdmin&action=supprimerUtilisateur&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
+                                <td align=center><a href="index.php?action=supprimerUtilisateur&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
 			</tr>
 		<?php } ?>
 	<tbody>

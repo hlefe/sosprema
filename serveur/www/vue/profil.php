@@ -1,7 +1,9 @@
-<?php require_once('header.php'); ?>
+<?php require_once('header.php'); 
+require_once('erreur.php');
+require_once('confirmation.php'); ?>
 <div id="contenute">
 <h1> Profil </h1>
-  <form method="post" action="index.php?controleur=controleurBenevol&action=modifierUtilisateur">
+  <form method="post" action="index.php?action=modifierUtilisateur">
     <label for="nom">Nom</label>
     <input required type="text" name="nom" value="<?php echo $utilisateurConnecter->nom;?>" />
     
@@ -14,22 +16,22 @@
     <h2>Adresse :</h2></br>
     
     <label for="num_rue">Numéro de rue</label>
-    <input type="text" name="num_rue" value="<?php echo $utilisateurConnecter->adresse->num_rue;?>" />
+    <input type="text" name="num_rue" value="<?php echo $utilisateurConnecter->num_rue;?>" />
     
     <label for="nom_rue">Nom de rue</label>
-    <input type="text" name="nom_rue" value="<?php echo $utilisateurConnecter->adresse->nom_rue;?>" />
+    <input type="text" name="nom_rue" value="<?php echo $utilisateurConnecter->nom_rue;?>" />
     
     <label for="code_postal">Code postal</label>
-    <input type="text" name="code_postal" value="<?php echo $utilisateurConnecter->adresse->code_postal;?>" />
+    <input type="text" name="code_postal" value="<?php echo $utilisateurConnecter->code_postal;?>" />
 
     <label for="ville">Ville</label>
-    <input type="text" name="ville" value="<?php echo $utilisateurConnecter->adresse->ville;?>" />
+    <input type="text" name="ville" value="<?php echo $utilisateurConnecter->ville;?>" />
      
     <button class="submit" name="boutonAjouter" value="modifierUtilisateur">Modifier</button>
 
 </form>
-<form method="post" action="index.php?vueAppeller=modifierMDP">
-    <button class="submit" name="boutonAjouter" value="modifierUtilisateur">Modifier mot de passe</button>
+<form method="post" action="index.php?action=vueModifierMotDePasse">
+    <button class="submit" name="boutonAjouter" value="modifierMDP">Modifier mot de passe</button>
 </form>
 </div>
 <?php require_once('footer.php'); ?>

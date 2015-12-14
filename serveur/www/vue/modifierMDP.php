@@ -1,7 +1,10 @@
-<?php require_once('header.php'); ?>
+<?php require_once('header.php'); 
+require_once('erreur.php');
+require_once('confirmation.php');
+?>
 <div id="contenute">
 <h1> Profil </h1>
-  <form method="post" action="index.php?controleur=controleurBenevol&action=modifierMotDePasse">
+  <form method="post" action="index.php?action=modifierMotDePasse">
     <label for="oldMDP">Mot de passe actuel</label>
     <input required type="password" name="oldMDP" placeholder="mot de passe" />
     

@@ -18,7 +18,10 @@ class utilisateur {
     private $nom;
     private $prenom;
     private $mot_de_passe;
-    private $adresse;
+    private $num_rue;
+    private $nom_rue;
+    private $code_postal;
+    private $ville;
     private $id_groupe;
     private $avatar;
     private $telephones;
@@ -32,8 +35,14 @@ class utilisateur {
             return $this->nom;
         } elseif ('prenom' == $property) {
             return $this->prenom;
-        } elseif ('adresse' == $property) {
-            return $this->adresse;
+        } elseif ('num_rue' == $property) {
+            return $this->num_rue;
+        } elseif ('nom_rue' == $property) {
+            return $this->nom_rue;
+        } elseif ('code_postal' == $property) {
+            return $this->code_postal;
+        } elseif ('ville' == $property) {
+            return $this->ville;
         } elseif ('id_groupe' == $property) {
             return $this->id_groupe;
         } elseif ('avatar' == $property) {
@@ -54,9 +63,15 @@ class utilisateur {
             $this->prenom = $value;
         } elseif ('mot_de_passe' == $property) {
             $this->mot_de_passe = $value;
-        } elseif ('adresse' == $property) {
-            $this->adresse = $value;
-        } elseif ('id_groupe' === $property) {
+        } elseif ('num_rue' == $property) {
+            $this->num_rue = $value;
+        } elseif ('nom_rue' == $property) {
+            $this->nom_rue = $value;
+        } elseif ('code_postal' == $property) {
+            $this->code_postal = $value;
+        } elseif ('ville' == $property) {
+            $this->ville = $value;
+        }  elseif ('id_groupe' === $property) {
             $this->id_groupe = $value;
         } elseif ('avatar' === $property) {
             $this->avatar = $value;
@@ -81,13 +96,13 @@ class utilisateur {
             } elseif ('mot_de_passe' == $key) {
                 $this->mot_de_passe = $value;
             } elseif ('num_rue' == $key) {
-                $this->adresse->num_rue = $value;
+                $this->num_rue = $value;
             } elseif ('nom_rue' == $key) {
-                $this->adresse->nom_rue = $value;
+                $this->nom_rue = $value;
             } elseif ('code_postal' == $key) {
-                $this->adresse->code_postal = $value;
+                $this->code_postal = $value;
             } elseif ('ville' == $key) {
-                $this->adresse->ville = $value;
+                $this->ville = $value;
             } elseif ('id_niveau_utilisateur' == $key) {
                 $this->id_groupe = $value;
             } elseif ('avatar' == $key) {

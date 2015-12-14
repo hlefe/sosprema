@@ -39,11 +39,21 @@ class modelUtilisateur {
 
     public static function modifierMotDePasse($idUser, $newMDR){
         $utilisateurGateway = new utilisateurGateway();
-        $utilisateur = $utilisateurGateway->modifierMotDePasse($idUser, $newMDR);
+        $utilisateurGateway->modifierMotDePasse($idUser, $newMDR);
+        $utilisateur = $utilisateurGateway->rechercheUtilisateurId($idUser);
+        return $utilisateur;
     }
 
     public static function modifierNiveau($user, $newNiveau){
         $utilisateurGateway = new utilisateurGateway();
         $utilisateur = $utilisateurGateway->modifierNiveau($user, $newNiveau);
+    }
+
+    public static function verifierEmailNonPresent($email){
+        $utilisateurGateway = new utilisateurGateway();
+        if($utilisateurGateway->rechercheUtilisateurEmail($email) != false){
+            return true;
+        }
+        return false;
     }
 }

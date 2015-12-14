@@ -5,18 +5,18 @@
 			<ul>
 				<li class="item-menu-avec-enfants">
 					<?php if(isset($utilisateurConnecter)){ ?>
-						<a href="index.php?vueAppeller=profil">Bienvenue, <?php printf("%s %s", $utilisateurConnecter->prenom, $utilisateurConnecter->nom); ?>
+						<a href="index.php?action=profil">Bienvenue, <?php printf("%s %s", $utilisateurConnecter->prenom, $utilisateurConnecter->nom); ?>
 													</a>
 						<ul class="enfants">
 							<li>
-								<a href="index.php?vueAppeller=profil">Mon profil</a>
+								<a href="index.php?action=profil">Mon profil</a>
 							</li>
 							<li>
-								<a href="index.php?controleur=controleurBenevol&action=deconnexion">Déconnexion</a>
+								<a href="index.php?action=deconnexion">Déconnexion</a>
 							</li>
 						</ul>
 					<?php } else { ?>
-						<a href="/">Connexion</a>
+						<a href="index.php?action=vueConnexion">Connexion</a>
 					<?php } ?>
 				</li>
 			</ul>
