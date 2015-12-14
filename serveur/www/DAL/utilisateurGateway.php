@@ -86,11 +86,12 @@ class utilisateurGateway {
 
     public function afficherToutUtilisateur(){        
         $querry = 'SELECT * FROM utilisateur';
-        $this->bd->executeQuerry($querry, NULL);
+        $this->bd->executeQuerry($querry, array());
         $result = $this->bd->getResults();
         if ($result == false){
             return false;
         }
+        return $result;
     }
 
     public function modifierUtilisateur($id_utilisateur, $prenom, $nom, $email, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar){

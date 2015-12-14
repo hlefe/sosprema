@@ -259,3 +259,34 @@ input::-webkit-input-placeholder {
 input:focus::-webkit-input-placeholder {
   color: #e74c3c;
 }
+
+.table{
+    width: 80%;
+    border-color: #e2e2e2;
+    margin: 20px;
+    padding: 20px;
+    min-width: 700px;
+    border-collapse: collapse;
+}
+table td, table th {
+    padding-bottom: 14px;
+    padding-top: 14px;
+    vertical-align: middle;
+}
+tr{
+  background-color: white;
+}
+tr td{
+  border: none;
+}
+
+thead tr{
+  background-color: #04959E;
+  color: white;
+}
+.id{
+  width: 50px;
+  background-color: #808080;
+  color:white;
+  font-weight: bold;
+}

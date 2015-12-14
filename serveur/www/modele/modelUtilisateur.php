@@ -26,7 +26,8 @@ class modelUtilisateur {
 
     public static function afficherToutUtilisateur() {
         $utilisateurGateway = new utilisateurGateway();
-        $utilisateurGateway = $utilisateurGateway->afficherToutUtilisateur($emailConnexion);
+        $utilisateurs = $utilisateurGateway->afficherToutUtilisateur();
+        return $utilisateurs;
     }
 
     public static function modifierUtilisateur($id_utilisateur, $prenom, $nom, $email, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar){

@@ -59,6 +59,15 @@ if(isset($_REQUEST['controleur'])){
             	require_once ("/vue/erreur.php");
 			}
 			break;
+		case 'listeUtilisateurs':
+			if(controleurAdmin::verifierDroit()){
+				$listeUsers = controleurAdmin::afficherToutUtilisateur();
+				require_once('vue/listeUtilisateurs.php');
+			}else{
+				$vueErreur[] = "vous ne possédez pas les droits appopriées.";
+            	require_once ("/vue/erreur.php");
+			}
+			break;
 		default:
 			break;
 	}

@@ -42,18 +42,27 @@ class controleurAdmin {
 
                 case "afficherToutUtilisateur":
                     $listesUsers = $this->afficherToutUtilisateur();
-                        //header('Location:vue/accueil.php');       // vue qui affiche la liste des utilisateurs.             
+                    header('Location:vue/listeUtilisateurs.php?liste='.$listeUsers.'');       // vue qui affiche la liste des utilisateurs.             
                     break;
                 default :
                     $vueErreur[] = "Probleme authentification";
-                    header("vue/erreur.php");
+                    foreach ($vueErreur as $key => $value) {
+                            $message .= "&erreur[]=".$value."";
+                        }
+                    header('Location:index.php?vueAppeller=erreur'.$message.'');
             }
         } catch(PDOException $ex){
             $vueErreur[] = "Erreur base de donnée, PDOException";
-            require_once ("/vue/erreur.php");
+            foreach ($vueErreur as $key => $value) {
+                            $message .= "&erreur[]=".$value."";
+                        }
+            header('Location:index.php?vueAppeller=erreur'.$message.'');
         } catch (Exception $ex) {
             $vueErreur[] = "Erreur inattendue";
-            require_once ("/vue/erreur.php");
+            foreach ($vueErreur as $key => $value) {
+                            $message .= "&erreur[]=".$value."";
+                        }
+            header('Location:index.php?vueAppeller=erreur'.$message.'');
         }
     }
 

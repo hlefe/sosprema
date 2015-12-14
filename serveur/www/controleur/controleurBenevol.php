@@ -39,7 +39,10 @@ class controleurBenevol {
                         header('Location:index.php?vueAppeller=profil');
                     } catch(PDOException $ex){
                         $vueErreur[] = "Erreur base de donnée, PDOException";
-                        header('Location:index.php?vueAppeller=erreur');
+                        foreach ($vueErreur as $key => $value) {
+                            $message .= "&erreur[]=".$value."";
+                        }
+                        header('Location:index.php?vueAppeller=erreur'.$message.'');
                     }
                     break;
 
@@ -47,23 +50,38 @@ class controleurBenevol {
                     try {
                         $this->modifierMotDePasse();
                         $vueConfirmation[] = "votre mot de passe à bien été modifié.";
-                        header('Location:index.php?vueAppeller=confirmation&message='.$vueConfirmation[].'');
+                        foreach ($vueConfirmation as $key => $value) {
+                            $message .= "&message[]=".$value."";
+                        }
+                        header('Location:index.php?vueAppeller=confirmation'.$message.'');
                     } catch(PDOException $ex){
                         $vueErreur[] = "Erreur base de donnée, PDOException";
-                        header('Location:index.php?vueAppeller=erreur');
+                        foreach ($vueErreur as $key => $value) {
+                            $message .= "&erreur[]=".$value."";
+                        }
+                        header('Location:index.php?vueAppeller=erreur'.$message.'');
                     }
                     break;
 
                 default :
                     $vueErreur[] = "Probleme authentification";
-                    header('Location:index.php?vueAppeller=erreur');
+                    foreach ($vueErreur as $key => $value) {
+                            $message .= "&erreur[]=".$value."";
+                        }
+                    header('Location:index.php?vueAppeller=erreur'.$message.'');
             }
         } catch(PDOException $ex){
             $vueErreur[] = "Erreur base de donnée, PDOException";
-            header('Location:index.php?vueAppeller=erreur');
+            foreach ($vueErreur as $key => $value) {
+                            $message .= "&erreur[]=".$value."";
+                        }
+            header('Location:index.php?vueAppeller=erreur'.$message.'');
         } catch (Exception $ex) {
             $vueErreur[] = "Erreur inattendue";
-            header('Location:index.php?vueAppeller=erreur');
+            foreach ($vueErreur as $key => $value) {
+                            $message .= "&erreur[]=".$value."";
+                        }
+            header('Location:index.php?vueAppeller=erreur'.$message.'');
         }
     }
 
