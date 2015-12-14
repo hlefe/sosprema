@@ -88,6 +88,11 @@ class controleurBenevol {
                         if ($utilisateur != FALSE) {
                             $_SESSION['utilisateurConnecter'] = $utilisateur;
                             $utilisateurConnecter = $utilisateur;
+                            if($utilisateurConnecter->verifierMotDePasse('SosPrema')){
+                                $vueConfirmation[]="Bienvenue pour votre premiére connexion, veuiller modifier votre mot de passe.";
+                                require_once('vue/modifierMDP.php');
+                                return;
+                            }
                             require_once('vue/accueil.php');
                         } else {
                             $vueErreur[] = "erreur de mot de passe ou d'adresse mail.";
@@ -194,7 +199,7 @@ class controleurBenevol {
                         if($newMDP==$newMDPVerif){
                             $mot_de_passe=nettoyage::nettoyerChaine($_POST['newMDP']);
 
-                            if(validation::validerPassword($mot_de_passe)){
+                            if(validation::validerPassword($mot_de_passe) && $mot_de_passe != 'SosPrema'){
                                 $_SESSION['utilisateurConnecter'] = modelUtilisateur::modifierMotDePasse($_SESSION['utilisateurConnecter']->userId, $mot_de_passe);
                                 $vueConfirmation[] = "votre mot de passe à bien été modifié.";
                                 require_once('vue/modifierMDP.php');
