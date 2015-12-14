@@ -1249,3 +1249,18 @@ Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
 151214  2:51:48  InnoDB: Shutdown completed; log sequence number 1675167
 151214  2:51:48 [Note] C:\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
 
+151214  8:18:53 [Note] Plugin 'FEDERATED' is disabled.
+151214  8:18:53 InnoDB: The InnoDB memory heap is disabled
+151214  8:18:53 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151214  8:18:53 InnoDB: Compressed tables use zlib 1.2.3
+151214  8:18:53 InnoDB: Initializing buffer pool, size = 16.0M
+151214  8:18:53 InnoDB: Completed initialization of buffer pool
+151214  8:18:53 InnoDB: highest supported file format is Barracuda.
+151214  8:19:02  InnoDB: Waiting for the background threads to start
+151214  8:19:03 InnoDB: 5.5.46 started; log sequence number 1675167
+151214  8:19:03 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+151214  8:19:03 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+151214  8:19:03 [Note] Server socket created on IP: '127.0.0.1'.
+151214  8:19:03 [Note] Event Scheduler: Loaded 0 events
+151214  8:19:03 [Note] C:\Users\Nico\Documents\Informatique\sospremaPerso\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
