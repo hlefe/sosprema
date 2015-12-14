@@ -265,7 +265,6 @@ input:focus::-webkit-input-placeholder {
     border-color: #e2e2e2;
     margin: 20px;
     padding: 20px;
-    min-width: 700px;
     border-collapse: collapse;
 }
 table td, table th {
@@ -291,7 +290,21 @@ thead tr{
   font-weight: bold;
 }
 #contenute{
-    margin: 10px;
+    margin: 20px;
     padding: 20px;
+    width: 80%;
     background-color: white;
+}
+.infosAccueil{
+  width: 70% !important;
+}
+
+.colonneDroite{
+  display: table-cell;
+}
+.colonneGauche{
+  display: table-cell;
+}
+.Caccueil{
+  width: 95% !important;
 }
