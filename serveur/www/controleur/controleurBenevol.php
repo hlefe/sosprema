@@ -49,7 +49,7 @@ class controleurBenevol {
                         
                     } catch(PDOException $ex){
                         $vueErreur[] = "Erreur de base de donnée, PDOException.";
-                        require_once('vue/modifierUtilisateur.php');
+                        require_once('vue/profil.php');
                     }
                     break;
 

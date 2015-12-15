@@ -28,7 +28,7 @@ require_once('confirmation.php');
 				</td>
 				<td align=center><?php echo $user["nom"]; ?></td>
 				<td align=center><?php echo $user["prenom"]; ?></td>
-				<td align=center><a href="index.php?action=adminModifierUtilisateur&mail=<?php echo $user["email"]; ?>">Modifier</a></td>
+				<td align=center><a href="index.php?action=vueAdminModifierUtilisateur&mail=<?php echo $user["email"]; ?>">Modifier</a></td>
                 <td align=center><a href="index.php?action=supprimerUtilisateur&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
 			</tr>
 		<?php } ?>

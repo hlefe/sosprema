@@ -6,7 +6,7 @@ if((!isset($_SESSION['utilisateurConnecter'])&& $_REQUEST['action']!= 'connexion
 	return;
 }
 
-$listeActionAdmin = array('gestion','vueAjoutUtilisateur','listeUtilisateurs','ajouterUtilisateur','supprimerUtilisateur','afficherToutUtilisateur','adminModifierUtilisateur');
+$listeActionAdmin = array('gestion','vueAjoutUtilisateur','listeUtilisateurs','ajouterUtilisateur','supprimerUtilisateur','afficherToutUtilisateur','vueAdminModifierUtilisateur','adminModifierUtilisateur');
 $listeActionBenevol = array('accueil','vueConnexion','profil','vueModifierMotDePasse','connexion','deconnexion','modifierUtilisateur','modifierMotDePasse');
 
 $action = $_REQUEST['action'];

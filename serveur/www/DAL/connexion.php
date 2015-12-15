@@ -28,7 +28,7 @@ class Connexion extends PDO
     
     public static function getInstance()
     {
-        include '/config/config.php';
+        include 'config/config.php';
         global $dsn;
         global $pswd;
         global $user;
