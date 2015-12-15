@@ -94,18 +94,22 @@ class controleurBenevol {
                                 return;
                             }
                             require_once('vue/accueil.php');
+                            return;
                         } else {
                             $vueErreur[] = "erreur de mot de passe ou d'adresse mail.";
                             require_once('vue/login.php');
+                            return;
                         }
                     }
                 }else
                     $vueErreur[] = "veuiller renseigner un mot de passe.";
                     require_once('vue/login.php');
+                    return;
             }
         } else {
             $vueErreur[] = "veuiller renseigner une adresse mail.";
             require_once('vue/login.php');
+            return;
         }
     }
 
