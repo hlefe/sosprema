@@ -12,9 +12,9 @@ require_once('header.php');
 <h2> Tableau de bord </h2>
 <div class="colonneGauche infosAccueil">
 	<div id="contenute" class="Caccueil">
-		<h3>Ce qu'on a fait</h3>
+		<h3>État du projet</h3>
 			<p>
-				De la merde, beaucoup beaucoup !! Je suis en rute !!
+				Interface de connexion et gestion des utilisateurs fonctionnelles.
 			</p>
 	</div>
 	<div id="contenute" class="Caccueil">
@@ -31,30 +31,30 @@ require_once('header.php');
 					<tr>
 						<td align=center class="id">1</td>
 						<td align=center>
-							Faire caca
+							Gestionnaire des hôpitaux
 						</td>
-						<td align=center>Auux toilettes</td>
+						<td align=center></td>
 					</tr>
 					<tr>
 						<td align=center class="id">2</td>
 						<td align=center>
-							Faire pipi
+							Gestionnaire des contacts
 						</td>
-						<td align=center>Par terre</td>
+						<td align=center></td>
 					</tr>
 					<tr>
 						<td align=center class="id">3</td>
 						<td align=center>
-							Faire chier
+							Gestionnaire des formations
 						</td>
-						<td align=center>Les gens</td>
+						<td align=center></td>
 					</tr>
 					<tr>
 						<td align=center class="id">4</td>
 						<td align=center>
-							Faire l'amour
+							Cloud
 						</td>
-						<td align=center>A Jawad</td>
+						<td align=center>Dépôt de fichiers type google drive</td>
 					</tr>
 			<tbody>
 		</table>
@@ -64,15 +64,15 @@ require_once('header.php');
 	<div id="contenute" class="Caccueil">
 		<h3>Questions</h3>
 		<ul>
-			<li> ça va ?
+			<li> 
+				<p>Le style / design est-il en harmonie avec le site SOSPrema ?</p>
 			</li>
-			<li> Oui et toi ?
+			<li> 
+				<p>Rencontrez-vous des problèmes lors de l'utilisation des différentes fonctionnalités ?</p>
 			</li>
-			<li> Moi tranquille
+			<li> 
+				<p>Avez vous des suggestions d'amélioration, pour les fonctionnalités en ligne ?</p>
 			</li>
-			<li> Ok !
-			</li>
-
 		</ul>
 	</div>
 </div>

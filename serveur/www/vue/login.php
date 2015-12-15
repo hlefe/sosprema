@@ -7,8 +7,11 @@
   require_once('header-connexion.php');
   require_once('erreur.php');
   ?>
+<div class="loginForm">
+  <img src="vue/images/logo.png" ></img>
+</div>
+<form method="post" action="index.php?action=connexion" class="loginForm">
 
-<form method="post" action="index.php?action=connexion">
   <h2><span class="entypo-login"></span> Connexion</h2>
 
   <button id="boutonConnexion" class="submit" name="action" type="hidden" value="connexion"><span class="entypo-lock"></span></button>

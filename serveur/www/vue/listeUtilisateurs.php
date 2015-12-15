@@ -3,6 +3,7 @@ require_once('header.php');
 require_once('erreur.php');
 require_once('confirmation.php');
 ?>
+<h2> Liste des utilisateurs</h2>
 <div id="contenute">
 <table class="table table-hover" align=center>
 	<thead>
@@ -11,7 +12,8 @@ require_once('confirmation.php');
 			<th>Mail</th>
 			<th>Nom</th>
 			<th>Prénom</th>
-                        <th>Modifier</th>
+            <th>Modifier</th>
+			<th>Supprimer</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -26,7 +28,8 @@ require_once('confirmation.php');
 				</td>
 				<td align=center><?php echo $user["nom"]; ?></td>
 				<td align=center><?php echo $user["prenom"]; ?></td>
-                                <td align=center><a href="index.php?action=supprimerUtilisateur&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
+				<td align=center><a href="index.php?action=adminModifierUtilisateur&mail=<?php echo $user["email"]; ?>">Modifier</a></td>
+                <td align=center><a href="index.php?action=supprimerUtilisateur&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
 			</tr>
 		<?php } ?>
 	<tbody>

@@ -200,13 +200,16 @@ body {
   
 }
 
-form {
+.loginForm {
   position:relative;
   margin: 50px auto;
   width: 380px;
   height: auto;
 }
 
+.loginForm img {
+  margin-left: 70px;
+}
 input {
   padding: 16px;
   border-radius:7px;
@@ -230,6 +233,18 @@ input:focus {
   float:right;
   height: 121px;
   width: 50px;
+  border: 0px;
+  background: #99A1C6;
+  border-radius:7px;
+  padding: 10px;
+  color:white;
+  font-size:22px;
+}
+
+#boutonAjouter {
+  float:right;
+  height: 50px;
+  width: 100px;
   border: 0px;
   background: #99A1C6;
   border-radius:7px;
@@ -306,5 +321,8 @@ thead tr{
   display: table-cell;
 }
 .Caccueil{
+  width: 95% !important;
+}
+.Caccueil table{
   width: 95% !important;
 }

@@ -46,6 +46,11 @@ class controleurAdmin {
                     $listesUsers = $this->afficherToutUtilisateur();      
                     break;
 
+                case 'adminModifierUtilisateur':
+                    $utilisateurConnecter = $this->adminModifierUtilisateur();
+                    require_once('vue/userEdit.php');
+                    break;
+
                 default :
                     $vueErreur[] = "Probleme pas d'action valide.";
                     require_once('vue/vueErreur.php');
@@ -154,6 +159,27 @@ class controleurAdmin {
             return modelUtilisateur::supprimerUtilisateur($email);
             $vueConfirmation[] = "L'utilisateur à bien été suprimé.";
             require_once('vue/vueConfirmation.php');
+
+        } catch(PDOException $ex){
+            $vueErreur[] = "Erreur base de donnée, PDOException";
+            require_once('vue/erreur.php');
+        }
+    }
+
+    public function adminModifierUtilisateur(){
+         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+
+        if(!isset($_GET['mail'])){
+            $vueErreur[] = "Veuiller renseigner une adresse mail.";
+            require_once('vue/vueErreur.php');
+            return;
+        }
+        $email = nettoyage::nettoyerChaine($_GET['mail']);
+
+        
+        try{
+
+            return modelUtilisateur::rechercheUtilisateur($email);
 
         } catch(PDOException $ex){
             $vueErreur[] = "Erreur base de donnée, PDOException";

@@ -13,7 +13,12 @@ class modelUtilisateur {
         return $utilisateur;
 
     }
+    public static function rechercheUtilisateur($email) {
+        $utilisateurGateway = new utilisateurGateway();
+        $utilisateur = $utilisateurGateway->rechercheUtilisateurEmail($email);
+        return $utilisateur;
 
+    }
     public static function creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar){
         $utilisateurGateway = new utilisateurGateway();
         $utilisateur = $utilisateurGateway->insererUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
