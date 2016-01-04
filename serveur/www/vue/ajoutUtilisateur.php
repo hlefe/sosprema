@@ -42,10 +42,18 @@ require_once('confirmation.php');
 
             <label for="ville">Ville</label>
             <input type="text" name="ville" placeholder="ville" />
+
+            <h3>Niveau de l'utilisateur</h3>
+            <input type="text" name="libelle_niveau" list="niveauUser">
+            <datalist id="niveauUser">
+                <?php
+                    foreach ($allNiveau as $niveau) {
+                        echo "<option value=".$niveau["libelle"].">".$niveau["libelle"]."</option>";
+                    }
+                ?>
+            </datalist>
         </div>
     </div>
 </form>
 
 <?php require_once('footer.php'); ?>
-
-

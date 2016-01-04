@@ -1,7 +1,11 @@
 <?php
 
 session_start();
-if((!isset($_SESSION['utilisateurConnecter'])&& $_REQUEST['action']!= 'connexion') || !isset($_REQUEST['action'])){
+
+if(!isset($_REQUEST['action'])){
+	require_once('vue/login.php');
+	return;
+}elseif((!isset($_SESSION['utilisateurConnecter'])&& $_REQUEST['action']!= 'connexion')){
 	require_once('vue/login.php');
 	return;
 }

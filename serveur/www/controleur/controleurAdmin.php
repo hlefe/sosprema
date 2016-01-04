@@ -21,6 +21,7 @@ class controleurAdmin {
                 case 'vueAjoutUtilisateur':
                         
                     $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+                    $allNiveau=modelNiveau::getAll();
                     require_once('vue/ajoutUtilisateur.php');
                     
                     break;
@@ -125,11 +126,17 @@ class controleurAdmin {
         else
             $ville=NULL;
 
-        if(isset($_POST['id_niveau_utilisateur']))
-            $id_niveau_utilisateur=nettoyage::nettoyerChaine($_POST['id_niveau_utilisateur']);
-        else
-            $id_niveau_utilisateur=NULL;
+        if(isset($_POST['libelle_niveau']))
+            $id_niveau_utilisateur=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
+            if($id_niveau_utilisateur=false){
+                $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
+                require_once('vue/ajoutUtilisateur.php');
+                return;
+            }
+        else{
+            $id_niveau_utilisateur=modelNiveau::rechercherId('utilisateur');
+        }
         $avatar = NULL;
 
         $mot_de_passe = 'SosPrema';

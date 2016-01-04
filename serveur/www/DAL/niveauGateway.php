@@ -19,13 +19,21 @@ class niveauGateway {
         return $libelle;
     }
 
-    public function getAll(){
-    	$querry = 'SELECT * FROM niveau';
-        $this->bd->executeQuerry($querry, NULL);
-        $results = $this->bd->getResults();
+    public function rechercherId($libelle){
+        $querry = 'SELECT * FROM niveau WHERE libelle=:libelle';
+        $this->bd->executeQuerry($querry, array(':libelle'=>array($libelle,PDO::PARAM_INT)));
+        $result = $this->bd->getResult();
         if ($result == false){
             return false;
         }
+        $id = $result['id'];
+        return $id;
+    }
+
+    public function getAll(){
+    	$querry = 'SELECT * FROM niveau';
+        $this->bd->executeQuerry($querry);
+        $results = $this->bd->getResults();
         return $results;
     }
 }
