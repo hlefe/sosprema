@@ -35,6 +35,12 @@ require_once('confirmation.php');
 	<tbody>
 </table>
 </div>
+<div id="contenute" class="Caccueil">
+		<h3>Ajout d'utilisateurs</h3>
+			<p>
+				 <a href="index.php?action=vueAjoutUtilisateur"><span>Ajouter un utilisateur</span></a>
+			</p>
+	</div>
 <?php
 require_once('footer.php');
 ?>

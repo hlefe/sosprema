@@ -326,3 +326,18 @@ thead tr{
 .Caccueil table{
   width: 95% !important;
 }
+
+.bandeau_accueil{
+  width:100%;
+}
+
+.bandeau{
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.abs_accueil{
+  position: absolute;
+  margin-left:20px;
+  margin-top: -150px;
+}
