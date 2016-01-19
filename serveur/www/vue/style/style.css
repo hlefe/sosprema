@@ -244,13 +244,13 @@ input:focus {
 #boutonAjouter {
   float:right;
   height: 50px;
-  width: 100px;
+  min-width: 100px;
   border: 0px;
-  background: #99A1C6;
+  background: #04959E;
   border-radius:7px;
   padding: 10px;
   color:white;
-  font-size:22px;
+  font-size:14px;
 }
 
 .inputUserIcon {
@@ -276,6 +276,7 @@ input:focus::-webkit-input-placeholder {
 }
 
 .table{
+    border-radius: 10px;
     width: 80%;
     border-color: #e2e2e2;
     margin: 20px;
@@ -336,8 +337,47 @@ thead tr{
   margin-right: auto;
   margin-left: auto;
 }
+
 .abs_accueil{
   position: absolute;
   margin-left:20px;
   margin-top: -150px;
+}
+
+.contenuteSansFond{
+  padding: 10px 20px 0px 20px;
+  width: 100%;
+  margin-bottom: -30px;
+}
+.green{
+  background-color: #04959E;
+  padding:10px;
+  border-radius: 8px;
+  float: right;
+}
+
+.green a{
+  padding: 10px;
+  width: 180px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.green button{
+  padding: 0px !important;
+  height: auto !important;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.wtitre{
+  width: 1%;
+
+}
+.mdp{
+  background-color: #FAB900;
+  margin-right: 10px; 
 }

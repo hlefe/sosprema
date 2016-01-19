@@ -1,8 +1,18 @@
 <?php require_once('header.php'); 
 require_once('erreur.php');
 require_once('confirmation.php'); ?>
-<h2> Profil </h2>
   <form method="post" action="index.php?action=modifierUtilisateur">
+     <div class="contenuteSansFond ">
+        <div class="colonneGauche wtitre">
+            <h2> Profil </h2>
+        </div>
+        <div class="colonneDroite wtitre">
+            <div class="green">
+                <button id="boutonAjouter" class="submit" name="boutonAjouter" type="hidden" value="ajouterUtilisateur"><span class="entypo-check">&nbsp;Enregistrer</span></button>
+
+            </div>
+        </div>
+    </div>
     <div class="colonneGauche infosAccueil">
         <div id="contenute" class="Caccueil">
                 <h3>Informations</h3>
@@ -15,16 +25,6 @@ require_once('confirmation.php'); ?>
                     <label for="email">Adresse Mail</label>
                     <input required type="text" name="email" value="<?php echo $utilisateurConnecter->email;?>" />
         </div>  
-        <div id="contenute" class="Caccueil">
-            <table>
-                <td>
-                    <h3>Valider les modifications</h3>
-                </td>
-                <td>
-                    <button id="boutonAjouter" class="submit" name="boutonAjouter" type="hidden" value="ajouterUtilisateur"><span class="entypo-check"></span></button>
-                </td>
-                </table>
-        </div>
     </div> 
 
     <div class="colonneDroite infosAccueil">
@@ -45,13 +45,4 @@ require_once('confirmation.php'); ?>
         </div>
     </div>
 </form>
-<div class="colonneGauche infosAccueil">
-    <div id="contenute" class="Caccueil">
-        <form method="post" action="index.php?action=vueModifierMotDePasse">
-            <table><td>
-            <h3>Modifier le mot de passe</h3></td><td>
-            <button id="boutonAjouter" class="submit" name="boutonAjouter" type="hidden" value="ajouterUtilisateur"><span class="entypo-lock"></span></button></td></table>
-        </form>
-    </div>
-</div>
 <?php require_once('footer.php'); ?>

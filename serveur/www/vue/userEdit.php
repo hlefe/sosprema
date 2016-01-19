@@ -1,8 +1,22 @@
 <?php require_once('header.php'); 
 require_once('erreur.php');
 require_once('confirmation.php'); ?>
-<h2> Modifier un utilisateur </h2>
-  <form method="post" action="index.php?action=adminModifierUtilisateur">
+<form method="post" action="index.php?action=adminModifierUtilisateur">
+    <div class="contenuteSansFond ">
+        <div class="colonneGauche wtitre">
+            <h2> Modifier un utilisateur </h2>
+        </div>
+        <div class="colonneDroite wtitre">
+            <div class="green">
+                <button id="boutonAjouter" class="submit" name="boutonAjouter" type="hidden" value="ajouterUtilisateur"><span class="entypo-check">&nbsp;Enregistrer</span></button>
+
+            </div>
+            <div class="green mdp">
+                <a href="index.php?action=vueModifierMotDePasse" ><span>Modifier mot de passe</span></a>
+            </div>
+        </div>
+    </div>
+  
     <div class="colonneGauche infosAccueil">
         <div id="contenute" class="Caccueil">
                 <h3>Informations</h3>
@@ -15,16 +29,6 @@ require_once('confirmation.php'); ?>
                     <label for="email">Adresse Mail</label>
                     <input required type="text" name="email" value="<?php echo $utilisateur->email;?>" />
         </div>  
-        <div id="contenute" class="Caccueil">
-            <table>
-                <td>
-                    <h3>Valider les modifications</h3>
-                </td>
-                <td>
-                    <button id="boutonAjouter" class="submit" name="boutonAjouter" type="hidden" value="ajouterUtilisateur"><span class="entypo-check"></span></button>
-                </td>
-                </table>
-        </div>
     </div> 
 
     <div class="colonneDroite infosAccueil">

@@ -3,7 +3,17 @@ require_once('header.php');
 require_once('erreur.php');
 require_once('confirmation.php');
 ?>
-<h2> Liste des utilisateurs</h2>
+<div class="contenuteSansFond">
+	<div class="colonneGauche wtitre">
+		<h2> Liste des utilisateurs</h2>
+	</div>
+	<div class="colonneDroite wtitre">
+		<div class="green">
+			<a href="index.php?action=vueAjoutUtilisateur" ><span>Ajouter un utilisateur</span></a>
+		</div>
+	</div>
+</div>
+
 <div id="contenute">
 <table class="table table-hover" align=center>
 	<thead>
@@ -35,12 +45,6 @@ require_once('confirmation.php');
 	<tbody>
 </table>
 </div>
-<div id="contenute" class="Caccueil">
-		<h3>Ajout d'utilisateurs</h3>
-			<p>
-				 <a href="index.php?action=vueAjoutUtilisateur"><span>Ajouter un utilisateur</span></a>
-			</p>
-	</div>
 <?php
 require_once('footer.php');
 ?>

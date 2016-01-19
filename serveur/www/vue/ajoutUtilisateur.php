@@ -2,7 +2,17 @@
 require_once('erreur.php');
 require_once('confirmation.php');
 ?>
-<h2> Ajouter un utilisateur </h2>
+ <div class="contenuteSansFond ">
+        <div class="colonneGauche wtitre">
+            <h2> Ajouter un utilisateur </h2>
+        </div>
+        <div class="colonneDroite wtitre">
+            <div class="green">
+                <button id="boutonAjouter" class="submit" name="boutonAjouter" type="hidden" value="ajouterUtilisateur"><span class="entypo-check">&nbsp;Ajouter</span></button>
+
+            </div>
+        </div>
+    </div>
   <form method="post" action="index.php?action=ajouterUtilisateur">
     <div class="colonneGauche infosAccueil">
         <div id="contenute" class="Caccueil">
@@ -16,16 +26,6 @@ require_once('confirmation.php');
                 <label for="email">Adresse Mail</label>
                 <input required type="text" name="email" placeholder="exemple@gmail.com" />
         </div>  
-        <div id="contenute" class="Caccueil">
-            <table>
-                <td>
-                    <h3>Ajouter cet utilisateur</h3>
-                </td>
-                <td>
-                    <button id="boutonAjouter" class="submit" name="boutonAjouter" type="hidden" value="ajouterUtilisateur"><span class="entypo-plus"></span></button>
-                </td>
-                </table>
-        </div>
     </div> 
 
     <div class="colonneDroite infosAccueil">
