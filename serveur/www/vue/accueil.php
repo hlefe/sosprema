@@ -13,54 +13,6 @@ require_once('header.php');
 	<div id ="contenute" class="bandeau">
 		<img src="vue/images/photobandeau.png" class="bandeau_accueil">
 	</div>
-	<div id="contenute" class="Caccueil">
-		<h3>État du projet</h3>
-			<p>
-				Interface de connexion et gestion des utilisateurs fonctionnelles.
-			</p>
-	</div>
-	<div id="contenute" class="Caccueil">
-		<h3> Tâches restantes </h3>
-		<table class="table table-hover" align=center>
-			<thead>
-				<tr>
-					<th>Num tâche</th>
-					<th>Nom tâche</th>
-					<th>Description tâche</th>
-				</tr>
-			</thead>
-			<tbody>
-					<tr>
-						<td align=center class="id">1</td>
-						<td align=center>
-							Gestionnaire des hôpitaux
-						</td>
-						<td align=center></td>
-					</tr>
-					<tr>
-						<td align=center class="id">2</td>
-						<td align=center>
-							Gestionnaire des contacts
-						</td>
-						<td align=center></td>
-					</tr>
-					<tr>
-						<td align=center class="id">3</td>
-						<td align=center>
-							Gestionnaire des formations
-						</td>
-						<td align=center></td>
-					</tr>
-					<tr>
-						<td align=center class="id">4</td>
-						<td align=center>
-							Cloud
-						</td>
-						<td align=center>Dépôt de fichiers type google drive</td>
-					</tr>
-			<tbody>
-		</table>
-	</div>
 </div>
 
 <!-- <div class="colonneGauche infosAccueil">
