@@ -14,6 +14,7 @@ require('header.php');
 		<img src="vue/images/photobandeau.png" class="bandeau_accueil">
 	</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	<div id="contenute" class="Caccueil">
 		<h3>État du projet</h3>
@@ -65,6 +66,8 @@ require('header.php');
                 <a href="vue/tableauDeBord.php">Tableau de bord du site</a>
 	</div>
 >>>>>>> 6b68015... Tableau de bord
+=======
+>>>>>>> be84b26... Accueil remise après le deuxième achat
 </div>
 
 <!-- <div class="colonneGauche infosAccueil">
