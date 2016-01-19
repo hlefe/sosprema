@@ -21,7 +21,7 @@ class Connexion extends PDO
     
     public function __construct($dsn, $user, $pswd) 
     {
-        $this->stmt = parent::__construct($dsn, $user, $pswd); //il me faut les paramètres de Valentin
+        $this->stmt = parent::__construct($dsn, $user, $pswd);
         $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
          
     }
