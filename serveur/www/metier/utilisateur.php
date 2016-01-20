@@ -21,7 +21,7 @@ class utilisateur {
     private $dateDeNaissance;
     private $nomRue;
     private $numRue;
-    private $codePostal
+    private $codePostal;
     private $profession;
     private $divers;
     private $avatar;

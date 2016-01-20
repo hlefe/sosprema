@@ -280,6 +280,11 @@ class controleurAdmin {
         else
             $prenom = nettoyage::nettoyerChaine($_POST['prenom']);
 
+        if(!isset($_POST['motDePasse'])|| $_POST['motDePasse']==""){
+            $vueErreur[] = "Veuiller renseigner un motDePasse.";
+            require_once('vue/userEdit.php');
+            return;
+        }
         else
             $motDePasse = nettoyage::nettoyerChaine($_POST['motDePasse']);
 
@@ -389,7 +394,7 @@ class controleurAdmin {
             $vueErreur[] = "Erreur base de donnée, PDOException";
             require_once('vue/userEdit.php');
         }
-
+    }
 
     public function afficherToutUtilisateur(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
@@ -400,8 +405,8 @@ class controleurAdmin {
      public static function verifierDroit(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try{
-            if(isset($_SESSION['utilisateurConnecter']->id_groupe)) echo "string";
-            $libelle = modelNiveau::rechercherLibelle($_SESSION['utilisateurConnecter']->id_groupe);
+            if(isset($_SESSION['utilisateurConnecter']->idNiveau)) echo "string";
+            $libelle = modelNiveau::rechercherLibelle($_SESSION['utilisateurConnecter']->idNiveau);
             if( $libelle == 'administrateur'){
                 return true;
             }else{
