@@ -9,8 +9,13 @@ class villeGateway {
     }
 
     public function ajouterVille($nomVille){
+<<<<<<< HEAD
         $querry = 'INSERT INTO ville (nomVille) VALUES (:nomVille)';
         $this->bd->executeQuerry($querry, array(':nomVille'=>array($nomVille,PDO::PARAM_INT)));
+=======
+        $querry = 'INSERT INTO ville (nomVille) VALUES (:nom)';
+        $this->bd->executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_INT)));
+>>>>>>> ce53088... voila pour l'erreur que tu as eu
     }
 
     public function rechercherVille($nomVille){

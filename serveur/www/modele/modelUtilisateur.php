@@ -27,6 +27,7 @@ class modelUtilisateur {
         $ville = new villeGateway();
         $departement = new departementGateway();
 
+<<<<<<< HEAD
 
         if($ville->rechercherVille($nomVille)==NULL){
             $ville->ajouterVille($nomVille);
@@ -38,6 +39,18 @@ class modelUtilisateur {
 
         if($region->rechercherRegion($nomRegion)==NULL){
             $region->ajouterRegion($nomRegion);
+=======
+        if($region->rechercherRegion($nomRegion)==NULL){
+            $region->ajouterRegion($nomRegion);
+        }
+
+        if($ville->rechercherVille($nomVille)==NULL){
+            $ville->ajouterVille($nomVille);
+        }
+
+        if($departement->rechercherDepartement($nomDepartement)==NULL){
+            $departement->ajouterDepartement($nomDepartement);
+>>>>>>> ce53088... voila pour l'erreur que tu as eu
         }
 
 
@@ -53,6 +66,7 @@ class modelUtilisateur {
         $ville = new villeGateway();
         $departement = new departementGateway();
 
+<<<<<<< HEAD
 
         if($ville->rechercherVille($nomVille)==NULL){
             $ville->ajouterVille($nomVille);
@@ -60,6 +74,14 @@ class modelUtilisateur {
 
         if($region->rechercherRegion($nomRegion)==NULL){
             $region->ajouterRegion($nomRegion);
+=======
+        if($region->rechercherRegion($nomRegion)==NULL){
+            $region->ajouterRegion($nomRegion);
+        }
+
+        if($ville->rechercherVille($nomVille)==NULL){
+            $ville->ajouterVille($nomVille);
+>>>>>>> ce53088... voila pour l'erreur que tu as eu
         }
 
         if($departement->rechercherDepartement($nomDepartement)==NULL){

@@ -9,7 +9,11 @@ class departementGateway {
     }
 
     public function ajouterDepartement($nomDepartement){
+<<<<<<< HEAD
         $querry = 'INSERT INTO ville (nomDepartement) VALUES (:nom)';
+=======
+        $querry = 'INSERT INTO departement (nomDepartement) VALUES (:nom)';
+>>>>>>> ce53088... voila pour l'erreur que tu as eu
         $this->bd->executeQuerry($querry, array(':nom'=>array($nomDepartement,PDO::PARAM_INT)));
     }
 
