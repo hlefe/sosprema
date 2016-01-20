@@ -262,9 +262,7 @@ class controleurAdmin {
 
         $utilisateur= $_SESSION['utilisateurModifie'];
 
-        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-
-        if(!isset($_POST['nom'])|| $_POST['nom']==""){
+        if(!isset($_POST['nom']) || $_POST['nom']==""){
             $vueErreur[] = "Veuiller renseigner un nom.";
             require_once('vue/userEdit.php');
             return;
@@ -279,16 +277,7 @@ class controleurAdmin {
         }
         else
             $prenom = nettoyage::nettoyerChaine($_POST['prenom']);
-
-        if(!isset($_POST['motDePasse'])|| $_POST['motDePasse']==""){
-            $vueErreur[] = "Veuiller renseigner un motDePasse.";
-            require_once('vue/userEdit.php');
-            return;
-        }
-        else
-            $motDePasse = nettoyage::nettoyerChaine($_POST['motDePasse']);
-
-        
+ 
         if(!isset($_POST['email'])|| $_POST['email']==""){
             $vueErreur[] = "Veuiller renseigner une adresse mail.";
             require_once('vue/userEdit.php');
@@ -297,28 +286,12 @@ class controleurAdmin {
         else
             if(validation::validerEmail($_POST['email'])){
                 $email = nettoyage::nettoyerChaine($_POST['email']);
-                if(modelUtilisateur::verifierEmailNonPresent($email)){
-                    $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
-                    require_once('vue/userEdit.php');
-                    return;
-                }
-            }else{
-                $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
-                require_once('vue/userEdit.php');
-                return;
-            }
-        if(!isset($_POST['emailPerso'])|| $_POST['emailPerso']==""){
-            $vueErreur[] = "Veuiller renseigner une adresse mail.";
-            require_once('vue/userEdit.php');
-            return;
-        }
-        else
-            if(validation::validerEmail($_POST['emailPerso'])){
-                $emailPerso = nettoyage::nettoyerChaine($_POST['emailPerso']);
-                if(modelUtilisateur::verifierEmailNonPresent($emailPerso)){
-                    $vueErreur[] = "Un utilisateur existe déjà avec l'adresse emailPerso correspondante.";
-                    require_once('vue/userEdit.php');
-                    return;
+                if($email != $utilisateur->email){
+                    if(modelUtilisateur::verifierEmailNonPresent($email)){
+                        $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
+                        require_once('vue/userEdit.php');
+                        return;
+                    }
                 }
             }else{
                 $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
@@ -360,7 +333,10 @@ class controleurAdmin {
             $dateDeNaissance=nettoyage::nettoyerChaine($_POST['dateDeNaissance']);
         else
             $dateDeNaissance=NULL;
-
+        if(isset($_POST['avatar']))
+            $avatar=nettoyage::nettoyerChaine($_POST['avatar']);
+        else
+            $avatar=NULL;
         if(isset($_POST['profession']))
             $profession=nettoyage::nettoyerChaine($_POST['profession']);
         else
@@ -385,8 +361,8 @@ class controleurAdmin {
 
 
         try{
-            modelUtilisateur::modifierUtilisateur($email, $emailPerso,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
+            modelUtilisateur::modifierUtilisateur($email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $code_postal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
             
             $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
             require_once('vue/userEdit.php');
