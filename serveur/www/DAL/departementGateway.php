@@ -8,19 +8,26 @@ class departementGateway {
         $this->bd = Connexion::getInstance();
     }
 
-    public function ajouterRegion($nomDepartement){
-        $querry = 'INSERT INTO region (nomDepartement) VALUES (:nom)';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nomDepartement,PDO::PARAM_INT)));
-    }
-
-    public function rechercherDepartement($nomDepartement){
-        $querry = 'SELECT * FROM departement WHERE nomDepartement=:nom';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nomDepartement,PDO::PARAM_INT)));
+    public function rechercherNom($id){
+        $querry = 'SELECT * FROM departement WHERE iddepartement=:id';
+        $this->bd->executeQuerry($querry, array(':id'=>array($id,PDO::PARAM_INT)));
         $result = $this->bd->getResult();
         if ($result == false){
             return false;
         }
-        return $result;
+        $nom = $result['nom'];
+        return $nom;
+    }
+
+    public function rechercherId($nom){
+        $querry = 'SELECT * FROM departement WHERE nom=:nom';
+        $this->bd->executeQuerry($querry, array(':nom'=>array($nom,PDO::PARAM_INT)));
+        $result = $this->bd->getResult();
+        if ($result == false){
+            return false;
+        }
+        $iddepartement = $result['iddepartement'];
+        return $iddepartement;
     }
 
     public function getAll(){
