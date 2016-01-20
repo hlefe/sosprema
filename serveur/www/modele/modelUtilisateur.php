@@ -22,16 +22,21 @@ class modelUtilisateur {
     public static function creerUtilisateur($email, $emailPerso,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
         
-        if(new regionGateway())::rechercherRegion($nomRegion)==NULL){
-            (new regionGateway())::ajouterRegion($nomRegion);
+
+        $region = new regionGateway();
+        $ville = new villeGateway();
+        $departement = new departementGateway();
+
+        if($region::rechercherRegion($nomRegion)==NULL){
+            $region::ajouterRegion($nomRegion);
         }
 
-        if(new villeGateway())::rechercherVille($nomVille)==NULL){
-            (new villeGateway())::ajouterVille($nomVille);
+        if($ville::rechercherVille($nomVille)==NULL){
+            $ville::ajouterVille($nomVille);
         }
 
-        if(new departementGateway())::rechercherDepartement($nomDepartement)==NULL){
-            (new departementGateway())::ajouterDepartement($nomDepartement);
+        if($departement::rechercherDepartement($nomDepartement)==NULL){
+            $departement::ajouterDepartement($nomDepartement);
         }
 
         $utilisateurGateway = new utilisateurGateway();
@@ -42,16 +47,20 @@ class modelUtilisateur {
     public static function modifierUtilisateur($email, $emailPerso,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
         
-        if(new regionGateway())::rechercherRegion($nomRegion)==NULL){
-            (new regionGateway())::ajouterRegion($nomRegion);
+        $region = new regionGateway();
+        $ville = new villeGateway();
+        $departement = new departementGateway();
+
+        if($region::rechercherRegion($nomRegion)==NULL){
+            $region::ajouterRegion($nomRegion);
         }
 
-        if(new villeGateway())::rechercherVille($nomVille)==NULL){
-            (new villeGateway())::ajouterVille($nomVille);
+        if($ville::rechercherVille($nomVille)==NULL){
+            $ville::ajouterVille($nomVille);
         }
 
-        if(new departementGateway())::rechercherDepartement($nomDepartement)==NULL){
-            (new departementGateway())::ajouterDepartement($nomDepartement);
+        if($departement::rechercherDepartement($nomDepartement)==NULL){
+            $departement::ajouterDepartement($nomDepartement);
         }
 
         $utilisateurGateway = new utilisateurGateway();

@@ -1491,3 +1491,28 @@ Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
 160120 16:33:11  InnoDB: Shutdown completed; log sequence number 2283129
 160120 16:33:11 [Note] C:\Users\Valentin\Downloads\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
 
+160120 18:13:49 [Note] Plugin 'FEDERATED' is disabled.
+160120 18:13:49 InnoDB: The InnoDB memory heap is disabled
+160120 18:13:49 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+160120 18:13:49 InnoDB: Compressed tables use zlib 1.2.3
+160120 18:13:49 InnoDB: Initializing buffer pool, size = 16.0M
+160120 18:13:49 InnoDB: Completed initialization of buffer pool
+160120 18:13:49 InnoDB: highest supported file format is Barracuda.
+160120 18:13:53  InnoDB: Waiting for the background threads to start
+160120 18:13:54 InnoDB: 5.5.46 started; log sequence number 2283129
+160120 18:13:54 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+160120 18:13:54 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+160120 18:13:54 [Note] Server socket created on IP: '127.0.0.1'.
+160120 18:13:54 [Note] Event Scheduler: Loaded 0 events
+160120 18:13:54 [Note] C:\Users\Nico\Documents\Informatique\sospremaPerso\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
+Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+InnoDB: Error: tablespace id is 70 in the data dictionary
+InnoDB: but in file .\sosprema\utilisateur.ibd it is 80!
+160120 18:18:26  InnoDB: Assertion failure in thread 11240 in file fil0fil.c line 768
+InnoDB: We intentionally generate a memory trap.
+InnoDB: Submit a detailed bug report to http://bugs.mysql.com.
+InnoDB: If you get repeated assertion failures or crashes, even
+InnoDB: immediately after the mysqld startup, there may be
+InnoDB: corruption in the InnoDB tablespace. Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.5/en/forcing-innodb-recovery.html
+InnoDB: about forcing recovery.

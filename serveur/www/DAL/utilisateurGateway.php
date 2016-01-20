@@ -120,7 +120,7 @@ class utilisateurGateway {
         $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
         $querry = 'UPDATE utilisateur SET email = :email, emailPerso = :emailPerso,nom = :nom,prenom=prenom,dateDeNaissance=:dateDeNaissance,nomRue=:nomRue,numRue=:numRue,
         codePostal=:codePostal,profession=:profession,divers=:divers,avatar=:avatar,idNiveau=:idNiveau,idFamille=:idFamille,nomVille=:nomVille,nomDepartement=:nomDepartement,nomRegion=:nomRegion
-        WHERE idUtilisateur=:idUtilisateur'
+        WHERE idUtilisateur=:idUtilisateur';
         $this->bd->executeQuerry($querry, array(':idUtilisateur'=>array($idUtilisateur,PDO::PARAM_STR),
                                                 ':email'=>array($email,PDO::PARAM_STR),
                                                 ':emailPerso'=>array($emailPerso,PDO::PARAM_STR),
