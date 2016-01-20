@@ -16,6 +16,7 @@ require('header.php');
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	<div id="contenute" class="Caccueil">
 		<h3>État du projet</h3>
@@ -71,6 +72,8 @@ require('header.php');
 >>>>>>> be84b26... Accueil remise après le deuxième achat
 =======
 >>>>>>> 1b77b11... Remise de l'ancienne version
+=======
+>>>>>>> 06e43bb... Et revoilà !
 </div>
 
 <!-- <div class="colonneGauche infosAccueil">
