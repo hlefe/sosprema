@@ -8,26 +8,26 @@ class niveauGateway {
         $this->bd = Connexion::getInstance();
     }
 
-    public function rechercherLibeller($id){
-    	$querry = 'SELECT * FROM niveau WHERE id=:id';
-        $this->bd->executeQuerry($querry, array(':id'=>array($id,PDO::PARAM_INT)));
+    public function rechercherNom($idNiveau){
+    	$querry = 'SELECT * FROM niveau WHERE idNiveau=:idNiveau';
+        $this->bd->executeQuerry($querry, array(':idNiveau'=>array($idNiveau,PDO::PARAM_INT)));
         $result = $this->bd->getResult();
         if ($result == false){
             return false;
         }
-        $libelle = $result['libelle'];
-        return $libelle;
+        $nom = $result['nom'];
+        return $nom;
     }
 
-    public function rechercherId($libelle){
-        $querry = 'SELECT * FROM niveau WHERE libelle=:libelle';
-        $this->bd->executeQuerry($querry, array(':libelle'=>array($libelle,PDO::PARAM_INT)));
+    public function rechercheridNiveau($nom){
+        $querry = 'SELECT * FROM niveau WHERE nom=:nom';
+        $this->bd->executeQuerry($querry, array(':nom'=>array($nom,PDO::PARAM_INT)));
         $result = $this->bd->getResult();
         if ($result == false){
             return false;
         }
-        $id = $result['id'];
-        return $id;
+        $idNiveau = $result['idNiveau'];
+        return $idNiveau;
     }
 
     public function getAll(){

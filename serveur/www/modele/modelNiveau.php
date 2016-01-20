@@ -6,9 +6,9 @@
  */
 
 class modelNiveau {
-	public static function rechercherLibelle($id_niveau){
+	public static function rechercherNom($id_niveau){
 		$niveauGateway = new niveauGateway();
-		$libelle = $niveauGateway->rechercherLibeller($id_niveau);
+		$libelle = $niveauGateway->rechercherNom($id_niveau);
 		return $libelle;
 	}
 

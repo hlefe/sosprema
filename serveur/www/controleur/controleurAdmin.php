@@ -406,14 +406,14 @@ class controleurAdmin {
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try{
             if(isset($_SESSION['utilisateurConnecter']->idNiveau)) echo "string";
-            $libelle = modelNiveau::rechercherLibelle($_SESSION['utilisateurConnecter']->idNiveau);
+            $libelle = modelNiveau::rechercherNom($_SESSION['utilisateurConnecter']->idNiveau);
             if( $libelle == 'administrateur'){
                 return true;
             }else{
                 return false;
             }
         }catch(PDOException $ex){
-            $vueErreur[]="erreur PDOException ressus.";
+            $vueErreur[]=$ex;
             require_once('vue/vueErreur.php');
         }
     }
