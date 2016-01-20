@@ -24,7 +24,7 @@ class utilisateurGateway {
 
     public function rechercheUtilisateurConnexion($email, $password)
     {   
-            $querry = 'SELECT * FROM utilisateur WHERE email=:email AND mot_de_passe=:password';
+            $querry = 'SELECT * FROM utilisateur WHERE email=:email AND motDePasse=:password';
             $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
                                                     ':password'=>array($password,PDO::PARAM_STR)));
             $result = $this->bd->getResult();
