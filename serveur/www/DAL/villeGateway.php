@@ -8,9 +8,9 @@ class villeGateway {
         $this->bd = Connexion::getInstance();
     }
 
-    public function ajouterRegion($nomVille){
-        $querry = 'INSERT INTO region (nomVille) VALUES (:nom)';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_INT)));
+    public function ajouterVille($nomVille){
+        $querry = 'INSERT INTO ville (nomVille) VALUES (:nomVille)';
+        $this->bd->executeQuerry($querry, array(':nomVille'=>array($nomVille,PDO::PARAM_INT)));
     }
 
     public function rechercherVille($nomVille){

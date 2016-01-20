@@ -18,6 +18,7 @@ class utilisateur {
     private $emailPerso;
     private $nom;
     private $prenom;
+    private $motDePasse;
     private $dateDeNaissance;
     private $nomRue;
     private $numRue;

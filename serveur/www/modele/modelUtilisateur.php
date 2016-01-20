@@ -27,17 +27,19 @@ class modelUtilisateur {
         $ville = new villeGateway();
         $departement = new departementGateway();
 
-        if($region::rechercherRegion($nomRegion)==NULL){
-            $region::ajouterRegion($nomRegion);
+
+        if($ville->rechercherVille($nomVille)==NULL){
+            $ville->ajouterVille($nomVille);
         }
 
-        if($ville::rechercherVille($nomVille)==NULL){
-            $ville::ajouterVille($nomVille);
+        if($departement->rechercherDepartement($nomDepartement)==NULL){
+            $departement->ajouterDepartement($nomDepartement);
         }
 
-        if($departement::rechercherDepartement($nomDepartement)==NULL){
-            $departement::ajouterDepartement($nomDepartement);
+        if($region->rechercherRegion($nomRegion)==NULL){
+            $region->ajouterRegion($nomRegion);
         }
+
 
         $utilisateurGateway = new utilisateurGateway();
         $utilisateur = $utilisateurGateway->insererUtilisateur($email, $emailPerso,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
@@ -51,16 +53,17 @@ class modelUtilisateur {
         $ville = new villeGateway();
         $departement = new departementGateway();
 
-        if($region::rechercherRegion($nomRegion)==NULL){
-            $region::ajouterRegion($nomRegion);
+
+        if($ville->rechercherVille($nomVille)==NULL){
+            $ville->ajouterVille($nomVille);
         }
 
-        if($ville::rechercherVille($nomVille)==NULL){
-            $ville::ajouterVille($nomVille);
+        if($region->rechercherRegion($nomRegion)==NULL){
+            $region->ajouterRegion($nomRegion);
         }
 
-        if($departement::rechercherDepartement($nomDepartement)==NULL){
-            $departement::ajouterDepartement($nomDepartement);
+        if($departement->rechercherDepartement($nomDepartement)==NULL){
+            $departement->ajouterDepartement($nomDepartement);
         }
 
         $utilisateurGateway = new utilisateurGateway();

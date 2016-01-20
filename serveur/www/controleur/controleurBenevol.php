@@ -222,7 +222,7 @@ class controleurBenevol {
             $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
             require_once('vue/profil.php');
         } catch(PDOException $ex){
-            $vueErreur[] = "Erreur base de donnée, PDOException";
+            $vueErreur[] = $ex;
             require_once('vue/profil.php');
         }
     }

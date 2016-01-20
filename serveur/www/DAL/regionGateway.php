@@ -1,6 +1,7 @@
 <?php
 
 class regionGateway {
+    
     private $bd;
     
     public function __construct()

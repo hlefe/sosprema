@@ -8,8 +8,8 @@ class departementGateway {
         $this->bd = Connexion::getInstance();
     }
 
-    public function ajouterRegion($nomDepartement){
-        $querry = 'INSERT INTO region (nomDepartement) VALUES (:nom)';
+    public function ajouterDepartement($nomDepartement){
+        $querry = 'INSERT INTO ville (nomDepartement) VALUES (:nom)';
         $this->bd->executeQuerry($querry, array(':nom'=>array($nomDepartement,PDO::PARAM_INT)));
     }
 
