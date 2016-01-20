@@ -18,7 +18,6 @@ class utilisateur {
     private $emailPerso;
     private $nom;
     private $prenom;
-    private $motDePasse;
     private $dateDeNaissance;
     private $nomRue;
     private $numRue;
@@ -35,10 +34,6 @@ class utilisateur {
     public function __get($property) {
         if ('userId' == $property) {
             return $this->userId;
-        }elseif ('email' == $property) {
-            return $this->email;
-        }elseif ('emailPerso' == $property) {
-            return $this->emailPerso;
         } elseif ('nom' == $property) {
             return $this->nom;
         } elseif ('prenom' == $property) {
@@ -75,10 +70,6 @@ class utilisateur {
     public function __set($property, $value) {
         if ('userId' == $property) {
             $this->userId = $value;
-        } elseif ('email' == $property) {
-            $this->email  = $value;
-        } elseif ('emailPerso' == $property) {
-            $this->emailPerso  = $value;
         } elseif ('nom' == $property) {
             $this->nom  = $value;
         } elseif ('prenom' == $property) {
@@ -117,10 +108,6 @@ class utilisateur {
         foreach ($param as $key=>$value){
             if ('userId' == $key) {
                 $this->userId = $value;
-            } elseif ('email' == $key) {
-                $this->email  = $value;
-            } elseif ('emailPerso' == $key) {
-                $this->emailPerso  = $value;
             } elseif ('nom' == $key) {
                 $this->nom  = $value;
             } elseif ('prenom' == $key) {
