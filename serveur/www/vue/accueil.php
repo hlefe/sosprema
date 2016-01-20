@@ -15,6 +15,7 @@ require('header.php');
 	</div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	<div id="contenute" class="Caccueil">
 		<h3>État du projet</h3>
@@ -68,6 +69,8 @@ require('header.php');
 >>>>>>> 6b68015... Tableau de bord
 =======
 >>>>>>> be84b26... Accueil remise après le deuxième achat
+=======
+>>>>>>> 1b77b11... Remise de l'ancienne version
 </div>
 
 <!-- <div class="colonneGauche infosAccueil">
