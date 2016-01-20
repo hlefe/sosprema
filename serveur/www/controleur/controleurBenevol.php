@@ -70,7 +70,7 @@ class controleurBenevol {
             $vueErreur[] = "Erreur base de donnée, PDOException";
             require_once('vue/vueErreur.php');
         } catch (Exception $ex) {
-            $vueErreur[] = "Erreur inattendue";
+            $vueErreur[] = "$ex";
             require_once('vue/vueErreur.php');
         }
     }
