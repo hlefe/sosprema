@@ -44,8 +44,8 @@ class modelUtilisateur {
         $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
     }
 
-    public static function modifierUtilisateur($email, $emailPerso,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
+    public static function modifierUtilisateur($email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $codePostal,$profession,$divers,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
         
         $region = new regionGateway();
         $ville = new villeGateway();

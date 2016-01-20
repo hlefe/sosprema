@@ -142,35 +142,18 @@ class controleurBenevol {
         else
             if(validation::validerEmail($_POST['email'])){
                 $email = nettoyage::nettoyerChaine($_POST['email']);
-                if(modelUtilisateur::verifierEmailNonPresent($email)){
-                    $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
-                    require_once('vue/profil.php');
-                    return;
+                if($email != $utilisateurConnecter->email){
+                    if(modelUtilisateur::verifierEmailNonPresent($email)){
+                        $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
+                        require_once('vue/profil.php');
+                        return;
+                    }
                 }
             }else{
                 $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
                 require_once('vue/profil.php');
                 return;
-            }
-        if(!isset($_POST['emailPerso'])|| $_POST['emailPerso']==""){
-            $vueErreur[] = "Veuiller renseigner une adresse mail.";
-            require_once('vue/profil.php');
-            return;
         }
-        else
-            if(validation::validerEmail($_POST['emailPerso'])){
-                $emailPerso = nettoyage::nettoyerChaine($_POST['emailPerso']);
-                if(modelUtilisateur::verifierEmailNonPresent($emailPerso)){
-                    $vueErreur[] = "Un utilisateur existe déjà avec l'adresse emailPerso correspondante.";
-                    require_once('vue/profil.php');
-                    return;
-                }
-            }else{
-                $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
-                require_once('vue/profil.php');
-                return;
-            }
-
         if(isset($_POST['numRue']))
             $numRue=nettoyage::nettoyerChaine($_POST['numRue']);
         else
@@ -205,7 +188,10 @@ class controleurBenevol {
             $dateDeNaissance=nettoyage::nettoyerChaine($_POST['dateDeNaissance']);
         else
             $dateDeNaissance=NULL;
-
+        if(isset($_POST['avatar']))
+            $avatar=nettoyage::nettoyerChaine($_POST['avatar']);
+        else
+            $avatar=NULL;
         if(isset($_POST['profession']))
             $profession=nettoyage::nettoyerChaine($_POST['profession']);
         else
@@ -230,8 +216,8 @@ class controleurBenevol {
 
 
         try{
-            modelUtilisateur::modifierUtilisateur($email, $emailPerso,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
+            modelUtilisateur::modifierUtilisateur($email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $code_postal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
             
             $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
             require_once('vue/profil.php');

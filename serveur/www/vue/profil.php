@@ -13,6 +13,7 @@ require_once('confirmation.php'); ?>
             </div>
         </div>
     </div>
+
     <div class="colonneGauche infosAccueil">
         <div id="contenute" class="Caccueil">
                 <h3>Informations</h3>
@@ -24,6 +25,21 @@ require_once('confirmation.php'); ?>
                     
                     <label for="email">Adresse Mail</label>
                     <input required type="text" name="email" value="<?php echo $utilisateurConnecter->email;?>" />
+        </div>  
+    </div> 
+
+    <div class="colonneGauche infosAccueil">
+        <div id="contenute" class="Caccueil">
+                <h3>Divers</h3>
+                    <label for="nom">Avatar</label>
+                    <img src="<?php echo $utilisateurConnecter->profession; ?>">
+                    <input  type="text" name="avatar" value="<?php echo $utilisateurConnecter->avatar;?>" />
+                    
+                    <label for="prenom">Profession</label>
+                    <input  type="text" name="profession" value="<?php echo $utilisateurConnecter->profession;?>" />
+                    
+                    <label for="email">Divers</label>
+                    <input type="text" name="divers" value="<?php echo $utilisateurConnecter->divers;?>" />
         </div>  
     </div> 
 

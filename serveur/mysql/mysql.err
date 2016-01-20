@@ -1512,3 +1512,10 @@ InnoDB: for more information.
 160120 21:23:39 [Note] Event Scheduler: Loaded 0 events
 160120 21:23:39 [Note] C:\Users\hugol\Documents\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
 Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+160120 23:13:34 [Note] C:\Users\hugol\Documents\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+160120 23:13:34 [Note] Event Scheduler: Purging the queue. 0 events
+160120 23:13:34  InnoDB: Starting shutdown...
+160120 23:13:35  InnoDB: Shutdown completed; log sequence number 2272829
+160120 23:13:35 [Note] C:\Users\hugol\Documents\UniServerZ\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+
