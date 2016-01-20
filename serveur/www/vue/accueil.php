@@ -17,6 +17,7 @@ require('header.php');
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	<div id="contenute" class="Caccueil">
 		<h3>État du projet</h3>
@@ -74,6 +75,11 @@ require('header.php');
 >>>>>>> 1b77b11... Remise de l'ancienne version
 =======
 >>>>>>> 06e43bb... Et revoilà !
+=======
+	<div id="contenute">
+     	<a href="vue/tableauDeBord.php"><h3>Consulter l'avancement du projet</h3></a>
+ 	</div>
+>>>>>>> 9198103... Gros debuggage général
 </div>
 
 <!-- <div class="colonneGauche infosAccueil">
@@ -127,10 +133,6 @@ require('header.php');
 	</div>
 </div>
  -->
- 
- <div id="contenute">
-     <a href="vue/tableauDeBord.php">Tableau de bord</a>
- </div>
  
 <div class="colonneDroite infosAccueil">
 	<div  class="Caccueil abs_accueil">

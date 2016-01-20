@@ -32,7 +32,7 @@ require_once('confirmation.php');
 		?>
 
 			<tr>
-				<td align=center class="id"><?php echo $user["id_utilisateur"]; ?></td>
+				<td align=center class="id"><?php echo $user["idUtilisateur"]; ?></td>
 				<td align=center>
 					<?php echo $user["email"]; ?>
 				</td>

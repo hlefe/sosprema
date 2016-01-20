@@ -32,16 +32,16 @@ require_once('confirmation.php'); ?>
             <h3>Adresse</h3>
     
             <label for="num_rue">Numéro de rue</label>
-            <input type="text" name="num_rue" value="<?php echo $utilisateurConnecter->num_rue;?>" />
+            <input type="text" name="num_rue" value="<?php echo $utilisateurConnecter->numRue;?>" />
             
             <label for="nom_rue">Nom de rue</label>
-            <input type="text" name="nom_rue" value="<?php echo $utilisateurConnecter->nom_rue;?>" />
+            <input type="text" name="nom_rue" value="<?php echo $utilisateurConnecter->nomRue;?>" />
             
             <label for="code_postal">Code postal</label>
-            <input type="text" name="code_postal" value="<?php echo $utilisateurConnecter->code_postal;?>" />
+            <input type="text" name="code_postal" value="<?php echo $utilisateurConnecter->codePostal;?>" />
 
             <label for="ville">Ville</label>
-            <input type="text" name="ville" value="<?php echo $utilisateurConnecter->ville;?>" />
+            <input type="text" name="ville" value="<?php echo $utilisateurConnecter->nomVille;?>" />
         </div>
     </div>
 </form>

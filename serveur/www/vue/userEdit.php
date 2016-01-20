@@ -36,16 +36,16 @@ require_once('confirmation.php'); ?>
             <h3>Adresse</h3>
     
             <label for="num_rue">Numéro de rue</label>
-            <input type="text" name="num_rue" value="<?php echo $utilisateur->num_rue;?>" />
+            <input type="text" name="num_rue" value="<?php echo $utilisateur->numRue;?>" />
             
             <label for="nom_rue">Nom de rue</label>
-            <input type="text" name="nom_rue" value="<?php echo $utilisateur->nom_rue;?>" />
+            <input type="text" name="nom_rue" value="<?php echo $utilisateur->nomRue;?>" />
             
             <label for="code_postal">Code postal</label>
-            <input type="text" name="code_postal" value="<?php echo $utilisateur->code_postal;?>" />
+            <input type="text" name="code_postal" value="<?php echo $utilisateur->codePostal;?>" />
 
             <label for="ville">Ville</label>
-            <input type="text" name="ville" value="<?php echo $utilisateur->ville;?>" />
+            <input type="text" name="ville" value="<?php echo $utilisateur->nomVille;?>" />
         </div>
     </div>
 </form>
