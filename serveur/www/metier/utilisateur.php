@@ -1,8 +1,8 @@
 <?php
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this license header; choose License Headers in Project Properties.
+ * To change this template file; choose Tools | Templates
  * and open the template in the editor.
  */
 
@@ -14,69 +14,90 @@
 class utilisateur {
 
     private $userId;
-    private $email;
+    private $email; 
+    private $emailPerso;
     private $nom;
     private $prenom;
-    private $mot_de_passe;
-    private $num_rue;
-    private $nom_rue;
-    private $code_postal;
-    private $ville;
-    private $id_groupe;
+    private $dateDeNaissance;
+    private $nomRue;
+    private $numRue;
+    private $codePostal
+    private $profession;
+    private $divers;
     private $avatar;
-    private $telephones;
+    private $idNiveau;
+    private $idFamille;
+    private $nomVille;
+    private $nomDepartement;
+    private $nomRegion;
 
     public function __get($property) {
         if ('userId' == $property) {
             return $this->userId;
-        } elseif ('email' == $property) {
-            return $this->email;
         } elseif ('nom' == $property) {
             return $this->nom;
         } elseif ('prenom' == $property) {
             return $this->prenom;
-        } elseif ('num_rue' == $property) {
-            return $this->num_rue;
-        } elseif ('nom_rue' == $property) {
-            return $this->nom_rue;
-        } elseif ('code_postal' == $property) {
-            return $this->code_postal;
-        } elseif ('ville' == $property) {
-            return $this->ville;
-        } elseif ('id_groupe' == $property) {
-            return $this->id_groupe;
+        }elseif ('dateDeNaissance' == $property) {
+            return $this->dateDeNaissance;
+        } elseif ('numRue' == $property) {
+            return $this->numRue;
+        } elseif ('nomRue' == $property) {
+            return $this->nomRue;
+        } elseif ('codePostal' == $property) {
+            return $this->codePostal;
+        }elseif ('profession' == $property) {
+            return $this->profession;
+        }elseif ('divers' == $property) {
+            return $this->divers;
+        }  elseif ('idNiveau' == $property) {
+            return $this->idNiveau;
         } elseif ('avatar' == $property) {
             return $this->avatar;
-        } elseif ('telephones' == $property) {
-            return $this->telephones;
+        }elseif ('idFamille' == $property) {
+            return $this->idFamille;
+        }elseif ('nomRegion' == $property) {
+            return $this->nomRegion;
+        }elseif ('nomVille' == $property) {
+            return $this->nomVille;
+        }elseif ('nomDepartement' == $property) {
+            return $this->nomDepartement;
         } else {
             throw new Exception('Propriété invalide !');
         }
     }
 
     public function __set($property, $value) {
-        if ('email' == $property) {
-            $this->email = $value;
+        if ('userId' == $property) {
+            $this->userId = $value;
         } elseif ('nom' == $property) {
-            $this->nom = $value;
+            $this->nom  = $value;
         } elseif ('prenom' == $property) {
-            $this->prenom = $value;
-        } elseif ('mot_de_passe' == $property) {
-            $this->mot_de_passe = $value;
-        } elseif ('num_rue' == $property) {
-            $this->num_rue = $value;
-        } elseif ('nom_rue' == $property) {
-            $this->nom_rue = $value;
-        } elseif ('code_postal' == $property) {
-            $this->code_postal = $value;
-        } elseif ('ville' == $property) {
-            $this->ville = $value;
-        }  elseif ('id_groupe' === $property) {
-            $this->id_groupe = $value;
-        } elseif ('avatar' === $property) {
+            $this->prenom  = $value;
+        }elseif ('dateDeNaissance' == $property) {
+            $this->dateDeNaissance  = $value;
+        } elseif ('numRue' == $property) {
+            $this->numRue = $value;
+        } elseif ('nomRue' == $property) {
+            $this->nomRue = $value;
+        } elseif ('codePostal' == $property) {
+            $this->codePostal = $value;
+        }elseif ('profession' == $property) {
+            $this->profession = $value;
+        }elseif ('divers' == $property) {
+            $this->divers = $value;
+        }  elseif ('idNiveau' == $property) {
+            $this->idNiveau = $value;
+        } elseif ('avatar' == $property) {
             $this->avatar = $value;
-        } elseif ('telephones' === $property) {
-            $this->telephones[] = $value;
+        }elseif ('idFamille' == $property) {
+            $this->idFamille = $value;
+        }elseif ('nomRegion' == $property) {
+            $this->nomRegion = $value;
+        }elseif ('nomVille' == $property) {
+            $this->nomVille = $value;
+        }elseif ('nomDepartement' == $property) {
+            $this->nomDepartement  = $value;
         } else {
             throw new Exception('Propriété invalide !');
         }
@@ -85,34 +106,42 @@ class utilisateur {
     public function __construct($param) {
 
         foreach ($param as $key=>$value){
-            if ('email' == $key) {
-                $this->email = $value;
-            } elseif ('id_utilisateur' == $key) {
+            if ('userId' == $key) {
                 $this->userId = $value;
             } elseif ('nom' == $key) {
-                $this->nom = $value;
+                $this->nom  = $value;
             } elseif ('prenom' == $key) {
-                $this->prenom = $value;
-            } elseif ('mot_de_passe' == $key) {
-                $this->mot_de_passe = $value;
-            } elseif ('num_rue' == $key) {
-                $this->num_rue = $value;
-            } elseif ('nom_rue' == $key) {
-                $this->nom_rue = $value;
-            } elseif ('code_postal' == $key) {
-                $this->code_postal = $value;
-            } elseif ('ville' == $key) {
-                $this->ville = $value;
-            } elseif ('id_niveau_utilisateur' == $key) {
-                $this->id_groupe = $value;
+                $this->prenom  = $value;
+            }elseif ('dateDeNaissance' == $key) {
+                $this->dateDeNaissance  = $value;
+            } elseif ('numRue' == $key) {
+                $this->numRue = $value;
+            } elseif ('nomRue' == $key) {
+                $this->nomRue = $value;
+            } elseif ('codePostal' == $key) {
+                $this->codePostal = $value;
+            }elseif ('profession' == $key) {
+                $this->profession = $value;
+            }elseif ('divers' == $key) {
+                $this->divers = $value;
+            }  elseif ('idNiveau' == $key) {
+                $this->idNiveau = $value;
             } elseif ('avatar' == $key) {
                 $this->avatar = $value;
-            }
+            }elseif ('idFamille' == $key) {
+                $this->idFamille = $value;
+            }elseif ('nomRegion' == $key) {
+                $this->nomRegion = $value;
+            }elseif ('nomVille' == $key) {
+                $this->nomVille = $value;
+            }elseif ('nomDepartement' == $key) {
+                $this->nomDepartement  = $value;
+            } 
         }
     }
 
-    public function verifierMotDePasse($mot_de_passe){
-        if($this->mot_de_passe == $mot_de_passe){
+    public function verifierMotDePasse($motDePasse){
+        if($this->motDePasse == $motDePasse){
             return true;
         }
         return false;

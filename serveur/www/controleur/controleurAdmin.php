@@ -86,6 +86,15 @@ class controleurAdmin {
         }
         else
             $prenom = nettoyage::nettoyerChaine($_POST['prenom']);
+
+        if(!isset($_POST['motDePasse'])|| $_POST['motDePasse']==""){
+            $vueErreur[] = "Veuiller renseigner un motDePasse.";
+            require_once('vue/ajoutUtilisateur.php');
+            return;
+        }
+        else
+            $motDePasse = nettoyage::nettoyerChaine($_POST['motDePasse']);
+
         
         if(!isset($_POST['email'])|| $_POST['email']==""){
             $vueErreur[] = "Veuiller renseigner une adresse mail.";
@@ -105,44 +114,86 @@ class controleurAdmin {
                 require_once('vue/ajoutUtilisateur.php');
                 return;
             }
-        
-        if(isset($_POST['num_rue']))
-            $num_rue=nettoyage::nettoyerChaine($_POST['num_rue']);
+        if(!isset($_POST['emailPerso'])|| $_POST['emailPerso']==""){
+            $vueErreur[] = "Veuiller renseigner une adresse mail.";
+            require_once('vue/ajoutUtilisateur.php');
+            return;
+        }
         else
-            $num_rue=NULL;
+            if(validation::validerEmail($_POST['emailPerso'])){
+                $emailPerso = nettoyage::nettoyerChaine($_POST['emailPerso']);
+                if(modelUtilisateur::verifierEmailNonPresent($emailPerso)){
+                    $vueErreur[] = "Un utilisateur existe déjà avec l'adresse emailPerso correspondante.";
+                    require_once('vue/ajoutUtilisateur.php');
+                    return;
+                }
+            }else{
+                $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
+                require_once('vue/ajoutUtilisateur.php');
+                return;
+            }
 
-        if(isset($_POST['nom_rue']))
-            $nom_rue=nettoyage::nettoyerChaine($_POST['nom_rue']);
+        if(isset($_POST['numRue']))
+            $numRue=nettoyage::nettoyerChaine($_POST['numRue']);
         else
-            $nom_rue=NULL;
+            $numRue=NULL;
 
-        if(isset($_POST['code_postal']))
+        if(isset($_POST['nomRue']))
+            $nomRue=nettoyage::nettoyerChaine($_POST['nomRue']);
+        else
+            $nomRue=NULL;
+
+        if(isset($_POST['codePostal']))
             $code_postal=nettoyage::nettoyerChaine($_POST['code_postal']);
         else
             $code_postal=NULL;
 
-        if(isset($_POST['ville']))
-            $ville=nettoyage::nettoyerChaine($_POST['ville']);
+        if(isset($_POST['nomVille']))
+            $nomVille=nettoyage::nettoyerChaine($_POST['nomVille']);
         else
-            $ville=NULL;
+            $nomVille=NULL;
+
+         if(isset($_POST['nomRegion']))
+            $nomRegion=nettoyage::nettoyerChaine($_POST['nomRegion']);
+        else
+            $nomRegion=NULL;
+
+         if(isset($_POST['nomDepartement']))
+            $nomDepartement=nettoyage::nettoyerChaine($_POST['nomDepartement']);
+        else
+            $nomDepartement=NULL;
+
+        if(isset($_POST['dateDeNaissance']))
+            $dateDeNaissance=nettoyage::nettoyerChaine($_POST['dateDeNaissance']);
+        else
+            $dateDeNaissance=NULL;
+
+        if(isset($_POST['profession']))
+            $profession=nettoyage::nettoyerChaine($_POST['profession']);
+        else
+            $profession=NULL;
+
+        if(isset($_POST['divers']))
+            $divers=nettoyage::nettoyerChaine($_POST['divers']);
+        else
+            $divers=NULL;
 
         if(isset($_POST['libelle_niveau']))
-            $id_niveau_utilisateur=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
+            $idNiveau=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
-            if($id_niveau_utilisateur=false){
-                $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
+            if($idNiveau=false){
+                $vueErreur[] = "Aucun niveau utilisateur correspondant à se libelle";
                 require_once('vue/ajoutUtilisateur.php');
                 return;
             }
         else{
-            $id_niveau_utilisateur=modelNiveau::rechercherId('utilisateur');
+            $idNiveau=modelNiveau::rechercherId('utilisateur');
         }
-        $avatar = NULL;
 
-        $mot_de_passe = 'SosPrema';
 
         try{
-            modelUtilisateur::creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
+            modelUtilisateur::creerUtilisateur($email, $emailPerso,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
+        $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
             
             $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
             require_once('vue/ajoutUtilisateur.php');
@@ -211,64 +262,134 @@ class controleurAdmin {
 
         $utilisateur= $_SESSION['utilisateurModifie'];
 
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+
         if(!isset($_POST['nom'])|| $_POST['nom']==""){
-            $vueErreur[] = "veuiller renseigner un nom.";
-            require_once('vue/profil.php');
+            $vueErreur[] = "Veuiller renseigner un nom.";
+            require_once('vue/userEdit.php');
             return;
         }
         else
             $nom = nettoyage::nettoyerChaine($_POST['nom']);
 
         if(!isset($_POST['prenom'])|| $_POST['prenom']==""){
-            $vueErreur[] = "veuiller renseigner un prenom.";
-            require_once('vue/profil.php');
+            $vueErreur[] = "Veuiller renseigner un prenom.";
+            require_once('vue/userEdit.php');
             return;
         }
         else
             $prenom = nettoyage::nettoyerChaine($_POST['prenom']);
+
+        else
+            $motDePasse = nettoyage::nettoyerChaine($_POST['motDePasse']);
+
         
         if(!isset($_POST['email'])|| $_POST['email']==""){
-            $vueErreur[]= "veuiller renseigner une adresse mail";
-            require_once('vue/profil.php');
+            $vueErreur[] = "Veuiller renseigner une adresse mail.";
+            require_once('vue/userEdit.php');
             return;
         }
         else
-            if(validation::validerEmail($_POST['email']))
+            if(validation::validerEmail($_POST['email'])){
                 $email = nettoyage::nettoyerChaine($_POST['email']);
-            else{
-                $vueErreur[]= "veuiller renseigner une adresse mail valide";
-                require_once('vue/profil.php');
+                if(modelUtilisateur::verifierEmailNonPresent($email)){
+                    $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
+                    require_once('vue/userEdit.php');
+                    return;
+                }
+            }else{
+                $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
+                require_once('vue/userEdit.php');
                 return;
             }
-        if(isset($_POST['num_rue']))
-            $num_rue=nettoyage::nettoyerChaine($_POST['num_rue']);
+        if(!isset($_POST['emailPerso'])|| $_POST['emailPerso']==""){
+            $vueErreur[] = "Veuiller renseigner une adresse mail.";
+            require_once('vue/userEdit.php');
+            return;
+        }
         else
-            $num_rue=NULL;
+            if(validation::validerEmail($_POST['emailPerso'])){
+                $emailPerso = nettoyage::nettoyerChaine($_POST['emailPerso']);
+                if(modelUtilisateur::verifierEmailNonPresent($emailPerso)){
+                    $vueErreur[] = "Un utilisateur existe déjà avec l'adresse emailPerso correspondante.";
+                    require_once('vue/userEdit.php');
+                    return;
+                }
+            }else{
+                $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
+                require_once('vue/userEdit.php');
+                return;
+            }
 
-        if(isset($_POST['nom_rue']))
-            $nom_rue=nettoyage::nettoyerChaine($_POST['nom_rue']);
+        if(isset($_POST['numRue']))
+            $numRue=nettoyage::nettoyerChaine($_POST['numRue']);
         else
-            $nom_rue=NULL;
+            $numRue=NULL;
 
-        if(isset($_POST['code_postal']))
+        if(isset($_POST['nomRue']))
+            $nomRue=nettoyage::nettoyerChaine($_POST['nomRue']);
+        else
+            $nomRue=NULL;
+
+        if(isset($_POST['codePostal']))
             $code_postal=nettoyage::nettoyerChaine($_POST['code_postal']);
         else
             $code_postal=NULL;
 
-        if(isset($_POST['ville']))
-            $ville=nettoyage::nettoyerChaine($_POST['ville']);
+        if(isset($_POST['nomVille']))
+            $nomVille=nettoyage::nettoyerChaine($_POST['nomVille']);
         else
-            $ville=NULL;
+            $nomVille=NULL;
 
-        $id_niveau_utilisateur=$utilisateur->id_groupe;
-        
-        $avatar = NULL;
+         if(isset($_POST['nomRegion']))
+            $nomRegion=nettoyage::nettoyerChaine($_POST['nomRegion']);
+        else
+            $nomRegion=NULL;
 
-        $utilisateur = modelUtilisateur::modifierUtilisateur($utilisateur->userId, $prenom, $nom, $email, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
-        
-        $vueConfirmation[] = "Les modifications ont bien été réalisé.";
-        require_once('vue/userEdit.php');
-    }
+         if(isset($_POST['nomDepartement']))
+            $nomDepartement=nettoyage::nettoyerChaine($_POST['nomDepartement']);
+        else
+            $nomDepartement=NULL;
+
+        if(isset($_POST['dateDeNaissance']))
+            $dateDeNaissance=nettoyage::nettoyerChaine($_POST['dateDeNaissance']);
+        else
+            $dateDeNaissance=NULL;
+
+        if(isset($_POST['profession']))
+            $profession=nettoyage::nettoyerChaine($_POST['profession']);
+        else
+            $profession=NULL;
+
+        if(isset($_POST['divers']))
+            $divers=nettoyage::nettoyerChaine($_POST['divers']);
+        else
+            $divers=NULL;
+
+        if(isset($_POST['libelle_niveau']))
+            $idNiveau=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
+
+            if($idNiveau=false){
+                $vueErreur[] = "Aucun niveau utilisateur correspondant à se libelle";
+                require_once('vue/userEdit.php');
+                return;
+            }
+        else{
+            $idNiveau=modelNiveau::rechercherId('utilisateur');
+        }
+
+
+        try{
+            modelUtilisateur::modifierUtilisateur($email, $emailPerso,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
+            
+            $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
+            require_once('vue/userEdit.php');
+        } catch(PDOException $ex){
+            $vueErreur[] = "Erreur base de donnée, PDOException";
+            require_once('vue/userEdit.php');
+        }
+
 
     public function afficherToutUtilisateur(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
