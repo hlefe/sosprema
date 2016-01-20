@@ -8,26 +8,19 @@ class villeGateway {
         $this->bd = Connexion::getInstance();
     }
 
-    public function rechercherNom($id){
-        $querry = 'SELECT * FROM ville WHERE idVille=:id';
-        $this->bd->executeQuerry($querry, array(':id'=>array($id,PDO::PARAM_INT)));
-        $result = $this->bd->getResult();
-        if ($result == false){
-            return false;
-        }
-        $nom = $result['nom'];
-        return $nom;
+    public function ajouterRegion($nomVille){
+        $querry = 'INSERT INTO region (nomVille) VALUES (:nom)';
+        $this->bd->executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_INT)));
     }
 
-    public function rechercherId($nom){
-        $querry = 'SELECT * FROM ville WHERE nom=:nom';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nom,PDO::PARAM_INT)));
+    public function rechercherVille($nomVille){
+        $querry = 'SELECT * FROM ville WHERE nomVille=:nom';
+        $this->bd->executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_INT)));
         $result = $this->bd->getResult();
         if ($result == false){
             return false;
         }
-        $idVille = $result['idVille'];
-        return $idVille;
+        return $result;
     }
 
     public function getAll(){
