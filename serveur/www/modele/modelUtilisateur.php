@@ -19,10 +19,55 @@ class modelUtilisateur {
         return $utilisateur;
 
     }
-    public static function creerUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar){
+    public static function creerUtilisateur($email, $emailPerso,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
+        $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
+        
+
+        $region = new regionGateway();
+        $ville = new villeGateway();
+        $departement = new departementGateway();
+
+        if($region::rechercherRegion($nomRegion)==NULL){
+            $region::ajouterRegion($nomRegion);
+        }
+
+        if($ville::rechercherVille($nomVille)==NULL){
+            $ville::ajouterVille($nomVille);
+        }
+
+        if($departement::rechercherDepartement($nomDepartement)==NULL){
+            $departement::ajouterDepartement($nomDepartement);
+        }
+
         $utilisateurGateway = new utilisateurGateway();
-        $utilisateur = $utilisateurGateway->insererUtilisateur($prenom, $nom, $email, $mot_de_passe, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
+        $utilisateur = $utilisateurGateway->insererUtilisateur($email, $emailPerso,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
+        $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
     }
+
+    public static function modifierUtilisateur($email, $emailPerso,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
+        
+        $region = new regionGateway();
+        $ville = new villeGateway();
+        $departement = new departementGateway();
+
+        if($region::rechercherRegion($nomRegion)==NULL){
+            $region::ajouterRegion($nomRegion);
+        }
+
+        if($ville::rechercherVille($nomVille)==NULL){
+            $ville::ajouterVille($nomVille);
+        }
+
+        if($departement::rechercherDepartement($nomDepartement)==NULL){
+            $departement::ajouterDepartement($nomDepartement);
+        }
+
+        $utilisateurGateway = new utilisateurGateway();
+        $utilisateur = $utilisateurGateway->modifierUtilisateur($email, $emailPerso,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
+    }
+
 
     public static function supprimerUtilisateur($emailConnexion) {
         $utilisateurGateway = new utilisateurGateway();
@@ -35,12 +80,6 @@ class modelUtilisateur {
         return $utilisateurs;
     }
 
-    public static function modifierUtilisateur($id_utilisateur, $prenom, $nom, $email, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar){
-        $utilisateurGateway = new utilisateurGateway();
-        $utilisateurGateway->modifierUtilisateur($id_utilisateur, $prenom, $nom, $email, $num_rue, $nom_rue, $code_postal, $ville, $id_niveau_utilisateur, $avatar);
-        $utilisateur = $utilisateurGateway->rechercheUtilisateurId($id_utilisateur);
-        return $utilisateur;
-    }
 
     public static function modifierMotDePasse($idUser, $newMDR){
         $utilisateurGateway = new utilisateurGateway();
