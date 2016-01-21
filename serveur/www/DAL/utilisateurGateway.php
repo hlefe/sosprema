@@ -72,14 +72,14 @@ class utilisateurGateway {
         return $utilisateur;
     }
 
-    public function insererUtilisateur($email, $emailPerso,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
+    public function insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
-        $querry = 'INSERT INTO utilisateur (email, emailPerso,nom,prenom,motDePasse,dateDeNaissance,nomRue,numRue,
-        codePostal,profession,divers,avatar,idNiveau,idFamille,nomVille,nomDepartement,nomRegion) 
-        VALUES (:email, :emailPerso,:nom,:prenom,:motDePasse,:dateDeNaissance,:nomRue,:numRue,
-        :codePostal,:profession,:divers,:avatar,:idNiveau,:idFamille,:nomVille,:nomDepartement,:nomRegion)';
+        $querry = 'INSERT INTO utilisateur (email,nom,prenom,motDePasse,dateDeNaissance,nomRue,numRue,
+        codePostal,profession,divers,avatar,idNiveau,nomVille,nomDepartement,nomRegion) 
+        VALUES (:email,:nom,:prenom,:motDePasse,:dateDeNaissance,:nomRue,:numRue,
+        :codePostal,:profession,:divers,:avatar,:idNiveau,:nomVille,:nomDepartement,:nomRegion)';
+        try{
         $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
-                                                ':emailPerso'=>array($emailPerso,PDO::PARAM_STR),
                                                 ':nom'=>array($nom,PDO::PARAM_STR),
                                                 ':prenom'=>array($prenom,PDO::PARAM_STR),
                                                 ':motDePasse'=>array($motDePasse,PDO::PARAM_STR),
@@ -90,12 +90,14 @@ class utilisateurGateway {
                                                 ':profession'=>array($profession,PDO::PARAM_INT),
                                                 ':divers'=>array($divers,PDO::PARAM_INT),
                                                 ':avatar'=>array($avatar,PDO::PARAM_INT),
-                                                ':ville'=>array($ville,PDO::PARAM_STR),
                                                 ':idNiveau'=>array($idNiveau,PDO::PARAM_STR),
-                                                ':idFamille'=>array($idFamille,PDO::PARAM_STR),
                                                 ':nomVille'=>array($nomVille,PDO::PARAM_STR),
                                                 ':nomDepartement'=>array($nomDepartement,PDO::PARAM_STR),
                                                 ':nomRegion'=>array($nomRegion,PDO::PARAM_STR)));
+        }catch(Exception $e)
+        {
+            die('Erreur : '.$e->getMessage());
+        }
     }
 
     public function supprimerUtilisateur($email){        

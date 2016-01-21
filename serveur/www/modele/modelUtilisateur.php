@@ -19,13 +19,13 @@ class modelUtilisateur {
         return $utilisateur;
 
     }
-    public static function creerUtilisateur($email, $emailPerso,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
+    public static function creerUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
         
-
         $region = new regionGateway();
         $ville = new villeGateway();
         $departement = new departementGateway();
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -40,22 +40,28 @@ class modelUtilisateur {
         if($region->rechercherRegion($nomRegion)==NULL){
             $region->ajouterRegion($nomRegion);
 =======
+=======
+>>>>>>> fef282b... Tout fonctionne !
         if($region->rechercherRegion($nomRegion)==NULL){
             $region->ajouterRegion($nomRegion);
         }
-
-        if($ville->rechercherVille($nomVille)==NULL){
-            $ville->ajouterVille($nomVille);
+        if(!$nomVille == ""){
+            if($ville->rechercherVille($nomVille)==NULL){
+                echo $nomVille;
+                $ville->ajouterVille($nomVille);
+            }
         }
-
         if($departement->rechercherDepartement($nomDepartement)==NULL){
             $departement->ajouterDepartement($nomDepartement);
 >>>>>>> ce53088... voila pour l'erreur que tu as eu
         }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> fef282b... Tout fonctionne !
         $utilisateurGateway = new utilisateurGateway();
-        $utilisateur = $utilisateurGateway->insererUtilisateur($email, $emailPerso,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
+        $utilisateur = $utilisateurGateway->insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
     }
 

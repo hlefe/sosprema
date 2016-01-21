@@ -2,6 +2,7 @@
 require_once('erreur.php');
 require_once('confirmation.php');
 ?>
+  <form method="post" action="index.php?action=ajouterUtilisateur">
  <div class="contenuteSansFond ">
         <div class="colonneGauche wtitre">
             <h2> Ajouter un utilisateur </h2>
@@ -13,7 +14,6 @@ require_once('confirmation.php');
             </div>
         </div>
     </div>
-  <form method="post" action="index.php?action=ajouterUtilisateur">
     <div class="colonneGauche infosAccueil">
         <div id="contenute" class="Caccueil">
                 <h3>Informations</h3>
@@ -25,6 +25,23 @@ require_once('confirmation.php');
                 
                 <label for="email">Adresse Mail</label>
                 <input required type="text" name="email" placeholder="exemple@gmail.com" />
+
+                <label for="motDePasse">Mot de passe</label>
+                <input required type="password" name="motDePasse" />
+        </div>  
+    </div> 
+
+    <div class="colonneGauche infosAccueil">
+        <div id="contenute" class="Caccueil">
+                <h3>Divers</h3>
+                    <label for="avatar">Avatar</label>
+                    <input  type="text" name="avatar"  placeholder="url" />
+                    
+                    <label for="profession">Profession</label>
+                    <input  type="text" name="profession" placeholder="profession" />
+                    
+                    <label for="divers">Divers</label>
+                    <input type="text" name="divers" placeholder="divers" />
         </div>  
     </div> 
 
@@ -43,15 +60,15 @@ require_once('confirmation.php');
             <label for="ville">Ville</label>
             <input type="text" name="ville" placeholder="ville" />
 
+            <label for="ville">Département</label>
+            <input type="text" name="nomDepartement"  />
+
+
+            <label for="ville">Région</label>
+            <input type="text" name="nomRegion"  />
+
             <h3>Niveau de l'utilisateur</h3>
-            <input type="text" name="libelle_niveau" list="niveauUser">
-            <datalist id="niveauUser">
-                <?php
-                    foreach ($allNiveau as $niveau) {
-                        echo "<option value=".$niveau["libelle"].">".$niveau["libelle"]."</option>";
-                    }
-                ?>
-            </datalist>
+            <input required type="text" name="libelle_niveau" list="niveauUser">
         </div>
     </div>
 </form>

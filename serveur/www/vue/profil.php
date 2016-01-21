@@ -31,14 +31,14 @@ require_once('confirmation.php'); ?>
     <div class="colonneGauche infosAccueil">
         <div id="contenute" class="Caccueil">
                 <h3>Divers</h3>
-                    <label for="nom">Avatar</label>
+                    <label for="avatar">Avatar</label>
                     <img src="<?php echo $utilisateurConnecter->avatar; ?>">
                     <input  type="text" name="avatar" value="<?php echo $utilisateurConnecter->avatar;?>" />
                     
-                    <label for="prenom">Profession</label>
+                    <label for="profession">Profession</label>
                     <input  type="text" name="profession" value="<?php echo $utilisateurConnecter->profession;?>" />
                     
-                    <label for="email">Divers</label>
+                    <label for="divers">Divers</label>
                     <input type="text" name="divers" value="<?php echo $utilisateurConnecter->divers;?>" />
         </div>  
     </div> 
@@ -60,7 +60,7 @@ require_once('confirmation.php'); ?>
             <input type="text" name="nomVille" value="<?php echo $utilisateurConnecter->nomVille;?>" />
 
             <label for="ville">Département</label>
-            <input type="text" name="nomDepartement" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
+            <input type="text" name="nomDepartement" value="<?php echo $utilisateurConnecter->nomDepartement;?>" />
 
 
             <label for="ville">Région</label>

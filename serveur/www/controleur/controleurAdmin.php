@@ -114,24 +114,7 @@ class controleurAdmin {
                 require_once('vue/ajoutUtilisateur.php');
                 return;
             }
-        if(!isset($_POST['emailPerso'])|| $_POST['emailPerso']==""){
-            $vueErreur[] = "Veuiller renseigner une adresse mail.";
-            require_once('vue/ajoutUtilisateur.php');
-            return;
-        }
-        else
-            if(validation::validerEmail($_POST['emailPerso'])){
-                $emailPerso = nettoyage::nettoyerChaine($_POST['emailPerso']);
-                if(modelUtilisateur::verifierEmailNonPresent($emailPerso)){
-                    $vueErreur[] = "Un utilisateur existe déjà avec l'adresse emailPerso correspondante.";
-                    require_once('vue/ajoutUtilisateur.php');
-                    return;
-                }
-            }else{
-                $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
-                require_once('vue/ajoutUtilisateur.php');
-                return;
-            }
+       
 
         if(isset($_POST['numRue']))
             $numRue=nettoyage::nettoyerChaine($_POST['numRue']);
@@ -144,9 +127,9 @@ class controleurAdmin {
             $nomRue=NULL;
 
         if(isset($_POST['codePostal']))
-            $code_postal=nettoyage::nettoyerChaine($_POST['code_postal']);
+            $codePostal=nettoyage::nettoyerChaine($_POST['code_postal']);
         else
-            $code_postal=NULL;
+            $codePostal=NULL;
 
         if(isset($_POST['nomVille']))
             $nomVille=nettoyage::nettoyerChaine($_POST['nomVille']);
@@ -173,6 +156,11 @@ class controleurAdmin {
         else
             $profession=NULL;
 
+        if(isset($_POST['avatar']))
+            $avatar=nettoyage::nettoyerChaine($_POST['avatar']);
+        else
+            $avatar=NULL;
+
         if(isset($_POST['divers']))
             $divers=nettoyage::nettoyerChaine($_POST['divers']);
         else
@@ -192,13 +180,13 @@ class controleurAdmin {
 
 
         try{
-            modelUtilisateur::creerUtilisateur($email, $emailPerso,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
+            modelUtilisateur::creerUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
             
             $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
             require_once('vue/ajoutUtilisateur.php');
         } catch(PDOException $ex){
-            $vueErreur[] = "Erreur base de donnée, PDOException";
+            $vueErreur[] = "Erreur base de donnée, PDOxception";
             require_once('vue/ajoutUtilisateur.php');
         }
 
@@ -217,7 +205,7 @@ class controleurAdmin {
         
         try{
 
-            return modelUtilisateur::supprimerUtilisateur($email);
+            modelUtilisateur::supprimerUtilisateur($email);
             $vueConfirmation[] = "L'utilisateur à bien été suprimé.";
             require_once('vue/vueConfirmation.php');
 
