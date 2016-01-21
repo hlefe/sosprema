@@ -31,6 +31,7 @@ class utilisateur {
     private $nomVille;
     private $nomDepartement;
     private $nomRegion;
+    private $motDePasse;
 
     public function __get($property) {
         if ('userId' == $property) {
@@ -73,6 +74,8 @@ class utilisateur {
     public function __set($property, $value) {
         if ('email' == $property) {
             $this->email = $value;
+        } elseif ('motDePasse' == $property) {
+            $this->motDePasse = $value;
         } elseif ('userId' == $property) {
             $this->userId = $value;
         } elseif ('nom' == $property) {
@@ -113,6 +116,8 @@ class utilisateur {
         foreach ($param as $key=>$value){
             if ('email' == $key) {
                 $this->email = $value;
+            } elseif ('motDePasse' == $key) {
+                $this->motDePasse = $value;
             } elseif ('idUtilisateur' == $key) {
                 $this->userId = $value;
             } elseif ('nom' == $key) {

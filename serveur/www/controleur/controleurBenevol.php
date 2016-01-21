@@ -88,6 +88,7 @@ class controleurBenevol {
                         if ($utilisateur != FALSE) {
                             $_SESSION['utilisateurConnecter'] = $utilisateur;
                             $utilisateurConnecter = $utilisateur;
+
                             if($utilisateurConnecter->verifierMotDePasse('SosPrema')){
                                 $vueConfirmation[]="Bienvenue pour votre premiére connexion, veuiller modifier votre mot de passe.";
                                 require_once('vue/modifierMDP.php');
