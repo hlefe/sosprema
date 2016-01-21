@@ -59,12 +59,12 @@ class modelUtilisateur {
         $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
     }
 
-    public static function modifierUtilisateur($email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
-        
+    public static function modifierUtilisateur($id_utilisateur,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
         $region = new regionGateway();
         $ville = new villeGateway();
         $departement = new departementGateway();
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -75,6 +75,8 @@ class modelUtilisateur {
         if($region->rechercherRegion($nomRegion)==NULL){
             $region->ajouterRegion($nomRegion);
 =======
+=======
+>>>>>>> 4671e41... Encore une vingtaine d'erreurs debuggées
         if($region->rechercherRegion($nomRegion)==NULL){
             $region->ajouterRegion($nomRegion);
         }
@@ -83,13 +85,11 @@ class modelUtilisateur {
             $ville->ajouterVille($nomVille);
 >>>>>>> ce53088... voila pour l'erreur que tu as eu
         }
-
         if($departement->rechercherDepartement($nomDepartement)==NULL){
             $departement->ajouterDepartement($nomDepartement);
         }
-
         $utilisateurGateway = new utilisateurGateway();
-        $utilisateur = $utilisateurGateway->modifierUtilisateur($email, $emailPerso,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $utilisateur = $utilisateurGateway->modifierUtilisateur($id_utilisateur,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
     }
 

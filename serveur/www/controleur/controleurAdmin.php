@@ -229,7 +229,6 @@ class controleurAdmin {
 
     public function vueAdminModifierUtilisateur(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-
         if(!isset($_GET['mail'])){
             $vueErreur[] = "Veuiller renseigner une adresse mail.";
             require_once('vue/vueErreur.php');
@@ -251,7 +250,6 @@ class controleurAdmin {
     }
 
     public function adminModifierUtilisateur(){
-        
         if(isset($_SESSION['utilisateurConnecter'])){
             $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         }else{
@@ -346,7 +344,6 @@ class controleurAdmin {
             $divers=nettoyage::nettoyerChaine($_POST['divers']);
         else
             $divers=NULL;
-
         if(isset($_POST['libelle_niveau']))
             $idNiveau=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
@@ -358,13 +355,17 @@ class controleurAdmin {
         else{
             $idNiveau=modelNiveau::rechercherId('utilisateur');
         }
-
-
         try{
+<<<<<<< HEAD
             modelUtilisateur::modifierUtilisateur($email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $code_postal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
             
             $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
+=======
+            modelUtilisateur::modifierUtilisateur($utilisateur->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $code_postal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
+            $vueConfirmation[] = "L'utilisateur à bien été modifié.";
+>>>>>>> 4671e41... Encore une vingtaine d'erreurs debuggées
             require_once('vue/userEdit.php');
         } catch(PDOException $ex){
             $vueErreur[] = "Erreur base de donnée, PDOException";

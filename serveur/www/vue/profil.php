@@ -48,16 +48,19 @@ require_once('confirmation.php'); ?>
             <h3>Adresse</h3>
     
             <label for="num_rue">Numéro de rue</label>
-            <input type="text" name="num_rue" value="<?php echo $utilisateurConnecter->numRue;?>" />
+            <input type="text" name="numRue" value="<?php echo $utilisateurConnecter->numRue;?>" />
             
             <label for="nom_rue">Nom de rue</label>
-            <input type="text" name="nom_rue" value="<?php echo $utilisateurConnecter->nomRue;?>" />
+            <input type="text" name="nomRue" value="<?php echo $utilisateurConnecter->nomRue;?>" />
             
             <label for="code_postal">Code postal</label>
-            <input type="text" name="code_postal" value="<?php echo $utilisateurConnecter->codePostal;?>" />
+            <input type="text" name="codePostal" value="<?php echo $utilisateurConnecter->codePostal;?>" />
 
             <label for="ville">Ville</label>
-            <input type="text" name="ville" value="<?php echo $utilisateurConnecter->nomVille;?>" />
+            <input type="text" name="nomVille" value="<?php echo $utilisateurConnecter->nomVille;?>" />
+
+            <label for="ville">Région</label>
+            <input type="text" name="nomRegion" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
         </div>
     </div>
 </form>

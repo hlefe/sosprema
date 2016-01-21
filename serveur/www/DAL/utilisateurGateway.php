@@ -116,29 +116,43 @@ class utilisateurGateway {
         return $result;
     }
 
-    public function modifierUtilisateur($id_utilisateur, $email, $emailPerso,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+    public function modifierUtilisateur($id_utilisateur, $email, $nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
-        $querry = 'UPDATE utilisateur SET email = :email, emailPerso = :emailPerso,nom = :nom,prenom=prenom,dateDeNaissance=:dateDeNaissance,nomRue=:nomRue,numRue=:numRue,
-        codePostal=:codePostal,profession=:profession,divers=:divers,avatar=:avatar,idNiveau=:idNiveau,idFamille=:idFamille,nomVille=:nomVille,nomDepartement=:nomDepartement,nomRegion=:nomRegion
-        WHERE idUtilisateur=:idUtilisateur';
-        $this->bd->executeQuerry($querry, array(':idUtilisateur'=>array($idUtilisateur,PDO::PARAM_STR),
+        $querry = 'UPDATE utilisateur   SET     email = :email, 
+                                                nom = :nom,
+                                                prenom=:prenom,
+                                                dateDeNaissance=:dateDeNaissance,
+                                                nomRue=:nomRue,
+                                                numRue=:numRue,
+                                                codePostal=:codePostal,
+                                                profession=:profession,
+                                                divers=:divers,
+                                                avatar=:avatar,
+                                                idNiveau=:idNiveau,
+                                                nomVille=:nomVille,
+                                                nomDepartement=:nomDepartement,
+                                                nomRegion=:nomRegion
+                                        WHERE   idUtilisateur=:idUtilisateur';
+        try{
+            $this->bd->executeQuerry($querry, array(':idUtilisateur'=>array($id_utilisateur,PDO::PARAM_STR),
                                                 ':email'=>array($email,PDO::PARAM_STR),
-                                                ':emailPerso'=>array($emailPerso,PDO::PARAM_STR),
                                                 ':nom'=>array($nom,PDO::PARAM_STR),
                                                 ':prenom'=>array($prenom,PDO::PARAM_STR),
                                                 ':dateDeNaissance'=>array($dateDeNaissance,PDO::PARAM_STR),
                                                 ':numRue'=>array($numRue,PDO::PARAM_INT),
                                                 ':nomRue'=>array($nomRue,PDO::PARAM_STR),
                                                 ':codePostal'=>array($codePostal,PDO::PARAM_INT),
-                                                ':profession'=>array($profession,PDO::PARAM_INT),
-                                                ':divers'=>array($divers,PDO::PARAM_INT),
-                                                ':avatar'=>array($avatar,PDO::PARAM_INT),
-                                                ':ville'=>array($ville,PDO::PARAM_STR),
+                                                ':profession'=>array($profession,PDO::PARAM_STR),
+                                                ':divers'=>array($divers,PDO::PARAM_STR),
+                                                ':avatar'=>array($avatar,PDO::PARAM_STR),
                                                 ':idNiveau'=>array($idNiveau,PDO::PARAM_STR),
-                                                ':idFamille'=>array($idFamille,PDO::PARAM_STR),
                                                 ':nomVille'=>array($nomVille,PDO::PARAM_STR),
                                                 ':nomDepartement'=>array($nomDepartement,PDO::PARAM_STR),
                                                 ':nomRegion'=>array($nomRegion,PDO::PARAM_STR)));
+        }catch(Exception $e)
+{
+        die('Erreur : '.$e->getMessage());
+}
     }
 
     public function modifierMotDePasse($idUser, $newMDP){

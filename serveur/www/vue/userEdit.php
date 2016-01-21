@@ -60,7 +60,13 @@ require_once('confirmation.php'); ?>
             <input type="text" name="code_postal" value="<?php echo $utilisateur->codePostal;?>" />
 
             <label for="ville">Ville</label>
-            <input type="text" name="ville" value="<?php echo $utilisateur->nomVille;?>" />
+            <input type="text" name="nomVille" value="<?php echo $utilisateur->nomVille;?>" />
+
+             <label for="ville">Département</label>
+            <input type="text" name="nomDepartement" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
+
+            <label for="ville">Région</label>
+            <input type="text" name="nomRegion" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
         </div>
     </div>
 </form>
