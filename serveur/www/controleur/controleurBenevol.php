@@ -165,7 +165,7 @@ class controleurBenevol {
             $nomRue=NULL;
 
         if(isset($_POST['codePostal']))
-            $code_postal=nettoyage::nettoyerChaine($_POST['code_postal']);
+            $code_postal=nettoyage::nettoyerChaine($_POST['codePostal']);
         else
             $code_postal=NULL;
 
@@ -211,15 +211,15 @@ class controleurBenevol {
                 return;
             }
         else{
-            $idNiveau=modelNiveau::rechercherId('utilisateur');
+            $idNiveau = $utilisateurConnecter->idNiveau;
         }
 
 
         try{
-            modelUtilisateur::modifierUtilisateur($email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+            $_SESSION['utilisateurConnecter'] = modelUtilisateur::modifierUtilisateur($utilisateurConnecter->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $code_postal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
-            
-            $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
+            $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+            $vueConfirmation[] = "L'utilisateur à bien été modifié.";
             require_once('vue/profil.php');
         } catch(PDOException $ex){
             $vueErreur[] = $ex;

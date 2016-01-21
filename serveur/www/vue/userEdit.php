@@ -35,7 +35,7 @@ require_once('confirmation.php'); ?>
         <div id="contenute" class="Caccueil">
                 <h3>Divers</h3>
                     <label for="nom">Avatar</label>
-                    <img src="<?php echo $utilisateurConnecter->profession; ?>">
+                    <img src="<?php echo $utilisateurConnecter->avatar; ?>">
                     <input  type="text" name="avatar" value="<?php echo $utilisateurConnecter->avatar;?>" />
                     
                     <label for="prenom">Profession</label>

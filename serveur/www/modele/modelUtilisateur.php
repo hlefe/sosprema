@@ -80,7 +80,6 @@ class modelUtilisateur {
         if($region->rechercherRegion($nomRegion)==NULL){
             $region->ajouterRegion($nomRegion);
         }
-
         if($ville->rechercherVille($nomVille)==NULL){
             $ville->ajouterVille($nomVille);
 >>>>>>> ce53088... voila pour l'erreur que tu as eu

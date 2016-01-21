@@ -32,7 +32,7 @@ require_once('confirmation.php'); ?>
         <div id="contenute" class="Caccueil">
                 <h3>Divers</h3>
                     <label for="nom">Avatar</label>
-                    <img src="<?php echo $utilisateurConnecter->profession; ?>">
+                    <img src="<?php echo $utilisateurConnecter->avatar; ?>">
                     <input  type="text" name="avatar" value="<?php echo $utilisateurConnecter->avatar;?>" />
                     
                     <label for="prenom">Profession</label>
@@ -58,6 +58,10 @@ require_once('confirmation.php'); ?>
 
             <label for="ville">Ville</label>
             <input type="text" name="nomVille" value="<?php echo $utilisateurConnecter->nomVille;?>" />
+
+            <label for="ville">Département</label>
+            <input type="text" name="nomDepartement" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
+
 
             <label for="ville">Région</label>
             <input type="text" name="nomRegion" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
