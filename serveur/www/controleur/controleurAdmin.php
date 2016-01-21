@@ -357,12 +357,16 @@ class controleurAdmin {
         }
         try{
 <<<<<<< HEAD
+<<<<<<< HEAD
             modelUtilisateur::modifierUtilisateur($email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $code_postal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
             
             $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
 =======
             modelUtilisateur::modifierUtilisateur($utilisateur->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+=======
+            $utilisateur = modelUtilisateur::modifierUtilisateur($utilisateur->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+>>>>>>> 671b99e... Erreur à la sauvegarde terrminée
         $code_postal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
             $vueConfirmation[] = "L'utilisateur à bien été modifié.";
 >>>>>>> 4671e41... Encore une vingtaine d'erreurs debuggées

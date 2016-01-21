@@ -89,8 +89,10 @@ class modelUtilisateur {
             $departement->ajouterDepartement($nomDepartement);
         }
         $utilisateurGateway = new utilisateurGateway();
-        $utilisateur = $utilisateurGateway->modifierUtilisateur($id_utilisateur,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $utilisateurGateway->modifierUtilisateur($id_utilisateur,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
+        $utilisateur = $utilisateurGateway->rechercheUtilisateurId($id_utilisateur);
+        return $utilisateur;
     }
 
 

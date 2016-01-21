@@ -113,7 +113,7 @@ class utilisateur {
         foreach ($param as $key=>$value){
             if ('email' == $key) {
                 $this->email = $value;
-            } elseif ('userId' == $key) {
+            } elseif ('idUtilisateur' == $key) {
                 $this->userId = $value;
             } elseif ('nom' == $key) {
                 $this->nom  = $value;

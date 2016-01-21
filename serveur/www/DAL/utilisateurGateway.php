@@ -57,19 +57,17 @@ class utilisateurGateway {
         if ($result == false){
             return false;
         }
-
         return $utilisateur = new utilisateur($result);
     }
 
     public function rechercheUtilisateurId($id_utilisateur)
     {        
-        $querry = 'SELECT * FROM utilisateur WHERE id_utilisateur=:id_utilisateur';
-        $this->bd->executeQuerry($querry, array(':id_utilisateur'=>array($id_utilisateur,PDO::PARAM_STR)));
+        $querry = 'SELECT * FROM utilisateur WHERE idUtilisateur=:idUtilisateur';
+        $this->bd->executeQuerry($querry, array(':idUtilisateur'=>array($id_utilisateur,PDO::PARAM_STR)));
         $result = $this->bd->getResult();
         if ($result == false){
             return false;
         }
-
         $utilisateur = new utilisateur($result);
         return $utilisateur;
     }
@@ -150,9 +148,9 @@ class utilisateurGateway {
                                                 ':nomDepartement'=>array($nomDepartement,PDO::PARAM_STR),
                                                 ':nomRegion'=>array($nomRegion,PDO::PARAM_STR)));
         }catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-}
+        {
+            die('Erreur : '.$e->getMessage());
+        }
     }
 
     public function modifierMotDePasse($idUser, $newMDP){
