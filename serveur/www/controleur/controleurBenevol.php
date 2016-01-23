@@ -68,6 +68,7 @@ class controleurBenevol {
             }
         } catch(PDOException $ex){
             $vueErreur[] = "Erreur base de donnée, PDOException";
+            $vueErreur[] = $ex;
             require_once('vue/vueErreur.php');
         } catch (Exception $ex) {
             $vueErreur[] = "Erreur inattendue";
@@ -75,6 +76,7 @@ class controleurBenevol {
         }
     }
 
+    //permet de valider le formulaire de connexion et de créer la session de l'utilisateur.
     public function validationFormulaireConnexion() {
         if (isset($_POST['emailConnexion']) && !$_POST['emailConnexion']=="") {
             
@@ -94,114 +96,43 @@ class controleurBenevol {
                                 require_once('vue/modifierMDP.php');
                                 return;
                             }
-                            require_once('vue/accueil.php');
-                            return;
-                        } else {
-                            $vueErreur[] = "erreur de mot de passe ou d'adresse mail.";
-                            require_once('vue/login.php');
-                            return;
-                        }
+                            
+                        } 
                     }
-                }else
-                    $vueErreur[] = "veuiller renseigner un mot de passe.";
-                    require_once('vue/login.php');
-                    return;
+                }
             }
-        } else {
-            $vueErreur[] = "veuiller renseigner une adresse mail.";
-            require_once('vue/login.php');
-            return;
         }
+        $vueErreur[] = "votre adresse email ou votre mot de passe est invalide.";
+        require_once('vue/login.php');
     }
 
+    // permet à l'utilisateur de modifier ses données perso.
     public function modifierUtilisateur() {
         
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
 
-        if(!isset($_POST['nom'])|| $_POST['nom']==""){
-            $vueErreur[] = "Veuiller renseigner un nom.";
+
+        try{
+            $nom = variableExterne::verifChampObligatoire('nom','nom');
+            $prenom =variableExterne::verifChampObligatoire('prenom','prenom');
+            $email = variableExterne::verifChampEmail('email', $utilisateurConnecter->email);
+        }catch(Exception $e){
+            $vueErreur[]=$e;
             require_once('vue/profil.php');
             return;
         }
-        else
-            $nom = nettoyage::nettoyerChaine($_POST['nom']);
-
-        if(!isset($_POST['prenom'])|| $_POST['prenom']==""){
-            $vueErreur[] = "Veuiller renseigner un prenom.";
-            require_once('vue/profil.php');
-            return;
-        }
-        else
-            $prenom = nettoyage::nettoyerChaine($_POST['prenom']);
-
         
-        if(!isset($_POST['email'])|| $_POST['email']==""){
-            $vueErreur[] = "Veuiller renseigner une adresse mail.";
-            require_once('vue/profil.php');
-            return;
-        }
-        else
-            if(validation::validerEmail($_POST['email'])){
-                $email = nettoyage::nettoyerChaine($_POST['email']);
-                if($email != $utilisateurConnecter->email){
-                    if(modelUtilisateur::verifierEmailNonPresent($email)){
-                        $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
-                        require_once('vue/profil.php');
-                        return;
-                    }
-                }
-            }else{
-                $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
-                require_once('vue/profil.php');
-                return;
-        }
-        if(isset($_POST['numRue']))
-            $numRue=nettoyage::nettoyerChaine($_POST['numRue']);
-        else
-            $numRue=NULL;
+            $numRue=variableExterne::verifChampOptionnel('numRue');
+            $nomRue=variableExterne::verifChampOptionnel('nomRue');
+            $code_postal=variableExterne::verifChampOptionnel('codePostal');
+            $nomVille=variableExterne::verifChampOptionnel('nomVille');
+            $nomRegion=variableExterne::verifChampOptionnel('nomRegion');
+            $nomDepartement=variableExterne::verifChampOptionnel('nomDepartement');
+            $dateDeNaissance=variableExterne::verifChampOptionnel('dateDeNaissance');
+            $avatar=variableExterne::verifChampOptionnel('avatar');     
+            $profession=variableExterne::verifChampOptionnel('profession');
+            $divers=variableExterne::verifChampOptionnel('divers');
 
-        if(isset($_POST['nomRue']))
-            $nomRue=nettoyage::nettoyerChaine($_POST['nomRue']);
-        else
-            $nomRue=NULL;
-
-        if(isset($_POST['codePostal']))
-            $code_postal=nettoyage::nettoyerChaine($_POST['codePostal']);
-        else
-            $code_postal=NULL;
-
-        if(isset($_POST['nomVille']))
-            $nomVille=nettoyage::nettoyerChaine($_POST['nomVille']);
-        else
-            $nomVille=NULL;
-
-         if(isset($_POST['nomRegion']))
-            $nomRegion=nettoyage::nettoyerChaine($_POST['nomRegion']);
-        else
-            $nomRegion=NULL;
-
-         if(isset($_POST['nomDepartement']))
-            $nomDepartement=nettoyage::nettoyerChaine($_POST['nomDepartement']);
-        else
-            $nomDepartement=NULL;
-
-        if(isset($_POST['dateDeNaissance']))
-            $dateDeNaissance=nettoyage::nettoyerChaine($_POST['dateDeNaissance']);
-        else
-            $dateDeNaissance=NULL;
-        if(isset($_POST['avatar']))
-            $avatar=nettoyage::nettoyerChaine($_POST['avatar']);
-        else
-            $avatar=NULL;
-        if(isset($_POST['profession']))
-            $profession=nettoyage::nettoyerChaine($_POST['profession']);
-        else
-            $profession=NULL;
-
-        if(isset($_POST['divers']))
-            $divers=nettoyage::nettoyerChaine($_POST['divers']);
-        else
-            $divers=NULL;
 
         if(isset($_POST['libelle_niveau']))
             $idNiveau=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
@@ -224,16 +155,18 @@ class controleurBenevol {
             require_once('vue/profil.php');
         } catch(PDOException $ex){
             $vueErreur[] = "Erreur base de donnée, PDOException";
+            $vueErreur[] = $ex;
             require_once('vue/profil.php');
         }
     }
 
+    //permet à l'utilisateur de modifier son mot de passe.
     public function modifierMotDePasse(){
         
         if(isset($_SESSION['utilisateurConnecter'])){
             $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         }else{
-            $vueErreur[] = "vous n'aviez pas à avoir accés à cette partie du site";
+            $vueErreur[] = "vous n'avez pas à avoir accés à cette partie du site";
             require_once('vue/login.php');
             return;
         }
@@ -252,38 +185,25 @@ class controleurBenevol {
                             if(validation::validerPassword($mot_de_passe) && $mot_de_passe != 'SosPrema'){
                                 $_SESSION['utilisateurConnecter'] = modelUtilisateur::modifierMotDePasse($_SESSION['utilisateurConnecter']->userId, $mot_de_passe);
                                 $vueConfirmation[] = "votre mot de passe à bien été modifié.";
-                                require_once('vue/modifierMDP.php');
-                                return;
                             }else{
                                 $vueErreur[] = "Nouveau mot de passe invalide.";
-                                require_once('vue/modifierMDP.php');
-                                return;
                             }
                         }else{
                             $vueErreur[] = "le mot de passe de vérification ne correspond pas au nouveau mot de passe.";
-                            require_once('vue/modifierMDP.php');
-                            return;
                         }
                     }else{
                         $vueErreur[] = "veuiller renseigner le champ de vérification du nouveau mot de passes.";
-                        require_once('vue/modifierMDP.php');
-                        return;
                     }
                 }else{
                     $vueErreur[] = "veuiller renseigner le champ pour le nouveau mot de passe.";
-                    require_once('vue/modifierMDP.php');
-                    return;
                 }
             } else{
                 $vueErreur[] = "l'ancien mot de passe est invalide.";
-                require_once('vue/modifierMDP.php');
-                return;
             }
         }else{
             $vueErreur[] = "veuiller renseigner votre ancien mot de passe.";
-            require_once('vue/modifierMDP.php');
-            return;
         }
+            require_once('vue/modifierMDP.php');
     }
 
     public function detruireSession(){

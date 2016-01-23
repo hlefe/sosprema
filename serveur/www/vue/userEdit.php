@@ -20,6 +20,7 @@ require_once('confirmation.php'); ?>
     <div class="colonneGauche infosAccueil">
         <div id="contenute" class="Caccueil">
                 <h3>Informations</h3>
+
                     <label for="nom">Nom</label>
                     <input required type="text" name="nom" value="<?php echo $utilisateur->nom;?>" />
                     

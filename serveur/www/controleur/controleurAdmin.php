@@ -68,103 +68,31 @@ class controleurAdmin {
         }
     }
 
+    // permet à l'administrateur d'ajouter un utilisateur.
     public function ajouterUtilisateur() {
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
 
-        if(!isset($_POST['nom'])|| $_POST['nom']==""){
-            $vueErreur[] = "Veuiller renseigner un nom.";
-            require_once('vue/ajoutUtilisateur.php');
+        try{
+            $nom = variableExterne::verifChampObligatoire('nom','nom');
+            $prenom =variableExterne::verifChampObligatoire('prenom','prenom');
+            $motDePasse = variableExterne::verifChampObligatoire('mot de passe','motDePasse');
+            $email = variableExterne::verifChampEmail('email', null);
+        }catch(Exception $e){
+            $vueErreur[]=$e;
+            require_once('vue/profil.php');
             return;
         }
-        else
-            $nom = nettoyage::nettoyerChaine($_POST['nom']);
 
-        if(!isset($_POST['prenom'])|| $_POST['prenom']==""){
-            $vueErreur[] = "Veuiller renseigner un prenom.";
-            require_once('vue/ajoutUtilisateur.php');
-            return;
-        }
-        else
-            $prenom = nettoyage::nettoyerChaine($_POST['prenom']);
-
-        if(!isset($_POST['motDePasse'])|| $_POST['motDePasse']==""){
-            $vueErreur[] = "Veuiller renseigner un motDePasse.";
-            require_once('vue/ajoutUtilisateur.php');
-            return;
-        }
-        else
-            $motDePasse = nettoyage::nettoyerChaine($_POST['motDePasse']);
-
-        
-        if(!isset($_POST['email'])|| $_POST['email']==""){
-            $vueErreur[] = "Veuiller renseigner une adresse mail.";
-            require_once('vue/ajoutUtilisateur.php');
-            return;
-        }
-        else
-            if(validation::validerEmail($_POST['email'])){
-                $email = nettoyage::nettoyerChaine($_POST['email']);
-                if(modelUtilisateur::verifierEmailNonPresent($email)){
-                    $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
-                    require_once('vue/ajoutUtilisateur.php');
-                    return;
-                }
-            }else{
-                $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
-                require_once('vue/ajoutUtilisateur.php');
-                return;
-            }
-       
-
-        if(isset($_POST['numRue']))
-            $numRue=nettoyage::nettoyerChaine($_POST['numRue']);
-        else
-            $numRue=NULL;
-
-        if(isset($_POST['nomRue']))
-            $nomRue=nettoyage::nettoyerChaine($_POST['nomRue']);
-        else
-            $nomRue=NULL;
-
-        if(isset($_POST['codePostal']))
-            $codePostal=nettoyage::nettoyerChaine($_POST['code_postal']);
-        else
-            $codePostal=NULL;
-
-        if(isset($_POST['nomVille']))
-            $nomVille=nettoyage::nettoyerChaine($_POST['nomVille']);
-        else
-            $nomVille=NULL;
-
-         if(isset($_POST['nomRegion']))
-            $nomRegion=nettoyage::nettoyerChaine($_POST['nomRegion']);
-        else
-            $nomRegion=NULL;
-
-         if(isset($_POST['nomDepartement']))
-            $nomDepartement=nettoyage::nettoyerChaine($_POST['nomDepartement']);
-        else
-            $nomDepartement=NULL;
-
-        if(isset($_POST['dateDeNaissance']))
-            $dateDeNaissance=nettoyage::nettoyerChaine($_POST['dateDeNaissance']);
-        else
-            $dateDeNaissance=NULL;
-
-        if(isset($_POST['profession']))
-            $profession=nettoyage::nettoyerChaine($_POST['profession']);
-        else
-            $profession=NULL;
-
-        if(isset($_POST['avatar']))
-            $avatar=nettoyage::nettoyerChaine($_POST['avatar']);
-        else
-            $avatar=NULL;
-
-        if(isset($_POST['divers']))
-            $divers=nettoyage::nettoyerChaine($_POST['divers']);
-        else
-            $divers=NULL;
+            $numRue=variableExterne::verifChampOptionnel('numRue');
+            $nomRue=variableExterne::verifChampOptionnel('nomRue');
+            $codePostal=variableExterne::verifChampOptionnel('codePostal');
+            $nomVille=variableExterne::verifChampOptionnel('nomVille');
+            $nomRegion=variableExterne::verifChampOptionnel('nomRegion');
+            $nomDepartement=variableExterne::verifChampOptionnel('nomDepartement');
+            $dateDeNaissance=variableExterne::verifChampOptionnel('dateDeNaissance');
+            $avatar=variableExterne::verifChampOptionnel('avatar');     
+            $profession=variableExterne::verifChampOptionnel('profession');
+            $divers=variableExterne::verifChampOptionnel('divers');
 
         if(isset($_POST['libelle_niveau']))
             $idNiveau=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
@@ -173,8 +101,7 @@ class controleurAdmin {
                 $vueErreur[] = "Aucun niveau utilisateur correspondant à se libelle";
                 require_once('vue/ajoutUtilisateur.php');
                 return;
-            }
-        else{
+            } else{
             $idNiveau=modelNiveau::rechercherId('utilisateur');
         }
 
@@ -192,6 +119,7 @@ class controleurAdmin {
 
     }
 
+    //permet la supression d'un utilisateur grace à son adresse email.
     public function supprimerUtilisateur(){
          $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
 
@@ -207,16 +135,19 @@ class controleurAdmin {
 
             modelUtilisateur::supprimerUtilisateur($email);
             $vueConfirmation[] = "L'utilisateur à bien été suprimé.";
-            require_once('vue/vueConfirmation.php');
-
+            $listeUsers = modelUtilisateur::afficherToutUtilisateur();
+            require_once('vue/listeUtilisateurs.php');
         } catch(PDOException $ex){
             $vueErreur[] = "Erreur base de donnée, PDOException";
-            require_once('vue/erreur.php');
+            $listeUsers = modelUtilisateur::afficherToutUtilisateur();
+            require_once('vue/listeUtilisateurs.php');
         }
     }
 
+    //fonction permettant l'apelle à la vue pour modifier un utilisateur.
     public function vueAdminModifierUtilisateur(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        
         if(!isset($_GET['mail'])){
             $vueErreur[] = "Veuiller renseigner une adresse mail.";
             require_once('vue/vueErreur.php');
@@ -237,113 +168,55 @@ class controleurAdmin {
         }
     }
 
+    //fonction permettant à un aministrateur de modifier un utilisateur.
     public function adminModifierUtilisateur(){
         if(isset($_SESSION['utilisateurConnecter'])){
             $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         }else{
-            $vueErreur[] = "vous n'aviez pas à avoir accés à cette partie du site";
+            $vueErreur[] = "vous n'avez pas à avoir accés à cette partie du site";
             require_once('vue/login.php');
             return;
         }
-
-        $utilisateur= $_SESSION['utilisateurModifie'];
-
-        if(!isset($_POST['nom']) || $_POST['nom']==""){
-            $vueErreur[] = "Veuiller renseigner un nom.";
-            require_once('vue/userEdit.php');
+        $utilisateur=$_SESSION['utilisateurModifie'];
+        try{
+            $nom = variableExterne::verifChampObligatoire('nom','nom');
+            $prenom =variableExterne::verifChampObligatoire('prenom','prenom');
+            $email = variableExterne::verifChampEmail('email', $utilisateur->email);
+        }catch(Exception $e){
+            $vueErreur[]=$e;
+            require_once('vue/profil.php');
             return;
         }
-        else
-            $nom = nettoyage::nettoyerChaine($_POST['nom']);
+        
+            $numRue=variableExterne::verifChampOptionnel('numRue');
+            $nomRue=variableExterne::verifChampOptionnel('nomRue');
+            $code_postal=variableExterne::verifChampOptionnel('codePostal');
+            $nomVille=variableExterne::verifChampOptionnel('nomVille');
+            $nomRegion=variableExterne::verifChampOptionnel('nomRegion');
+            $nomDepartement=variableExterne::verifChampOptionnel('nomDepartement');
+            $dateDeNaissance=variableExterne::verifChampOptionnel('dateDeNaissance');
+            $avatar=variableExterne::verifChampOptionnel('avatar');     
+            $profession=variableExterne::verifChampOptionnel('profession');
+            $divers=variableExterne::verifChampOptionnel('divers');
 
-        if(!isset($_POST['prenom'])|| $_POST['prenom']==""){
-            $vueErreur[] = "Veuiller renseigner un prenom.";
-            require_once('vue/userEdit.php');
-            return;
-        }
-        else
-            $prenom = nettoyage::nettoyerChaine($_POST['prenom']);
- 
-        if(!isset($_POST['email'])|| $_POST['email']==""){
-            $vueErreur[] = "Veuiller renseigner une adresse mail.";
-            require_once('vue/userEdit.php');
-            return;
-        }
-        else
-            if(validation::validerEmail($_POST['email'])){
-                $email = nettoyage::nettoyerChaine($_POST['email']);
-                if($email != $utilisateur->email){
-                    if(modelUtilisateur::verifierEmailNonPresent($email)){
-                        $vueErreur[] = "Un utilisateur existe déjà avec l'adresse email correspondante.";
-                        require_once('vue/userEdit.php');
-                        return;
-                    }
-                }
-            }else{
-                $vueErreur[] = "Veuiller renseigner une adresse mail valide.";
-                require_once('vue/userEdit.php');
-                return;
-            }
 
-        if(isset($_POST['numRue']))
-            $numRue=nettoyage::nettoyerChaine($_POST['numRue']);
-        else
-            $numRue=NULL;
-
-        if(isset($_POST['nomRue']))
-            $nomRue=nettoyage::nettoyerChaine($_POST['nomRue']);
-        else
-            $nomRue=NULL;
-
-        if(isset($_POST['codePostal']))
-            $code_postal=nettoyage::nettoyerChaine($_POST['code_postal']);
-        else
-            $code_postal=NULL;
-
-        if(isset($_POST['nomVille']))
-            $nomVille=nettoyage::nettoyerChaine($_POST['nomVille']);
-        else
-            $nomVille=NULL;
-
-         if(isset($_POST['nomRegion']))
-            $nomRegion=nettoyage::nettoyerChaine($_POST['nomRegion']);
-        else
-            $nomRegion=NULL;
-
-         if(isset($_POST['nomDepartement']))
-            $nomDepartement=nettoyage::nettoyerChaine($_POST['nomDepartement']);
-        else
-            $nomDepartement=NULL;
-
-        if(isset($_POST['dateDeNaissance']))
-            $dateDeNaissance=nettoyage::nettoyerChaine($_POST['dateDeNaissance']);
-        else
-            $dateDeNaissance=NULL;
-        if(isset($_POST['avatar']))
-            $avatar=nettoyage::nettoyerChaine($_POST['avatar']);
-        else
-            $avatar=NULL;
-        if(isset($_POST['profession']))
-            $profession=nettoyage::nettoyerChaine($_POST['profession']);
-        else
-            $profession=NULL;
-
-        if(isset($_POST['divers']))
-            $divers=nettoyage::nettoyerChaine($_POST['divers']);
-        else
-            $divers=NULL;
         if(isset($_POST['libelle_niveau']))
             $idNiveau=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
             if($idNiveau=false){
                 $vueErreur[] = "Aucun niveau utilisateur correspondant à se libelle";
-                require_once('vue/userEdit.php');
+                require_once('vue/profil.php');
                 return;
             }
         else{
-            $idNiveau=modelNiveau::rechercherId('utilisateur');
+            $idNiveau = $utilisateur->idNiveau;
+            require_once('vue/profil.php');
+            return;
         }
+        
+        
         try{
+
             $utilisateur = modelUtilisateur::modifierUtilisateur($utilisateur->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $code_postal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
             $vueConfirmation[] = "L'utilisateur à bien été modifié.";
@@ -354,12 +227,14 @@ class controleurAdmin {
         }
     }
 
+    //fonction permettant la récupération de tout les utilisateurs dans la base.
     public function afficherToutUtilisateur(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         $listeUsers = modelUtilisateur::afficherToutUtilisateur();
         require_once('vue/listeUtilisateurs.php');
     }
 
+    //fonction permettant de vérifier si un utilisateur est admin ou non.
      public static function verifierDroit(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try{
