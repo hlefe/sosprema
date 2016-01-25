@@ -1,32 +1,26 @@
 <?php
 
-class departementGateway {
-     private $bd;
+class DepartementGateway {
     
-    public function __construct()
-    {
-        $this->bd = Connexion::getInstance();
-    }
-
-    public function ajouterDepartement($nomDepartement){
+    public static function ajouterDepartement($nomDepartement){
         $querry = 'INSERT INTO departement (nomDepartement) VALUES (:nom)';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nomDepartement,PDO::PARAM_INT)));
+        Connexion::executeQuerry($querry, array(':nom'=>array($nomDepartement,PDO::PARAM_INT)));
     }
 
-    public function rechercherDepartement($nomDepartement){
+    public static function rechercherDepartement($nomDepartement){
         $querry = 'SELECT * FROM departement WHERE nomDepartement=:nom';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nomDepartement,PDO::PARAM_INT)));
-        $result = $this->bd->getResult();
+        Connexion::executeQuerry($querry, array(':nom'=>array($nomDepartement,PDO::PARAM_INT)));
+        $result = Connexion::getResult();
         if ($result == false){
             return false;
         }
         return $result;
     }
 
-    public function getAll(){
+    public static function getAll(){
         $querry = 'SELECT * FROM departement';
-        $this->bd->executeQuerry($querry);
-        $results = $this->bd->getResults();
+        Connexion::executeQuerry($querry);
+        $results = Connexion::getResults();
         return $results;
     }
 }

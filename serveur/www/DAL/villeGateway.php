@@ -1,32 +1,26 @@
 <?php
 
-class villeGateway {
-     private $bd;
+class VilleGateway {
     
-    public function __construct()
-    {
-        $this->bd = Connexion::getInstance();
-    }
-
-    public function ajouterVille($nomVille){
+    public static function ajouterVille($nomVille){
         $querry = 'INSERT INTO ville (nomVille) VALUES (:nom)';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_INT)));
+        Connexion::executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_INT)));
     }
 
-    public function rechercherVille($nomVille){
+    public static function rechercherVille($nomVille){
         $querry = 'SELECT * FROM ville WHERE nomVille=:nom';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_INT)));
-        $result = $this->bd->getResult();
+        Connexion::executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_INT)));
+        $result = Connexion::getResult();
         if ($result == false){
             return false;
         }
         return $result;
     }
 
-    public function getAll(){
+    public static function getAll(){
         $querry = 'SELECT * FROM ville';
-        $this->bd->executeQuerry($querry);
-        $results = $this->bd->getResults();
+        Connexion::executeQuerry($querry);
+        $results = Connexion::getResults();
         return $results;
     }
 }

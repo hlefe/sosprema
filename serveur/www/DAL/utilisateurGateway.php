@@ -1,20 +1,13 @@
 <?php
 
-class utilisateurGateway {
-    
-    private $bd;
-    
-    public function __construct()
-    {
-        $this->bd = Connexion::getInstance();
-    }
+class UtilisateurGateway {
 
-    public function rechercheUtilisateurConnexion($email, $password)
+    public static function rechercheUtilisateurConnexion($email, $password)
     {   
             $querry = 'SELECT * FROM utilisateur WHERE email=:email AND motDePasse=:password';
-            $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
+            Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
                                                     ':password'=>array($password,PDO::PARAM_STR)));
-            $result = $this->bd->getResult();
+            $result = Connexion::getResult();
             if ($result == false){
                 return false;
             }
@@ -22,11 +15,11 @@ class utilisateurGateway {
             return $utilisateur;
     }
 
-    public function rechercheUtilisateurEmail($email)
+    public static function rechercheUtilisateurEmail($email)
     {   
             $querry = 'SELECT * FROM utilisateur WHERE email=:email';
-            $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
-            $result = $this->bd->getResult();
+            Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
+            $result = Connexion::getResult();
             if ($result == false){
                 return false;
             }
@@ -35,22 +28,22 @@ class utilisateurGateway {
         
     }
 
-    public function rechercheUtilisateurNom($nom)
+    public static function rechercheUtilisateurNom($nom)
     {        
         $querry = 'SELECT * FROM utilisateur WHERE nom=:nom';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nom,PDO::PARAM_STR)));
-        $result = $this->bd->getResult();
+        Connexion::executeQuerry($querry, array(':nom'=>array($nom,PDO::PARAM_STR)));
+        $result = Connexion::getResult();
         if ($result == false){
             return false;
         }
         return $utilisateur = new utilisateur($result);
     }
 
-    public function rechercheUtilisateurId($id_utilisateur)
+    public static function rechercheUtilisateurId($id_utilisateur)
     {        
         $querry = 'SELECT * FROM utilisateur WHERE idUtilisateur=:idUtilisateur';
-        $this->bd->executeQuerry($querry, array(':idUtilisateur'=>array($id_utilisateur,PDO::PARAM_STR)));
-        $result = $this->bd->getResult();
+        Connexion::executeQuerry($querry, array(':idUtilisateur'=>array($id_utilisateur,PDO::PARAM_STR)));
+        $result = Connexion::getResult();
         if ($result == false){
             return false;
         }
@@ -58,14 +51,15 @@ class utilisateurGateway {
         return $utilisateur;
     }
 
-    public function insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
+    public static function insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
+        
         $querry = 'INSERT INTO utilisateur (email,nom,prenom,motDePasse,dateDeNaissance,nomRue,numRue,
         codePostal,profession,divers,avatar,idNiveau,nomVille,nomDepartement,nomRegion) 
         VALUES (:email,:nom,:prenom,:motDePasse,:dateDeNaissance,:nomRue,:numRue,
         :codePostal,:profession,:divers,:avatar,:idNiveau,:nomVille,:nomDepartement,:nomRegion)';
 
-        $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
+        Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
                                                 ':nom'=>array($nom,PDO::PARAM_STR),
                                                 ':prenom'=>array($prenom,PDO::PARAM_STR),
                                                 ':motDePasse'=>array($motDePasse,PDO::PARAM_STR),
@@ -82,23 +76,23 @@ class utilisateurGateway {
                                                 ':nomRegion'=>array($nomRegion,PDO::PARAM_STR)));
     }
 
-    public function supprimerUtilisateur($email){        
+    public static function supprimerUtilisateur($email){        
         $querry = 'DELETE FROM utilisateur WHERE email=:email';
-        $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
+        Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
         return true;
     }
 
-    public function afficherToutUtilisateur(){        
+    public static function afficherToutUtilisateur(){        
         $querry = 'SELECT * FROM utilisateur';
-        $this->bd->executeQuerry($querry, array());
-        $result = $this->bd->getResults();
+        Connexion::executeQuerry($querry, array());
+        $result = Connexion::getResults();
         if ($result == false){
             return false;
         }
         return $result;
     }
 
-    public function modifierUtilisateur($id_utilisateur, $email, $nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+    public static function modifierUtilisateur($id_utilisateur, $email, $nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
         $querry = 'UPDATE utilisateur   SET     email = :email, 
                                                 nom = :nom,
@@ -116,7 +110,7 @@ class utilisateurGateway {
                                                 nomRegion=:nomRegion
                                         WHERE   idUtilisateur=:idUtilisateur';
             
-            $this->bd->executeQuerry($querry, array(':idUtilisateur'=>array($id_utilisateur,PDO::PARAM_STR),
+        Connexion::executeQuerry($querry, array(':idUtilisateur'=>array($id_utilisateur,PDO::PARAM_STR),
                                                 ':email'=>array($email,PDO::PARAM_STR),
                                                 ':nom'=>array($nom,PDO::PARAM_STR),
                                                 ':prenom'=>array($prenom,PDO::PARAM_STR),
@@ -133,15 +127,15 @@ class utilisateurGateway {
                                                 ':nomRegion'=>array($nomRegion,PDO::PARAM_STR)));
     }
 
-    public function modifierMotDePasse($idUser, $newMDP){
+    public static function modifierMotDePasse($idUser, $newMDP){
         $querry = 'UPDATE utilisateur SET mot_de_passe=:mot_de_passe WHERE id_utilisateur=:id_utilisateur';
-        $this->bd->executeQuerry($querry, array(':mot_de_passe'=>array($newMDP,PDO::PARAM_STR),
+        Connexion::executeQuerry($querry, array(':mot_de_passe'=>array($newMDP,PDO::PARAM_STR),
                                                 ':id_utilisateur'=>array($idUser,PDO::PARAM_STR)));
     }
 
-    public function modifierNiveau($user, $newNiveau){
+    public static function modifierNiveau($user, $newNiveau){
         $querry = 'UPDATE utilisateur SET id_niveau_utilisateur=:id_niveau_utilisateur WHERE id_utilisateur=:id_utilisateur';
-        $this->bd->executeQuerry($querry, array(':id_niveau_utilisateur'=>array($newNiveau,PDO::PARAM_INT),
+        Connexion::executeQuerry($querry, array(':id_niveau_utilisateur'=>array($newNiveau,PDO::PARAM_INT),
                                                 ':id_utilisateur'=>array($user->userId,PDO::PARAM_STR)));
         $user->id_groupe= $newNiveau;
         return $user;

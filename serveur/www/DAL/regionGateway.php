@@ -1,32 +1,26 @@
 <?php
 
-class regionGateway {
-    private $bd;
+class RegionGateway {
     
-    public function __construct()
-    {
-        $this->bd = Connexion::getInstance();
-    }
-
-    public function ajouterRegion($nomRegion){
+    public static function ajouterRegion($nomRegion){
         $querry = 'INSERT INTO region (nomRegion) VALUES (:nom)';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nomRegion,PDO::PARAM_INT)));
+        Connexion::executeQuerry($querry, array(':nom'=>array($nomRegion,PDO::PARAM_INT)));
     }
 
-    public function rechercherRegion($nomRegion){
+    public static function rechercherRegion($nomRegion){
         $querry = 'SELECT * FROM region WHERE nomRegion=:nom';
-        $this->bd->executeQuerry($querry, array(':nom'=>array($nomRegion,PDO::PARAM_INT)));
-        $result = $this->bd->getResult();
+        Connexion::executeQuerry($querry, array(':nom'=>array($nomRegion,PDO::PARAM_INT)));
+        $result = Connexion::getResult();
         if ($result == false){
             return false;
         }
         return $result;
     }
 
-    public function getAll(){
+    public static function getAll(){
         $querry = 'SELECT * FROM region';
-        $this->bd->executeQuerry($querry);
-        $results = $this->bd->getResults();
+        Connexion::executeQuerry($querry);
+        $results = Connexion::getResults();
         return $results;
     }
 }
