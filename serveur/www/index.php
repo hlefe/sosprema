@@ -1,13 +1,5 @@
 <?php
-/**
- * Cntrôleur global du site
- *
- * Traite les paramètres $_GET.
- * Créer la connexion à la base de données.
- *
- *
- */
-    //affiche les erreurs à l'écran
+try {
     ini_set('display_errors', 1);
 
 
@@ -15,6 +7,15 @@
 
     require_once('config/Autoload.php');
     Autoload::charger();
+    
     require_once('controleur/frontControleur.php');
+    
+    Connexion::connect($dsn, $user, $pswd);
+}
+catch (PDOException $ex){    
+    $vueErreur = $ex->getMessage();
+    require 'vue/erreur.php';
+}
+    
 
  ?>
