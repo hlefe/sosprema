@@ -1,18 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of utilisateurGateway
- *
- * @author Nico
- */
-
-
 class utilisateurGateway {
     
     private $bd;
@@ -32,8 +19,7 @@ class utilisateurGateway {
                 return false;
             }
             $utilisateur = new utilisateur($result);
-            return $utilisateur;       
-        
+            return $utilisateur;
     }
 
     public function rechercheUtilisateurEmail($email)
@@ -78,7 +64,7 @@ class utilisateurGateway {
         codePostal,profession,divers,avatar,idNiveau,nomVille,nomDepartement,nomRegion) 
         VALUES (:email,:nom,:prenom,:motDePasse,:dateDeNaissance,:nomRue,:numRue,
         :codePostal,:profession,:divers,:avatar,:idNiveau,:nomVille,:nomDepartement,:nomRegion)';
-        try{
+
         $this->bd->executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
                                                 ':nom'=>array($nom,PDO::PARAM_STR),
                                                 ':prenom'=>array($prenom,PDO::PARAM_STR),
@@ -94,10 +80,6 @@ class utilisateurGateway {
                                                 ':nomVille'=>array($nomVille,PDO::PARAM_STR),
                                                 ':nomDepartement'=>array($nomDepartement,PDO::PARAM_STR),
                                                 ':nomRegion'=>array($nomRegion,PDO::PARAM_STR)));
-        }catch(Exception $e)
-        {
-            die('Erreur : '.$e->getMessage());
-        }
     }
 
     public function supprimerUtilisateur($email){        
@@ -133,7 +115,7 @@ class utilisateurGateway {
                                                 nomDepartement=:nomDepartement,
                                                 nomRegion=:nomRegion
                                         WHERE   idUtilisateur=:idUtilisateur';
-        try{
+            
             $this->bd->executeQuerry($querry, array(':idUtilisateur'=>array($id_utilisateur,PDO::PARAM_STR),
                                                 ':email'=>array($email,PDO::PARAM_STR),
                                                 ':nom'=>array($nom,PDO::PARAM_STR),
@@ -149,10 +131,6 @@ class utilisateurGateway {
                                                 ':nomVille'=>array($nomVille,PDO::PARAM_STR),
                                                 ':nomDepartement'=>array($nomDepartement,PDO::PARAM_STR),
                                                 ':nomRegion'=>array($nomRegion,PDO::PARAM_STR)));
-        }catch(Exception $e)
-        {
-            die('Erreur : '.$e->getMessage());
-        }
     }
 
     public function modifierMotDePasse($idUser, $newMDP){

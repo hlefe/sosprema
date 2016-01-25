@@ -44,24 +44,27 @@ class modelUtilisateur {
 
     public static function modifierUtilisateur($id_utilisateur,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
+        
         $region = new regionGateway();
         $ville = new villeGateway();
         $departement = new departementGateway();
-        if($region->rechercherRegion($nomRegion)==NULL){
+        if($region->rechercherRegion($nomRegion)==NULL && $nomRegion != ""){
             $region->ajouterRegion($nomRegion);
         }
-        if($ville->rechercherVille($nomVille)==NULL){
+        if($ville->rechercherVille($nomVille)==NULL && $nomVille != ""){
             $ville->ajouterVille($nomVille);
         }
-        if($departement->rechercherDepartement($nomDepartement)==NULL){
+        if($departement->rechercherDepartement($nomDepartement)==NULL && $nomDepartement != ""){
             $departement->ajouterDepartement($nomDepartement);
         }
+
         $utilisateurGateway = new utilisateurGateway();
-        
+
         $utilisateurGateway->modifierUtilisateur($id_utilisateur,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
+
+        $utilisateur = $utilisateurGateway->rechercheUtilisateurId($id_utilisateur);        
         
-        $utilisateur = $utilisateurGateway->rechercheUtilisateurEmail($email);
         return $utilisateur;
     }
 

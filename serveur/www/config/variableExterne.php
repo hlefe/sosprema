@@ -20,6 +20,7 @@ class variableExterne{
             return NULL;
 	}
 
+	//permet de verifier le champ email.
 	public static function verifChampEmail ($nomVariable, $emailAComparer) {
 		if(!isset($_POST[$nomVariable])|| $_POST[$nomVariable]==""){
             throw new Exception("Veuiller renseigner une adresse mail.", 1);

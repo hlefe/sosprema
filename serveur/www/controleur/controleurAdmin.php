@@ -97,7 +97,7 @@ class controleurAdmin {
         if(isset($_POST['libelle_niveau']))
             $idNiveau=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
-            if($idNiveau=false){
+            if($idNiveau==false){
                 $vueErreur[] = "Aucun niveau utilisateur correspondant à se libelle";
                 require_once('vue/ajoutUtilisateur.php');
                 return;
@@ -177,14 +177,16 @@ class controleurAdmin {
             require_once('vue/login.php');
             return;
         }
+
         $utilisateur=$_SESSION['utilisateurModifie'];
+
         try{
             $nom = variableExterne::verifChampObligatoire('nom','nom');
             $prenom =variableExterne::verifChampObligatoire('prenom','prenom');
             $email = variableExterne::verifChampEmail('email', $utilisateur->email);
         }catch(Exception $e){
             $vueErreur[]=$e;
-            require_once('vue/profil.php');
+            require_once('vue/userEdit.php');
             return;
         }
         
@@ -200,25 +202,25 @@ class controleurAdmin {
             $divers=variableExterne::verifChampOptionnel('divers');
 
 
-        if(isset($_POST['libelle_niveau']))
-            $idNiveau=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
-
-            if($idNiveau=false){
+        if(!isset($_POST['libelle_niveau'])){
+            $idNiveau = $utilisateur->idNiveau;
+        }else{
+                $idNiveau=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
+                
+            if($idNiveau==false && isset($_POST['libelle_niveau'])){
                 $vueErreur[] = "Aucun niveau utilisateur correspondant à se libelle";
-                require_once('vue/profil.php');
+                require_once('vue/userEdit.php');
                 return;
             }
-        else{
-            $idNiveau = $utilisateur->idNiveau;
-            require_once('vue/profil.php');
-            return;
-        }
+        }     
         
         
         try{
 
-            $utilisateur = modelUtilisateur::modifierUtilisateur($utilisateur->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+            $_SESSION['utilisateurModifie'] = modelUtilisateur::modifierUtilisateur($utilisateur->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $code_postal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
+            $utilisateur = $_SESSION['utilisateurModifie'];
+            
             $vueConfirmation[] = "L'utilisateur à bien été modifié.";
             require_once('vue/userEdit.php');
         } catch(PDOException $ex){

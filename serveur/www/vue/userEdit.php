@@ -51,22 +51,22 @@ require_once('confirmation.php'); ?>
         <div id="contenute" class="Caccueil">
             <h3>Adresse</h3>
     
-            <label for="num_rue">Numéro de rue</label>
-            <input type="text" name="num_rue" value="<?php echo $utilisateur->numRue;?>" />
+            <label for="numRue">Numéro de rue</label>
+            <input type="text" name="numRue" value="<?php echo $utilisateur->numRue;?>" />
             
-            <label for="nom_rue">Nom de rue</label>
-            <input type="text" name="nom_rue" value="<?php echo $utilisateur->nomRue;?>" />
+            <label for="nomRue">Nom de rue</label>
+            <input type="text" name="nomRue" value="<?php echo $utilisateur->nomRue;?>" />
             
-            <label for="code_postal">Code postal</label>
-            <input type="text" name="code_postal" value="<?php echo $utilisateur->codePostal;?>" />
+            <label for="codePostal">Code postal</label>
+            <input type="text" name="codePostal" value="<?php echo $utilisateur->codePostal;?>" />
 
             <label for="ville">Ville</label>
             <input type="text" name="nomVille" value="<?php echo $utilisateur->nomVille;?>" />
 
-             <label for="ville">Département</label>
+             <label for="departement">Département</label>
             <input type="text" name="nomDepartement" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
 
-            <label for="ville">Région</label>
+            <label for="region">Région</label>
             <input type="text" name="nomRegion" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
         </div>
     </div>

@@ -95,6 +95,9 @@ class controleurBenevol {
                                 $vueConfirmation[]="Bienvenue pour votre premiére connexion, veuiller modifier votre mot de passe.";
                                 require_once('vue/modifierMDP.php');
                                 return;
+                            }else{
+                                require_once('vue/accueil.php');
+                                return;
                             }
                             
                         } 
@@ -137,7 +140,7 @@ class controleurBenevol {
         if(isset($_POST['libelle_niveau']))
             $idNiveau=modelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
-            if($idNiveau=false){
+            if($idNiveau==false){
                 $vueErreur[] = "Aucun niveau utilisateur correspondant à se libelle";
                 require_once('vue/profil.php');
                 return;
@@ -206,6 +209,7 @@ class controleurBenevol {
             require_once('vue/modifierMDP.php');
     }
 
+    //permet de détruire la session d'un utilisateur lorsqu'il se déconnecte.
     public function detruireSession(){
         session_unset();
         session_destroy();
