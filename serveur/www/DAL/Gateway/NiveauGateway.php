@@ -1,10 +1,10 @@
 <?php
 
-class NiveauGateway {
-
+class NiveauGateway
+{
     public static function rechercherNom($idNiveau){
     	$querry = 'SELECT * FROM niveau WHERE idNiveau=:idNiveau';
-            Connexion::executeQuerry($querry, array(':idNiveau'=>array($idNiveau,PDO::PARAM_INT)));
+        Connexion::executeQuerry($querry, array(':idNiveau'=>array($idNiveau,PDO::PARAM_INT)));
         $result = Connexion::getResult();
         if ($result == false){
             return false;

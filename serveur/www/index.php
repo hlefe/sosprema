@@ -1,4 +1,5 @@
 <?php
+
 try {
     ini_set('display_errors', 1);
 
@@ -16,6 +17,5 @@ catch (PDOException $ex){
     $vueErreur = $ex->getMessage();
     require 'vue/erreur.php';
 }
-    
 
  ?>
