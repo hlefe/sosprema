@@ -5,21 +5,16 @@
  * @author Nico
  */
 
-class modelNiveau {
+class ModelNiveau {
 	public static function rechercherNom($id_niveau){
-		$niveauGateway = new niveauGateway();
-		$libelle = $niveauGateway->rechercherNom($id_niveau);
-		return $libelle;
+		return NiveauGateway::rechercherNom($id_niveau);	
 	}
 
 	public static function rechercherId($libelle){
-		$niveauGateway = new niveauGateway();
-		$id = $niveauGateway->rechercheridNiveau($libelle);
-		return $id;
+		return NiveauGateway::rechercheridNiveau($libelle);
 	}
 
 	public static function getAll(){
-		$niveauGateway = new niveauGateway();
-		return $niveauGateway->getAll();
+		return NiveauGateway::getAll();
 	}
 }

@@ -1,17 +1,6 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of validation
- *
- * @author Nico
- */
-class validation {
+class Validation {
 
     //valide une adresse email donné en paramétre, et retourne true si elle est valide ou false sinon.
     public static function validerEmail($email) {

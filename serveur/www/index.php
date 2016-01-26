@@ -10,12 +10,15 @@ try {
     require_once('config/Autoload.php');
     Autoload::charger();
     
-    require_once('controleur/frontControleur.php');
-    
     Connexion::connect($dsn, $user, $pswd);
+    FrontControleur::init();
+    
 }
 catch (PDOException $ex){    
     $vueErreur = $ex->getMessage();
+    require 'vue/erreur.php';
+}catch(Exception $e){
+	$vueErreur = $ex->getMessage();
     require 'vue/erreur.php';
 }
  ?>

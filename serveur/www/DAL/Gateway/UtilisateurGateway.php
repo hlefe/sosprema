@@ -128,7 +128,7 @@ class UtilisateurGateway {
     }
 
     public static function modifierMotDePasse($idUser, $newMDP){
-        $querry = 'UPDATE utilisateur SET mot_de_passe=:mot_de_passe WHERE id_utilisateur=:id_utilisateur';
+        $querry = 'UPDATE utilisateur SET motDePasse=:mot_de_passe WHERE idUtilisateur=:id_utilisateur';
         Connexion::executeQuerry($querry, array(':mot_de_passe'=>array($newMDP,PDO::PARAM_STR),
                                                 ':id_utilisateur'=>array($idUser,PDO::PARAM_STR)));
     }

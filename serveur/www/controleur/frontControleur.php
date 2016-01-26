@@ -1,32 +1,38 @@
 <?php
 
-session_start();
+class FrontControleur {
+    
+    function init() {
 
-if(!isset($_REQUEST['action'])){
-	require_once('vue/login.php');
-	return;
-}elseif((!isset($_SESSION['utilisateurConnecter'])&& $_REQUEST['action']!= 'connexion')){
-	require_once('vue/login.php');
-	return;
-}
+        session_start();
 
-$listeActionAdmin = array('gestion','vueAjoutUtilisateur','listeUtilisateurs','ajouterUtilisateur','supprimerUtilisateur','afficherToutUtilisateur','vueAdminModifierUtilisateur','adminModifierUtilisateur');
-$listeActionBenevol = array('accueil','vueConnexion','profil','vueModifierMotDePasse','connexion','deconnexion','modifierUtilisateur','modifierMotDePasse');
+        if(!isset($_REQUEST['action'])){
+        	require_once('vue/login.php');
+        	return;
+        }elseif((!isset($_SESSION['utilisateurConnecter'])&& $_REQUEST['action']!= 'connexion')){
+        	require_once('vue/login.php');
+        	return;
+        }
 
-$action = $_REQUEST['action'];
+        $listeActionAdmin =  get_class_methods('ControleurAdmin');
+        $listeActionBenevol =  get_class_methods('ControleurBenevol');
 
-if(in_array($action, $listeActionAdmin)){
-	if(controleurAdmin::verifierDroit()){
-		$controleur = new controleurAdmin();
-	}
-	else{
-		$vueErreur[] = "vous ne possédez pas les droits appopriées.";
-        require_once ("/vue/erreur.php");
-        return;
+        $action = $_REQUEST['action'];
+
+        if(in_array($action, $listeActionAdmin)){
+        	if(ControleurAdmin::verifierDroit()){
+        		ControleurAdmin::$action();
+        	}
+        	else{
+        		$vueErreur[] = "vous ne possédez pas les droits appopriées.";
+                require_once ("/vue/erreur.php");
+                return;
+            }
+        }elseif(in_array($action, $listeActionBenevol)){
+        	ControleurBenevol::$action();
+        }else{
+        	$vueErreur[]="l'action demander n'est pas définie";
+        	require_once('vue/vueErreur.php');
+        }
     }
-}elseif(in_array($action, $listeActionBenevol)){
-	$controleur = new controleurBenevol();
-}else{
-	$vueErreur[]="l'action demander n'est pas définie";
-	require_once('vue/vueErreur.php');
 }
