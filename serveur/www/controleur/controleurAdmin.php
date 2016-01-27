@@ -11,16 +11,15 @@ class ControleurAdmin {
 
         
         try{
-            ModelGestionUtilisateur::creerUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille=null,$nomVille,$nomDepartement,$nomRegion);
+            ModelGestionUtilisateur::creerUtilisateur();
             
             $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
             require_once('vue/ajoutUtilisateur.php');
         } catch(PDOException $ex){
-            $vueErreur[] = $ex;
+            $vueErreur[] = $ex->getMessage();
             require_once('vue/ajoutUtilisateur.php');
         } catch(Exception $e){
-            $vueErreur[] = $e;
+            $vueErreur[] = $e->getMessage();
             require_once('vue/ajoutUtilisateur.php');
         }
 
@@ -92,10 +91,10 @@ class ControleurAdmin {
             $vueConfirmation[] = "L'utilisateur à bien été modifié.";
             require_once('vue/profil.php');
         } catch(PDOException $ex){;
-            $vueErreur[] = $ex;
+            $vueErreur[] = $ex->getMessage();
             require_once('vue/profil.php');
         } catch(Exception $e){
-            $vueErreur[]=$e;
+            $vueErreur[]=$e->getMessage();
             require_once('vue/profil.php');
             return;
         }
@@ -120,7 +119,7 @@ class ControleurAdmin {
                 return false;
             }
         }catch(PDOException $ex){
-            $vueErreur[]=$ex;
+            $vueErreur[]=$ex->getMessage();
             require_once('vue/vueErreur.php');
         }
     }

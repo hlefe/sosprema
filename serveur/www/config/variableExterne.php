@@ -28,7 +28,7 @@ class VariableExterne{
         else{
             if(Validation::validerEmail($_POST[$nomVariable])){
                 $email = Nettoyage::nettoyerChaine($_POST[$nomVariable]);
-                if($email != $emailAComparer && $emailAComparer != null){
+                if($email != $emailAComparer && $emailAComparer == null){
                     if(ModelGestionUtilisateur::verifierEmailNonPresent($email)){
                         throw new Exception("Un utilisateur existe déjà avec l'adresse email correspondante.", 1);
                     }else{

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * cette classe permettra de gérer l'utilisateur qui est connecté
- * @author Nico
- */
-
 class ModelGestionUtilisateur {
 
     public static function rechercheUtilisateur($email) {
@@ -41,9 +36,11 @@ class ModelGestionUtilisateur {
             $idNiveau=ModelNiveau::rechercherId('utilisateur');
         }
 
-        ModelGestionLieu::verifierPresenceLieu('VilleGateway', $nomVille);
-        ModelGestionLieu::verifierPresenceLieu('RegionGateway', $nomRegion);
-        ModelGestionLieu::verifierPresenceLieu('DepartementGateway', $nomDepartement);
+        ModelGestionLieu::verifierPresenceLieu('ville', $nomVille);
+        ModelGestionLieu::verifierPresenceLieu('region', $nomRegion);
+        ModelGestionLieu::verifierPresenceLieu('departement', $nomDepartement);
+
+        $idFamille =null;
 
         $utilisateur = UtilisateurGateway::insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
@@ -53,11 +50,11 @@ class ModelGestionUtilisateur {
         
         $nom = variableExterne::verifChampObligatoire('nom','nom');
         $prenom =variableExterne::verifChampObligatoire('prenom','prenom');
-        $email = variableExterne::verifChampEmail('email', $utilisateurConnecter->email);
+        $email = variableExterne::verifChampEmail('email', $utilisateurModifie->email);
 
         $numRue=variableExterne::verifChampOptionnel('numRue');
         $nomRue=variableExterne::verifChampOptionnel('nomRue');
-        $code_postal=variableExterne::verifChampOptionnel('codePostal');
+        $codePostal=variableExterne::verifChampOptionnel('codePostal');
         $nomVille=variableExterne::verifChampOptionnel('nomVille');
         $nomRegion=variableExterne::verifChampOptionnel('nomRegion');
         $nomDepartement=variableExterne::verifChampOptionnel('nomDepartement');
@@ -67,26 +64,25 @@ class ModelGestionUtilisateur {
         $divers=variableExterne::verifChampOptionnel('divers');
 
 
-        if(isset($_POST['libelle_niveau']))
+        if(isset($_POST['libelle_niveau'])){
             $idNiveau=ModelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
             if($idNiveau==false){
-                $vueErreur[] = "Aucun niveau utilisateur correspondant à se libelle";
-                require_once('vue/profil.php');
-                return;
+                throw new Exception("Aucun niveau utilisateur ne correspond à se libelle", 1);
             }
+        }
         else{
-            $idNiveau = $_SESSION['utilisateurConnecter']->idNiveau;
+            $idNiveau = $utilisateurModifie->idNiveau;
         }
 
-        ModelGestionLieu::verifierPresenceLieu('VilleGateway', $nomVille);
-        ModelGestionLieu::verifierPresenceLieu('RegionGateway', $nomRegion);
-        ModelGestionLieu::verifierPresenceLieu('DepartementGateway', $nomDepartement);
+        ModelGestionLieu::verifierPresenceLieu('ville', $nomVille);
+        ModelGestionLieu::verifierPresenceLieu('region', $nomRegion);
+        ModelGestionLieu::verifierPresenceLieu('departement', $nomDepartement);
 
-        UtilisateurGateway::modifierUtilisateur($id_utilisateur,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
+        UtilisateurGateway::modifierUtilisateur($utilisateurModifie->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        $codePostal,$profession,$divers,$avatar,$idNiveau,$utilisateurModifie->idFamille,$nomVille,$nomDepartement,$nomRegion);
 
-        $utilisateur = UtilisateurGateway::rechercheUtilisateurId($id_utilisateur);        
+        $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateurModifie->userId);        
         
         return $utilisateur;
     }

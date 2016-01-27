@@ -8,6 +8,9 @@ class ModelSession {
         $utilisateurConnecter = UtilisateurGateway::rechercheUtilisateurConnexion($emailConnexion, $passwordConnexion);
         if($utilisateurConnecter != false){
         	$_SESSION['utilisateurConnecter'] = $utilisateurConnecter;
+        }else{
+            throw new Exception("Erreur de login ou de mot de passe.", 1);
+            
         }
         return $utilisateurConnecter;
     }

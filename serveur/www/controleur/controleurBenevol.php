@@ -28,12 +28,12 @@ class ControleurBenevol {
     public static function connexion() {
 
         try{
-            $utilisateur = ModelSession::creationUtilisateurConnecter();
+            $utilisateurConnecter = ModelSession::creationUtilisateurConnecter();
         }catch(Exception $ex){
-            $vueErreur[]=$ex;
+            $vueErreur[]=$ex->getMessage();
             require_once('vue/login.php');
         }
-        if ($utilisateur != FALSE) {
+        if ($utilisateurConnecter != FALSE) {
             require_once('vue/accueil.php');   
         }
     }
@@ -49,10 +49,10 @@ class ControleurBenevol {
             $vueConfirmation[] = "L'utilisateur à bien été modifié.";
             require_once('vue/profil.php');
         } catch(PDOException $ex){;
-            $vueErreur[] = $ex;
+            $vueErreur[] = $ex->getMessage();
             require_once('vue/profil.php');
         } catch(Exception $e){
-            $vueErreur[]=$e;
+            $vueErreur[]=$e->getMessage();
             require_once('vue/profil.php');
             return;
         }
@@ -72,11 +72,11 @@ class ControleurBenevol {
         try{
             $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::modifierMotDePasse($_SESSION['utilisateurConnecter']);
         }catch(Exception $e){
-            $vueErreur[] = $e;
+            $vueErreur[] = $e->getMessage();
             require_once('vue/modifierMDP.php');
             return;
         }catch(PDOException $e){
-            $vueErreur[] = $e;
+            $vueErreur[] = $e->getMessage();
             require_once('vue/modifierMDP.php');
             return;
         }

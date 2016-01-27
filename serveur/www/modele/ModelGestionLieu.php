@@ -1,9 +1,18 @@
 <?php
 
 class ModelGestionLieu {
-	public verifierPresenceLieu($nomGateway, $variable){
-		if($nomGateway::rechercherRegion($variable)==NULL){
-            $nomGateway::ajouterRegion($variable);
-        }
+	public static function verifierPresenceLieu($typeLieu, $variable){
+		if($typeLieu == 'region')
+			if(RegionGateway::rechercherRegion($variable)==NULL){
+	            RegionGateway::ajouterRegion($variable);
+	        }
+	    elseif($typeLieu == 'ville')
+			if(VillGateway::rechercherVille($variable)==NULL){
+	            RegionGateway::ajouterVille($variable);
+	        }
+	    elseif($typeLieu == 'Departement')
+			if(DepartementGateway::rechercherDepartement($variable)==NULL){
+	            DepartementGateway::ajouterDepartement($variable);
+	        }
 	}
 }
