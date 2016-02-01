@@ -11,13 +11,13 @@
             <?php if(isset($utilisateurConnecter)){ ?>
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="vue/style/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                        <img src="<?php echo $utilisateurConnecter->avatar;?>" class="user-image" alt="User Image">
                         <span class="hidden-xs"><?php echo $utilisateurConnecter->prenom;?> <?php echo $utilisateurConnecter->nom ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="vue/style/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="<?php echo $utilisateurConnecter->avatar;?>" class="img-circle" alt="User Image">
                             <p>
                                 <?php echo $utilisateurConnecter->prenom;?> <?php echo $utilisateurConnecter->nom ?>
                             </p>

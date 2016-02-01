@@ -24,7 +24,7 @@ $listePages = ModelPage::obtenirTout($utilisateurConnecter);
     <!-- Panneau utilisateur -->
     <div class="user-panel">
         <div class="pull-left image">
-            <img src="vue/style/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <img src="<?php echo $utilisateurConnecter->avatar;?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
             <p><?php echo $utilisateurConnecter->prenom;?> <?php echo $utilisateurConnecter->nom ?></p>

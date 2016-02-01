@@ -200,6 +200,8 @@
 				"sidebar.less",
 				"small-box.less",
 				"social-widgets.less",
+				"sosPrema/nuancier.less",
+				"sosPrema/variables.less",
 				"table.less",
 				"timeline.less",
 				"users-list.less",

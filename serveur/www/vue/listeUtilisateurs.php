@@ -1,4 +1,4 @@
-<?php require('header.php'); ?>*
+<?php require('header.php'); ?>
 <!-- Main content -->
 <section class="content">
     <?php require_once('erreur.php'); ?>
