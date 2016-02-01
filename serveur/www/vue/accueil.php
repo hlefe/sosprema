@@ -9,73 +9,55 @@
  */
 require('header.php');
 ?>
-<div class="colonneGauche infosAccueil">
-	<div id ="contenute" class="bandeau">
-		<img src="vue/images/photobandeau.png" class="bandeau_accueil">
-	</div>
-	<div id="contenute">
-     	<a href="vue/tableauDeBord.php"><h3>Consulter l'avancement du projet</h3></a>
- 	</div>
-</div>
+<!-- Main content -->
+<section class="content">
+    <!-- Main row -->
+    <div class="row">
+    <!-- Left col -->
+    <section class="col-lg-7 connectedSortable">
+        <div class="box">
+            <div class="box-header with-border">
+                <h3 class="box-title">L'engagement SOSPréma</h3>
+                <div class="box-tools pull-right">
+                <!-- Buttons, labels, and many other things can be placed here! -->
+                <!-- Here is a label for example -->
+                <span class="label label-primary">À lire</span>
+                </div><!-- /.box-tools -->
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <img style="width:80%" src="vue/images/photobandeau.png">
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+                Tout savoir sur le fonctionnement de l'association...
+            </div><!-- box-footer -->
+        </div><!-- /.box -->
 
-<!-- <div class="colonneGauche infosAccueil">
-	<div id="contenute" class="Caccueil">
-		<h3>État du projet</h3>
-			<p>
-				Interface de connexion et gestion des utilisateurs fonctionnelles.
-			</p>
-	</div>
-	<div id="contenute" class="Caccueil">
-		<h3> Tâches restantes </h3>
-		<table class="table table-hover" align=center>
-			<thead>
-				<tr>
-					<th>Num tâche</th>
-					<th>Nom tâche</th>
-					<th>Description tâche</th>
-				</tr>
-			</thead>
-			<tbody>
-					<tr>
-						<td align=center class="id">1</td>
-						<td align=center>
-							Gestionnaire des hôpitaux
-						</td>
-						<td align=center></td>
-					</tr>
-					<tr>
-						<td align=center class="id">2</td>
-						<td align=center>
-							Gestionnaire des contacts
-						</td>
-						<td align=center></td>
-					</tr>
-					<tr>
-						<td align=center class="id">3</td>
-						<td align=center>
-							Gestionnaire des formations
-						</td>
-						<td align=center></td>
-					</tr>
-					<tr>
-						<td align=center class="id">4</td>
-						<td align=center>
-							Cloud
-						</td>
-						<td align=center>Dépôt de fichiers type google drive</td>
-					</tr>
-			<tbody>
-		</table>
-	</div>
-</div>
- -->
- 
-<div class="colonneDroite infosAccueil">
-	<div  class="Caccueil abs_accueil">
-		    <a class="twitter-timeline"  href="https://twitter.com/SOSPrema" data-widget-id="683938070039781376">Tweets de @SOSPrema</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	</div>
-</div>
+    </section><!-- /.Left col -->
+    <!-- right col (We are only adding the ID to make the widgets sortable)-->
+    <section class="col-lg-5 connectedSortable">
+
+       <div class="box box-solid box-info">
+           <div class="box-header with-border">
+                <h3 class="box-title">Twitter</h3>
+                <div class="box-tools pull-right">
+                <!-- Buttons, labels, and many other things can be placed here! -->
+                <!-- Here is a label for example -->
+                <span class="label label-primary">Social</span>
+                </div><!-- /.box-tools -->
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <a class="twitter-timeline"  href="https://twitter.com/SOSPrema" data-widget-id="683938070039781376">Tweets de @SOSPrema</a>
+                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+                Twitter: @SosPrema
+            </div><!-- box-footer -->
+       </div>
+    </section><!-- right col -->
+    </div><!-- /.row (main row) -->
+
+</section><!-- /.content -->
 <?php
 require('footer.php');
 ?>

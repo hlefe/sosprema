@@ -85,7 +85,7 @@ class ControleurBenevol {
     }
 
     //permet de détruire la session d'un utilisateur lorsqu'il se déconnecte.
-    public static function detruireSession(){
+    public static function deconnexion(){
         session_unset();
         session_destroy();
         $_SESSION = array();

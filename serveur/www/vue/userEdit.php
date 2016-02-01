@@ -1,74 +1,109 @@
-<?php require_once('header.php'); 
+<?php
+require('header.php'); 
 require_once('erreur.php');
-require_once('confirmation.php'); ?>
-<form method="post" action="index.php?action=adminModifierUtilisateur">
-    <div class="contenuteSansFond ">
-        <div class="colonneGauche wtitre">
-            <h2> Modifier un utilisateur </h2>
-        </div>
-        <div class="colonneDroite wtitre">
-            <div class="green">
-                <button id="boutonAjouter" class="submit" name="boutonAjouter" type="hidden" value="ajouterUtilisateur"><span class="entypo-check">&nbsp;Enregistrer</span></button>
-
-            </div>
-            <div class="green mdp">
-                <a href="index.php?action=vueModifierMotDePasse" ><span>Modifier mot de passe</span></a>
-            </div>
-        </div>
-    </div>
-  
-    <div class="colonneGauche infosAccueil">
-        <div id="contenute" class="Caccueil">
-                <h3>Informations</h3>
-
-                    <label for="nom">Nom</label>
-                    <input required type="text" name="nom" value="<?php echo $utilisateur->nom;?>" />
-                    
-                    <label for="prenom">Prénom</label>
-                    <input required type="text" name="prenom" value="<?php echo $utilisateur->prenom;?>" />
-                    
-                    <label for="email">Adresse Mail</label>
-                    <input required type="text" name="email" value="<?php echo $utilisateur->email;?>" />
-        </div>  
-    </div> 
-
-    <div class="colonneGauche infosAccueil">
-        <div id="contenute" class="Caccueil">
-                <h3>Divers</h3>
-                    <label for="nom">Avatar</label>
-                    <img src="<?php echo $utilisateurConnecter->avatar; ?>">
-                    <input  type="text" name="avatar" value="<?php echo $utilisateurConnecter->avatar;?>" />
-                    
-                    <label for="prenom">Profession</label>
-                    <input  type="text" name="profession" value="<?php echo $utilisateurConnecter->profession;?>" />
-                    
-                    <label for="email">Divers</label>
-                    <input type="text" name="divers" value="<?php echo $utilisateurConnecter->divers;?>" />
-        </div>  
-    </div> 
-
-    <div class="colonneDroite infosAccueil">
-        <div id="contenute" class="Caccueil">
-            <h3>Adresse</h3>
-    
-            <label for="numRue">Numéro de rue</label>
-            <input type="text" name="numRue" value="<?php echo $utilisateur->numRue;?>" />
-            
-            <label for="nomRue">Nom de rue</label>
-            <input type="text" name="nomRue" value="<?php echo $utilisateur->nomRue;?>" />
-            
-            <label for="codePostal">Code postal</label>
-            <input type="text" name="codePostal" value="<?php echo $utilisateur->codePostal;?>" />
-
-            <label for="ville">Ville</label>
-            <input type="text" name="nomVille" value="<?php echo $utilisateur->nomVille;?>" />
-
-             <label for="departement">Département</label>
-            <input type="text" name="nomDepartement" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
-
-            <label for="region">Région</label>
-            <input type="text" name="nomRegion" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
-        </div>
-    </div>
-</form>
-<?php require_once('footer.php'); ?>
+require_once('confirmation.php');
+?>
+<!-- Main content -->
+<section class="content">
+    <form method="post" action="index.php?action=adminModifierUtilisateur">
+             <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-7 connectedSortable">
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Informations</h3>
+                            <div class="box-tools pull-right">
+                                <span class="label label-primary">Requis</span>
+                            </div><!-- /.box-tools -->
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="nom">Nom</label>
+                                <input class="form-control" required type="text" name="nom" value="<?php echo $utilisateur->nom;?>" />
+                            </div>
+                            <div class="form-group">
+                                    <label for="prenom">Prénom</label>
+                                    <input class="form-control" required type="text" name="prenom" value="<?php echo $utilisateur->prenom;?>" />
+                            </div>
+                            <div class="form-group">
+                                    <label for="email">Adresse Mail</label>
+                                    <input class="form-control" required type="email" name="email" value="<?php echo $utilisateur->email;?>" />
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary" name="boutonAjouter" value="ajouterUtilisateur">Enregistrer</button>
+                        </div>
+                    </div><!-- /.box -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Divers</h3>
+                            <div class="box-tools pull-right">
+                                <span class="label label-primary">Facultatif</span>
+                            </div><!-- /.box-tools -->
+                        </div><!-- /.box-header -->
+                        
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="nom">Avatar</label>
+                                <img src="<?php echo $utilisateurConnecter->avatar; ?>">
+                                <input class="form-control" type="text" name="avatar" value="<?php echo $utilisateurConnecter->avatar;?>" />
+                            </div>
+                            <div class="form-group">
+                                <label for="prenom">Profession</label>
+                                <input class="form-control" type="text" name="profession" value="<?php echo $utilisateurConnecter->profession;?>" />
+                            </div>
+                            <div class="form-group">   
+                                <label for="email">Divers</label>
+                                <input class="form-control" type="text" name="divers" value="<?php echo $utilisateurConnecter->divers;?>" />
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary" ame="boutonAjouter" value="ajouterUtilisateur">Enregistrer</button>
+                        </div>
+                    </div>
+                </section><!-- /.Left col -->
+                <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                <section class="col-lg-5 connectedSortable">
+                    <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Adresse</h3>
+                                <div class="box-tools pull-right">
+                                    <span class="label label-primary">Facultatif</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="numRue">Numéro de rue</label>
+                                    <input class="form-control" type="text" name="numRue" value="<?php echo $utilisateur->numRue;?>" />
+                                </div>
+                                <div class="form-group"> 
+                                    <label for="nomRue">Nom de rue</label>
+                                    <input class="form-control" type="text" name="nomRue" value="<?php echo $utilisateur->nomRue;?>" />
+                                </div>
+                                <div class="form-group">                  
+                                    <label for="codePostal">Code postal</label>
+                                    <input class="form-control" type="text" name="codePostal" value="<?php echo $utilisateur->codePostal;?>" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="ville">Ville</label>
+                                    <input class="form-control" type="text" name="nomVille" value="<?php echo $utilisateur->nomVille;?>" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="departement">Département</label>
+                                    <input class="form-control" type="text" name="nomDepartement" value="<?php echo $utilisateur->nomRegion;?>" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="region">Région</label>
+                                    <input class="form-control" type="text" name="nomRegion" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary" ame="boutonAjouter" value="ajouterUtilisateur">Enregistrer</button>
+                            </div>
+                    </div>
+                </section>
+            </div><!-- /.row (main row) -->
+    </form>
+</section>
+<?php require('footer.php'); ?>
