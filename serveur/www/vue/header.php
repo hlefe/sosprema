@@ -75,7 +75,7 @@ $pageActuelle =  ModelPage::rechercherPage($_GET['action']);
                 <?php echo $pageActuelle->nom; ?>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Accueil</a></li>
+                    <li><a href="index.php?action=accueil"><i class="fa fa-dashboard"></i> Accueil</a></li>
                     <li class="active"><?php echo $pageActuelle->nom; ?></li>
                 </ol>
             </section>

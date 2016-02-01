@@ -1,9 +1,8 @@
-<?php
-require_once('header.php');
-require_once('erreur.php');
-require_once('confirmation.php');
-?>
+<?php require('header.php'); ?>*
+<!-- Main content -->
 <section class="content">
+    <?php require_once('erreur.php'); ?>
+    <?php require_once('confirmation.php'); ?>
   <div class="content body">
      <div class="box">
             <div class="box-header with-border">

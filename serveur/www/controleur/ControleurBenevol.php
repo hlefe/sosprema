@@ -29,12 +29,12 @@ class ControleurBenevol {
 
         try{
             $utilisateurConnecter = ModelSession::creationUtilisateurConnecter();
-        }catch(Exception $ex){
+            if ($utilisateurConnecter != FALSE) 
+                require_once('vue/accueil.php');   
+        }
+        catch(Exception $ex){
             $vueErreur[]=$ex->getMessage();
             require_once('vue/login.php');
-        }
-        if ($utilisateurConnecter != FALSE) {
-            require_once('vue/accueil.php');   
         }
     }
 

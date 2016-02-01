@@ -1,8 +1,8 @@
-<?php require_once('header.php'); 
-require_once('erreur.php');
-require_once('confirmation.php'); ?>
+<?php require('header.php'); ?>*
 <!-- Main content -->
 <section class="content">
+    <?php require_once('erreur.php'); ?>
+    <?php require_once('confirmation.php'); ?>
     <form method="post" action="index.php?action=adminModifierUtilisateur">
         <!-- Main row -->
         <div class="row">
@@ -31,6 +31,7 @@ require_once('confirmation.php'); ?>
                     </div>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary" ame="boutonAjouter" value="ajouterUtilisateur">Enregistrer</button>
+                                                    <button type="submit" class="btn btn-warning" formaction="index.php?action=vueModifierMotDePasse">Modifier mot de passe</button>
                     </div>
                 </div><!-- /.box -->
                 <div class="box box-primary">
