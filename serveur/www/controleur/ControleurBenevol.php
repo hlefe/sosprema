@@ -15,6 +15,7 @@ class ControleurBenevol {
     }
 
     public static function vueModifierMotDePasse(){
+        $niveaux = ModelNiveau::getAll();
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         require_once('vue/modifierMDP.php');
     }
@@ -57,7 +58,7 @@ class ControleurBenevol {
 
     //permet à l'utilisateur de modifier son mot de passe.
     public static function modifierMotDePasse(){
-        
+        $niveaux = ModelNiveau::getAll();
         if(isset($_SESSION['utilisateurConnecter'])){
             $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         }else{

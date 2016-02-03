@@ -8,10 +8,10 @@ class ControleurAdmin {
     // permet à l'administrateur d'ajouter un utilisateur.
     public static function vueAjoutUtilisateur() {
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        $niveaux = ModelNiveau::getAll();
         if(isset($_REQUEST['add'])){
             try{
                 ModelGestionUtilisateur::creerUtilisateur();
-                
                 $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
                 require_once('vue/ajoutUtilisateur.php');
             } catch(PDOException $ex){

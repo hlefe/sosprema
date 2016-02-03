@@ -30,6 +30,47 @@
                             </div>
                         </div>
                     </div><!-- /.box -->
+                    
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Sécurité et droits</h3>
+                            <div class="box-tools pull-right">
+                                <span class="label label-primary">Requis</span>
+                            </div><!-- /.box-tools -->
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="col-xs-5">
+                                <div class="form-group">
+                                    <label >Définir un niveau de responsabilité pour l'utilisateur</label>
+                                    <?php foreach($niveaux as $niveau){ ?>
+                                        <div class="radio">
+                                            <label>
+                                            <input name="libelle_niveau" id="optionsRadios<?php echo $niveau['idNiveau']; ?>" value="<?php echo $niveau['nom']; ?>" checked="" type="radio">
+                                                <?php echo $niveau['nom']; ?>
+                                            </label>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                             </div>
+                            <div class="col-xs-5">
+                                <div class="form-group">
+                                    <label for="oldMDP">Définir un mot de passe</label>
+                                    <input class="form-control" required type="password" name="motDePasse" placeholder="mot de passe" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section><!-- /.Left col -->
+                <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                <section class="col-lg-5 connectedSortable">
+                    
+                    <div class="box">
+                         <div class="box-footer">
+                            <button type="submit" class="btn btn-primary" name="boutonAjouter" value="ajouterUtilisateur">Ajouter</button>
+                         </div>
+                    </div>
+                    
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <h3 class="box-title">Divers</h3>
@@ -56,14 +97,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section><!-- /.Left col -->
-                <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                <section class="col-lg-5 connectedSortable">
-                    <div class="box">
-                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary" name="boutonAjouter" value="ajouterUtilisateur">Ajouter</button>
-                         </div>
                     </div>
                     <div class="box">
                             <div class="box-header with-border">
