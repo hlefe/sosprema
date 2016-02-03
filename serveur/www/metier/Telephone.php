@@ -16,29 +16,24 @@ class telephone {
     private $type;
     private $numero;
 
+    //Getter
     public function __get($property) {
-        if ('type' == $property) {
-            return $this->type;
-        } elseif ('numero' == $property) {
-            return $this->numero;
-        } else {
-            throw new Exception('Propriété invalide !');
-        }
+        //Utilisation d'une variable dynamique   
+        return $this->$property;
     }
 
+//Setter
     public function __set($property, $value) {
-        if ('type' == $property) {
-            $this->type = $value;
-        } elseif ('numero' == $property) {
-            $this->numero = $value;
-        } else {
-            throw new Exception('Propriété invalide !');
-        }
+        //Utilisation d'une variable dynamique 
+        $this->$property = $value;
     }
 
-    public function __construct($type, $numero) {
-        $this->type = $type;
-        $this->numero = $numero;
+//Constructeur
+    public function __construct($param) {
+        foreach ($param as $key=>$value){
+            //Utilisation d'une variable dynamique
+            $this->$key = $value;
+        }
     }
 
 }

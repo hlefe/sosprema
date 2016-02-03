@@ -6,7 +6,7 @@ class page {
     private $url;
     private $droit;
 
-	public function __construct($param){
+	/*public function __construct($param){
        foreach ($param as $key=>$value){
             if ('id' == $key) {
                 $this->id = $value;
@@ -49,5 +49,25 @@ class page {
 		}else{
 			return;
 		}
-	}
+	}*/
+
+	//Getter
+    public function __get($property) {
+        //Utilisation d'une variable dynamique   
+        return $this->$property;
+    }
+
+//Setter
+    public function __set($property, $value) {
+        //Utilisation d'une variable dynamique 
+        $this->$property = $value;
+    }
+
+//Constructeur
+    public function __construct($param) {
+        foreach ($param as $key=>$value){
+            //Utilisation d'une variable dynamique
+            $this->$key = $value;
+        }
+    }
 }
