@@ -17,7 +17,7 @@
                 <table class="table table-hover" align=center>
                     <thead>
                         <tr>
-                            <th class="text-center">#</th>
+                            <th>#</th>
                             <th>Mail</th>
                             <th>Nom</th>
                             <th>Prénom</th>
@@ -31,14 +31,14 @@
                         ?>
 
                             <tr>
-                                <td align=center class="id"><?php echo $user["idUtilisateur"]; ?></td>
-                                <td align=center>
+                                <td class="id"><?php echo $user["idUtilisateur"]; ?></td>
+                                <td>
                                     <?php echo $user["email"]; ?>
                                 </td>
-                                <td align=center><?php echo $user["nom"]; ?></td>
-                                <td align=center><?php echo $user["prenom"]; ?></td>
-                                <td align=center><a href="index.php?action=vueAdminModifierUtilisateur&mail=<?php echo $user["email"]; ?>">Modifier</a></td>
-                                <td align=center><a href="index.php?action=supprimerUtilisateur&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
+                                <td><?php echo $user["nom"]; ?></td>
+                                <td><?php echo $user["prenom"]; ?></td>
+                                <td><a href="index.php?action=vueAdminModifierUtilisateur&mail=<?php echo $user["email"]; ?>">Modifier</a></td>
+                                <td><a href="index.php?action=supprimerUtilisateur&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
                             </tr>
                         <?php } ?>
                     <tbody>

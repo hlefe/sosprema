@@ -106,7 +106,7 @@ class utilisateur {
         }elseif ('nomDepartement' == $property) {
             $this->nomDepartement  = $value;
         } else {
-            throw new Exception('Propriété invalide !');
+            throw new Exception('Propriété invalide !'.$property.$value);
         }
     }
 

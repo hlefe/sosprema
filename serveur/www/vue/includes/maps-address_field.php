@@ -28,8 +28,7 @@ Ce formulaire renvoie les champs suivants:
     <div class="box-header with-border">
         <h3 class="box-title">Adresse détaillée</h3>
         <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-            </button>
+            <a href="index.php?action=<?php echo $_REQUEST['action']; ?>&editAddress=true<?php if (isset($_REQUEST['mail'])) { ?>&mail=<?php echo $_REQUEST['mail']; } ?>">Modifier</a>
         </div>
     </div>
     
@@ -48,10 +47,10 @@ Ce formulaire renvoie les champs suivants:
         </div>
         <!-- Contenu grisé des champs -->
         <div class="col-xs-8">
-            <input id="street_number" class="form-control" readonly="readonly" type="text" name="numRue" value="<?php echo $utilisateurConnecter->numRue;?>" />
-            <input id="route" class="form-control" readonly="readonly" type="text" name="nomRue" value="<?php echo $utilisateurConnecter->nomRue;?>" />
-            <input id="postal_code" class="form-control" type="text" readonly="readonly" name="codePostal" value="<?php echo $utilisateurConnecter->codePostal;?>" />
-            <input id="locality" class="form-control" readonly="readonly" type="text" name="nomVille" value="<?php echo $utilisateurConnecter->nomVille;?>" />
+            <input id="street_number" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="numRue" value="<?php echo $utilisateurConnecter->numRue;?>" />
+            <input id="route" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomRue" value="<?php echo $utilisateurConnecter->nomRue;?>" />
+            <input id="postal_code" class="form-control" type="text" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> name="codePostal" value="<?php echo $utilisateurConnecter->codePostal;?>" />
+            <input id="locality" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomVille" value="<?php echo $utilisateurConnecter->nomVille;?>" />
         </div> 
    </div>
    <!-- /.box-body -->

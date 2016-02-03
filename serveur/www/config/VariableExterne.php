@@ -71,10 +71,9 @@ class VariableExterne{
     }
 
     public static function verifChampPassword ($nomChamp, $nomVariable){
-        $password = VariableExterne::verifChampObligatoire($nomChamp, $nomVariable);
-        if($password != null)
-            if(Validation::validerPassword($password)){
-                return $password;
+        if($_POST[$nomVariable] != null)
+            if(Validation::validerPassword($_POST[$nomVariable])){
+                return $_POST[$nomVariable];
             }else{
                 throw new Exception("Votre mot de passe est invalide.", 1);
             }   

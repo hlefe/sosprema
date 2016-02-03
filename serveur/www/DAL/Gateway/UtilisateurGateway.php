@@ -130,10 +130,10 @@ class UtilisateurGateway {
     }
 
     public static function modifierNiveau($user, $newNiveau){
-        $querry = 'UPDATE utilisateur SET id_niveau_utilisateur=:id_niveau_utilisateur WHERE id_utilisateur=:id_utilisateur';
+        $querry = 'UPDATE utilisateur SET idNiveau=:id_niveau_utilisateur WHERE idUtilisateur=:id_utilisateur';
         Connexion::executeQuerry($querry, array(':id_niveau_utilisateur'=>array($newNiveau,PDO::PARAM_INT),
                                                 ':id_utilisateur'=>array($user->userId,PDO::PARAM_STR)));
-        $user->id_groupe= $newNiveau;
+        $user->idNiveau= $newNiveau;
         return $user;
     }
 }

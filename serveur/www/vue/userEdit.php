@@ -31,7 +31,7 @@
                         </div>
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary" name="boutonAjouter" value="ajouterUtilisateur">Enregistrer</button>
-                            <button type="submit" class="btn btn-warning" formaction="index.php?action=vueModifierMotDePasse">Modifier les droits et le mot de passe</button>
+                            <button type="submit" class="btn btn-warning" formaction="index.php?action=safeUserInfo">Modifier les droits et le mot de passe</button>
                         </div>
                     </div><!-- /.box -->
                     <div class="box box-primary">
@@ -43,17 +43,19 @@
                         </div><!-- /.box-header -->
                         
                         <div class="box-body">
-                            <div class="form-group">
+                            <div class="col-sm-8">
+                                <div class=" form-group">
+                                    <label for="prenom">Profession</label>
+                                    <input class="form-control" type="text" name="profession" value="<?php echo $utilisateurConnecter->profession;?>" />
+                                </div>
+                                <div class="form-group">   
+                                    <label for="email">Divers</label>
+                                    <input class="form-control" type="text" name="divers" value="<?php echo $utilisateurConnecter->divers;?>" />
+                                </div>
+                            </div>
+                            <div class="col-sm-3 form-group">
                                 <label for="nom">Avatar</label>
                                 <?php require('includes/avatar_upload.php'); ?>
-                            </div>
-                            <div class="form-group">
-                                <label for="prenom">Profession</label>
-                                <input class="form-control" type="text" name="profession" value="<?php echo $utilisateurConnecter->profession;?>" />
-                            </div>
-                            <div class="form-group">   
-                                <label for="email">Divers</label>
-                                <input class="form-control" type="text" name="divers" value="<?php echo $utilisateurConnecter->divers;?>" />
                             </div>
                         </div>
                         <div class="box-footer">

@@ -31,7 +31,7 @@
                     </div>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary" ame="boutonAjouter" value="ajouterUtilisateur">Enregistrer</button>
-                                                    <button type="submit" class="btn btn-warning" formaction="index.php?action=vueModifierMotDePasse">Modifier mot de passe</button>
+                                                    <button type="submit" class="btn btn-warning" formaction="index.php?action=userPassword">Modifier mot de passe</button>
                     </div>
                 </div><!-- /.box -->
                 <div class="box box-primary">

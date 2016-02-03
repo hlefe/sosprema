@@ -13,13 +13,32 @@ class ControleurBenevol {
     public static function vueConnexion(){
         require_once('vue/login.php');
     }
-
-    public static function vueModifierMotDePasse(){
-        $niveaux = ModelNiveau::getAll();
-        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-        require_once('vue/modifierMDP.php');
+    
+    //permet à l'utilisateur de modifier son mot de passe.
+    public static function userPassword(){
+        if(isset($_SESSION['utilisateurConnecter'])){
+            $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        }else{
+            $vueErreur[] = "vous n'avez pas accès à cette partie du site";
+            require_once('vue/login.php');
+            return;
+        }
+        if(isset($_REQUEST['edit'])){
+            try{
+                $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::modifierMotDePasse($_SESSION['utilisateurConnecter']);
+                $vueConfirmation[]="Votre mot de passe à bien été modifié";
+            }catch(Exception $e){
+                $vueErreur[] = $e->getMessage();
+            }catch(PDOException $e){
+                $vueErreur[] = $e->getMessage();
+            }
+        }
+        require_once('vue/userPassword.php');
     }
-
+    
+    
+    
+    
     //permet de valider le formulaire de connexion et de créer la session de l'utilisateur.
     public static function connexion() {
 
@@ -54,32 +73,6 @@ class ControleurBenevol {
         else{
             require_once('vue/profil.php');
         }
-    }
-
-    //permet à l'utilisateur de modifier son mot de passe.
-    public static function modifierMotDePasse(){
-        $niveaux = ModelNiveau::getAll();
-        if(isset($_SESSION['utilisateurConnecter'])){
-            $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-        }else{
-            $vueErreur[] = "vous n'avez pas à avoir accés à cette partie du site";
-            require_once('vue/login.php');
-            return;
-        }
-
-        try{
-            $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::modifierMotDePasse($_SESSION['utilisateurConnecter']);
-        }catch(Exception $e){
-            $vueErreur[] = $e->getMessage();
-            require_once('vue/modifierMDP.php');
-            return;
-        }catch(PDOException $e){
-            $vueErreur[] = $e->getMessage();
-            require_once('vue/modifierMDP.php');
-            return;
-        }
-        $vueConfirmation[]="Votre mot de passe à bien été modifié";
-        require_once('vue/modifierMDP.php');
     }
 
     //permet de détruire la session d'un utilisateur lorsqu'il se déconnecte.

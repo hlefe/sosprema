@@ -116,6 +116,7 @@ class ModelGestionUtilisateur {
 
     public static function modifierNiveau($user, $newNiveau){
         $utilisateur = UtilisateurGateway::modifierNiveau($user, $newNiveau);
+        return $utilisateur;
     }
 
     public static function verifierEmailNonPresent($email){
@@ -123,5 +124,25 @@ class ModelGestionUtilisateur {
             return true;
         }
         return false;
+    }
+    
+    public static function modifierSafeUserInfo($utilisateurModifie){
+        $vueErreur[] = "Aucun niveau utilisateur correspondant à ce libelle";
+         if(isset($_POST['libelle_niveau'])){
+            $idNiveau=ModelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
+            if($idNiveau==false){
+                $vueErreur[] = "Aucun niveau utilisateur correspondant à ce libelle";
+                require_once('vue/ajoutUtilisateur.php');
+                return;
+            } else{
+                $utilisateurModifie = self::modifierNiveau($utilisateurModifie, $idNiveau);
+            }
+        }
+        
+        $newMDP = VariableExterne::verifChampPassword('nouveau mot de passe','newMDP');         
+        if (!$newMDP == "")
+            UtilisateurGateway::modifierMotDePasse($utilisateurModifie->userId, $newMDP);
+        $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateurModifie->userId);
+        return $utilisateur;
     }
 }

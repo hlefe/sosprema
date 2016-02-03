@@ -138,4 +138,28 @@ class ControleurAdmin {
         $listeUsers = self::afficherToutUtilisateur();
         require_once('vue/listeUtilisateurs.php');
     }
+    
+    //Modifier les informations de sécurité/droit d'un utilisateur ( Mot de passe & niveau)
+     public static function safeUserInfo(){
+        $niveaux = ModelNiveau::getAll();
+        $utilisateurModifie = $_SESSION['utilisateurModifie'];
+        if(isset($_SESSION['utilisateurConnecter'])){
+            $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        }else{
+            $vueErreur[] = "vous n'avez pas accès à cette partie du site";
+            require_once('vue/login.php');
+            return;
+        }
+        if(isset($_REQUEST['edit'])){
+            try{
+                $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::modifierSafeUserInfo($utilisateurModifie);
+                $vueConfirmation[]="Informations de sécurité mises à jour";
+            }catch(Exception $e){
+                $vueErreur[] = $e->getMessage();
+            }catch(PDOException $e){
+                $vueErreur[] = $e->getMessage();
+            }
+        }
+        require_once('vue/safeUserInfo.php');
+    }
 }

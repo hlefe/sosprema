@@ -1,31 +1,3 @@
-<!-- <?php 
-/**
- * Vue: Page de connexion
- *
- *
- */
-  //require_once('header-connexion.php');
-  //require_once('erreur.php');
-  ?>
-<div class="loginForm">
-  <img src="vue/images/logo.png" ></img>
-</div>
-<form method="post" action="index.php?action=connexion" class="loginForm">
-
-  <h2><span class="entypo-login"></span> Connexion</h2>
-
-  <button id="boutonConnexion" class="submit" name="action" type="hidden" value="connexion"><span class="entypo-lock"></span></button>
-  
-  <span class="entypo-user inputUserIcon"></span>
-  <input type="text" class="user" name="emailConnexion" value="" placeholder="mail"/>
-  <span class="entypo-key inputPassIcon"></span>
-  <input type="password" name="passwordConnexion" class="pass"placeholder="mot de passe"/>
-</form>
-  <?php
-//require_once('footer.php'); 
-?>
--->
-
 <?php 
 /**
  * Vue: Page de connexion
@@ -41,7 +13,7 @@
         <img src="vue/images/logo.png" ></img>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Veuillez entrer vos informations de connexion:</p>
+        <p class="login-box-msg">Veuillez entrer vos informations de connexion</p>
         <form method="post" action="index.php?action=connexion">
           <div class="form-group has-feedback">
             <input type="email" required class="form-control" name="emailConnexion" placeholder="Email">
@@ -61,4 +33,39 @@
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+        <div class="box">
+            <div class="box-header with-border">
+            <h3 class="box-title">Identifiant administrateur</h3>
+            </div>
+            <div style="display: block;" class="box-body">
+            compteAdmin@gmail.com
+            </div>
+            <!-- /.box-body -->
+            <div style="display: block;" class="box-footer">
+            admin
+            </div>
+            <!-- /.box-footer-->
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+        <div class="box">
+            <div class="box-header with-border">
+            <h3 class="box-title">Identifiant bénévole</h3>
+            </div>
+            <div style="display: block;" class="box-body">
+            compteBenevole@gmail.com
+            </div>
+            <!-- /.box-body -->
+            <div style="display: block;" class="box-footer">
+            benevole
+            </div>
+            <!-- /.box-footer-->
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+    
+    
   </body>
