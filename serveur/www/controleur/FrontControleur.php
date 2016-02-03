@@ -9,7 +9,11 @@ class FrontControleur {
         if(!isset($_REQUEST['action'])){
         	require_once('vue/login.php');
         	return;
-        }elseif((!isset($_SESSION['utilisateurConnecter'])&& $_REQUEST['action']!= 'connexion')){
+        }elseif($_REQUEST['action'] == 'tableau_de_bord'){
+            require_once ('/vue/tableauDeBord2.php');
+            return;
+        }   
+        elseif((!isset($_SESSION['utilisateurConnecter'])&& $_REQUEST['action']!= 'connexion')){
         	require_once('vue/login.php');
         	return;
         }
@@ -17,8 +21,7 @@ class FrontControleur {
         $listeActionAdmin =  get_class_methods('ControleurAdmin');
         $listeActionBenevol =  get_class_methods('ControleurBenevol');
 
-        $action = $_REQUEST['action'];
-
+        $action = $_REQUEST['action']; 
         if(in_array($action, $listeActionAdmin)){
         	if(ControleurAdmin::verifierDroit()){
         		ControleurAdmin::$action();

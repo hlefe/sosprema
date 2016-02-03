@@ -20,6 +20,7 @@
     max-width: 220px;
 }
 </style>
+
 <div class="kv-avatar center-block">
     <input id="file" name ="avatar" value="<?php echo $utilisateurConnecter->avatar; ?>" type="file" multiple>
 </div>
