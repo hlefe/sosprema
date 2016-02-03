@@ -64,42 +64,65 @@
                 <!-- right col (We are only adding the ID to make the widgets sortable)-->
                 <section class="col-lg-5 connectedSortable">
                     <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Adresse</h3>
+                        <div class="box-tools pull-right">
+                            <span class="label label-primary">Facultatif</span>
+                        </div><!-- /.box-tools -->
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        
+                        <div class="alert alert-info alert-dismissible">
+                            <h4><i class="icon fa fa-info"></i>Adresse complète</h4>
+                           <div class="form-group">
+                            <?php require('vue/style/plugins/mapsSearch/mapsSearch.php'); ?>   
+                        </div>  
+                        </div>
+                        <div class="box box-warning box-solid">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Adresse</h3>
-                                <div class="box-tools pull-right">
-                                    <span class="label label-primary">Facultatif</span>
-                                </div><!-- /.box-tools -->
-                            </div><!-- /.box-header -->
+                            <h3 class="box-title">Adresse détaillée</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                            <!-- /.box-tools -->
+                            </div>
+                            <!-- /.box-header -->
                             <div class="box-body">
-                                <div class="form-group">
-                                    <label for="numRue">Numéro de rue</label>
-                                    <input class="form-control" type="text" name="numRue" value="<?php echo $utilisateur->numRue;?>" />
-                                </div>
-                                <div class="form-group"> 
+                                
+                                
+                            
+                                <div class="col-xs-4">
+                                    <p>
+                                    <label for="numRue">Numéro de rue</label>                     
+                                    </p><p>
+                                
                                     <label for="nomRue">Nom de rue</label>
-                                    <input class="form-control" type="text" name="nomRue" value="<?php echo $utilisateur->nomRue;?>" />
-                                </div>
-                                <div class="form-group">                  
+                                    
+                                    </p><p>
                                     <label for="codePostal">Code postal</label>
-                                    <input class="form-control" type="text" name="codePostal" value="<?php echo $utilisateur->codePostal;?>" />
-                                </div>
-                                <div class="form-group">
+                                    </p><p> 
                                     <label for="ville">Ville</label>
-                                    <input class="form-control" type="text" name="nomVille" value="<?php echo $utilisateur->nomVille;?>" />
+                                    </p>
                                 </div>
-                                <div class="form-group">
-                                    <label for="departement">Département</label>
-                                    <input class="form-control" type="text" name="nomDepartement" value="<?php echo $utilisateur->nomRegion;?>" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="region">Région</label>
-                                    <input class="form-control" type="text" name="nomRegion" value="<?php echo $utilisateurConnecter->nomRegion;?>" />
-                                </div>
+                                <div class="col-xs-8">
+                                    <input id="street_number" class="form-control" readonly="readonly" type="text" name="numRue" value="<?php echo $utilisateurConnecter->numRue;?>" />
+                                    <input id="route" class="form-control" readonly="readonly" type="text" name="nomRue" value="<?php echo $utilisateurConnecter->nomRue;?>" />
+                                    <input id="postal_code" class="form-control" type="text" readonly="readonly" name="codePostal" value="<?php echo $utilisateurConnecter->codePostal;?>" />
+                                    <input id="locality" class="form-control" readonly="readonly" type="text" name="nomVille" value="<?php echo $utilisateurConnecter->nomVille;?>" />
+                        
+
+                                </div> 
                             </div>
-                            <div class="box-footer">
-                                <button type="submit" class="btn btn-primary" ame="boutonAjouter" value="ajouterUtilisateur">Enregistrer</button>
-                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                            
                     </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary" ame="boutonAjouter" value="ajouterUtilisateur">Enregistrer</button>
+                    </div>
+                </div>
                 </section>
             </div><!-- /.row (main row) -->
     </form>
