@@ -1,14 +1,4 @@
-                            <!-- Include Google Maps JS API -->
-<script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDiAqFfL5kg50DPVHkPdmxetXXH9sAMDOE">
-</script>
-
-<!-- Custom JS code to bind to Autocomplete API -->
-<!-- find it here: https://github.com/lewagon/google-place-autocomplete/blob/gh-pages/autocomplete.js -->
-<!-- We'll detail this file in the article -->
-<script type="text/javascript" src="autocomplete.js"></script>
-                            <script>
-                                function initializeAutocomplete(id) {
+function initializeAutocomplete(id) {
   var element = document.getElementById(id);
   if (element) {
     var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode'] });
@@ -35,9 +25,3 @@ function onPlaceChanged() {
 google.maps.event.addDomListener(window, 'load', function() {
   initializeAutocomplete('user_input_autocomplete_address');
 });
-</script>
-
-  <input class="form-control" id="user_input_autocomplete_address" placeholder="Taper l'adresse ici...">
-             
-                        
-                        
