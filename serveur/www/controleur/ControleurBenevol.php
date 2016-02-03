@@ -10,13 +10,6 @@ class ControleurBenevol {
         require_once('vue/accueil.php');
     }
 
-    public static function profil(){
-        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-         
-        require_once('vue/profil.php');
-        
-    }
-
     public static function vueConnexion(){
         require_once('vue/login.php');
     }
@@ -41,21 +34,24 @@ class ControleurBenevol {
     }
 
     // permet à l'utilisateur de modifier ses données perso.
-    public static function modifierUtilisateur() {
-        
+    public static function profil() {
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-
-        try{
-            $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateurConnecter);
-            $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-            $vueConfirmation[] = "L'utilisateur à bien été modifié.";
-            header('Location: index.php?action=profil');
-        } catch(PDOException $ex){;
-            $vueErreur[] = $ex->getMessage();
-            header('Location: index.php?action=profil');
-        } catch(Exception $e){
-            $vueErreur[]=$e->getMessage();
-            header('Location: index.php?action=profil');
+        if(isset($_REQUEST['edit'])){
+            try{
+                $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateurConnecter);
+                $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+                $vueConfirmation[] = "L'utilisateur à bien été modifié.";
+                require_once('vue/profil.php');
+            } catch(PDOException $ex){;
+                $vueErreur[] = $ex->getMessage();
+                require_once('vue/profil.php');
+            } catch(Exception $e){
+                $vueErreur[]=$e->getMessage();
+                require_once('vue/profil.php');
+            }
+        }
+        else{
+            require_once('vue/profil.php');
         }
     }
 

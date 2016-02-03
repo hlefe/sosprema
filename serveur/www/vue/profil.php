@@ -3,7 +3,7 @@
 <section class="content">
     <?php require_once('erreur.php'); ?>
     <?php require_once('confirmation.php'); ?>
-    <form method="post" action="index.php?action=modifierUtilisateur" enctype="multipart/form-data">
+    <form method="post" action="index.php?action=profil&edit=true" enctype="multipart/form-data">
         <!-- Main row -->
         <div class="row">
             <!-- Left col -->
@@ -76,10 +76,7 @@
                         </div><!-- /.box-tools -->
                     </div><!-- /.box-header -->
                     <div class="box-body">
-                        
-                       <?php require('vue/includes/maps-address_field.php'); ?>   
-
-                            
+                       <?php require('vue/includes/maps-address_field.php'); ?>    
                     </div>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary" ame="boutonAjouter" value="ajouterUtilisateur">Enregistrer</button>

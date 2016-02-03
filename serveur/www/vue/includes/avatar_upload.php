@@ -21,7 +21,7 @@
 }
 </style>
 <div class="kv-avatar center-block">
-    <input id="file" name ="avatar" type="file" multiple>
+    <input id="file" name ="avatar" value="<?php echo $utilisateurConnecter->avatar; ?>" type="file" multiple>
 </div>
 
     <script>

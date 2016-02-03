@@ -11,9 +11,6 @@ Ce formulaire renvoie les champs suivants:
  */
 ?> 
  
- 
- 
- 
 <!-- //Appel du plugin permettant l'autocomplétion google maps (Modifier ce fichier pour configurer l'API key google maps) -->
 <?php require('vue/style/plugins/google-place-autocomplete-gh-pages/config.php');  ?> 
 

@@ -52,12 +52,12 @@ class UtilisateurGateway {
     }
 
     public static function insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
+        $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille){
         
         $querry = 'INSERT INTO utilisateur (email,nom,prenom,motDePasse,dateDeNaissance,nomRue,numRue,
-        codePostal,profession,divers,avatar,idNiveau,nomVille,nomDepartement,nomRegion) 
+        codePostal,profession,divers,avatar,idNiveau,nomVille) 
         VALUES (:email,:nom,:prenom,:motDePasse,:dateDeNaissance,:nomRue,:numRue,
-        :codePostal,:profession,:divers,:avatar,:idNiveau,:nomVille,:nomDepartement,:nomRegion)';
+        :codePostal,:profession,:divers,:avatar,:idNiveau,:nomVille)';
 
         Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
                                                 ':nom'=>array($nom,PDO::PARAM_STR),
@@ -71,9 +71,8 @@ class UtilisateurGateway {
                                                 ':divers'=>array($divers,PDO::PARAM_INT),
                                                 ':avatar'=>array($avatar,PDO::PARAM_INT),
                                                 ':idNiveau'=>array($idNiveau,PDO::PARAM_STR),
-                                                ':nomVille'=>array($nomVille,PDO::PARAM_STR),
-                                                ':nomDepartement'=>array($nomDepartement,PDO::PARAM_STR),
-                                                ':nomRegion'=>array($nomRegion,PDO::PARAM_STR)));
+                                                ':nomVille'=>array($nomVille,PDO::PARAM_STR)
+                                                ));
     }
 
     public static function supprimerUtilisateur($email){        
@@ -93,7 +92,7 @@ class UtilisateurGateway {
     }
 
     public static function modifierUtilisateur($id_utilisateur, $email, $nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion){
+        $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille){
         $querry = 'UPDATE utilisateur   SET     email = :email, 
                                                 nom = :nom,
                                                 prenom=:prenom,
@@ -105,9 +104,7 @@ class UtilisateurGateway {
                                                 divers=:divers,
                                                 avatar=:avatar,
                                                 idNiveau=:idNiveau,
-                                                nomVille=:nomVille,
-                                                nomDepartement=:nomDepartement,
-                                                nomRegion=:nomRegion
+                                                nomVille=:nomVille
                                         WHERE   idUtilisateur=:idUtilisateur';
             
         Connexion::executeQuerry($querry, array(':idUtilisateur'=>array($id_utilisateur,PDO::PARAM_STR),
@@ -122,9 +119,8 @@ class UtilisateurGateway {
                                                 ':divers'=>array($divers,PDO::PARAM_STR),
                                                 ':avatar'=>array($avatar,PDO::PARAM_STR),
                                                 ':idNiveau'=>array($idNiveau,PDO::PARAM_STR),
-                                                ':nomVille'=>array($nomVille,PDO::PARAM_STR),
-                                                ':nomDepartement'=>array($nomDepartement,PDO::PARAM_STR),
-                                                ':nomRegion'=>array($nomRegion,PDO::PARAM_STR)));
+                                                ':nomVille'=>array($nomVille,PDO::PARAM_STR)
+                                                ));
     }
 
     public static function modifierMotDePasse($idUser, $newMDP){

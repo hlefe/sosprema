@@ -16,23 +16,36 @@ class VariableExterne{
 	public static function verifChampOptionnel ($nomVariable) {
 		if(isset($_POST[$nomVariable]))
             return Nettoyage::nettoyerChaine($_POST[$nomVariable]);
-            
-        //Si le champ est une image (avatar par exemple) donc un type $_FILES
-        elseif(isset($_FILES[$nomVariable])) {
+        else
+            return NULL;
+	}
+    
+    public static function verifChampAvatar($nomVariable, $ancien){
+         //Si le champ est une image (avatar par exemple) donc un type $_FILES
+         if(isset($_FILES[$nomVariable])) {
+            //vérification des erreurs de fichier
+            switch ($_FILES[$nomVariable]['error']) {
+                case UPLOAD_ERR_OK:
+                    break;
+                case UPLOAD_ERR_NO_FILE:
+                    return $ancien;
+                case UPLOAD_ERR_INI_SIZE:
+                case UPLOAD_ERR_FORM_SIZE:
+                    return $ancien;
+                default:
+                    return $ancien;
+            }
             //Upload fichier
                 $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
                 $extension = strtolower(  substr(  strrchr($_FILES['avatar']['name'], '.')  ,1)  );
                 $chemin_destination = 'content/avatars/';     
-                mkdir($chemin_destination, 0777, true);
                 $md5 = md5(uniqid(rand(), true));
                 $nom = $chemin_destination. $md5 . "." . $extension;
                 $res = move_uploaded_file($_FILES['avatar']['tmp_name'], $nom);     
             //Retourne le lien du fichier
            return $nom;
         }
-        else
-            return NULL;
-	}
+    }
 
 	//permet de verifier le champ email.
 	public static function verifChampEmail ($nomVariable, $emailAComparer) {

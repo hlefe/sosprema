@@ -51,15 +51,12 @@ class ModelGestionUtilisateur {
         $nom = variableExterne::verifChampObligatoire('nom','nom');
         $prenom =variableExterne::verifChampObligatoire('prenom','prenom');
         $email = variableExterne::verifChampEmail('email', $utilisateurModifie->email);
-
         $numRue=variableExterne::verifChampOptionnel('numRue');
         $nomRue=variableExterne::verifChampOptionnel('nomRue');
         $codePostal=variableExterne::verifChampOptionnel('codePostal');
         $nomVille=variableExterne::verifChampOptionnel('nomVille');
-        $nomRegion=variableExterne::verifChampOptionnel('nomRegion');
-        $nomDepartement=variableExterne::verifChampOptionnel('nomDepartement');
         $dateDeNaissance=variableExterne::verifChampOptionnel('dateDeNaissance');
-        $avatar=variableExterne::verifChampOptionnel('avatar');     
+        $avatar=variableExterne::verifChampAvatar('avatar', $utilisateurModifie->avatar);     
         $profession=variableExterne::verifChampOptionnel('profession');
         $divers=variableExterne::verifChampOptionnel('divers');
 
@@ -76,11 +73,8 @@ class ModelGestionUtilisateur {
         }
 
         ModelGestionLieu::verifierPresenceLieu('ville', $nomVille);
-        ModelGestionLieu::verifierPresenceLieu('region', $nomRegion);
-        ModelGestionLieu::verifierPresenceLieu('departement', $nomDepartement);
-
         UtilisateurGateway::modifierUtilisateur($utilisateurModifie->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar,$idNiveau,$utilisateurModifie->idFamille,$nomVille,$nomDepartement,$nomRegion);
+        $codePostal,$profession,$divers,$avatar,$idNiveau,$utilisateurModifie->idFamille,$nomVille);
 
         $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateurModifie->userId);        
         
