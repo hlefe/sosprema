@@ -12,7 +12,9 @@ class ControleurBenevol {
 
     public static function profil(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+         
         require_once('vue/profil.php');
+        
     }
 
     public static function vueConnexion(){
@@ -30,7 +32,7 @@ class ControleurBenevol {
         try{
             $utilisateurConnecter = ModelSession::creationUtilisateurConnecter();
             if ($utilisateurConnecter != FALSE) 
-                require_once('vue/accueil.php');   
+                header('Location: index.php?action=accueil');   
         }
         catch(Exception $ex){
             $vueErreur[]=$ex->getMessage();
@@ -47,14 +49,13 @@ class ControleurBenevol {
             $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateurConnecter);
             $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
             $vueConfirmation[] = "L'utilisateur à bien été modifié.";
-            require_once('vue/profil.php');
+            header('Location: index.php?action=profil');
         } catch(PDOException $ex){;
             $vueErreur[] = $ex->getMessage();
-            require_once('vue/profil.php');
+            header('Location: index.php?action=profil');
         } catch(Exception $e){
             $vueErreur[]=$e->getMessage();
-            require_once('vue/profil.php');
-            return;
+            header('Location: index.php?action=profil');
         }
     }
 

@@ -16,6 +16,20 @@ class VariableExterne{
 	public static function verifChampOptionnel ($nomVariable) {
 		if(isset($_POST[$nomVariable]))
             return Nettoyage::nettoyerChaine($_POST[$nomVariable]);
+            
+        //Si le champ est une image (avatar par exemple) donc un type $_FILES
+        elseif(isset($_FILES[$nomVariable])) {
+            //Upload fichier
+                $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
+                $extension = strtolower(  substr(  strrchr($_FILES['avatar']['name'], '.')  ,1)  );
+                $chemin_destination = 'content/avatars/';     
+                mkdir($chemin_destination, 0777, true);
+                $md5 = md5(uniqid(rand(), true));
+                $nom = $chemin_destination. $md5 . "." . $extension;
+                $res = move_uploaded_file($_FILES['avatar']['tmp_name'], $nom);     
+            //Retourne le lien du fichier
+           return $nom;
+        }
         else
             return NULL;
 	}

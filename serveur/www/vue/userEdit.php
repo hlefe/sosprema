@@ -45,8 +45,7 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="nom">Avatar</label>
-                                <img src="<?php echo $utilisateurConnecter->avatar; ?>">
-                                <input class="form-control" type="text" name="avatar" value="<?php echo $utilisateurConnecter->avatar;?>" />
+                                <?php require('includes/avatar_upload.php'); ?>
                             </div>
                             <div class="form-group">
                                 <label for="prenom">Profession</label>
