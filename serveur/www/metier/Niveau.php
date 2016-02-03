@@ -15,28 +15,23 @@ class niveau {
 	private $idNiveau;
 	private $libelle;
 
-	public function __construct($idNiveau, $libelle){
-		$this->idNiveau = $idNiveau;
-		$this->libelle = $libelle;
-	}
+//Getter
+    public function __get($property) {
+        //Utilisation d'une variable dynamique   
+        return $this->$property;
+    }
 
-	public function __get($property){
-		if('idNiveau'==$property){
-			return $this->idNiveau;
-		}elseif('libelle'==$property){
-			return $this->libelle;
-		}else{
-			return null;
-		}
-	}
+//Setter
+    public function __set($property, $value) {
+        //Utilisation d'une variable dynamique 
+        $this->$property = $value;
+    }
 
-	public function __set($property, $value){
-		if('idNiveau'==$property){
-			$this->idNiveau = $value;
-		}elseif('libelle'==$property){
-			$this->libelle = $value;
-		}else{
-			return;
-		}
-	}
+//Constructeur
+    public function __construct($param) {
+        foreach ($param as $key=>$value){
+            //Utilisation d'une variable dynamique
+            $this->$key = $value;
+        }
+    }
 }

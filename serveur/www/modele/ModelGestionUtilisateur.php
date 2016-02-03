@@ -73,10 +73,10 @@ class ModelGestionUtilisateur {
         }
 
         ModelGestionLieu::verifierPresenceLieu('ville', $nomVille);
-        UtilisateurGateway::modifierUtilisateur($utilisateurModifie->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
+        UtilisateurGateway::modifierUtilisateur($utilisateurModifie->idUtilisateur,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
         $codePostal,$profession,$divers,$avatar,$idNiveau,$utilisateurModifie->idFamille,$nomVille);
 
-        $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateurModifie->userId);        
+        $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateurModifie->idUtilisateur);        
         
         return $utilisateur;
     }
@@ -109,8 +109,8 @@ class ModelGestionUtilisateur {
             throw new Exception("Le nouveau et la confirmation de mot de passe sont incorecte.", 1);
         }
            
-        UtilisateurGateway::modifierMotDePasse($utilisateur->userId, $motDePasse);
-        $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateur->userId);
+        UtilisateurGateway::modifierMotDePasse($utilisateur->idUtilisateur, $motDePasse);
+        $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateur->idUtilisateur);
         return $utilisateur;
     }
 
@@ -126,7 +126,7 @@ class ModelGestionUtilisateur {
         return false;
     }
     
-    public static function modifierSafeUserInfo($utilisateurModifie){
+    public static function modifierSafeidUtilisateurfo($utilisateurModifie){
         $vueErreur[] = "Aucun niveau utilisateur correspondant à ce libelle";
          if(isset($_POST['libelle_niveau'])){
             $idNiveau=ModelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
@@ -141,8 +141,8 @@ class ModelGestionUtilisateur {
         
         $newMDP = VariableExterne::verifChampPassword('nouveau mot de passe','newMDP');         
         if (!$newMDP == "")
-            UtilisateurGateway::modifierMotDePasse($utilisateurModifie->userId, $newMDP);
-        $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateurModifie->userId);
+            UtilisateurGateway::modifierMotDePasse($utilisateurModifie->idUtilisateur, $newMDP);
+        $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateurModifie->idUtilisateur);
         return $utilisateur;
     }
 }
