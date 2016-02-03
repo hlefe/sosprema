@@ -6,20 +6,24 @@
 class ControleurAdmin {
 
     // permet à l'administrateur d'ajouter un utilisateur.
-    public static function ajouterUtilisateur() {
+    public static function vueAjoutUtilisateur() {
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-
-        
-        try{
-            ModelGestionUtilisateur::creerUtilisateur();
-            
-            $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
-            require_once('vue/ajoutUtilisateur.php');
-        } catch(PDOException $ex){
-            $vueErreur[] = $ex->getMessage();
-            require_once('vue/ajoutUtilisateur.php');
-        } catch(Exception $e){
-            $vueErreur[] = $e->getMessage();
+        if(isset($_REQUEST['add'])){
+            try{
+                ModelGestionUtilisateur::creerUtilisateur();
+                
+                $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
+                require_once('vue/ajoutUtilisateur.php');
+            } catch(PDOException $ex){
+                $vueErreur[] = $ex->getMessage();
+                require_once('vue/ajoutUtilisateur.php');
+            } catch(Exception $e){
+                $vueErreur[] = $e->getMessage();
+                require_once('vue/ajoutUtilisateur.php');
+            }
+        }
+        else{
+            $allNiveau=ModelNiveau::getAll();
             require_once('vue/ajoutUtilisateur.php');
         }
 
@@ -122,12 +126,6 @@ class ControleurAdmin {
             $vueErreur[]=$ex->getMessage();
             require_once('vue/vueErreur.php');
         }
-    }
-
-    public static function vueAjoutUtilisateur(){
-        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-        $allNiveau=ModelNiveau::getAll();
-        require_once('vue/ajoutUtilisateur.php');
     }
 
     public static function gestion(){

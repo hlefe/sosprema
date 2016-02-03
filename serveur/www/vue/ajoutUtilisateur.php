@@ -3,7 +3,7 @@
 <section class="content">
     <?php require_once('erreur.php'); ?>
     <?php require_once('confirmation.php'); ?>
-    <form method="post" action="index.php?action=ajouterUtilisateur">
+    <form method="post" action="index.php?action=vueAjoutUtilisateur&add=true">
         <!-- Main row -->
             <div class="row">
                 <!-- Left col -->
@@ -39,17 +39,21 @@
                         </div><!-- /.box-header -->
                         
                         <div class="box-body">
-                            <div class="form-group">
-                                <label for="nom">Avatar</label>
-                                <input class="form-control" type="text" name="avatar" />
-                            </div>
-                            <div class="form-group">
-                                <label for="prenom">Profession</label>
-                                <input class="form-control" type="text" name="profession"  />
-                            </div>
-                            <div class="form-group">   
-                                <label for="email">Divers</label>
-                                <input class="form-control" type="text" name="divers"  />
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class=" form-group">
+                                        <label for="prenom">Profession</label>
+                                        <input class="form-control" type="text" name="profession" value="<?php echo $utilisateurConnecter->profession;?>" />
+                                    </div>
+                                    <div class="form-group">   
+                                        <label for="email">Divers</label>
+                                        <input class="form-control" type="text" name="divers" value="<?php echo $utilisateurConnecter->divers;?>" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label for="nom">Avatar</label>
+                                    <?php require('includes/avatar_upload.php'); ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,30 +73,7 @@
                                 </div><!-- /.box-tools -->
                             </div><!-- /.box-header -->
                             <div class="box-body">
-                                <div class="form-group">
-                                    <label for="numRue">Numéro de rue</label>
-                                    <input class="form-control" type="text" name="numRue"  />
-                                </div>
-                                <div class="form-group"> 
-                                    <label for="nomRue">Nom de rue</label>
-                                    <input class="form-control" type="text" name="nomRue" />
-                                </div>
-                                <div class="form-group">                  
-                                    <label for="codePostal">Code postal</label>
-                                    <input class="form-control" type="text" name="codePostal"  />
-                                </div>
-                                <div class="form-group">
-                                    <label for="ville">Ville</label>
-                                    <input class="form-control" type="text" name="nomVille"  />
-                                </div>
-                                <div class="form-group">
-                                    <label for="departement">Département</label>
-                                    <input class="form-control" type="text" name="nomDepartement"  />
-                                </div>
-                                <div class="form-group">
-                                    <label for="region">Région</label>
-                                    <input class="form-control" type="text" name="nomRegion"  />
-                                </div>
+                                <?php require('vue/includes/maps-address_field.php'); ?>    
                             </div>
                     </div>
                 </section>

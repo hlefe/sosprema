@@ -11,7 +11,7 @@ class ModelGestionUtilisateur {
         
         $nom = variableExterne::verifChampObligatoire('nom','nom');
         $prenom =variableExterne::verifChampObligatoire('prenom','prenom');
-        $motDePasse = variableExterne::verifChampObligatoire('mot de passe','motDePasse');
+        $motDePasse = variableExterne::verifChampPassword('mot de passe','motDePasse');
         $email = variableExterne::verifChampEmail('email', null);
 
         $numRue=variableExterne::verifChampOptionnel('numRue');
@@ -29,7 +29,7 @@ class ModelGestionUtilisateur {
             $idNiveau=ModelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
             if($idNiveau==false){
-                $vueErreur[] = "Aucun niveau utilisateur correspondant à se libelle";
+                $vueErreur[] = "Aucun niveau utilisateur correspondant à ce libelle";
                 require_once('vue/ajoutUtilisateur.php');
                 return;
             } else{
