@@ -22,7 +22,7 @@
 </style>
 
 <div class="kv-avatar center-block">
-    <input id="file" name ="avatar" value="<?php if($pageActuelle->id =='profil')  echo $utilisateurConnecter->avatar; if($pageActuelle->id =='vueAdminModifierUtilisateur'|| 'adminModifierUtilisateur')  echo $utilisateur->avatar; ?>" type="file" multiple>
+    <input id="file" name ="avatar" value="<?php if($pageActuelle->id =='profil')  echo $utilisateurConnecter->avatar; if($pageActuelle->id =='vueAdminModifierUtilisateur'|| $pageActuelle->id == 'adminModifierUtilisateur')  echo $utilisateur->avatar; ?>" type="file" multiple>
 </div>
 
     <script>
@@ -34,7 +34,7 @@
         browseClass: "btn btn-primary btn-lg",
         fileType: "image",
         previewFileType: "image",
-        defaultPreviewContent: '<img style="max-height: 100px" src="<?php if($pageActuelle->id =="profil")  echo $utilisateurConnecter->avatar; if($pageActuelle->id =="vueAdminModifierUtilisateur"|| "adminModifierUtilisateur")  echo $utilisateur->avatar; ?>">',
+        defaultPreviewContent: '<img style="max-height: 100px" src="<?php if($pageActuelle->id =="profil")  echo $utilisateurConnecter->avatar; if($pageActuelle->id =="vueAdminModifierUtilisateur"|| $pageActuelle->id =="adminModifierUtilisateur")  echo $utilisateur->avatar; ?>">',
         browseLabel: '',
         removeLabel: '',
         maxFileSize: 1500,

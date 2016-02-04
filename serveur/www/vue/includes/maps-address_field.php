@@ -46,12 +46,12 @@ Ce formulaire renvoie les champs suivants:
             </p>
         </div>
         <!-- Contenu grisé des champs -->
-        <div class="col-xs-8">
-            <input id="street_number" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="numRue" value="<?php if($pageActuelle->id =='profil')  echo $utilisateurConnecter->numRue; if($pageActuelle->id =='vueAdminModifierUtilisateur'|| 'adminModifierUtilisateur')  echo $utilisateur->numRue;?>" />
-            <input id="route" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomRue" value="<?php if($pageActuelle->id =='profil')  echo $utilisateurConnecter->nomRue; if($pageActuelle->id =='vueAdminModifierUtilisateur'|| 'adminModifierUtilisateur')  echo $utilisateur->nomRue;?>" />
-            <input id="postal_code" class="form-control" type="text" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> name="codePostal" value="<?php if($pageActuelle->id =='profil')  echo $utilisateurConnecter->codePostal; if($pageActuelle->id =='vueAdminModifierUtilisateur'|| 'adminModifierUtilisateur')  echo $utilisateur->codePostal;?>" />
-            <input id="locality" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomVille" value="<?php if($pageActuelle->id =='profil')  echo $utilisateurConnecter->nomVille; if($pageActuelle->id =='vueAdminModifierUtilisateur'|| 'adminModifierUtilisateur')  echo $utilisateur->nomVille;?>" />
-      </div> 
+         <div class="col-xs-8">
+            <input id="street_number" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="numRue" value="<?php if($pageActuelle->id =='profil')  echo $utilisateurConnecter->numRue; if($pageActuelle->id =='vueAdminModifierUtilisateur'|| $pageActuelle->id =='adminModifierUtilisateur')  echo $utilisateur->numRue;?>" />
+            <input id="route" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomRue" value="<?php if($pageActuelle->id =='profil')  echo $utilisateurConnecter->nomRue; if($pageActuelle->id =='vueAdminModifierUtilisateur'|| $pageActuelle->id =='adminModifierUtilisateur')  echo $utilisateur->nomRue;?>" />
+            <input id="postal_code" class="form-control" type="text" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> name="codePostal" value="<?php if($pageActuelle->id =='profil')  echo $utilisateurConnecter->codePostal; if($pageActuelle->id =='vueAdminModifierUtilisateur'|| $pageActuelle->id =='adminModifierUtilisateur')  echo $utilisateur->codePostal;?>" />
+            <input id="locality" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomVille" value="<?php if($pageActuelle->id =='profil')  echo $utilisateurConnecter->nomVille; if($pageActuelle->id =='vueAdminModifierUtilisateur'|| $pageActuelle->id == 'adminModifierUtilisateur')  echo $utilisateur->nomVille;?>" />
+        </div> 
    </div>
    <!-- /.box-body -->
 </div>
