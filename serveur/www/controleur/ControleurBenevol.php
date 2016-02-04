@@ -45,7 +45,7 @@ class ControleurBenevol {
         try{
             $utilisateurConnecter = ModelSession::creationUtilisateurConnecter();
             if ($utilisateurConnecter != FALSE) 
-                header('Location: index.php?action=accueil');   
+                header('Location: index.php?action=accueil');  
         }
         catch(Exception $ex){
             $vueErreur[]=$ex->getMessage();

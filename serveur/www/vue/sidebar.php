@@ -27,7 +27,9 @@ $listePages = ModelPage::obtenirTout($utilisateurConnecter);
             <img src="<?php echo $utilisateurConnecter->avatar;?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-            <p><?php echo $utilisateurConnecter->prenom;?> <?php echo $utilisateurConnecter->nom ?></p>
+            <p><?php 
+print_r($utilisateurConnecter);
+            echo $utilisateurConnecter->prenom;?> <?php echo $utilisateurConnecter->nom ?></p>
             <a href="#"><i class="fa fa-circle text-success"></i> Connecté</a>
         </div>
     </div>

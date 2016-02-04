@@ -9,24 +9,24 @@ class ModelGestionUtilisateur {
 
     public static function creerUtilisateur(){
         
-        $nom = variableExterne::verifChampObligatoire('nom','nom');
-        $prenom =variableExterne::verifChampObligatoire('prenom','prenom');
-        $motDePasse = variableExterne::verifChampPassword('mot de passe','motDePasse');
-        $email = variableExterne::verifChampEmail('email', null);
+        $nom = VariableExterne::verifChampObligatoire('nom','nom');
+        $prenom =VariableExterne::verifChampObligatoire('prenom','prenom');
+        $motDePasse = VariableExterne::verifChampPassword('mot de passe','motDePasse');
+        $email = VariableExterne::verifChampEmail('email', null);
 
-        $numRue=variableExterne::verifChampOptionnel('numRue');
-        $nomRue=variableExterne::verifChampOptionnel('nomRue');
-        $codePostal=variableExterne::verifChampOptionnel('codePostal');
-        $nomVille=variableExterne::verifChampOptionnel('nomVille');
-        $nomRegion=variableExterne::verifChampOptionnel('nomRegion');
-        $nomDepartement=variableExterne::verifChampOptionnel('nomDepartement');
-        $dateDeNaissance=variableExterne::verifChampOptionnel('dateDeNaissance');
-        $avatar=variableExterne::verifChampOptionnel('avatar');     
-        $profession=variableExterne::verifChampOptionnel('profession');
-        $divers=variableExterne::verifChampOptionnel('divers');
+        $numRue=VariableExterne::verifChampOptionnel('numRue');
+        $nomRue=VariableExterne::verifChampOptionnel('nomRue');
+        $codePostal=VariableExterne::verifChampOptionnel('codePostal');
+        $nomVille=VariableExterne::verifChampOptionnel('nomVille');
+        $nomRegion=VariableExterne::verifChampOptionnel('nomRegion');
+        $nomDepartement=VariableExterne::verifChampOptionnel('nomDepartement');
+        $dateDeNaissance=VariableExterne::verifChampOptionnel('dateDeNaissance');
+        $avatar=VariableExterne::verifChampOptionnel('avatar');     
+        $profession=VariableExterne::verifChampOptionnel('profession');
+        $divers=VariableExterne::verifChampOptionnel('divers');
 
         if(isset($_POST['libelle_niveau']))
-            $idNiveau=ModelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
+            $idNiveau=ModelNiveau::rechercherId(Nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
             if($idNiveau==false){
                 $vueErreur[] = "Aucun niveau utilisateur correspondant à ce libelle";
@@ -48,21 +48,21 @@ class ModelGestionUtilisateur {
 
     public static function modifierUtilisateur($utilisateurModifie){
         
-        $nom = variableExterne::verifChampObligatoire('nom','nom');
-        $prenom =variableExterne::verifChampObligatoire('prenom','prenom');
-        $email = variableExterne::verifChampEmail('email', $utilisateurModifie->email);
-        $numRue=variableExterne::verifChampOptionnel('numRue');
-        $nomRue=variableExterne::verifChampOptionnel('nomRue');
-        $codePostal=variableExterne::verifChampOptionnel('codePostal');
-        $nomVille=variableExterne::verifChampOptionnel('nomVille');
-        $dateDeNaissance=variableExterne::verifChampOptionnel('dateDeNaissance');
-        $avatar=variableExterne::verifChampAvatar('avatar', $utilisateurModifie->avatar);     
-        $profession=variableExterne::verifChampOptionnel('profession');
-        $divers=variableExterne::verifChampOptionnel('divers');
+        $nom = VariableExterne::verifChampObligatoire('nom','nom');
+        $prenom =VariableExterne::verifChampObligatoire('prenom','prenom');
+        $email = VariableExterne::verifChampEmail('email', $utilisateurModifie->email);
+        $numRue=VariableExterne::verifChampOptionnel('numRue');
+        $nomRue=VariableExterne::verifChampOptionnel('nomRue');
+        $codePostal=VariableExterne::verifChampOptionnel('codePostal');
+        $nomVille=VariableExterne::verifChampOptionnel('nomVille');
+        $dateDeNaissance=VariableExterne::verifChampOptionnel('dateDeNaissance');
+        $avatar=VariableExterne::verifChampAvatar('avatar', $utilisateurModifie->avatar);     
+        $profession=VariableExterne::verifChampOptionnel('profession');
+        $divers=VariableExterne::verifChampOptionnel('divers');
 
 
         if(isset($_POST['libelle_niveau'])){
-            $idNiveau=ModelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
+            $idNiveau=ModelNiveau::rechercherId(Nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
             if($idNiveau==false){
                 throw new Exception("Aucun niveau utilisateur ne correspond à se libelle", 1);
@@ -129,7 +129,7 @@ class ModelGestionUtilisateur {
     public static function modifierSafeUserInfo($utilisateurModifie){
         $vueErreur[] = "Aucun niveau utilisateur correspondant à ce libelle";
          if(isset($_POST['libelle_niveau'])){
-            $idNiveau=ModelNiveau::rechercherId(nettoyage::nettoyerChaine($_POST['libelle_niveau']));
+            $idNiveau=ModelNiveau::rechercherId(Nettoyage::nettoyerChaine($_POST['libelle_niveau']));
             if($idNiveau==false){
                 $vueErreur[] = "Aucun niveau utilisateur correspondant à ce libelle";
                 require_once('vue/ajoutUtilisateur.php');

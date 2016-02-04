@@ -2,15 +2,15 @@
 
 class FrontControleur {
     
-    function init() {
-
+    public static function init() {
+        require_once 'metier/Utilisateur.php'; 
         session_start();
 
         if(!isset($_REQUEST['action'])){
         	require_once('vue/login.php');
         	return;
         }elseif($_REQUEST['action'] == 'tableau_de_bord'){
-            require_once ('/vue/tableauDeBord2.php');
+            require_once ('vue/tableauDeBord2.php');
             return;
         }   
         elseif((!isset($_SESSION['utilisateurConnecter'])&& $_REQUEST['action']!= 'connexion')){
@@ -28,7 +28,7 @@ class FrontControleur {
         	}
         	else{
         		$vueErreur[] = "vous ne possédez pas les droits appopriées.";
-                require_once ("/vue/erreur.php");
+                require_once ("vue/erreur.php");
                 return;
             }
         }elseif(in_array($action, $listeActionBenevol)){

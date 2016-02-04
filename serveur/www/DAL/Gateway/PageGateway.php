@@ -9,7 +9,7 @@ class PageGateway {
         if ($result == false){
             return false;
         }
-        $page = new page($result);
+        $page = new Page($result);
         return $page;
     }
 

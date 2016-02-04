@@ -93,13 +93,13 @@ class ControleurAdmin {
             $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
             $utilisateur = $_SESSION['utilisateurModifie'];
             $vueConfirmation[] = "L'utilisateur à bien été modifié.";
-            require_once('vue/profil.php');
+            require_once('vue/userEdit.php');
         } catch(PDOException $ex){;
             $vueErreur[] = $ex->getMessage();
-            require_once('vue/profil.php');
+            require_once('vue/userEdit.php');
         } catch(Exception $e){
             $vueErreur[]=$e->getMessage();
-            require_once('vue/profil.php');
+            require_once('vue/userEdit.php');
             return;
         }
     }

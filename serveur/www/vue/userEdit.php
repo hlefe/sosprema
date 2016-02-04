@@ -46,11 +46,11 @@
                             <div class="col-sm-8">
                                 <div class=" form-group">
                                     <label for="prenom">Profession</label>
-                                    <input class="form-control" type="text" name="profession" value="<?php echo $utilisateurConnecter->profession;?>" />
+                                    <input class="form-control" type="text" name="profession" value="<?php echo $utilisateur->profession;?>" />
                                 </div>
                                 <div class="form-group">   
                                     <label for="email">Divers</label>
-                                    <input class="form-control" type="text" name="divers" value="<?php echo $utilisateurConnecter->divers;?>" />
+                                    <input class="form-control" type="text" name="divers" value="<?php echo $utilisateur->divers;?>" />
                                 </div>
                             </div>
                             <div class="col-sm-3 form-group">

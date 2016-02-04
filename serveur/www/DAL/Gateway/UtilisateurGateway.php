@@ -11,7 +11,7 @@ class UtilisateurGateway {
             if ($result == false){
                 return false;
             }
-            $utilisateur = new utilisateur($result);
+            $utilisateur = new Utilisateur($result);
             return $utilisateur;
     }
 
@@ -23,7 +23,7 @@ class UtilisateurGateway {
             if ($result == false){
                 return false;
             }
-            $utilisateur = new utilisateur($result);
+            $utilisateur = new Utilisateur($result);
             return $utilisateur;       
         
     }
@@ -36,7 +36,7 @@ class UtilisateurGateway {
         if ($result == false){
             return false;
         }
-        return $utilisateur = new utilisateur($result);
+        return $utilisateur = new Utilisateur($result);
     }
 
     public static function rechercheUtilisateurId($id_utilisateur)
@@ -47,7 +47,7 @@ class UtilisateurGateway {
         if ($result == false){
             return false;
         }
-        $utilisateur = new utilisateur($result);
+        $utilisateur = new Utilisateur($result);
         return $utilisateur;
     }
 
