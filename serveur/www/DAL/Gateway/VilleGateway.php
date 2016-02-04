@@ -2,14 +2,16 @@
 
 class VilleGateway {
     
-    public static function ajouterVille($nomVille){
-        $querry = 'INSERT INTO ville (nomVille) VALUES (:nom)';
-        Connexion::executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_INT)));
+    public static function ajouterVille($nomVille, $codePostal, $idDepartement){
+        $querry = 'INSERT INTO ville (nomVille, codePostal, idDepartement) VALUES (:nomVille, :codePostal, :idDepartement)';
+        Connexion::executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_STR),
+                                                ':codePostal'=>array($codePostal,PDO::PARAM_INT),
+                                                ':idDepartement'=>array($idDepartement,PDO::PARAM_INT)));
     }
-
+    
     public static function rechercherVille($nomVille){
         $querry = 'SELECT * FROM ville WHERE nomVille=:nom';
-        Connexion::executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_INT)));
+        Connexion::executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_STR)));
         $result = Connexion::getResult();
         if ($result == false){
             return false;

@@ -15,7 +15,7 @@ class NiveauGateway
 
     public static function rechercheridNiveau($nom){
         $querry = 'SELECT * FROM niveau WHERE nom=:nom';
-        Connexion::executeQuerry($querry, array(':nom'=>array($nom,PDO::PARAM_INT)));
+        Connexion::executeQuerry($querry, array(':nom'=>array($nom,PDO::PARAM_STR)));
         $result = Connexion::getResult();
         if ($result == false){
             return false;

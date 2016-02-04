@@ -25,7 +25,6 @@ class UtilisateurGateway {
             }
             $utilisateur = new Utilisateur($result);
             return $utilisateur;       
-        
     }
 
     public static function rechercheUtilisateurNom($nom)
@@ -51,27 +50,22 @@ class UtilisateurGateway {
         return $utilisateur;
     }
 
-    public static function insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille){
+    public static function insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,
+        $profession,$divers,$avatar,$idNiveau,$idFamille,$idAdresse){
         
-        $querry = 'INSERT INTO utilisateur (email,nom,prenom,motDePasse,dateDeNaissance,nomRue,numRue,
-        codePostal,profession,divers,avatar,idNiveau,nomVille) 
-        VALUES (:email,:nom,:prenom,:motDePasse,:dateDeNaissance,:nomRue,:numRue,
-        :codePostal,:profession,:divers,:avatar,:idNiveau,:nomVille)';
+        $querry = 'INSERT INTO utilisateur (email,nom,prenom,motDePasse,dateDeNaissance,profession,divers,avatar,idNiveau,idAdresse) 
+        VALUES (:email,:nom,:prenom,:motDePasse,:dateDeNaissance,:profession,:divers,:avatar,:idNiveau,:idAdresse)';
 
         Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
                                                 ':nom'=>array($nom,PDO::PARAM_STR),
                                                 ':prenom'=>array($prenom,PDO::PARAM_STR),
                                                 ':motDePasse'=>array($motDePasse,PDO::PARAM_STR),
                                                 ':dateDeNaissance'=>array($dateDeNaissance,PDO::PARAM_STR),
-                                                ':numRue'=>array($numRue,PDO::PARAM_INT),
-                                                ':nomRue'=>array($nomRue,PDO::PARAM_STR),
-                                                ':codePostal'=>array($codePostal,PDO::PARAM_INT),
-                                                ':profession'=>array($profession,PDO::PARAM_INT),
-                                                ':divers'=>array($divers,PDO::PARAM_INT),
-                                                ':avatar'=>array($avatar,PDO::PARAM_INT),
+                                                ':profession'=>array($profession,PDO::PARAM_STR),
+                                                ':divers'=>array($divers,PDO::PARAM_STR),
+                                                ':avatar'=>array($avatar,PDO::PARAM_STR),
                                                 ':idNiveau'=>array($idNiveau,PDO::PARAM_STR),
-                                                ':nomVille'=>array($nomVille,PDO::PARAM_STR)
+                                                ':idAdresse'=>array($idAdresse,PDO::PARAM_INT)
                                                 ));
     }
 
@@ -91,20 +85,18 @@ class UtilisateurGateway {
         return $result;
     }
 
-    public static function modifierUtilisateur($id_utilisateur, $email, $nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar=null,$idNiveau,$idFamille,$nomVille){
+    public static function modifierUtilisateur($id_utilisateur, $email, $nom,$prenom,$dateDeNaissance,
+        $profession,$divers,$avatar,$idNiveau,$idFamille,$idAdresse){
+            
         $querry = 'UPDATE utilisateur   SET     email = :email, 
                                                 nom = :nom,
                                                 prenom=:prenom,
                                                 dateDeNaissance=:dateDeNaissance,
-                                                nomRue=:nomRue,
-                                                numRue=:numRue,
-                                                codePostal=:codePostal,
                                                 profession=:profession,
                                                 divers=:divers,
                                                 avatar=:avatar,
                                                 idNiveau=:idNiveau,
-                                                nomVille=:nomVille
+                                                idAdresse=:idAdresse
                                         WHERE   idUtilisateur=:idUtilisateur';
             
         Connexion::executeQuerry($querry, array(':idUtilisateur'=>array($id_utilisateur,PDO::PARAM_STR),
@@ -112,14 +104,11 @@ class UtilisateurGateway {
                                                 ':nom'=>array($nom,PDO::PARAM_STR),
                                                 ':prenom'=>array($prenom,PDO::PARAM_STR),
                                                 ':dateDeNaissance'=>array($dateDeNaissance,PDO::PARAM_STR),
-                                                ':numRue'=>array($numRue,PDO::PARAM_INT),
-                                                ':nomRue'=>array($nomRue,PDO::PARAM_STR),
-                                                ':codePostal'=>array($codePostal,PDO::PARAM_INT),
                                                 ':profession'=>array($profession,PDO::PARAM_STR),
                                                 ':divers'=>array($divers,PDO::PARAM_STR),
                                                 ':avatar'=>array($avatar,PDO::PARAM_STR),
                                                 ':idNiveau'=>array($idNiveau,PDO::PARAM_STR),
-                                                ':nomVille'=>array($nomVille,PDO::PARAM_STR)
+                                                ':idAdresse'=>array($idAdresse,PDO::PARAM_STR)
                                                 ));
     }
 

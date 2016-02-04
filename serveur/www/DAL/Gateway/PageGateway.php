@@ -4,7 +4,7 @@ class PageGateway {
     
     public static function rechercherPage($nomPage){
         $querry = 'SELECT * FROM page WHERE id=:nom';
-        Connexion::executeQuerry($querry, array(':nom'=>array($nomPage,PDO::PARAM_INT)));
+        Connexion::executeQuerry($querry, array(':nom'=>array($nomPage,PDO::PARAM_STR)));
         $result = Connexion::getResult();
         if ($result == false){
             return false;

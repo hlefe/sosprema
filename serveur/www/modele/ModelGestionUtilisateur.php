@@ -34,15 +34,19 @@ class ModelGestionUtilisateur {
             } else{
             $idNiveau=ModelNiveau::rechercherId('utilisateur');
         }
-
+        
+ // Faudrait peut-être que ces fonctions retournent la référence du lieu:
         ModelGestionLieu::verifierPresenceLieu('ville', $nomVille);
         ModelGestionLieu::verifierPresenceLieu('region', $nomRegion);
         ModelGestionLieu::verifierPresenceLieu('departement', $nomDepartement);
-
+ // Puis créer un métier Adresse, afin de créer une adresse et mettre les infos ci-dessus dedans...  
+ // en attendant je suis obligé de mettre une adresse à 0: 
+        $idAddress= 0;
+// Pareil pour les familles ?
         $idFamille =null;
 
-        $utilisateur = UtilisateurGateway::insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar,$idNiveau,$idFamille,$nomVille,$nomDepartement,$nomRegion);
+        $utilisateur = UtilisateurGateway::insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,
+        $profession,$divers,$avatar,$idNiveau,$idFamille,$idAddress);
     }
 
     public static function modifierUtilisateur($utilisateurModifie){
@@ -69,10 +73,16 @@ class ModelGestionUtilisateur {
         else{
             $idNiveau = $utilisateurModifie->idNiveau;
         }
+        
 
+        
+        
         ModelGestionLieu::verifierPresenceLieu('ville', $nomVille);
-        UtilisateurGateway::modifierUtilisateur($utilisateurModifie->userId,$email,$nom,$prenom,$dateDeNaissance,$nomRue,$numRue,
-        $codePostal,$profession,$divers,$avatar,$idNiveau,$utilisateurModifie->idFamille,$nomVille);
+        //Gérer la création de l'adresse !!! 
+        $idAdresse = null;
+        
+        UtilisateurGateway::modifierUtilisateur($utilisateurModifie->userId,$email,$nom,$prenom,$dateDeNaissance,
+        $profession,$divers,$avatar,$idNiveau,$utilisateurModifie->idFamille,$idAdresse);
 
         $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateurModifie->userId);        
         
