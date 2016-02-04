@@ -42,7 +42,7 @@ Les champs suivants sont définis:
 
 <!-- Le champ avatar  -->
 <div class="kv-avatar center-block">
-    <input id="file" name ="avatar" value="<?php echo $utilisateur->avatar; ?>" type="file" multiple>
+    <input id="file" name ="avatar" value="<?php if(isset($utilisateur->avatar)) echo $utilisateur->avatar; ?>" type="file">
 </div>
 
 <!-- Configuration du plugin fileInput  -->
@@ -55,7 +55,7 @@ $("#file").fileinput({
     browseClass: "btn btn-primary btn-lg",
     fileType: "image",
     previewFileType: "image",
-    defaultPreviewContent: '<img style="max-height: 100px" src="<?php  echo $utilisateur->avatar; ?>">',
+    defaultPreviewContent: '<img style="max-height: 100px" src="<?php  if(isset($utilisateur->avatar)) echo $utilisateur->avatar; ?>">',
     browseLabel: '',
     removeLabel: '',
     maxFileSize: 1500,

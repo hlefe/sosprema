@@ -30,7 +30,6 @@ class ModelGestionUtilisateur {
 
             if($idNiveau==false){
                 $vueErreur[] = "Aucun niveau utilisateur correspondant à ce libelle";
-                require_once('vue/ajoutUtilisateur.php');
                 return;
             } else{
             $idNiveau=ModelNiveau::rechercherId('utilisateur');
@@ -131,7 +130,6 @@ class ModelGestionUtilisateur {
             $idNiveau=ModelNiveau::rechercherId(Nettoyage::nettoyerChaine($_POST['libelle_niveau']));
             if($idNiveau==false){
                 $vueErreur[] = "Aucun niveau utilisateur correspondant à ce libelle";
-                require_once('vue/ajoutUtilisateur.php');
                 return;
             } else{
                 $utilisateurModifie = self::modifierNiveau($utilisateurModifie, $idNiveau);

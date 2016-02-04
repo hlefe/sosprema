@@ -7,11 +7,11 @@ class ControleurBenevol {
 
     public static function accueil(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-        require_once('vue/accueil.php');
+        require_once('vue/pages/accueil.php');
     }
 
     public static function vueConnexion(){
-        require_once('vue/login.php');
+        require_once('vue/pages/login.php');
     }
     
     //permet à l'utilisateur de modifier son mot de passe.
@@ -20,7 +20,7 @@ class ControleurBenevol {
             $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         }else{
             $vueErreur[] = "vous n'avez pas accès à cette partie du site";
-            require_once('vue/login.php');
+            require_once('vue/pages/login.php');
             return;
         }
         if(isset($_REQUEST['edit'])){
@@ -33,7 +33,7 @@ class ControleurBenevol {
                 $vueErreur[] = $e->getMessage();
             }
         }
-        require_once('vue/userPassword.php');
+        require_once('vue/pages/userPassword.php');
     }
     
     
@@ -49,7 +49,7 @@ class ControleurBenevol {
         }
         catch(Exception $ex){
             $vueErreur[]=$ex->getMessage();
-            require_once('vue/login.php');
+            require_once('vue/pages/login.php');
         }
     }
 
@@ -62,18 +62,13 @@ class ControleurBenevol {
                 $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
                 $utilisateur = $_SESSION['utilisateurConnecter'];
                 $vueConfirmation[] = "L'utilisateur à bien été modifié.";
-                require_once('vue/profil.php');
             } catch(PDOException $ex){;
                 $vueErreur[] = $ex->getMessage();
-                require_once('vue/profil.php');
             } catch(Exception $e){
                 $vueErreur[]=$e->getMessage();
-                require_once('vue/profil.php');
             }
         }
-        else{
-            require_once('vue/profil.php');
-        }
+        require_once('vue/pages/profil.php');
     }
 
     //permet de détruire la session d'un utilisateur lorsqu'il se déconnecte.
@@ -81,7 +76,7 @@ class ControleurBenevol {
         session_unset();
         session_destroy();
         $_SESSION = array();
-        require_once ('vue/login.php');
+        require_once ('vue/pages/login.php');
     }
 
 }

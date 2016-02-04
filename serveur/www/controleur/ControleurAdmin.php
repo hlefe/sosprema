@@ -6,52 +6,24 @@
 class ControleurAdmin {
 
     // permet à l'administrateur d'ajouter un utilisateur.
-    public static function vueAjoutUtilisateur() {
+    public static function ajoutUtilisateur() {
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         $niveaux = ModelNiveau::getAll();
         if(isset($_REQUEST['add'])){
             try{
                 ModelGestionUtilisateur::creerUtilisateur();
-                $vueConfirmation[] = "L'utilisateur à bien été ajouté.";
-                require_once('vue/ajoutUtilisateur.php');
+                $vueConfirmation[] = "L'utilisateur à bien été ajouté.";               
             } catch(PDOException $ex){
                 $vueErreur[] = $ex->getMessage();
-                require_once('vue/ajoutUtilisateur.php');
             } catch(Exception $e){
                 $vueErreur[] = $e->getMessage();
-                require_once('vue/ajoutUtilisateur.php');
             }
         }
         else{
             $allNiveau=ModelNiveau::getAll();
-            require_once('vue/ajoutUtilisateur.php');
         }
+        require_once('vue/pages/admin/ajoutUtilisateur.php');
 
-    }
-
-    //permet la supression d'un utilisateur grace à son adresse email.
-    public static function supprimerUtilisateur(){
-         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-
-        if(!isset($_GET['mail'])){
-            $vueErreur[] = "Veuiller renseigner une adresse mail.";
-            require_once('vue/vueErreur.php');
-            return;
-        }
-        $email = Nettoyage::nettoyerChaine($_GET['mail']);
-
-        
-        try{
-
-            ModelGestionUtilisateur::supprimerUtilisateur($email);
-            $vueConfirmation[] = "L'utilisateur à bien été suprimé.";
-            $listeUsers = ModelGestionUtilisateur::afficherToutUtilisateur();
-            require_once('vue/listeUtilisateurs.php');
-        } catch(PDOException $ex){
-            $vueErreur[] = "Erreur base de donnée, PDOException";
-            $listeUsers = ModelGestionUtilisateur::afficherToutUtilisateur();
-            require_once('vue/listeUtilisateurs.php');
-        }
     }
 
     //fonction permettant l'apelle à la vue pour modifier un utilisateur.
@@ -80,7 +52,7 @@ class ControleurAdmin {
                 $vueErreur[]=$e->getMessage();
             }
         }
-        require_once('vue/userEdit.php');
+        require_once('vue/pages/admin/userEdit.php');
     }
 
     //fonction permettant à un aministrateur de modifier un utilisateur.
@@ -90,12 +62,7 @@ class ControleurAdmin {
         
     }
 
-    //fonction permettant la récupération de tout les utilisateurs dans la base.
-    public static function afficherToutUtilisateur(){
-        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-        $listeUsers = ModelGestionUtilisateur::afficherToutUtilisateur();
-        require_once('vue/listeUtilisateurs.php');
-    }
+ 
 
     //fonction permettant de vérifier si un utilisateur est admin ou non.
      public static function verifierDroit(){
@@ -110,7 +77,7 @@ class ControleurAdmin {
             }
         }catch(PDOException $ex){
             $vueErreur[]=$ex->getMessage();
-            require_once('vue/vueErreur.php');
+            require_once('vue/includes/vueErreur.php');
         }
     }
 
@@ -118,12 +85,22 @@ class ControleurAdmin {
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         require_once('vue/gestion.php');
     }
-
+    
     public static function listeUtilisateurs(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-        $listeUsers = self::afficherToutUtilisateur();
-        require_once('vue/listeUtilisateurs.php');
+        if(isset($_GET['mail'])){
+            $email = Nettoyage::nettoyerChaine($_GET['mail']);
+            try{
+                ModelGestionUtilisateur::supprimerUtilisateur($email);
+                $vueConfirmation[] = "L'utilisateur a bien été suppprimé.";
+            } catch(PDOException $ex){
+                $vueErreur[] = "Erreur base de donnée, PDOException";
+            }
+        }
+        $listeUsers = ModelGestionUtilisateur::afficherToutUtilisateur();
+        require_once('vue/pages/admin/listeUtilisateurs.php');
     }
+
     
     //Modifier les informations de sécurité/droit d'un utilisateur ( Mot de passe & niveau)
      public static function safeUserInfo(){
@@ -133,7 +110,7 @@ class ControleurAdmin {
             $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         }else{
             $vueErreur[] = "vous n'avez pas accès à cette partie du site";
-            require_once('vue/login.php');
+            require_once('vue/pages/login.php');
             return;
         }
         if(isset($_REQUEST['edit'])){
@@ -146,6 +123,6 @@ class ControleurAdmin {
                 $vueErreur[] = $e->getMessage();
             }
         }
-        require_once('vue/safeUserInfo.php');
+        require_once('vue/pages/admin/securityUserInfo.php');
     }
 }

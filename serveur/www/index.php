@@ -14,9 +14,9 @@ try {
 }
 catch (PDOException $ex){    
     $vueErreur = $ex->getMessage();
-    require 'vue/erreur.php';
+    require 'vue/includes/erreur.php';
 }catch(Exception $e){
 	$vueErreur = $ex->getMessage();
-    require 'vue/erreur.php';
+    require 'vue/includes/erreur.php';
 }
  ?>

@@ -24,14 +24,14 @@ Les champs suivants sont définis:
 <div class="box-body">
     <div class="form-group">
         <label for="nom">Nom</label>
-        <input class="form-control" required type="text" name="nom" value="<?php echo $utilisateur->nom;?>" />
+        <input class="form-control" required type="text" name="nom" value="<?php if(isset($utilisateur->nom)) echo $utilisateur->nom; ?>" />
     </div>
     <div class="form-group">
             <label for="prenom">Prénom</label>
-            <input class="form-control" required type="text" name="prenom" value="<?php echo $utilisateur->prenom;?>" />
+            <input class="form-control" required type="text" name="prenom" value="<?php if(isset($utilisateur->prenom)) echo $utilisateur->prenom;?>" />
     </div>
     <div class="form-group">
             <label for="email">Adresse Mail</label>
-            <input class="form-control" required type="email" name="email" value="<?php echo $utilisateur->email;?>" />
+            <input class="form-control" required type="email" name="email" value="<?php if(isset($utilisateur->email)) echo $utilisateur->email;?>" />
     </div>
 </div>
