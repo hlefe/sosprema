@@ -55,53 +55,39 @@ class ControleurAdmin {
     }
 
     //fonction permettant l'apelle à la vue pour modifier un utilisateur.
-    public static function vueAdminModifierUtilisateur(){
+    public static function userEdit(){
+        //Définition utilisateur connecté
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         
-        if(!isset($_GET['mail'])){
-            $vueErreur[] = "Veuiller renseigner une adresse mail.";
-            require_once('vue/vueErreur.php');
-            return;
-        }
-        $email = Nettoyage::nettoyerChaine($_GET['mail']);
-
-        try{
-
-            $utilisateur = ModelGestionUtilisateur::rechercheUtilisateur($email);
+        // Si une adresse mail est définie dans l'url, changement d'utilisateur à modifier
+        // et donc on saute l'étape de prise en compte des modifications, 
+        // car on vient forcément d'une page différente.
+        if(isset($_GET['mail'])){
+            //Recherche utilisateur
+            $utilisateur = ModelGestionUtilisateur::rechercheUtilisateur($_GET['mail']);
             $_SESSION['utilisateurModifie'] = $utilisateur;
-            require_once('vue/userEdit.php');
-
-        } catch(PDOException $ex){
-            $vueErreur[] = "Erreur base de donnée, PDOException";
-            require_once('vue/erreur.php');
+        }else{
+            //Récupération de l'utilisateur à modifier
+            $utilisateur=$_SESSION['utilisateurModifie'];
+            try{
+                //modification de cet utilisateur
+                $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
+                $utilisateur = $_SESSION['utilisateurModifie'];
+                $vueConfirmation[] = "L'utilisateur à bien été modifié.";
+            } catch(PDOException $ex){;
+                $vueErreur[] = $ex->getMessage();
+            } catch(Exception $e){
+                $vueErreur[]=$e->getMessage();
+            }
         }
+        require_once('vue/userEdit.php');
     }
 
     //fonction permettant à un aministrateur de modifier un utilisateur.
     public static function adminModifierUtilisateur(){
-        if(isset($_SESSION['utilisateurConnecter'])){
-            $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-        }else{
-            $vueErreur[] = "vous n'avez pas à avoir accés à cette partie du site";
-            require_once('vue/login.php');
-            return;
-        }
-
         $utilisateur=$_SESSION['utilisateurModifie'];
 
-        try{
-            $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
-            $utilisateur = $_SESSION['utilisateurModifie'];
-            $vueConfirmation[] = "L'utilisateur à bien été modifié.";
-            require_once('vue/userEdit.php');
-        } catch(PDOException $ex){;
-            $vueErreur[] = $ex->getMessage();
-            require_once('vue/userEdit.php');
-        } catch(Exception $e){
-            $vueErreur[]=$e->getMessage();
-            require_once('vue/userEdit.php');
-            return;
-        }
+        
     }
 
     //fonction permettant la récupération de tout les utilisateurs dans la base.

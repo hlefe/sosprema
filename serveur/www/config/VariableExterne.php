@@ -42,7 +42,7 @@ class VariableExterne{
                 $md5 = md5(uniqid(rand(), true));
                 $nom = $chemin_destination. $md5 . "." . $extension;
                 $res = move_uploaded_file($_FILES['avatar']['tmp_name'], $nom);     
-            //Retourne le lien du fichier
+            //Retourne le lien du fichier          
            return $nom;
         }
     }

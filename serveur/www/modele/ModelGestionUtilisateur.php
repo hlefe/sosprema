@@ -47,7 +47,6 @@ class ModelGestionUtilisateur {
     }
 
     public static function modifierUtilisateur($utilisateurModifie){
-        
         $nom = VariableExterne::verifChampObligatoire('nom','nom');
         $prenom =VariableExterne::verifChampObligatoire('prenom','prenom');
         $email = VariableExterne::verifChampEmail('email', $utilisateurModifie->email);

@@ -37,7 +37,7 @@
                                 </td>
                                 <td><?php echo $user["nom"]; ?></td>
                                 <td><?php echo $user["prenom"]; ?></td>
-                                <td><a href="index.php?action=vueAdminModifierUtilisateur&mail=<?php echo $user["email"]; ?>">Modifier</a></td>
+                                <td><a href="index.php?action=userEdit&mail=<?php echo $user["email"]; ?>">Modifier</a></td>
                                 <td><a href="index.php?action=supprimerUtilisateur&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
                             </tr>
                         <?php } ?>

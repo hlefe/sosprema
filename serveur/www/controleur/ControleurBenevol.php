@@ -55,11 +55,12 @@ class ControleurBenevol {
 
     // permet à l'utilisateur de modifier ses données perso.
     public static function profil() {
+        $utilisateur = $_SESSION['utilisateurConnecter'];
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         if(isset($_REQUEST['edit'])){
             try{
-                $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateurConnecter);
-                $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+                $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
+                $utilisateur = $_SESSION['utilisateurConnecter'];
                 $vueConfirmation[] = "L'utilisateur à bien été modifié.";
                 require_once('vue/profil.php');
             } catch(PDOException $ex){;
