@@ -4,6 +4,18 @@ class ModelGestionUtilisateur {
 
     public static function rechercheUtilisateur($email) {
         $utilisateur = UtilisateurGateway::rechercheUtilisateurEmail($email);
+        
+        $adresse = AdresseGateway::rechercherAdresseById($utilisateur->idAddresse);
+        $ville = VilleGateway::rechercherVilleById($adresse['idVille']);
+        $departement = DepartementGateway::rechercherDepartementById($ville['idDepartement']);
+        $region = RegionGateway::rechercherRegionById($departement['idRegion']);
+        $userAdresse = new $arrayName = array('numRue' => $adresse['numRue'], 
+                                              'nomRue' => $adresse['nomRue'],
+                                              'codePostal' => $ville['codePostal'],
+                                              'nomVille' => $ville['nomVille'],
+                                              'nomDepartement' => $departement['nomDepartement'],
+                                              'nomRegion' => $regio['nomRegion']);
+        $utilisateur->adresse = new Adresse($userAdresse);
         return $utilisateur;
     }
 
@@ -36,17 +48,16 @@ class ModelGestionUtilisateur {
         }
         
  // Faudrait peut-être que ces fonctions retournent la référence du lieu:
-        ModelGestionLieu::verifierPresenceLieu('ville', $nomVille);
-        ModelGestionLieu::verifierPresenceLieu('region', $nomRegion);
-        ModelGestionLieu::verifierPresenceLieu('departement', $nomDepartement);
+        $idRegion = ModelGestionLieu::verifierPresenceRegion($nomRegion);
+        $idDepartement = ModelGestionLieu::verifierPresenceDepartement($nomDepartement, $idRegion);
+        $idVille = ModelGestionLieu::verifierPresenceVille($nomVille, $codePostal, $idDepartement);
+        AdresseGateway::ajouterAdresse($numRue, $nomRue, $idVille);
  // Puis créer un métier Adresse, afin de créer une adresse et mettre les infos ci-dessus dedans...  
  // en attendant je suis obligé de mettre une adresse à 0: 
-        $idAddress= 0;
-// Pareil pour les familles ?
-        $idFamille =null;
+        $idAddress= AdresseGateway::rechercherAdresse($numRue, $nomRue, $idVille);
 
         $utilisateur = UtilisateurGateway::insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,
-        $profession,$divers,$avatar,$idNiveau,$idFamille,$idAddress);
+        $profession,$divers,$avatar,$idNiveau,$idAddress);
     }
 
     public static function modifierUtilisateur($utilisateurModifie){
@@ -57,6 +68,8 @@ class ModelGestionUtilisateur {
         $nomRue=VariableExterne::verifChampOptionnel('nomRue');
         $codePostal=VariableExterne::verifChampOptionnel('codePostal');
         $nomVille=VariableExterne::verifChampOptionnel('nomVille');
+        $nomRegion=VariableExterne::verifChampOptionnel('nomRegion');
+        $nomDepartement=VariableExterne::verifChampOptionnel('nomDepartement');
         $dateDeNaissance=VariableExterne::verifChampOptionnel('dateDeNaissance');
         $avatar=VariableExterne::verifChampAvatar('avatar', $utilisateurModifie->avatar);     
         $profession=VariableExterne::verifChampOptionnel('profession');
@@ -76,11 +89,14 @@ class ModelGestionUtilisateur {
         
 
         
-        
+        $idRegion = ModelGestionLieu::verifierPresenceRegion($nomRegion);
+        $idDepartement = ModelGestionLieu::verifierPresenceDepartement($nomDepartement, $idRegion);
+        $idVille = ModelGestionLieu::verifierPresenceVille($nomVille, $codePostal, $idDepartement);
+        AdresseGateway::ajouterAdresse($numRue, $nomRue, $idVille);
+
+        $idAddress= AdresseGateway::rechercherAdresse($numRue, $nomRue, $idVille);
         ModelGestionLieu::verifierPresenceLieu('ville', $nomVille);
-        //Gérer la création de l'adresse !!! 
-        $idAdresse = null;
-        
+
         UtilisateurGateway::modifierUtilisateur($utilisateurModifie->userId,$email,$nom,$prenom,$dateDeNaissance,
         $profession,$divers,$avatar,$idNiveau,$utilisateurModifie->idFamille,$idAdresse);
 

@@ -10,12 +10,22 @@ class AdresseGateway {
                                                 ':idVille'=>array($idVille,PDO::PARAM_INT)));        
     }
     
-    public static function rechercherAdresse($numRue, $nomRue){
+    public static function rechercherAdresse($numRue, $nomRue, $idVille){
         $querry = 'SELECT * FROM adresse WHERE numRue=:numRue AND nomRue=:nomRue';
         
         Connexion::executeQuerry($querry, array(':numRue'=>array($numRue,PDO::PARAM_INT),
                                                 ':nomRue'=>array($nomRue,PDO::PARAM_STR)));
         $result = Connexion::getResult();
+        return $result;
+    }
+
+    public static function rechercherAdresseById($idAdresse){
+        $querry = 'SELECT * FROM departement WHERE idAdresse=:idAdresse';
+        Connexion::executeQuerry($querry, array(':idAdresse'=>array($idAdresse,PDO::PARAM_STR)));
+        $result = Connexion::getResult();
+        if ($result == false){
+            return false;
+        }
         return $result;
     }
     

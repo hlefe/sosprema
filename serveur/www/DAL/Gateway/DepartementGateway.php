@@ -18,6 +18,16 @@ class DepartementGateway {
         return $result;
     }
 
+    public static function rechercherDepartementById($idDepartement){
+        $querry = 'SELECT * FROM departement WHERE idDepartement=:idDepartement';
+        Connexion::executeQuerry($querry, array(':idDepartement'=>array($idDepartement,PDO::PARAM_STR)));
+        $result = Connexion::getResult();
+        if ($result == false){
+            return false;
+        }
+        return $result;
+    }
+
     public static function getAll(){
         $querry = 'SELECT * FROM departement';
         Connexion::executeQuerry($querry);

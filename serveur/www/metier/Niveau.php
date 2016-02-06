@@ -1,16 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of telephone
- *
- * @author Nico
- */
 class niveau {
 	private $idNiveau;
 	private $libelle;
@@ -21,22 +10,10 @@ class niveau {
 	}
 
 	public function __get($property){
-		if('idNiveau'==$property){
-			return $this->idNiveau;
-		}elseif('libelle'==$property){
-			return $this->libelle;
-		}else{
-			return null;
-		}
+		return $this->$property
 	}
 
 	public function __set($property, $value){
-		if('idNiveau'==$property){
-			$this->idNiveau = $value;
-		}elseif('libelle'==$property){
-			$this->libelle = $value;
-		}else{
-			return;
-		}
+		$this->$property = $value;
 	}
 }

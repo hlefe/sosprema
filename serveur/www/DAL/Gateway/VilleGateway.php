@@ -9,9 +9,20 @@ class VilleGateway {
                                                 ':idDepartement'=>array($idDepartement,PDO::PARAM_INT)));
     }
     
-    public static function rechercherVille($nomVille){
-        $querry = 'SELECT * FROM ville WHERE nomVille=:nom';
-        Connexion::executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_STR)));
+    public static function rechercherVille($nomVille, $codePostal){
+        $querry = 'SELECT * FROM ville WHERE nomVille=:nom AND codePostal=:codePostal';
+        Connexion::executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_STR)
+                                                ':codePostal'=>array($codePostal, PDO::PARAM_INT)));
+        $result = Connexion::getResult();
+        if ($result == false){
+            return false;
+        }
+        return $result;
+    }
+
+    public static function rechercherVilleById($idVille){
+        $querry = 'SELECT * FROM departement WHERE idVille=:idVille';
+        Connexion::executeQuerry($querry, array(':idVille'=>array($idVille,PDO::PARAM_STR)));
         $result = Connexion::getResult();
         if ($result == false){
             return false;
