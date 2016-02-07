@@ -59,7 +59,7 @@ Les champs suivants sont définis:
         </div>
         <!-- Contenu grisé des champs -->
          <div class="col-xs-8">
-            <input id="street_number" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="numRue" value="<?php if(isset($utilisateur)) echo $utilisateur->numRue; ?>" />
+            <input id="street_number" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="numRue" value="<?php if(isset($utilisateur)) echo $utilisateur->adresse->numRue;  ?>" />
             <input id="route" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomRue" value="<?php if(isset($utilisateur)) echo $utilisateur->nomRue; ?>" />
             <input id="postal_code" class="form-control" type="text" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> name="codePostal" value="<?php if(isset($utilisateur)) echo $utilisateur->codePostal;?>" />
             <input id="locality" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomVille" value="<?php if(isset($utilisateur)) echo $utilisateur->nomVille;?>" />

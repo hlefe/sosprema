@@ -20,7 +20,7 @@ class AdresseGateway {
     }
 
     public static function rechercherAdresseById($idAdresse){
-        $querry = 'SELECT * FROM departement WHERE idAdresse=:idAdresse';
+        $querry = 'SELECT * FROM adresse WHERE idAdresse=:idAdresse';
         Connexion::executeQuerry($querry, array(':idAdresse'=>array($idAdresse,PDO::PARAM_STR)));
         $result = Connexion::getResult();
         if ($result == false){

@@ -5,7 +5,7 @@ class ModelGestionUtilisateur {
     public static function rechercheUtilisateur($email) {
         $utilisateur = UtilisateurGateway::rechercheUtilisateurEmail($email);
         
-        if($utilisateur->idAddresse!=NULL){
+        if($utilisateur->idAdresse!=NULL){
             $adresse = AdresseGateway::rechercherAdresseById($utilisateur->idAdresse);
             $ville = VilleGateway::rechercherVilleById($adresse['idVille']);
             $departement = DepartementGateway::rechercherDepartementById($ville['idDepartement']);
@@ -15,7 +15,7 @@ class ModelGestionUtilisateur {
                                                   'codePostal' => $ville['codePostal'],
                                                   'nomVille' => $ville['nomVille'],
                                                   'nomDepartement' => $departement['nomDepartement'],
-                                                  'nomRegion' => $regio['nomRegion']);
+                                                  'nomRegion' => $region['nomRegion']);
             $utilisateur->adresse = new Adresse($userAdresse);
         }
         return $utilisateur;

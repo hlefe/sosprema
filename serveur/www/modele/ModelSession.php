@@ -10,7 +10,7 @@ class ModelSession {
             throw new Exception("Erreur de login ou de mot de passe.", 1);
         }
 
-        if($utilisateurConnecter->idAddresse!=NULL){
+        if($utilisateurConnecter->idAdresse!=NULL){
             $adresse = AdresseGateway::rechercherAdresseById($utilisateur->idAdresse);
             $ville = VilleGateway::rechercherVilleById($adresse['idVille']);
             $departement = DepartementGateway::rechercherDepartementById($ville['idDepartement']);
