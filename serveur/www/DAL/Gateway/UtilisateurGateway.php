@@ -4,27 +4,52 @@ class UtilisateurGateway {
 
     public static function rechercheUtilisateurConnexion($email, $password)
     {   
-            $querry = 'SELECT * FROM utilisateur WHERE email=:email AND motDePasse=:password';
-            Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
-                                                    ':password'=>array($password,PDO::PARAM_STR)));
-            $result = Connexion::getResult();
-            if ($result == false){
-                return false;
-            }
-            $utilisateur = new Utilisateur($result);
-            return $utilisateur;
+        $querry = 'SELECT * FROM utilisateur WHERE email=:email AND motDePasse=:password';
+        Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
+                                                ':password'=>array($password,PDO::PARAM_STR)));
+        $result = Connexion::getResult();
+        if ($result == false){
+            return false;
+        }
+        $utilisateur = new Utilisateur($result);
+        if($utilisateur->idAdresse!=NULL){
+            $adresse = AdresseGateway::rechercherAdresseById($utilisateur->idAdresse);
+            $ville = VilleGateway::rechercherVilleById($adresse['idVille']);
+            $departement = DepartementGateway::rechercherDepartementById($ville['idDepartement']);
+            $region = RegionGateway::rechercherRegionById($departement['idRegion']);
+            $userAdresse = array('numRue' => $adresse['numRue'], 
+                                  'nomRue' => $adresse['nomRue'],
+                                  'codePostal' => $ville['codePostal'],
+                                  'nomVille' => $ville['nomVille'],
+                                  'nomDepartement' => $departement['nomDepartement'],
+                                  'nomRegion' => $region['nomRegion']);
+            $utilisateur->adresse = new Adresse($userAdresse);
+        }
+        return $utilisateur;
     }
 
-    public static function rechercheUtilisateurEmail($email)
-    {   
-            $querry = 'SELECT * FROM utilisateur WHERE email=:email';
-            Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
-            $result = Connexion::getResult();
-            if ($result == false){
-                return false;
-            }
-            $utilisateur = new Utilisateur($result);
-            return $utilisateur;       
+    public static function rechercheUtilisateurEmail($email){   
+        $querry = 'SELECT * FROM utilisateur WHERE email=:email';
+        Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
+        $result = Connexion::getResult();
+        if ($result == false){
+            return false;
+        }
+        $utilisateur = new Utilisateur($result);
+        if($utilisateur->idAdresse!=NULL){
+            $adresse = AdresseGateway::rechercherAdresseById($utilisateur->idAdresse);
+            $ville = VilleGateway::rechercherVilleById($adresse['idVille']);
+            $departement = DepartementGateway::rechercherDepartementById($ville['idDepartement']);
+            $region = RegionGateway::rechercherRegionById($departement['idRegion']);
+            $userAdresse = array('numRue' => $adresse['numRue'], 
+                                  'nomRue' => $adresse['nomRue'],
+                                  'codePostal' => $ville['codePostal'],
+                                  'nomVille' => $ville['nomVille'],
+                                  'nomDepartement' => $departement['nomDepartement'],
+                                  'nomRegion' => $region['nomRegion']);
+            $utilisateur->adresse = new Adresse($userAdresse);
+        }
+            return $utilisateur;  
     }
 
     public static function rechercheUtilisateurNom($nom)
@@ -47,6 +72,19 @@ class UtilisateurGateway {
             return false;
         }
         $utilisateur = new Utilisateur($result);
+        if($utilisateur->idAdresse!=NULL){
+            $adresse = AdresseGateway::rechercherAdresseById($utilisateur->idAdresse);
+            $ville = VilleGateway::rechercherVilleById($adresse['idVille']);
+            $departement = DepartementGateway::rechercherDepartementById($ville['idDepartement']);
+            $region = RegionGateway::rechercherRegionById($departement['idRegion']);
+            $userAdresse = array('numRue' => $adresse['numRue'], 
+                                  'nomRue' => $adresse['nomRue'],
+                                  'codePostal' => $ville['codePostal'],
+                                  'nomVille' => $ville['nomVille'],
+                                  'nomDepartement' => $departement['nomDepartement'],
+                                  'nomRegion' => $region['nomRegion']);
+            $utilisateur->adresse = new Adresse($userAdresse);
+        }
         return $utilisateur;
     }
 
@@ -86,7 +124,7 @@ class UtilisateurGateway {
     }
 
     public static function modifierUtilisateur($id_utilisateur, $email, $nom,$prenom,$dateDeNaissance,
-        $profession,$divers,$avatar,$idNiveau,$idFamille,$idAdresse){
+        $profession,$divers,$avatar,$idNiveau,$idAdresse){
             
         $querry = 'UPDATE utilisateur   SET     email = :email, 
                                                 nom = :nom,

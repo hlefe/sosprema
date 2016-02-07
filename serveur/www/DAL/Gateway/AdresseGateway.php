@@ -11,10 +11,11 @@ class AdresseGateway {
     }
     
     public static function rechercherAdresse($numRue, $nomRue, $idVille){
-        $querry = 'SELECT * FROM adresse WHERE numRue=:numRue AND nomRue=:nomRue';
+        $querry = 'SELECT * FROM adresse WHERE numRue=:numRue AND nomRue=:nomRue AND idVille = :idVille';
         
         Connexion::executeQuerry($querry, array(':numRue'=>array($numRue,PDO::PARAM_INT),
-                                                ':nomRue'=>array($nomRue,PDO::PARAM_STR)));
+                                                ':nomRue'=>array($nomRue,PDO::PARAM_STR),
+                                                ':idVille'=>array($idVille,PDO::PARAM_STR)));
         $result = Connexion::getResult();
         return $result;
     }

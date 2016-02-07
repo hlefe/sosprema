@@ -4,9 +4,9 @@ class VilleGateway {
     
     public static function ajouterVille($nomVille, $codePostal, $idDepartement){
         $querry = 'INSERT INTO ville (nomVille, codePostal, idDepartement) VALUES (:nomVille, :codePostal, :idDepartement)';
-        Connexion::executeQuerry($querry, array(':nom'=>array($nomVille,PDO::PARAM_STR),
+        Connexion::executeQuerry($querry, array(':nomVille'=>array($nomVille,PDO::PARAM_STR),
                                                 ':codePostal'=>array($codePostal,PDO::PARAM_INT),
-                                                ':idDepartement'=>array($idDepartement,PDO::PARAM_INT)));
+                                                ':idDepartement'=>array($idDepartement,PDO::PARAM_STR)));
     }
     
     public static function rechercherVille($nomVille, $codePostal){

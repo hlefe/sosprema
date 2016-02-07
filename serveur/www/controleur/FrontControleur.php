@@ -3,7 +3,8 @@
 class FrontControleur {
     
     public static function init() {
-        require_once 'metier/Utilisateur.php'; 
+        require_once 'metier/Utilisateur.php';
+        require_once 'metier/Adresse.php';  
         session_start();
 
         if(!isset($_REQUEST['action'])){

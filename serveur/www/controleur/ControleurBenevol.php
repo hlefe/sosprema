@@ -63,7 +63,7 @@ class ControleurBenevol {
                 $utilisateur = $_SESSION['utilisateurConnecter'];
                 $vueConfirmation[] = "L'utilisateur à bien été modifié.";
             } catch(PDOException $ex){;
-                $vueErreur[] = $ex->getMessage();
+                $vueErreur[] = $ex;
             } catch(Exception $e){
                 $vueErreur[]=$e->getMessage();
             }

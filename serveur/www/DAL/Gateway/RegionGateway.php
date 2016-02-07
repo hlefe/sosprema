@@ -18,7 +18,7 @@ class RegionGateway {
     }
 
     public static function rechercherRegionById($idRegion){
-        $querry = 'SELECT * FROM departement WHERE idRegion=:idRegion';
+        $querry = 'SELECT * FROM region WHERE idRegion=:idRegion';
         Connexion::executeQuerry($querry, array(':idRegion'=>array($idRegion,PDO::PARAM_STR)));
         $result = Connexion::getResult();
         if ($result == false){

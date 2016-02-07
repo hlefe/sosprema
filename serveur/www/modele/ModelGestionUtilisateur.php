@@ -4,20 +4,6 @@ class ModelGestionUtilisateur {
 
     public static function rechercheUtilisateur($email) {
         $utilisateur = UtilisateurGateway::rechercheUtilisateurEmail($email);
-        
-        if($utilisateur->idAdresse!=NULL){
-            $adresse = AdresseGateway::rechercherAdresseById($utilisateur->idAdresse);
-            $ville = VilleGateway::rechercherVilleById($adresse['idVille']);
-            $departement = DepartementGateway::rechercherDepartementById($ville['idDepartement']);
-            $region = RegionGateway::rechercherRegionById($departement['idRegion']);
-            $userAdresse = array('numRue' => $adresse['numRue'], 
-                                                  'nomRue' => $adresse['nomRue'],
-                                                  'codePostal' => $ville['codePostal'],
-                                                  'nomVille' => $ville['nomVille'],
-                                                  'nomDepartement' => $departement['nomDepartement'],
-                                                  'nomRegion' => $region['nomRegion']);
-            $utilisateur->adresse = new Adresse($userAdresse);
-        }
         return $utilisateur;
     }
 
@@ -53,13 +39,10 @@ class ModelGestionUtilisateur {
         $idRegion = ModelGestionLieu::verifierPresenceRegion($nomRegion);
         $idDepartement = ModelGestionLieu::verifierPresenceDepartement($nomDepartement, $idRegion);
         $idVille = ModelGestionLieu::verifierPresenceVille($nomVille, $codePostal, $idDepartement);
-        AdresseGateway::ajouterAdresse($numRue, $nomRue, $idVille);
- // Puis créer un métier Adresse, afin de créer une adresse et mettre les infos ci-dessus dedans...  
- // en attendant je suis obligé de mettre une adresse à 0: 
-        $idAddress= AdresseGateway::rechercherAdresse($numRue, $nomRue, $idVille);
+        $idAdresse = ModelGestionLieu::verifierPresenceAdresse($numRue, $nomRue, $idVille);
 
         $utilisateur = UtilisateurGateway::insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,
-        $profession,$divers,$avatar,$idNiveau,$idAddress);
+        $profession,$divers,$avatar,$idNiveau,$idAdresse);
     }
 
     public static function modifierUtilisateur($utilisateurModifie){
@@ -94,13 +77,10 @@ class ModelGestionUtilisateur {
         $idRegion = ModelGestionLieu::verifierPresenceRegion($nomRegion);
         $idDepartement = ModelGestionLieu::verifierPresenceDepartement($nomDepartement, $idRegion);
         $idVille = ModelGestionLieu::verifierPresenceVille($nomVille, $codePostal, $idDepartement);
-        AdresseGateway::ajouterAdresse($numRue, $nomRue, $idVille);
-
-        $idAddress= AdresseGateway::rechercherAdresse($numRue, $nomRue, $idVille);
-        ModelGestionLieu::verifierPresenceLieu('ville', $nomVille);
+        $idAdresse = ModelGestionLieu::verifierPresenceAdresse($numRue, $nomRue, $idVille);
 
         UtilisateurGateway::modifierUtilisateur($utilisateurModifie->userId,$email,$nom,$prenom,$dateDeNaissance,
-        $profession,$divers,$avatar,$idNiveau,$utilisateurModifie->idFamille,$idAdresse);
+        $profession,$divers,$avatar,$idNiveau,$idAdresse);
 
         $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateurModifie->userId);        
         

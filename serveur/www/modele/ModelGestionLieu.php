@@ -6,7 +6,7 @@ class ModelGestionLieu {
 		if($ville!=NULL){
 	    	return $ville['idVille'];
 	    }
-		VilleGateway::ajouterVille($variable,$codePostal, $idDepartement);
+		VilleGateway::ajouterVille($nomVille,$codePostal, $idDepartement);
 		$ville=VilleGateway::rechercherVille($nomVille,$codePostal);
 		return $ville['idVille'];
 	}
@@ -29,5 +29,15 @@ class ModelGestionLieu {
 		RegionGateway::ajouterRegion($nomRegion);
 		$region = RegionGateway::rechercherRegion($nomRegion);
 		return $region['idRegion'];
+	}
+
+	public static function verifierPresenceAdresse($numRue, $nomRue, $idVille){
+		$adresse = AdresseGateway::rechercherAdresse($numRue, $nomRue, $idVille);
+		if($adresse != NULL){
+			return $adresse['idAdresse'];
+		}
+		AdresseGateway::ajouterAdresse($numRue, $nomRue, $idVille);
+		$adresse = AdresseGateway::rechercherAdresse($numRue, $nomRue, $idVille);
+		return $adresse['idAdresse'];
 	}
 }
