@@ -7,7 +7,7 @@
  */
 $pageActuelle =  ModelPage::rechercherPage($_GET['action']);
 ?>
-<script src="//d1ks1friyst4m3.cloudfront.net/toolbar/prod/td.js" async data-trackduck-id="56afbc363c5a000f1734a9c3"></script>
+<script src="vue/style/plugins/feedback/td.js" async data-trackduck-id="56afbc363c5a000f1734a9c3"></script>
 <!DOCTYPE html>
 <html>
   <head>
