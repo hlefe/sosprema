@@ -22,13 +22,13 @@ class utilisateur {
     }
 
     public function __set($property, $value) {
-        $this->property = $value;
+        $this->$property = $value;
     }
 
     public function __construct($param) {
 
         foreach ($param as $key=>$value){
-            if($key = 'idUtilisateur'){
+            if($key == 'idUtilisateur'){
                 $this->userId = $value;
             }else{
                 $this->$key = $value;

@@ -5,17 +5,19 @@ class ModelGestionUtilisateur {
     public static function rechercheUtilisateur($email) {
         $utilisateur = UtilisateurGateway::rechercheUtilisateurEmail($email);
         
-        $adresse = AdresseGateway::rechercherAdresseById($utilisateur->idAddresse);
-        $ville = VilleGateway::rechercherVilleById($adresse['idVille']);
-        $departement = DepartementGateway::rechercherDepartementById($ville['idDepartement']);
-        $region = RegionGateway::rechercherRegionById($departement['idRegion']);
-        $userAdresse = new $arrayName = array('numRue' => $adresse['numRue'], 
-                                              'nomRue' => $adresse['nomRue'],
-                                              'codePostal' => $ville['codePostal'],
-                                              'nomVille' => $ville['nomVille'],
-                                              'nomDepartement' => $departement['nomDepartement'],
-                                              'nomRegion' => $regio['nomRegion']);
-        $utilisateur->adresse = new Adresse($userAdresse);
+        if($utilisateur->idAddresse!=NULL){
+            $adresse = AdresseGateway::rechercherAdresseById($utilisateur->idAdresse);
+            $ville = VilleGateway::rechercherVilleById($adresse['idVille']);
+            $departement = DepartementGateway::rechercherDepartementById($ville['idDepartement']);
+            $region = RegionGateway::rechercherRegionById($departement['idRegion']);
+            $userAdresse = array('numRue' => $adresse['numRue'], 
+                                                  'nomRue' => $adresse['nomRue'],
+                                                  'codePostal' => $ville['codePostal'],
+                                                  'nomVille' => $ville['nomVille'],
+                                                  'nomDepartement' => $departement['nomDepartement'],
+                                                  'nomRegion' => $regio['nomRegion']);
+            $utilisateur->adresse = new Adresse($userAdresse);
+        }
         return $utilisateur;
     }
 
