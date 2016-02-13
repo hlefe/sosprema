@@ -18,4 +18,20 @@ class EnfantGateway {
         $results = Connexion::getResults();
         return $results;
     }
+    
+    public static function supprimerEnfant($idEnfant){
+        $querry = 'DELETE FROM enfant WHERE idEnfant=:idEnfant';
+        Connexion::executeQuerry($querry, array(':idEnfant'=>array($idEnfant,PDO::PARAM_INT)));
+    }
+    
+    public static function modifierEnfant($idEnfant, $prenom, $dateNaissance, $termeNaissance){
+        $querry = 'UPDATE enfant SET :prenom = prenom,
+                                     :dateNaissance = dateNaissance,
+                                     :termeNaissance = :termeNaissance
+                              WHERE  :idEnfant = idEnfant';
+        Connexion::executeQuerry($querry, array(':idEnfant'=>array($idEnfant,PDO::PARAM_INT),
+                                                ':prenom'=>array($prenom,PDO::PARAM_STR),
+                                                ':dateNaissance'=>array($dateNaissance,PDO::PARAM_STR),
+                                                ':termeNaissance'=>array($termeNaissance,PDO::PARAM_STR)));
+    }
 }

@@ -27,4 +27,23 @@ class ModelGestionHopital {
         HopitalGateway::ajouterHopital($nomHopital, $idAdresse, $niveau, $service, $nbLits, $nbPremaParAn,
                                        $cafeParent, $parkingPayant, $convention, $visiteBenevole);
     }
+    
+    public static function supprimerHopital($idHopital){
+        HopitalGateway::supprimerHopital($idHopital);
+    }
+    
+    public static function modifierHopital($idHopital, $idAdresse){
+        
+        $nomHopital = VariableExterne::verifChampObligatoire('nomHopital', 'nomHopital');
+        $niveau = VariableExterne::verifChampObligatoire('niveau', 'niveau');
+        $service = VariableExterne::verifChampObligatoire('service', 'service');
+        $nbLits = VariableExterne::verifChampOptionnel('nbLits');
+        $nbPremaParAn = VariableExterne::verifChampOptionnel('nbPremaParAn');
+        $cafeParent = VariableExterne::verifChampOptionnel('cafeParent');
+        $parkingPayant = VariableExterne::verifChampOptionnel('parkingPayant');
+        $convention = VariableExterne::verifChampOptionnel('convention');
+        $visiteBenevole = VariableExterne::verifChampOptionnel('visiteBenevole');
+        
+        HopitalGateway::modifierHopital($idHopital, $nomHopital, $idAdresse, $niveau, $service, $nbLits, $nbPremaParAn, $cafeParent, $parkingPayant, $convention, $visiteBenevole);
+    }
 }
