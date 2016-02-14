@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * 
+ */
+class ControleurModerteur {
+
+	public static function ajouterHopital(){
+		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+		try {
+			ModelGestionHopital::ajouterHopital();
+		} catch(PDOException $ex){;
+                $vueErreur[] = $ex->getMessage;
+        } catch(Exception $e){
+            $vueErreur[]=$e->getMessage();
+        }
+        require_once('vue/pages/ajouterHopital.php');
+	}
+
+	public static function modifierHopital(){
+		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+		$hopital = $_SESSION['hopitalModifie'];
+		try {
+			ModelGestionHopital::ModifierHopital($hopital);
+		} catch(PDOException $ex){;
+                $vueErreur[] = $ex->getMessage;
+        } catch(Exception $e){
+            $vueErreur[]=$e->getMessage();
+        }
+        require_once('vue/pages/modificationHopital.php');
+	}
+
+	public static function supprimerHopital(){
+		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+	}
+
+}
