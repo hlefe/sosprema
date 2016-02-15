@@ -30,7 +30,15 @@
             
                 <!-- Colonne de droite-->
             <section class="col-lg-5 connectedSortable">
-            
+                <div class="box">
+                    <!-- Champs adresse -->
+                    <?php include('vue/includes/hopital/contacts/contactsLocaux.php'); ?>
+                    <div class="box-footer">
+                            <!-- bouton enregistrer -->
+                            <button type="submit" class="btn btn-primary" name="enregistrer" value="enregistrer">Enregistrer</button>
+                    </div>
+                </div>
+                
                 <div class="box">
                     <!-- Champs adresse -->
                     <?php include('vue/includes/hopital/adresse/adresse.php'); ?>
