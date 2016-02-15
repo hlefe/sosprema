@@ -24,13 +24,15 @@ class ControleurModerateur {
 
 	public static function ajouterHopital(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-		try {
-			ModelGestionHopital::ajouterHopital();
-            $vueConfirmation[] = "L'hopital à bien été ajouté.";
-		} catch(PDOException $ex){;
-                $vueErreur[] = $ex->getMessage;
-        } catch(Exception $e){
-            $vueErreur[]=$e->getMessage();
+        if(isset($_REQUEST['add'])){
+    		try {
+    			ModelGestionHopital::ajouterHopital();
+                $vueConfirmation[] = "L'hopital à bien été ajouté.";
+    		} catch(PDOException $ex){;
+                    $vueErreur[] = $ex->getMessage;
+            } catch(Exception $e){
+                $vueErreur[]=$e->getMessage();
+            }
         }
         require_once('vue/pages/moderateur/ajouterHopital.php');
 	}
