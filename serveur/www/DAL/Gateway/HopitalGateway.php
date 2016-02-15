@@ -20,11 +20,27 @@ class HopitalGateway {
         
     }
     
-    public static function rechercherHopital($nomHopital){        
-        $querry = 'SELECT * FROM hopital WHERE nomHopital=:nomhopital';
-        Connexion::executeQuerry($querry, array(':nomHopital'=>array($nomHopital,PDO::PARAM_STR)));
+    public static function rechercherHopital($idHopital){      
+        $querry = 'SELECT * FROM hopital WHERE idHopital=:idHopital';
+        Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_STR)));
         $result = Connexion::getResult();
-        return $result;
+        $hopital = new Hopital($result);
+        //Assocaition de l'adresse de l'hôpital
+        if($hopital->idAdresse!=NULL){
+            $adresse = AdresseGateway::rechercherAdresseById($hopital->idAdresse);
+            $ville = VilleGateway::rechercherVilleById($adresse['idVille']);
+            $departement = DepartementGateway::rechercherDepartementById($ville['idDepartement']);
+            $region = RegionGateway::rechercherRegionById($departement['idRegion']);
+            $hopitalAdresse = array('numRue' => $adresse['numRue'], 
+                                  'nomRue' => $adresse['nomRue'],
+                                  'codePostal' => $ville['codePostal'],
+                                  'nomVille' => $ville['nomVille'],
+                                  'nomDepartement' => $departement['nomDepartement'],
+                                  'nomRegion' => $region['nomRegion']);
+            $hopital->adresse = new Adresse($hopitalAdresse);
+        }
+        
+        return $hopital;
     }
     
     public static function getAll(){
@@ -40,17 +56,17 @@ class HopitalGateway {
     }
     
     public static function modifierHopital($idHopital,$nomHopital, $idAdresse, $niveau, $service, $nbLits, $nbPremaParAn, $cafeParent, $parkingPayant, $convention, $visiteBenevole){
-        $querry = 'UPDATE hopital SET :nomHopital = nomHopital, 
-                                      :idAdresse = idAdresse, 
-                                      :niveau = niveau, 
-                                      :service = service, 
-                                      :nbLits = nbLits, 
-                                      :nbPremaParAn = nbPremaParAn, 
-                                      :cafeParent = cafeParent, 
-                                      :parkingPayant = parkingPayant, 
-                                      :convention = convention, 
-                                      :visiteBenevole = visiteBenevole
-                                WHERE :idcontact = idcontact';
+        $querry = 'UPDATE hopital SET nomHopital = :nomHopital, 
+                                      idAdresse = :idAdresse, 
+                                      niveau = :niveau, 
+                                      service = :service, 
+                                      nbLits = :nbLits, 
+                                      nbPremaParAn = :nbPremaParAn, 
+                                      cafeParent = :cafeParent, 
+                                      parkingPayant = :parkingPayant, 
+                                      convention = :convention, 
+                                      visiteBenevole = :visiteBenevole
+                                WHERE idHopital = 1';
         
         Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT),
                                                 ':nomHopital'=>array($nomHopital,PDO::PARAM_STR),

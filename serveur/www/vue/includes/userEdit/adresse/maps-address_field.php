@@ -15,10 +15,12 @@ Si on est dans le cas de l'ajout d'un utilisateur, rien à faire.
 
 Les champs suivants sont définis:
 
-        numRue          Numéro de la rue
+         numRue          Numéro de la rue
         nomRue          Nom de la rue
         codePostal      Code postal de la rue
         nomVille        Nom de la ville
+        nomDepartement  Nom du département
+        nomRegion       Nom de la région
         
  */
 ?> 
@@ -68,8 +70,8 @@ Les champs suivants sont définis:
             <input id="route" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomRue" value="<?php if(isset($utilisateur)) echo $utilisateur->adresse->nomRue; ?>" />
             <input id="postal_code" class="form-control" type="text" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> name="codePostal" value="<?php if(isset($utilisateur)) echo $utilisateur->adresse->codePostal;?>" />
             <input id="locality" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomVille" value="<?php if(isset($utilisateur)) echo $utilisateur->adresse->nomVille;?>" />
-            <input id="locality" class="form-control" type="text" name="nomDepartement" value="<?php if(isset($utilisateur)) echo $utilisateur->adresse->nomDepartement;?>"/>
-            <input id="locality" class="form-control" type="text" name="nomRegion" value="<?php if(isset($utilisateur)) echo $utilisateur->adresse->nomRegion;?>"/>
+            <input id="locality" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomDepartement" value="<?php if(isset($utilisateur)) echo $utilisateur->adresse->nomDepartement;?>"/>
+            <input id="locality" class="form-control" <?php if(!isset($_REQUEST['editAddress'])) echo "readonly";  ?> type="text" name="nomRegion" value="<?php if(isset($utilisateur)) echo $utilisateur->adresse->nomRegion;?>"/>
 
         </div> 
    </div>

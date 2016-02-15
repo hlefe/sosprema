@@ -21,14 +21,24 @@ class FrontControleur {
 
         $listeActionAdmin =  get_class_methods('ControleurAdmin');
         $listeActionBenevol =  get_class_methods('ControleurBenevol');
-
+        $listeActionModerateur =  get_class_methods('ControleurModerateur');
+         
         $action = $_REQUEST['action']; 
         if(in_array($action, $listeActionAdmin)){
         	if(ControleurAdmin::verifierDroit()){
         		ControleurAdmin::$action();
         	}
         	else{
-        		$vueErreur[] = "vous ne possédez pas les droits appopriées.";
+        		$vueErreur[] = "vous ne possédez pas les droits appopriés.";
+                require_once ("vue/includes/erreur.php");
+                return;
+            }
+        }elseif(in_array($action, $listeActionModerateur)){
+        	if(ControleurModerateur::verifierDroit()){
+        		ControleurModerateur::$action();
+        	}
+        	else{
+        		$vueErreur[] = "vous ne possédez pas les droits appopriés.";
                 require_once ("vue/includes/erreur.php");
                 return;
             }

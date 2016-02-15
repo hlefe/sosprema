@@ -1,6 +1,6 @@
 <?php 
 
-require_once('header.php');
+require_once('vue/layout/header.php');
 ?>
 <div id="contenute">
 <h2> Erreur :</h2>

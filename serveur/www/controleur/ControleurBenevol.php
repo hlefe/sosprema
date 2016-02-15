@@ -78,5 +78,18 @@ class ControleurBenevol {
         $_SESSION = array();
         require_once ('vue/pages/login.php');
     }
+    
+    public static function afficherHopitaux(){
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        $hopitaux=ModelGestionHopital::afficherToutHopital();
+        require_once ('vue/pages/hopitaux.php');
+    }
+    
+    public static function afficherHopital(){
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        //Recherche hopital
+        $hopital = ModelGestionHopital::rechercherHopital($_GET['id']);
+        require_once ('vue/pages/hopital.php');
+    }
 
 }

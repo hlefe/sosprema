@@ -9,10 +9,12 @@ Si on est dans le cas de l'ajout d'un utilisateur, rien à faire.
 
 Les champs suivants sont définis:
 
-        numRue          Numéro de la rue
+         numRue          Numéro de la rue
         nomRue          Nom de la rue
         codePostal      Code postal de la rue
         nomVille        Nom de la ville
+        nomDepartement  Nom du département
+        nomRegion       Nom de la région
         
  */
 ?> 
