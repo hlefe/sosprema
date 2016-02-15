@@ -66,15 +66,15 @@ class HopitalGateway {
                                       parkingPayant = :parkingPayant, 
                                       convention = :convention, 
                                       visiteBenevole = :visiteBenevole
-                                WHERE idHopital = 1';
+                                WHERE idHopital = :idHopital';
         
         Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT),
                                                 ':nomHopital'=>array($nomHopital,PDO::PARAM_STR),
                                                 ':idAdresse'=>array($idAdresse,PDO::PARAM_INT), 
                                                 ':niveau'=>array($niveau,PDO::PARAM_INT), 
                                                 ':service'=>array($service,PDO::PARAM_STR), 
-                                                ':nbLits'=>array($nbLits,PDO::PARAM_INT), 
-                                                ':nbPremaParAn'=>array($nbPremaParAn,PDO::PARAM_INT), 
+                                                ':nbLits'=>array($nbLits,PDO::PARAM_STR), 
+                                                ':nbPremaParAn'=>array($nbPremaParAn,PDO::PARAM_STR), 
                                                 ':cafeParent'=>array($cafeParent,PDO::PARAM_BOOL), 
                                                 ':parkingPayant'=>array($parkingPayant,PDO::PARAM_BOOL), 
                                                 ':convention'=>array($convention,PDO::PARAM_BOOL), 

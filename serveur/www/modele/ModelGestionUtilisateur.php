@@ -14,12 +14,6 @@ class ModelGestionUtilisateur {
         $motDePasse = VariableExterne::verifChampPassword('mot de passe','motDePasse');
         $email = VariableExterne::verifChampEmail('email', null);
 
-        $numRue=VariableExterne::verifChampOptionnel('numRue');
-        $nomRue=VariableExterne::verifChampOptionnel('nomRue');
-        $codePostal=VariableExterne::verifChampOptionnel('codePostal');
-        $nomVille=VariableExterne::verifChampOptionnel('nomVille');
-        $nomRegion=VariableExterne::verifChampOptionnel('nomRegion');
-        $nomDepartement=VariableExterne::verifChampOptionnel('nomDepartement');
         $dateDeNaissance=VariableExterne::verifChampOptionnel('dateDeNaissance');
         $avatar=VariableExterne::verifChampOptionnel('avatar');     
         $profession=VariableExterne::verifChampOptionnel('profession');
@@ -35,11 +29,7 @@ class ModelGestionUtilisateur {
             $idNiveau=ModelNiveau::rechercherId('utilisateur');
         }
         
- // Faudrait peut-être que ces fonctions retournent la référence du lieu:
-        $idRegion = ModelGestionLieu::verifierPresenceRegion($nomRegion);
-        $idDepartement = ModelGestionLieu::verifierPresenceDepartement($nomDepartement, $idRegion);
-        $idVille = ModelGestionLieu::verifierPresenceVille($nomVille, $codePostal, $idDepartement);
-        $idAdresse = ModelGestionLieu::verifierPresenceAdresse($numRue, $nomRue, $idVille);
+        $idAdresse = ModelGestionLieu::gestionAjoutModifAdresse();
 
         $utilisateur = UtilisateurGateway::insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,
         $profession,$divers,$avatar,$idNiveau,$idAdresse);
@@ -49,12 +39,6 @@ class ModelGestionUtilisateur {
         $nom = VariableExterne::verifChampObligatoire('nom','nom');
         $prenom =VariableExterne::verifChampObligatoire('prenom','prenom');
         $email = VariableExterne::verifChampEmail('email', $utilisateurModifie->email);
-        $numRue=VariableExterne::verifChampOptionnel('numRue');
-        $nomRue=VariableExterne::verifChampOptionnel('nomRue');
-        $codePostal=VariableExterne::verifChampOptionnel('codePostal');
-        $nomVille=VariableExterne::verifChampOptionnel('nomVille');
-        $nomRegion=VariableExterne::verifChampOptionnel('nomRegion');
-        $nomDepartement=VariableExterne::verifChampOptionnel('nomDepartement');
         $dateDeNaissance=VariableExterne::verifChampOptionnel('dateDeNaissance');
         $avatar=VariableExterne::verifChampAvatar('avatar', $utilisateurModifie->avatar);     
         $profession=VariableExterne::verifChampOptionnel('profession');
@@ -72,12 +56,7 @@ class ModelGestionUtilisateur {
             $idNiveau = $utilisateurModifie->idNiveau;
         }
         
-
-        
-        $idRegion = ModelGestionLieu::verifierPresenceRegion($nomRegion);
-        $idDepartement = ModelGestionLieu::verifierPresenceDepartement($nomDepartement, $idRegion);
-        $idVille = ModelGestionLieu::verifierPresenceVille($nomVille, $codePostal, $idDepartement);
-        $idAdresse = ModelGestionLieu::verifierPresenceAdresse($numRue, $nomRue, $idVille);
+        $idAdresse = ModelGestionLieu::gestionAjoutModifAdresse();
 
         UtilisateurGateway::modifierUtilisateur($utilisateurModifie->userId,$email,$nom,$prenom,$dateDeNaissance,
         $profession,$divers,$avatar,$idNiveau,$idAdresse);

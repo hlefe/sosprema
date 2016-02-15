@@ -12,7 +12,7 @@ class ModelGestionHopital {
         return $hopitaux;
     }
     
-    public static function ajouterHopital($idAdresse){
+    public static function ajouterHopital(){
        
         $nomHopital = VariableExterne::verifChampObligatoire('nomHopital', 'nomHopital');
         $niveau = VariableExterne::verifChampObligatoire('niveau', 'niveau');
@@ -23,6 +23,8 @@ class ModelGestionHopital {
         $parkingPayant = VariableExterne::verifChampOptionnel('parkingPayant');
         $convention = VariableExterne::verifChampOptionnel('convention');
         $visiteBenevole = VariableExterne::verifChampOptionnel('visiteBenevole');
+
+        $idAdresse = ModelGestionLieu::gestionAjoutModifAdresse();
         
         HopitalGateway::ajouterHopital($nomHopital, $idAdresse, $niveau, $service, $nbLits, $nbPremaParAn,
                                        $cafeParent, $parkingPayant, $convention, $visiteBenevole);
@@ -32,7 +34,7 @@ class ModelGestionHopital {
         HopitalGateway::supprimerHopital($idHopital);
     }
     
-    public static function modifierHopital($idHopital, $idAdresse){
+    public static function modifierHopital($idHopital){
         
         $nomHopital = VariableExterne::verifChampObligatoire('nomHopital', 'nomHopital');
         $niveau = VariableExterne::verifChampOptionnel('niveau', 'niveau');
@@ -44,8 +46,10 @@ class ModelGestionHopital {
         $convention = VariableExterne::verifChampOptionnel('convention');
         $visiteBenevole = VariableExterne::verifChampOptionnel('visiteBenevole');
         
+        $idAdresse = ModelGestionLieu::gestionAjoutModifAdresse();
+        
         HopitalGateway::modifierHopital($idHopital, $nomHopital, $idAdresse, $niveau, $service, $nbLits, $nbPremaParAn, $cafeParent, $parkingPayant, $convention, $visiteBenevole);
-        $hopital = HopitalGateway::rechercherHopital($_SESSION['hopitalModifie']->$idHopital);        
+        return HopitalGateway::rechercherHopital($idHopital);        
      
     }
 }

@@ -26,6 +26,7 @@ class ControleurModerateur {
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
 		try {
 			ModelGestionHopital::ajouterHopital();
+            $vueConfirmation[] = "L'hopital à bien été ajouté.";
 		} catch(PDOException $ex){;
                 $vueErreur[] = $ex->getMessage;
         } catch(Exception $e){
@@ -42,7 +43,8 @@ class ControleurModerateur {
         }else{
             $hopital = $_SESSION['hopitalModifie'];
             try {
-                ModelGestionHopital::ModifierHopital($hopital,$hopital->idAdresse);
+                $hopital = ModelGestionHopital::ModifierHopital($hopital->idHopital);
+                $_SESSION['hopitalModifie']=$hopital;
             } catch(PDOException $ex){
                     $vueErreur[] = $ex->getMessage();
             } catch(Exception $e){

@@ -40,4 +40,19 @@ class ModelGestionLieu {
 		$adresse = AdresseGateway::rechercherAdresse($numRue, $nomRue, $idVille);
 		return $adresse['idAdresse'];
 	}
+
+	public static function gestionAjoutModifAdresse(){
+		$numRue=VariableExterne::verifChampOptionnel('numRue');
+        $nomRue=VariableExterne::verifChampOptionnel('nomRue');
+        $codePostal=VariableExterne::verifChampOptionnel('codePostal');
+        $nomVille=VariableExterne::verifChampOptionnel('nomVille');
+        $nomRegion=VariableExterne::verifChampOptionnel('nomRegion');
+        $nomDepartement=VariableExterne::verifChampOptionnel('nomDepartement');
+
+        $idRegion = ModelGestionLieu::verifierPresenceRegion($nomRegion);
+        $idDepartement = ModelGestionLieu::verifierPresenceDepartement($nomDepartement, $idRegion);
+        $idVille = ModelGestionLieu::verifierPresenceVille($nomVille, $codePostal, $idDepartement);
+        $idAdresse = ModelGestionLieu::verifierPresenceAdresse($numRue, $nomRue, $idVille);
+        return $idAdresse;
+	}
 }
