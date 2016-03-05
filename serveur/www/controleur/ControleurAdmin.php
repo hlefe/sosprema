@@ -125,4 +125,83 @@ class ControleurAdmin {
         }
         require_once('vue/pages/admin/securityUserInfo.php');
     }
+
+    public static function ajouterUtilisateurCommeContact(){
+        $utilisateurModifie = $_SESSION['utilisateurModifie'];
+        if(isset($_SESSION['utilisateurConnecter'])){
+            $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        }else{
+            $vueErreur[] = "vous n'avez pas accès à cette partie du site";
+            require_once('vue/pages/login.php');
+            return;
+        }
+        if(isset($_REQUEST['edit'])){
+            try{
+                $_SESSION['utilisateurModifie'] = ModelContactLocal::ajouterContactLocal($utilisateurModifie->userId);
+                $vueConfirmation[]="L'utilisateur est un contact local.";
+            }catch(Exception $e){
+                $vueErreur[] = $e->getMessage();
+            }catch(PDOException $e){
+                $vueErreur[] = $e->getMessage();
+            }
+        }
+        require_once('vue/pages/admin/ajoutContactLocal.php');
+    }
+
+    public static function modifierContactLocal(){
+        $utilisateurModifie = $_SESSION['utilisateurModifie'];
+        if(isset($_SESSION['utilisateurConnecter'])){
+            $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        }else{
+            $vueErreur[] = "vous n'avez pas accès à cette partie du site";
+            require_once('vue/pages/login.php');
+            return;
+        }
+        if(isset($_REQUEST['edit'])){
+            try{
+                $_SESSION['utilisateurModifie'] = ModelContactLocal::modifierContactLocal($utilisateurModifie->contactLocal->idContact);
+                $vueConfirmation[]="L'utilisateur est un contact local.";
+            }catch(Exception $e){
+                $vueErreur[] = $e->getMessage();
+            }catch(PDOException $e){
+                $vueErreur[] = $e->getMessage();
+            }
+        }
+        require_once('vue/pages/admin/ajoutContactLocal.php');
+    }
+
+    public static function ajouterTelephoneUtilisteur(){
+        $utilisateur = $_SESSION['utilisateurModifie'];
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        if(isset($_REQUEST['edit'])){
+            try{
+                $_SESSION['utilisateurModifie'] = ModelTelephone::ajouterTelephone($utilisateur);
+                $utilisateur = $_SESSION['utilisateurModifie'];
+                $vueConfirmation[] = "Le numéro de téléphone à bien été ajouter.";
+            } catch(PDOException $ex){;
+                $vueErreur[] = $ex;
+            } catch(Exception $e){
+                $vueErreur[]=$e->getMessage();
+            }
+        }
+        require_once('vue/pages/ajoutModifTelephone.php');
+    }
+
+    public static function modifierTelephoneUtilisateur(){
+        $utilisateur = $_SESSION['utilisateurModifie'];
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        if(isset($_REQUEST['edit'])){
+            try{
+                ModelTelephone::modifierTelephone($_REQUEST['idTelephone']);
+                $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::rechercherUtilisateur($utilisateur->email);
+                $utilisateur = $_SESSION['utilisateurModifie'];
+                $vueConfirmation[] = "Le numéro de téléphone à bien été ajouter.";
+            } catch(PDOException $ex){;
+                $vueErreur[] = $ex;
+            } catch(Exception $e){
+                $vueErreur[]=$e->getMessage();
+            }
+        }
+        require_once('vue/pages/ajoutModifTelephone.php');
+    }
 }

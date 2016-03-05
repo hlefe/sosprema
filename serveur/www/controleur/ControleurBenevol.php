@@ -34,10 +34,7 @@ class ControleurBenevol {
             }
         }
         require_once('vue/pages/userPassword.php');
-    }
-    
-    
-    
+    }    
     
     //permet de valider le formulaire de connexion et de créer la session de l'utilisateur.
     public static function connexion() {
@@ -90,6 +87,59 @@ class ControleurBenevol {
         //Recherche hopital
         $hopital = ModelGestionHopital::rechercherHopital($_GET['id']);
         require_once ('vue/pages/hopital.php');
+    }
+
+    public static function ajouterTelephone(){
+        $utilisateur = $_SESSION['utilisateurConnecter'];
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        if(isset($_REQUEST['edit'])){
+            try{
+                $_SESSION['utilisateurConnecter'] = ModelTelephone::ajouterTelephone($utilisateur);
+                $utilisateur = $_SESSION['utilisateurConnecter'];
+                $vueConfirmation[] = "Le numéro de téléphone à bien été ajouter.";
+            } catch(PDOException $ex){;
+                $vueErreur[] = $ex;
+            } catch(Exception $e){
+                $vueErreur[]=$e->getMessage();
+            }
+        }
+        require_once('vue/pages/profil.php');
+    }
+
+    public static function modifierTelephone(){
+        $utilisateur = $_SESSION['utilisateurConnecter'];
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        if(isset($_REQUEST['edit'])){
+            try{
+                ModelTelephone::modifierTelephone($_REQUEST['idTelephone']);
+                $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::rechercheUtilisateur($utilisateur->email);
+                $utilisateur = $_SESSION['utilisateurConnecter'];
+                $vueConfirmation[] = "Le numéro de téléphone à bien été ajouter.";
+            } catch(PDOException $ex){;
+                $vueErreur[] = $ex;
+            } catch(Exception $e){
+                $vueErreur[]=$e->getMessage();
+            }
+        }
+        require_once('vue/pages/profil.php');
+    }
+
+    public static function supprimerTelephone(){
+        $utilisateur = $_SESSION['utilisateurConnecter'];
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        if(isset($_REQUEST['edit'])){
+            try{
+                ModelTelephone::supprimerTelephone($_REQUEST['idTelephone']);
+                $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::rechercheUtilisateur($utilisateur->email);
+                $utilisateur = $_SESSION['utilisateurConnecter'];
+                $vueConfirmation[] = "Le numéro de téléphone à bien été supprimer.";
+            } catch(PDOException $ex){;
+                $vueErreur[] = $ex;
+            } catch(Exception $e){
+                $vueErreur[]=$e->getMessage();
+            }
+        }
+        require_once('vue/pages/profil.php');
     }
 
 }

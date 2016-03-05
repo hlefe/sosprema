@@ -12,7 +12,7 @@ class ModelContactLocal {
         return $contacts;
     }
     
-    public static function ajouterContactLocal($idUtilisateur, $idHopital){
+    public static function ajouterContactLocal($idUtilisateur){
         
         $datePremierEngagement = VariableExterne::verifChampObligatoire('datePremierEngagement', 'datePremierEngagement');
         $dateRenouvellement = VariableExterne::verifChampOptionnel('dateRenouvellement');
@@ -23,8 +23,7 @@ class ModelContactLocal {
         $conventionPMI = VariableExterne::verifChampOptionnel('conventionPMI');
         $charteVisiteur = VariableExterne::verifChampOptionnel('charteVisiteur');
         
-        ContactLocalGateway::ajouterContactLocal($idUtilisateur, $idHopital, $datePremierEngagement, $dateRenouvellement, $dateSenior,
-                                                 $visitesBenevoles, $conventionHopital, $conventionCAMSP, $conventionPMI, $charteVisiteur);       
+        ContactLocalGateway::ajouterContactLocal($idUtilisateur, $datePremierEngagement, $dateRenouvellement, $dateSenior, $visitesBenevoles, $conventionHopital, $conventionCAMSP, $conventionPMI, $charteVisiteur);       
     }
     
     public static function supprimerContact($idcontact){
@@ -45,11 +44,15 @@ class ModelContactLocal {
         ContactLocalGateway::modifierContact($idcontact, $datePremierEngagement, $dateRenouvellement, $dateSenior, $visitesBenevoles, $conventionHopital, $conventionCAMSP, $conventionPMI, $charteVisiteur);
     }
     
-    public static function supprimerEnafant($idEnfant){
+    public static function supprimerEnfant($idEnfant){
         EnfantGateway::supprimerEnfant($idEnfant);
     }
+
+    public static function ajouterEnfant($idContactLocal){
+        EnfantGateway::ajouterEnfant($idContactLocal);
+    }
     
-    public static function modifierEnafant($idEnfant){
+    public static function modifierEnfant($idEnfant){
         
         $prenom = VariableExterne::ChampObligatoire('prenom', 'prenom');
         $dateNaissance = VariableExterne::verifChampOptionnel('dateNaisance');

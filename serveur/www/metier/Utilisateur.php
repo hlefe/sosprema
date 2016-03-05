@@ -16,6 +16,8 @@ class utilisateur {
     private $motDePasse;
     private $idAdresse;
     private $adresse;
+    private $telephones;
+    private $contactLocal;
 
     public function __get($property) {
         return $this->$property;

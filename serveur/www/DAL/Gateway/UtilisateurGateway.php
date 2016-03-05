@@ -25,6 +25,10 @@ class UtilisateurGateway {
                                   'nomRegion' => $region['nomRegion']);
             $utilisateur->adresse = new Adresse($userAdresse);
         }
+        $listeTel = TelephoneGateway::rechercheTelephoneUtilisateur($utilisateur->userId);
+        if($listeTel != null){
+            $utilisateur->telephones = $listeTel;
+        }
         return $utilisateur;
     }
 
@@ -48,6 +52,10 @@ class UtilisateurGateway {
                                   'nomDepartement' => $departement['nomDepartement'],
                                   'nomRegion' => $region['nomRegion']);
             $utilisateur->adresse = new Adresse($userAdresse);
+        }
+        $listeTel = TelephoneGateway::rechercheTelephoneUtilisateur($utilisateur->userId);
+        if($listeTel != null){
+            $utilisateur->telephones = $listeTel;
         }
             return $utilisateur;  
     }
@@ -84,6 +92,10 @@ class UtilisateurGateway {
                                   'nomDepartement' => $departement['nomDepartement'],
                                   'nomRegion' => $region['nomRegion']);
             $utilisateur->adresse = new Adresse($userAdresse);
+        }
+        $listeTel = TelephoneGateway::rechercheTelephoneUtilisateur($utilisateur->userId);
+        if($listeTel != null){
+            $utilisateur->telephones = $listeTel;
         }
         return $utilisateur;
     }
