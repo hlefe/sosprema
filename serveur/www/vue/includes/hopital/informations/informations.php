@@ -32,8 +32,8 @@ Les champs suivants sont définis:
             <label for="service">Service</label>
             <input class="form-control" required type="text" name="service" value="<?php if(isset($hopital)) echo $hopital->service;?>" <?php if($_REQUEST['action'] == "afficherHopital") echo "readonly"; ?> />
     </div>
-    <div class="form-group">
+    <div class="form-group" style="height:30px">
             <label for="conventionmail">Convention</label>
-            <input class="form-control" required type="text" name="convention" value="<?php if(isset($hopital)) echo $hopital->convention;?>" <?php if($_REQUEST['action'] == "afficherHopital") echo "readonly";?> />
+            <input data-off-text="Non"  data-on-text="Oui" type="checkbox" class="form-control" required name="convention" <?php if(isset($hopital)&&$hopital->convention=="on") echo "checked";?> <?php if($_REQUEST['action'] == "afficherHopital") echo "readonly";?> />
     </div>
 </div>

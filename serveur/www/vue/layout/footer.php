@@ -15,8 +15,21 @@
     </footer>
     
     <!-- Scripts divers et variés pour bootstrap -->
+        <!-- jQuery -->
+        <script src="vue/style/plugins/bootstrap-switch-master/docs/js/jquery.min.js"></script>
+        <!-- bootstrap -->
+        <script src="vue/style/plugins/bootstrap-switch-master/docs/js/bootstrap.min.js"></script>
+        <!-- boottrapSwitch -->
+        <script src="vue/style/plugins/bootstrap-switch-master/dist/js/bootstrap-switch.js"></script>
+        <!-- boottrapSwitch run -->
+        <script>
+        $(function(argument) {
+        $('[type="checkbox"]').bootstrapSwitch();
+        })
+        </script>
+    
         <!-- jQuery 2.1.4 -->
-        <script src="vue/style/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <!-- <script src="vue/style/plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <!-- jQuery UI 1.11.4 -->
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -24,7 +37,7 @@
         $.widget.bridge('uibutton', $.ui.button);
         </script>
         <!-- Bootstrap 3.3.5 -->
-        <script src="vue/style/bootstrap/js/bootstrap.min.js"></script>
+        <!-- <script src="vue/style/bootstrap/js/bootstrap.min.js"></script>
         <!-- Morris.js charts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
         <script src="vue/style/plugins/morris/morris.min.js"></script>

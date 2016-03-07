@@ -47,6 +47,10 @@ $pageActuelle =  ModelPage::rechercherPage($_GET['action']);
         <link rel="stylesheet" href="vue/style/plugins/daterangepicker/daterangepicker-bs3.css">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="vue/style/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+        
+        <!-- Switch boolean  -->
+        <link href="vue/style/plugins/bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+        <link href="vue/style/plugins/bootstrap-switch-master/docs/css/main.css" rel="stylesheet">
 
     <!-- Chargement du skin SOSPréma  -->
     <link rel="stylesheet" href="vue/style/dist/css/skins/skin-sosPrema.css">

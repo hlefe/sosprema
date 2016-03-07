@@ -1,52 +1,21 @@
-<div class="box-header with-border">
-    <h3 class="box-title">Contacts locaux</h3>
+<div class="box-header with-border" style="cursor: initial; ">
+    <h3 class="box-title" style="cursor: initial; ">Contacts locaux pour cet hôpital</h3>
     <?php if($_REQUEST['action'] != "afficherHopital") { ?>
-    <div class="box-tools pull-right">
-        <span class="label label-primary">Facultatif</span>
-    </div>
     <?php } ?>
 </div>
-
-        <ul class="users-list clearfix">
-        <li>
-            <img src="vue/style/dist/img/user1-128x128.jpg" alt="User Image">
-            <a class="users-list-name" href="#">Alexander Pierce</a>
-            <span class="users-list-date">10 ans</span>
-        </li>
-        <li>
-            <img src="vue/style/dist/img/user8-128x128.jpg" alt="User Image">
-            <a class="users-list-name" href="#">Norman</a>
-            <span class="users-list-date">6 ans</span>
-        </li>
-        <li>
-            <img src="vue/style/dist/img/user7-128x128.jpg" alt="User Image">
-            <a class="users-list-name" href="#">Jane</a>
-            <span class="users-list-date">12 ans</span>
-        </li>
-        <li>
-            <img src="vue/style/dist/img/user6-128x128.jpg" alt="User Image">
-            <a class="users-list-name" href="#">John</a>
-            <span class="users-list-date">12 ans</span>
-        </li>
-        <li>
-            <img src="vue/style/dist/img/user2-160x160.jpg" alt="User Image">
-            <a class="users-list-name" href="#">Alexander</a>
-            <span class="users-list-date">13 ans</span>
-        </li>
-        <li>
-            <img src="vue/style/dist/img/user5-128x128.jpg" alt="User Image">
-            <a class="users-list-name" href="#">Sarah</a>
-            <span class="users-list-date">14 ans</span>
-        </li>
-        <li>
-            <img src="vue/style/dist/img/user4-128x128.jpg" alt="User Image">
-            <a class="users-list-name" href="#">Nora</a>
-            <span class="users-list-date">15 ans</span>
-        </li>
-        <li>
-            <img src="vue/style/dist/img/user3-128x128.jpg" alt="User Image">
-            <a class="users-list-name" href="#">Nadia</a>
-            <span class="users-list-date">15 ans</span>
-        </li>
-        </ul>
-    
+<ul class="users-list clearfix">
+    <li>
+        <img src="vue/style/dist/img/user1-128x128.jpg" alt="User Image">
+        <a class="users-list-name" href="#">Fabrice Opry</a>
+        <span class="users-list-date">06 86 60 02 12</span>
+    </li>
+    <li>
+        <img src="vue/style/dist/img/user8-128x128.jpg" alt="User Image">
+        <a class="users-list-name" href="#">Richard Ruiny</a>
+        <span class="users-list-date">09 87 99 55 43</span>
+    </li>
+    <li>
+        <img src="vue/images/users-add-user-icon.png" alt="User Image">
+        <a class="users-list-name" href="#">Ajouter</a>
+    </li>
+</ul>
