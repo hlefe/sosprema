@@ -29,7 +29,7 @@ class UtilisateurGateway {
         if($listeTel != null){
             $utilisateur->telephones = $listeTel;
         }
-        $contactLocal = ContactLocalGateway::rechercherContactLocal($utilisateur->userId);
+        $contactLocal = ContactLocalGateway::rechercherContactLocalByIdUser($utilisateur->userId);
         if($contactLocal != false){
             $utilisateur->contactLocal = $contactLocal;
         }
@@ -61,7 +61,7 @@ class UtilisateurGateway {
         if($listeTel != null){
             $utilisateur->telephones = $listeTel;
         }
-        $contactLocal = ContactLocalGateway::rechercherContactLocal($utilisateur->userId);
+        $contactLocal = ContactLocalGateway::rechercherContactLocalByIdUser($utilisateur->userId);
         if($contactLocal != false){
             $utilisateur->contactLocal = $contactLocal;
         }
@@ -105,7 +105,7 @@ class UtilisateurGateway {
         if($listeTel != null){
             $utilisateur->telephones = $listeTel;
         }
-        $contactLocal = ContactLocalGateway::rechercherContactLocal($utilisateur->userId);
+        $contactLocal = ContactLocalGateway::rechercherContactLocalByIdUser($utilisateur->userId);
         if($contactLocal != false){
             $utilisateur->contactLocal = $contactLocal;
         }

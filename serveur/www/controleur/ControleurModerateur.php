@@ -59,4 +59,30 @@ class ControleurModerateur {
 	public static function supprimerHopital(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
 	}
+
+    public static function ajouterRelation(){
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        try {
+            ModelRelation::ajouterRelation($_REQUEST['idHopital'], $_REQUEST['idContact']);
+            $hopital = ModelGestionHopital::rechercherHopital($_REQUEST['idHopital']);
+            $_SESSION['hopitalModifie']=$hopital;
+        } catch(PDOException $ex){
+            $vueErreur[] = $ex->getMessage();
+        } catch(Exception $e){
+            $vueErreur[]=$e->getMessage();
+        }
+    }
+
+    public static function supprimerRelation(){
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        try {
+            ModelRelation::supprimerRelation($_REQUEST['idHopital'], $_REQUEST['idContact']);
+            $hopital = ModelGestionHopital::rechercherHopital($_REQUEST['idHopital']);
+            $_SESSION['hopitalModifie']=$hopital;
+        } catch(PDOException $ex){
+            $vueErreur[] = $ex->getMessage();
+        } catch(Exception $e){
+            $vueErreur[]=$e->getMessage();
+        }
+    }
 }

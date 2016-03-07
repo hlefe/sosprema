@@ -2,32 +2,35 @@
 
 class RelationGateway
 {
-    public static function rechercherNom($idNiveau){
-    	$querry = 'SELECT * FROM niveau WHERE idNiveau=:idNiveau';
-        Connexion::executeQuerry($querry, array(':idNiveau'=>array($idNiveau,PDO::PARAM_INT)));
+    public static function rechercherContactLocalByIdHopital($idHopital){
+    	$querry = 'SELECT * FROM relation WHERE idHopital=:idHopital';
+        Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT)));
         $result = Connexion::getResult();
         if ($result == false){
             return false;
         }
-        $nom = $result['nom'];
-        return $nom;
+        return $result;
     }
 
-    public static function rechercheridNiveau($nom){
-        $querry = 'SELECT * FROM niveau WHERE nom=:nom';
-        Connexion::executeQuerry($querry, array(':nom'=>array($nom,PDO::PARAM_STR)));
-        $result = Connexion::getResult();
-        if ($result == false){
-            return false;
-        }
-        $idNiveau = $result['idNiveau'];
-        return $idNiveau;
+    public static function ajouterRelation($idHopital, $idContact){
+        $querry = 'INSERT INTO relation (idHopital, idUtilisateur) VALUES (:idHopital, :idContact)';
+        Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT),
+                                                ':idContact'=>array($idContact,PDO::PARAM_INT)));
     }
 
-    public static function getAll(){
-    	$querry = 'SELECT * FROM niveau';
-        Connexion::executeQuerry($querry);
-        $results = Connexion::getResults();
-        return $results;
+    public static function supprimerRelation($idHopital,$idContact){
+         $querry = 'DELETE FROM telephone WHERE idHopital = :idHopital AND idUtilisateur = :idUtilisateur';
+        Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT),
+                                                ':idUtilisateur'=>array($idUtilisateur,PDO::PARAM_INT)));
+    }
+
+    public static function supprimerRelationForHopital($idHopital){
+        $querry = 'DELETE FROM telephone WHERE idHopital = :idHopital';
+        Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT)));
+    }
+
+    public static function supprimerRelationForContact($idContact){
+        $querry = 'DELETE FROM telephone WHERE idUtilisateur = :idUtilisateur';
+        Connexion::executeQuerry($querry, array(':idUtilisateur'=>array($idUtilisateur,PDO::PARAM_INT)));
     }
 }

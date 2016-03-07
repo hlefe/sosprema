@@ -2,14 +2,14 @@
 
 class ModelRelation {
 	public static function rechercherContactLocalByIdHopital($idHopital){
-		return NiveauGateway::rechercherNom($idHopital);	
+		return RelationGateway::rechercherContactLocalByIdHopital($idHopital);	
 	}
 
 	public static function ajouterRelation($idHopital, $idContactLocal){
-		return NiveauGateway::rechercheridNiveau($idHopital, $idContactLocal);
+		return RelationGateway::ajouterRelation($idHopital, $idContactLocal);
 	}
 
-	public static function getAll(){
-		return NiveauGateway::getAll();
+	public static function supprimerRelation($idHopital,$idContactLocal){
+		RelationGateway::supprimerRelation($idHopital, $idContactLocal);
 	}
 }

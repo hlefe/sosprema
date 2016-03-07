@@ -18,9 +18,19 @@ class ContactLocalGateway {
                                                 ':charteVisiteur'=>array($charteVisiteur,PDO::PARAM_BOOL)));
     }
     
-    public static function rechercherContactLocal($idUtilisateur){
+    public static function rechercherContactLocalByIdUser($idUtilisateur){
         $querry = 'SELECT * FROM contactlocal WHERE idUtilisateur=:idUtilisateur';
         Connexion::executeQuerry($querry, array('idUtilisateur'=>array($idUtilisateur,PDO::PARAM_INT)));
+        $result = Connexion::getResult();
+        if($result==false){
+            return false;
+        }
+        return new Contactlocal($result);
+    }
+
+    public static function rechercherContactLocalByIdContact($idcontact){
+        $querry = 'SELECT * FROM contactlocal WHERE idContact=:idcontact';
+        Connexion::executeQuerry($querry, array('idcontact'=>array($idcontact,PDO::PARAM_INT)));
         $result = Connexion::getResult();
         if($result==false){
             return false;

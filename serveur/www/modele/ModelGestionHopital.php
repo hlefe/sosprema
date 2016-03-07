@@ -4,6 +4,10 @@ class ModelGestionHopital {
     
     public static function rechercherHopital($idHopital){
         $hopital = HopitalGateway::rechercherHopital($idHopital);
+        $contactLocal = ModelContactLocal::rechercherContactLocalByHopital($idHopital);
+        if($contactLocal != false || $contactLocal != NULL){
+            $hopital->listeContactLocal = $contactLocal;
+        }
         return $hopital;
     }
     
@@ -32,6 +36,7 @@ class ModelGestionHopital {
     
     public static function supprimerHopital($idHopital){
         HopitalGateway::supprimerHopital($idHopital);
+        RelationGateway::supprimerRelationForHopital($idHopital);
     }
     
     public static function modifierHopital($idHopital){
