@@ -135,4 +135,20 @@ class ModelGestionUtilisateur {
         $utilisateur = UtilisateurGateway::rechercheUtilisateurId($utilisateurModifie->userId);
         return $utilisateur;
     }
+
+    public static function rechercheUtilisateurContactLocal(){
+        $tmpContact = ContactLocalGateway::getAll();
+        foreach ($tmpContact as $contact) {
+            $contactLocal[]=UtilisateurGateway::rechercheUtilisateurId($contact['idUtilisateur']);
+        }
+        return $contactLocal;
+    }
+
+    public static function rechercheUtilisateurContactLocalByIdHop($idHopital){
+        $tmpContact = ContactLocalGateway::getAll();
+        foreach ($tmpContact as $contact) {
+            $contactLocal[]=UtilisateurGateway::rechercheUtilisateurId($contact['idUtilisateur']);
+        }
+        return $contactLocal;
+    }
 }
