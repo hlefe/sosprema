@@ -43,29 +43,22 @@ Les champs suivants sont définis:
                 foreach($utilisateur->telephones as $telephone){
         ?>
         <div class="input-group">
-            
             <div class="input-group-addon">
-             
-                <i class="fa fa-phone"></i>
-                
+                <i class="fa fa-phone"></i> 
             </div>
             <div class="input-group-addon">
                 <?php echo $telephone->type; ?>
             </div>
             <input class="form-control " data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="" type="text" value="<?php echo $telephone->numero; ?>" readonly>
-            <div class="input-group-addon ">
-                
+            <div class="input-group-addon"> 
                 <?php if ($_GET["action"]=="profil"){ ?>
-                <a href='?action=supprimerTelephone&idTelephone=<?php echo $telephone->idTelephone; ?>&edit=true'>
-                    
-                    <i class="fa fa-close btn-danger"></i>
-                    
-                </a>
+                    <a href='?action=supprimerTelephone&idTelephone=<?php echo $telephone->idTelephone; ?>&edit=true'>
+                        <i class="fa fa-close btn-danger"></i>
+                    </a>
                 <?php }else{ ?>
-                <a href='?action=supprimerTelephoneUser&idTelephone=<?php echo $telephone->idTelephone; ?>&edit=true'>
-                    
-                    <i class="fa fa-close btn-danger"></i>
-                </a>
+                    <a href='?action=supprimerTelephoneUser&idTelephone=<?php echo $telephone->idTelephone; ?>&edit=true'>
+                        <i class="fa fa-close btn-danger"></i>
+                    </a>
                 <?php } ?>
             </div>    
             
@@ -77,11 +70,19 @@ Les champs suivants sont définis:
             }
        }
         ?>
-        
-        <div class="btn btn-default btn-file pull-right">
-            <h4> Ajouter un numéro</h4>
-                <input type="text" name="intitule" placeholder="Intitulé" >
-                <input type="text" name="numero" placeholder="Numéro">
+         <div class="input-group">
+            <div class="input-group-addon">
+                <i class="fa fa-phone"></i> 
+            </div>
+            <div class="input-group-addon" style="padding: 0px;">
+                <input class="form-control" type="text" name="intitule" placeholder="Intitulé" style="border: 0px none; height: 30px; width:150px;">
+            </div>
+            <input class="form-control" type="text" name="numero" placeholder="Numéro">
+            <div class="input-group-addon" style="padding: 0px;"> 
+                <button class="btn ">
+                        <i class="fa fa-plus "></i>
+                </button>
+            </div>    
         </div>
        
 
