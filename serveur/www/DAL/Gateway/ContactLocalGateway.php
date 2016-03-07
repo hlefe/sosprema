@@ -22,6 +22,9 @@ class ContactLocalGateway {
         $querry = 'SELECT * FROM contactlocal WHERE idUtilisateur=:idUtilisateur';
         Connexion::executeQuerry($querry, array('idUtilisateur'=>array($idUtilisateur,PDO::PARAM_INT)));
         $result = Connexion::getResult();
+        if($result==false){
+            return false;
+        }
         return new Contactlocal($result);
     }
     
