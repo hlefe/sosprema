@@ -34,7 +34,7 @@ require('vue/layout/header.php');
 
     </section><!-- /.Left col -->
     <!-- right col (We are only adding the ID to make the widgets sortable)-->
-    <section class="col-lg-5 connectedSortable">
+    <section class="col-lg-3 connectedSortable">
 
        <div class="box box-solid box-info">
            <div class="box-header with-border">

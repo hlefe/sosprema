@@ -117,6 +117,7 @@ class UtilisateurGateway {
                                                 ':idNiveau'=>array($idNiveau,PDO::PARAM_STR),
                                                 ':idAdresse'=>array($idAdresse,PDO::PARAM_INT)
                                                 ));
+        return self::rechercheUtilisateurEmail($email);
     }
 
     public static function supprimerUtilisateur($email){        

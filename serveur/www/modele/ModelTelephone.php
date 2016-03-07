@@ -12,11 +12,13 @@ class ModelTelephone {
 	}
 
 	public static function ajouterTelephone($utilisateur){
-		$intitule = VariableExterne::verifChampObligatoire('intitulé', 'intitule');
-		$numero = VariableExterne::verifChampObligatoire('numéro', 'numero');
-		TelephoneGatewy::ajouterTelephone($intitule,$numero,$utilisateur->userId);
-		$utilisateur = ModelGestionUtilisateur::rechercherUtilisateur($utilisateur->email);
-		return $utilisateur;
+		$intitule = VariableExterne::verifChampOptionnel( 'intitule');
+		$numero = VariableExterne::verifChampOptionnel( 'numero');
+        if($intitule !="" && $numero != ""){
+            TelephoneGateway::ajouterTelephone($intitule,$numero,$utilisateur->userId);
+            $utilisateur = ModelGestionUtilisateur::rechercheUtilisateur($utilisateur->email);
+            return $utilisateur;
+        }
 	}
 
 	public static function modifierTelephone($idTelephone){

@@ -96,7 +96,7 @@ class ControleurBenevol {
             try{
                 $_SESSION['utilisateurConnecter'] = ModelTelephone::ajouterTelephone($utilisateur);
                 $utilisateur = $_SESSION['utilisateurConnecter'];
-                $vueConfirmation[] = "Le numéro de téléphone à bien été ajouter.";
+                $vueConfirmation[] = "Le numéro de téléphone à bien été ajouté.";
             } catch(PDOException $ex){;
                 $vueErreur[] = $ex;
             } catch(Exception $e){

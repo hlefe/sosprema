@@ -3,7 +3,7 @@
 <section class="content">
     <?php require_once('vue/includes/erreur.php'); ?>
     <?php require_once('vue/includes/confirmation.php'); ?>
-    <form method="post" action="index.php?action=userEdit" enctype="multipart/form-data">
+    <form method="post" action="index.php?action=userEdit" id="form" enctype="multipart/form-data">
         <!-- Main row -->
         <div class="row">
             <!-- Colonne de gauche -->

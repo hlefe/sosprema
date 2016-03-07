@@ -204,4 +204,22 @@ class ControleurAdmin {
         }
         require_once('vue/pages/ajoutModifTelephone.php');
     }
+    
+     public static function supprimerTelephoneUser(){
+        $utilisateur = $_SESSION['utilisateurModifie'];
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        if(isset($_REQUEST['edit'])){
+            try{
+                ModelTelephone::supprimerTelephone($_REQUEST['idTelephone']);
+                $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::rechercheUtilisateur($utilisateur->email);
+                $utilisateur = $_SESSION['utilisateurModifie'];
+                $vueConfirmation[] = "Le numéro de téléphone à bien été supprimer.";
+            } catch(PDOException $ex){;
+                $vueErreur[] = $ex;
+            } catch(Exception $e){
+                $vueErreur[]=$e->getMessage();
+            }
+        }
+        require_once('vue/pages/admin/userEdit.php');
+    }
 }

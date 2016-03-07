@@ -38,7 +38,7 @@ Les champs suivants sont définis:
         <label>Téléphones:</label>
         
         <!-- Boucle for pour chaque numéro de cet utilisateur, l'afficher  -->
-       <?php 
+       <?php if(isset($utilisateur)){
             if($utilisateur->telephones != null){
                 foreach($utilisateur->telephones as $telephone){
         ?>
@@ -46,12 +46,19 @@ Les champs suivants sont définis:
             <div class="input-group-addon">
             <i class="fa fa-phone"></i>
             </div>
-            <input class="form-control " type="text" value="<?php echo $telephone->type.' : '; ?>">
-            <input class="form-control " data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="" type="text" value="<?php echo $telephone->numero; ?>">
+            <input class="form-control " type="text" value="<?php echo $telephone->type; ?>" readonly>
+            <input class="form-control " data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="" type="text" value="<?php echo $telephone->numero; ?>" readonly>
+
             <div class="input-group-addon ">
+                <?php if ($_GET["action"]=="profil"){ ?>
                 <a href='?action=supprimerTelephone&idTelephone=<?php echo $telephone->idTelephone; ?>&edit=true'>
                     <i class="fa fa-close btn-danger"></i>
                 </a>
+                <?php }else{ ?>
+                <a href='?action=supprimerTelephoneUser&idTelephone=<?php echo $telephone->idTelephone; ?>&edit=true'>
+                    <i class="fa fa-close btn-danger"></i>
+                </a>
+                <?php } ?>
             </div>    
         </div>
         
@@ -59,11 +66,13 @@ Les champs suivants sont définis:
        <?php 
                 }
             }
+       }
         ?>
         
         <div class="btn btn-default btn-file pull-right">
-                <i class="fa fa-plus"></i> Ajouter un autre numéro
-                <input name="ajouter" type="file" >
+            <h4> Ajouter un numéro</h4>
+                <input type="text" name="intitule" placeholder="Intitulé" >
+                <input type="text" name="numero" placeholder="Numéro">
         </div>
        
 

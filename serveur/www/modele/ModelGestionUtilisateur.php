@@ -18,7 +18,7 @@ class ModelGestionUtilisateur {
         $avatar=VariableExterne::verifChampOptionnel('avatar');     
         $profession=VariableExterne::verifChampOptionnel('profession');
         $divers=VariableExterne::verifChampOptionnel('divers');
-
+        
         if(isset($_POST['libelle_niveau']))
             $idNiveau=ModelNiveau::rechercherId(Nettoyage::nettoyerChaine($_POST['libelle_niveau']));
 
@@ -33,6 +33,9 @@ class ModelGestionUtilisateur {
 
         $utilisateur = UtilisateurGateway::insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,
         $profession,$divers,$avatar,$idNiveau,$idAdresse);
+        if(isset($_REQUEST['intitule']) && isset($_REQUEST['numero'])){
+            ModelTelephone::ajouterTelephone($utilisateur);
+        }
     }
 
     public static function modifierUtilisateur($utilisateurModifie){
@@ -43,7 +46,10 @@ class ModelGestionUtilisateur {
         $avatar=VariableExterne::verifChampAvatar('avatar', $utilisateurModifie->avatar);     
         $profession=VariableExterne::verifChampOptionnel('profession');
         $divers=VariableExterne::verifChampOptionnel('divers');
-
+        
+        if(isset($_REQUEST['intitule']) && isset($_REQUEST['numero'])){
+            ModelTelephone::ajouterTelephone($utilisateurModifie);
+        }
 
         if(isset($_POST['libelle_niveau'])){
             $idNiveau=ModelNiveau::rechercherId(Nettoyage::nettoyerChaine($_POST['libelle_niveau']));

@@ -20,7 +20,7 @@ class TelephoneGateway {
         $querry = 'INSERT INTO telephone (intitule, numero, idContact) VALUES (:intitule, :numero, :idContact)';
         Connexion::executeQuerry($querry, array(':intitule'=>array($intitule,PDO::PARAM_STR),
                                                 ':numero'=>array($numero,PDO::PARAM_INT), 
-                                                ':idContact'=>array($idContact,PDO::PARAM_STR)));
+                                                ':idContact'=>array($userId,PDO::PARAM_STR)));
     }
 
     public static function modifierTelephone($idTelephone, $intitule, $numero){
