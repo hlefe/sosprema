@@ -18,7 +18,7 @@ class ContactLocalGateway {
                                                 ':charteVisiteur'=>array($charteVisiteur,PDO::PARAM_BOOL)));
     }
     
-    public static function rechercherContacLocal($idUtilisateur){
+    public static function rechercherContactLocal($idUtilisateur){
         $querry = 'SELECT * FROM contactlocal WHERE idUtilisateur=:idUtilisateur';
         Connexion::executeQuerry($querry, array('idUtilisateur'=>array($idUtilisateur,PDO::PARAM_INT)));
         $result = Connexion::getResult();

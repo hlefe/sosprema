@@ -24,9 +24,7 @@ class ContactLocal {
     public function __construct($param) {
 
         foreach ($param as $key=>$value){
-            else{
-                $this->$key = $value;
-            }
+            $this->$key = $value;
         }
     }
 }
