@@ -145,7 +145,7 @@ class ControleurAdmin {
                 $vueErreur[] = $e->getMessage();
             }
         }
-        require_once('vue/pages/admin/ajoutContactLocal.php');
+        require_once('vue/include/userEdit/contactLocal.php');
     }
 
     public static function modifierContactLocal(){

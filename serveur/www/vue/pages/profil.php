@@ -41,6 +41,15 @@
                         <button type="submit" class="btn btn-primary" name="enregistrer" value="enregistrer">Enregistrer</button>
                     </div>
                 </div>
+                <?php if(isset($utilisateur->contactLocal->idContact)){ ?>
+                <div class="box">
+                    <!-- Champs contact local -->
+                    <?php include('vue/includes/userEdit/contactLocal/contactLocal.php'); ?>
+                     <div class="box-footer">
+                        <button type="submit" class="btn btn-primary" name="enregistrer" value="enregistrer">Enregistrer</button>
+                    </div>
+                </div>
+                <?php } ?> 
             </section>
         </div>
     </form>
