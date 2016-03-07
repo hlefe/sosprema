@@ -23,12 +23,13 @@ Les champs suivants sont définis:
             <?php foreach($niveaux as $niveau){ ?>
                 <div class="radio">
                     <label>
-                    <input name="libelle_niveau" id="optionsRadios<?php echo $niveau['idNiveau']; ?>" value="<?php echo $niveau['nom']; ?>" checked="" type="radio">
+                    <input name="libelle_niveau" id="optionsRadios<?php echo $niveau['idNiveau']; ?>" value="<?php echo $niveau['nom']; ?>" checked type="radio">
                         <?php echo $niveau['nom']; ?>
                     </label>
                 </div>
             <?php } ?>
         </div>
+        
         </div>
     <div class="col-xs-5">
         <div class="form-group">
