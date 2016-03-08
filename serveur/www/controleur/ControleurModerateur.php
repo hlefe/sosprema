@@ -71,6 +71,7 @@ class ControleurModerateur {
         } catch(Exception $e){
             $vueErreur[]=$e->getMessage();
         }
+        require_once('vue/pages/moderateur/modificationHopital.php');
     }
 
     public static function supprimerRelation(){
@@ -84,5 +85,34 @@ class ControleurModerateur {
         } catch(Exception $e){
             $vueErreur[]=$e->getMessage();
         }
+        require_once('vue/pages/moderateur/modificationHopital.php');
+    }
+
+    public static function ajouterContactHopital(){
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        try {
+            ModelContactHopital::ajouterContactHopital();
+            $hopital = ModelGestionHopital::rechercherHopital($_REQUEST['idHopital']);
+            $_SESSION['hopitalModifie']=$hopital;
+        } catch(PDOException $ex){
+            $vueErreur[] = $ex->getMessage();
+        } catch(Exception $e){
+            $vueErreur[]=$e->getMessage();
+        }
+        require_once('vue/pages/moderateur/modificationHopital.php');
+    }
+
+    public static function supprimerContactHopital(){
+        $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        try {
+            ModelContactHopital::supprimerContactHopital($_REQUEST['idContactHopital']);
+            $hopital = ModelGestionHopital::rechercherHopital($_REQUEST['idHopital']);
+            $_SESSION['hopitalModifie']=$hopital;
+        } catch(PDOException $ex){
+            $vueErreur[] = $ex->getMessage();
+        } catch(Exception $e){
+            $vueErreur[]=$e->getMessage();
+        }
+        require_once('vue/pages/moderateur/modificationHopital.php');
     }
 }

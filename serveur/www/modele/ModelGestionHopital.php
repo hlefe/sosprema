@@ -8,6 +8,10 @@ class ModelGestionHopital {
         if($contactLocal != false || $contactLocal != NULL){
             $hopital->listeContactLocal = $contactLocal;
         }
+        $contactHopital = ModelContactHopital::rechercherContactHopitalByHopital($idHopital);
+        if($contactHopital != false || $contactHopital != NULL){
+            $hopital->listeContactHopital = $contactHopital;
+        }
         return $hopital;
     }
     
