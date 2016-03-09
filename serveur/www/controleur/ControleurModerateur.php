@@ -36,6 +36,7 @@ class ControleurModerateur {
         }
         require_once('vue/pages/moderateur/ajouterHopital.php');
 	}
+    
 
 	public static function modifierHopital(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
@@ -46,6 +47,7 @@ class ControleurModerateur {
             $hopital = $_SESSION['hopitalModifie'];
             try {
                 $hopital = ModelGestionHopital::ModifierHopital($hopital->idHopital);
+                $hopital = ModelGestionHopital::rechercherHopital($hopital->idHopital);
                 $_SESSION['hopitalModifie']=$hopital;
             } catch(PDOException $ex){
                     $vueErreur[] = $ex->getMessage();
@@ -118,8 +120,9 @@ class ControleurModerateur {
     
     public static function afficherTousLesContactsLocaux(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
-         $contacts = ModelContactLocal::afficherToutContact();
-         $idHopital =  $_GET['idHopital'];
+        $contacts = ModelContactLocal::afficherToutContact();
+        $idHopital =  $_GET['idHopital'];
+         
         require_once('vue/includes/hopital/contacts/ajoutL.php');
 	}
     public static function afficherTousLesContactsHopitaux(){
