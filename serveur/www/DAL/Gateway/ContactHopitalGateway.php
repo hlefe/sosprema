@@ -2,14 +2,15 @@
 
 class ContactHopitalGateway {
     
-    public static function ajouterContactHopital($idHopital, $nom, $prenom, $profession)
+    public static function ajouterContactHopital($idHopital, $nom, $prenom, $profession,$numero)
     {
-        $querry = 'INSERT INTO contacthopital (idHopital, nom, prenom, profession)
-                  VALUES (:idHopital, :nom, :prenom, :profession)';
+        $querry = 'INSERT INTO contacthopital (idHopital, nom, prenom, profession, numero)
+                  VALUES (:idHopital, :nom, :prenom, :profession, :numero)';
         Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT), 
                                                 ':nom'=>array($nom,PDO::PARAM_STR), 
                                                 ':prenom'=>array($prenom,PDO::PARAM_STR), 
-                                                ':profession'=>array($profession,PDO::PARAM_STR)));
+                                                ':profession'=>array($profession,PDO::PARAM_STR),
+                                                ':numero'=>array($numero,PDO::PARAM_STR)));
     }
     
     public static function rechercherContactHopital($idContactHopital){

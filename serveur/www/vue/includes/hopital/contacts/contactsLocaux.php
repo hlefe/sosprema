@@ -8,11 +8,16 @@
     if(isset($listeL)){
             foreach($listeL as $contact){
     ?>
+    
     <li>
         <img src="vue/images/avatar_local.png" alt="User Image">
         <a class="users-list-name" href="index.php?action=userEdit&mail=<?php echo $contact->email;?>"><?php echo $contact->prenom ." ". $contact->nom; ?></a>
         <span class="users-list-date"><?php echo $contact->telephones[0]->numero;?></span>
+    <div class="box-tools">
+        <a href="http://google.com"><button type="button" class="btn btn-box-tool bg-red" ><i class="fa fa-times"></i><b> Supprimer</b></button></a>
+    </div>
     </li>
+    
     <?php 
             }}
     ?>

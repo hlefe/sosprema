@@ -13,6 +13,9 @@
         <img src="vue/images/avatar.png" alt="User Image">
         <a class="users-list-name" href="#"><?php echo $contact->prenom ." ". $contact->nom;?></a>
         <span class="users-list-date"><?php echo $contact->numero; ?></span>
+        <div class="box-tools">
+             <a href="index.php?action=modifierHopital&idContactHopital=<?php echo $contact->idContactHopital; ?>"><button type="button" class="btn btn-box-tool bg-red" > <i class="fa fa-times"></i><b> Supprimer</b></button></a>
+        </div>
     </li>
     <?php 
             }}

@@ -46,7 +46,12 @@ class ControleurModerateur {
         }else{
             $hopital = $_SESSION['hopitalModifie'];
             try {
-                $hopital = ModelGestionHopital::ModifierHopital($hopital->idHopital);
+                if(isset($_GET['idContactHopital'])){
+                    ModelContactHopital::supprimerContactHopital($_GET['idContactHopital']);
+                }
+                else{
+                    $hopital = ModelGestionHopital::ModifierHopital($hopital->idHopital);
+                }
                 $hopital = ModelGestionHopital::rechercherHopital($hopital->idHopital);
                 $_SESSION['hopitalModifie']=$hopital;
             } catch(PDOException $ex){
@@ -107,8 +112,8 @@ class ControleurModerateur {
     public static function supprimerContactHopital(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try {
-            ModelContactHopital::supprimerContactHopital($_REQUEST['idContactHopital']);
-            $hopital = ModelGestionHopital::rechercherHopital($_REQUEST['idHopital']);
+            ModelContactHopital::supprimerContactHopital($_GET['idContactHopital']);
+            $hopital = ModelGestionHopital::rechercherHopital(($_GET['idHopital']));
             $_SESSION['hopitalModifie']=$hopital;
         } catch(PDOException $ex){
             $vueErreur[] = $ex->getMessage();

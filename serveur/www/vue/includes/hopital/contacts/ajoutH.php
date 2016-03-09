@@ -1,6 +1,6 @@
 <div class="form-group" >
     <label>Nom</label>
-    <input class="form-control" name="nom" type="text">
+    <input class="form-control" name="nom" type="text" >
 </div>
 <div class="form-group" >
     <label>Prénom</label>
