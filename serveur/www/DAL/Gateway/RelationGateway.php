@@ -23,18 +23,18 @@ class RelationGateway
     }
 
     public static function supprimerRelation($idHopital,$idContact){
-         $querry = 'DELETE FROM telephone WHERE idHopital = :idHopital AND idUtilisateur = :idUtilisateur';
-        Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT),
+         $querry = 'DELETE FROM relation WHERE idHopital = :idHopital AND idUtilisateur = :idUtilisateur';
+         Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT),
                                                 ':idUtilisateur'=>array($idContact,PDO::PARAM_INT)));
     }
 
     public static function supprimerRelationForHopital($idHopital){
-        $querry = 'DELETE FROM telephone WHERE idHopital = :idHopital';
+        $querry = 'DELETE FROM relation WHERE idHopital = :idHopital';
         Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT)));
     }
 
     public static function supprimerRelationForContact($idContact){
-        $querry = 'DELETE FROM telephone WHERE idUtilisateur = :idUtilisateur';
+        $querry = 'DELETE FROM relation WHERE idUtilisateur = :idUtilisateur';
         Connexion::executeQuerry($querry, array(':idUtilisateur'=>array($idUtilisateur,PDO::PARAM_INT)));
     }
 }

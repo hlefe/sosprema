@@ -49,6 +49,9 @@ class ControleurModerateur {
                 if(isset($_GET['idContactHopital'])){
                     ModelContactHopital::supprimerContactHopital($_GET['idContactHopital']);
                 }
+                elseif(isset($_GET['idContactLocal'])){
+                    ModelRelation::supprimerRelation($hopital->idHopital,$_GET['idContactLocal']);
+                }
                 else{
                     $hopital = ModelGestionHopital::ModifierHopital($hopital->idHopital);
                 }
