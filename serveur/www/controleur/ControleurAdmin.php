@@ -43,8 +43,13 @@ class ControleurAdmin {
             $utilisateur=$_SESSION['utilisateurModifie'];
             try{
                 //modification de cet utilisateur
-                $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
-                $utilisateur = $_SESSION['utilisateurModifie'];
+                if(isset($_GET['mailC'])){
+                    ModelContactLocal::ajouterContactLocal($utilisateur->userId);
+                }
+                else{
+                    $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
+                }
+                $utilisateur = ModelGestionUtilisateur::rechercheUtilisateur($utilisateur->email);
                 $vueConfirmation[] = "L'utilisateur à bien été modifié.";
             } catch(PDOException $ex){;
                 $vueErreur[] = $ex->getMessage();
@@ -97,6 +102,7 @@ class ControleurAdmin {
                 $vueErreur[] = "Erreur base de donnée, PDOException";
             }
         }
+        $contactsLocaux = ModelContactLocal::afficherToutContact();
         $listeUsers = ModelGestionUtilisateur::afficherToutUtilisateur();
         require_once('vue/pages/admin/listeUtilisateurs.php');
     }
@@ -127,7 +133,11 @@ class ControleurAdmin {
     }
 
     public static function ajouterUtilisateurCommeContact(){
-        $utilisateurModifie = $_SESSION['utilisateurModifie'];
+        if(isset($_GET['mailC'])){
+            $utilisateurModifie = ModelGestionUtilisateur::rechercheUtilisateur($_GET['mailC']);
+        } else {
+            $utilisateurModifie = $_SESSION['utilisateurModifie'];
+        }
         if(isset($_SESSION['utilisateurConnecter'])){
             $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         }else{
@@ -145,7 +155,7 @@ class ControleurAdmin {
                 $vueErreur[] = $e->getMessage();
             }
         }
-        require_once('vue/include/userEdit/contactLocal.php');
+        require_once('vue/includes/userEdit/contactLocal/contactLocal.php');
     }
 
     public static function modifierContactLocal(){

@@ -16,12 +16,16 @@ Les champs suivants sont définis:
  */
 ?> 
 <div class="box-header with-border">
-    <h3 class="box-title">Informations</h3>
+    <h3 class="box-title">Fiche contact local</h3>
     <div class="box-tools pull-right">
         <span class="label label-primary">Requis</span>
     </div>
 </div>
 <div class="box-body">
+     <?php 
+    $test = $utilisateur->contactLocal;
+    if (isset($test)){ ?>
+
     <div class="form-group">
         <label for="datePremierEngagement">Date première engagement</label>
         <input class="form-control" required type="text" name="datePremierEngagement" value="<?php if(isset($utilisateur)) echo $utilisateur->contactLocal->datePremierEngagement; ?>"/>
@@ -58,6 +62,16 @@ Les champs suivants sont définis:
             <label for="charteVisiteur">Charte visiteur</label>
             <input class="form-control" required type="text" name="charteVisiteur" value="<?php if(isset($utilisateur)) echo $utilisateur->contactLocal->charteVisiteur;?>" />
     </div>
-    
+    <?php }else{ ?>
+        <a href="index.php?action=userEdit&mailC=<?php echo $utilisateur->email ?>" class="btn bg-purple">Faire de cet utilisateur un contact local</a>
+    <?php } ?>
 
 </div>
+<?php 
+    $test = $utilisateur->contactLocal;
+    if (isset($test)){ ?>
+<div class="box-footer">
+    <!-- bouton enregistrer -->
+    <button type="submit" class="btn btn-primary" name="enregistrer" value="enregistrer">Enregistrer</button>
+</div>
+<?php } ?>

@@ -6,15 +6,32 @@
   <div class="content body">
      <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Liste des utilisateurs</h3>
                 <div class="box-tools pull-right">
                 <!-- Buttons, labels, and many other things can be placed here! -->
                 <!-- Here is a label for example -->
+               
                 <a href="index.php?action=ajoutUtilisateur" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter un utilisateur</a>
                 </div><!-- /.box-tools -->
             </div><!-- /.box-header -->
             <div class="box-body">
-                <table class="table table-hover" align=center>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+     
+ <div class="nav-tabs-custom" style="cursor: move;">
+    <ul class="nav nav-tabs  ui-sortable-handle" style="cursor: initial; ">
+        <li class="active"><a aria-expanded="true" href="#tab_1-1" data-toggle="tab">Tous les utilisateurs</a></li>
+        <li class=""><a aria-expanded="false" href="#tab_2-2" data-toggle="tab">Contacts locaux</a></li>
+    </ul>
+    <div class="tab-content" style="cursor: initial; ">
+        <div class="tab-pane active" id="tab_1-1" style="cursor: initial; ">
+            <table class="table table-hover" align=center>
                     <thead>
                         <tr>
                             <th>#</th>
@@ -43,6 +60,45 @@
                         <?php } ?>
                     <tbody>
                 </table>
+        </div>
+        <!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_2-2">
+             <table class="table table-hover" align=center>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Mail</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Modifier</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                        foreach($contactsLocaux as $user){
+                             $contact=UtilisateurGateway::rechercheUtilisateurId($user["idUtilisateur"]);
+                        ?>
+
+                            <tr>
+                                <td class="id"><?php echo $user["idUtilisateur"]; ?></td>
+                                <td>
+                                    <?php echo $contact->email; ?>
+                                </td>
+                                <td><?php echo $contact->nom; ?></td>
+                                <td><?php echo $contact->prenom; ?></td>
+                                <td><a href="index.php?action=userEdit&mail=<?php echo $contact->email; ?>">Modifier compte</a></td>
+                                <td><a href="index.php?action=listeUtilisateurs&mail=<?php echo $contact->email; ?>">Supprimer</a></td>
+                            </tr>
+                        <?php } ?>
+                    <tbody>
+                </table>
+            
+        </div>
+        <!-- /.tab-pane -->
+    </div>
+<!-- /.tab-content -->
+</div>
             </div><!-- /.box-body -->
      </div>
   </div>

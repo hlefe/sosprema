@@ -12,7 +12,7 @@
     <li>
         <img src="vue/images/avatar_local.png" alt="User Image">
         <a class="users-list-name" href="index.php?action=userEdit&mail=<?php echo $contact->email;?>"><?php echo $contact->prenom ." ". $contact->nom; ?></a>
-        <span class="users-list-date"><?php echo $contact->telephones[0]->numero;?></span>
+        <span class="users-list-date"><?php if(isset($contact->telephones[0])){ echo $contact->telephones[0]->numero; } ?></span>
     <div class="box-tools">
         <a href="index.php?action=modifierHopital&idContactLocal=<?php echo $contact->userId; ?>"><button type="button" class="btn btn-box-tool bg-red" ><i class="fa fa-times"></i><b> Supprimer</b></button></a>
     </div>

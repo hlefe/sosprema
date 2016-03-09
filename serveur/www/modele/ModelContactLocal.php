@@ -18,15 +18,14 @@ class ModelContactLocal {
     
     public static function ajouterContactLocal($idUtilisateur){
         
-        $datePremierEngagement = VariableExterne::verifChampObligatoire('datePremierEngagement', 'datePremierEngagement');
-        $dateRenouvellement = VariableExterne::verifChampOptionnel('dateRenouvellement');
-        $dateSenior = VariableExterne::verifChampOptionnel('dateSenior');
-        $visitesBenevoles = VariableExterne::verifChampOptionnel('dateBenevoles');
-        $conventionHopital = VariableExterne::verifChampOptionnel('conventionHopital');
-        $conventionCAMSP = VariableExterne::verifChampOptionnel('conventionCAMSP');
-        $conventionPMI = VariableExterne::verifChampOptionnel('conventionPMI');
-        $charteVisiteur = VariableExterne::verifChampOptionnel('charteVisiteur');
-        
+        $datePremierEngagement = " ";
+        $dateRenouvellement = " ";
+        $dateSenior = " ";
+        $visitesBenevoles = " ";
+        $conventionHopital = " ";
+        $conventionCAMSP = " ";
+        $conventionPMI = " ";
+        $charteVisiteur = " ";
         ContactLocalGateway::ajouterContactLocal($idUtilisateur, $datePremierEngagement, $dateRenouvellement, $dateSenior, $visitesBenevoles, $conventionHopital, $conventionCAMSP, $conventionPMI, $charteVisiteur);       
     }
     

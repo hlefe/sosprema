@@ -32,12 +32,18 @@
             
                 <!-- Colonne de droite-->
             <section class="col-lg-5 connectedSortable">
-            
                 <div class="box">
                     <!-- Champs adresse -->
                     <?php include('vue/includes/userEdit/adresse/adresse.php'); ?>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary" name="enregistrer" value="enregistrer">Enregistrer</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <!-- Champs adresse -->
+                    <?php include('vue/includes/userEdit/contactLocal/contactLocal.php'); ?>
+                    <div class="box-footer">
+                        
                     </div>
                 </div>
             </section>

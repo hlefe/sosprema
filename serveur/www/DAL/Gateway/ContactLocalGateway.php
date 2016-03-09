@@ -2,12 +2,11 @@
 
 class ContactLocalGateway {
     
-    public static function ajouterContactLocal($idUtilisateur, $idHopital, $datePremierEngagement, $dateRenouvellement, $dateSenior, $visitesBenevoles, $conventionHopital, $conventionCAMSP, $conventionPMI, $charteVisiteur)
+    public static function ajouterContactLocal($idUtilisateur, $datePremierEngagement, $dateRenouvellement, $dateSenior, $visitesBenevoles, $conventionHopital, $conventionCAMSP, $conventionPMI, $charteVisiteur)
     {
-        $querry = 'INSERT INTO contactlocal (idUtilisateur, idHopital, datePremierEngagement, dateRenouvellement, dateSenior, visitesBenevoles, conventionHopital, conventionCAMSP, conventionPMI, charteVisiteur)
-                  VALUES (:idUtilisateur, :idHopital, :datePremierEngagement, :dateRenouvellement, :dateSenior, :visitesBenevoles, :conventionHopital, :conventionCAMSP, :conventionPMI, :charteVisiteur)';
+        $querry = 'INSERT INTO contactlocal (idUtilisateur, datePremierEngagement, dateRenouvellement, dateSenior, visitesBenevoles, conventionHopital, conventionCAMSP, conventionPMI, charteVisiteur)
+                  VALUES (:idUtilisateur, :datePremierEngagement, :dateRenouvellement, :dateSenior, :visitesBenevoles, :conventionHopital, :conventionCAMSP, :conventionPMI, :charteVisiteur)';
         Connexion::executeQuerry($querry, array(':idUtilisateur'=>array($idUtilisateur,PDO::PARAM_INT),
-                                                ':idHopital'=>array($idHopital,PDO::PARAM_INT), 
                                                 ':datePremierEngagement'=>array($datePremierEngagement,PDO::PARAM_STR), 
                                                 ':dateRenouvellement'=>array($dateRenouvellement,PDO::PARAM_STR), 
                                                 ':dateSenior'=>array($dateSenior,PDO::PARAM_STR), 
