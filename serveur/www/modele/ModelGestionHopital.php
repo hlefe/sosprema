@@ -54,8 +54,12 @@ class ModelGestionHopital {
         $parkingPayant = VariableExterne::verifChampOptionnel('parkingPayant');
         $convention = VariableExterne::verifChampOptionnel('convention');
         $visiteBenevole = VariableExterne::verifChampOptionnel('visiteBenevole');
-        
+        $contactHopital = VariableExterne::verifChampOptionnel('contactH');
+        $idcontact = VariableExterne::verifChampOptionnel('idContact');
         $idAdresse = ModelGestionLieu::gestionAjoutModifAdresse();
+        
+        ModelContactHopital::ajouterContactHopital($idHopital);
+        ModelRelation::ajouterRelation($idHopital, $idcontact);
         
         HopitalGateway::modifierHopital($idHopital, $nomHopital, $idAdresse, $niveau, $service, $nbLits, $nbPremaParAn, $cafeParent, $parkingPayant, $convention, $visiteBenevole);
         return HopitalGateway::rechercherHopital($idHopital);        

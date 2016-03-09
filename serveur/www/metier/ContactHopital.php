@@ -1,12 +1,12 @@
 <?php
 
 class ContactHopital {
-	private $nomRue;
-	private $numRue;
-	private $codePostal;
-	private $nomVille;
-	private $nomDepartement;
-	private $nomRegion;
+	private $idContactHopital;
+	private $idHopital;
+	private $nom;
+	private $prenom;
+	private $profession;
+    private $numero;
 
 	public function __get($property) {
         return $this->$property;

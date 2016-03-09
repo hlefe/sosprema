@@ -5,10 +5,14 @@ class RelationGateway
     public static function rechercherContactLocalByIdHopital($idHopital){
     	$querry = 'SELECT * FROM relation WHERE idHopital=:idHopital';
         Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT)));
+        $results = Connexion::getResults();
+        return $results;
+    }
+    
+    public static function rechercherContactLocalInHopital($idHopital,$idContact){
+    	$querry = 'SELECT * FROM relation WHERE idUtilisateur=:idContact';
+        Connexion::executeQuerry($querry, array(':idContact'=>array($idContact,PDO::PARAM_INT)));
         $result = Connexion::getResult();
-        if ($result == false){
-            return false;
-        }
         return $result;
     }
 
@@ -21,7 +25,7 @@ class RelationGateway
     public static function supprimerRelation($idHopital,$idContact){
          $querry = 'DELETE FROM telephone WHERE idHopital = :idHopital AND idUtilisateur = :idUtilisateur';
         Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_INT),
-                                                ':idUtilisateur'=>array($idUtilisateur,PDO::PARAM_INT)));
+                                                ':idUtilisateur'=>array($idContact,PDO::PARAM_INT)));
     }
 
     public static function supprimerRelationForHopital($idHopital){

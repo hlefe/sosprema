@@ -35,7 +35,8 @@ class ContactLocalGateway {
         if($result==false){
             return false;
         }
-        return new Contactlocal($result);
+        $contact = new Contactlocal($result);
+        return $contact;
     }
     
     public static function getAll(){

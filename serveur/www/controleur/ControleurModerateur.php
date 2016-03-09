@@ -54,7 +54,7 @@ class ControleurModerateur {
             }
         }
         require_once('vue/pages/moderateur/modificationHopital.php');
-	}
+    }
 
 	public static function supprimerHopital(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
@@ -115,4 +115,15 @@ class ControleurModerateur {
         }
         require_once('vue/pages/moderateur/modificationHopital.php');
     }
+    
+    public static function afficherTousLesContactsLocaux(){
+		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+         $contacts = ModelContactLocal::afficherToutContact();
+         $idHopital =  $_GET['idHopital'];
+        require_once('vue/includes/hopital/contacts/ajoutL.php');
+	}
+    public static function afficherTousLesContactsHopitaux(){
+		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        require_once('vue/includes/hopital/contacts/ajoutH.php');
+	}
 }

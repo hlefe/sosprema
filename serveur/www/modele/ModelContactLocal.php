@@ -6,9 +6,9 @@ class ModelContactLocal {
         $contactLocal = ContactLocalGateway::rechercherContacLocalByIdUser($idUtilisateur);
         return $contactLocal;
     }
-
+    
     public static function rechercherContactLocalByIdContact($idcontact){
-        $contactLocal = ContactLocalGateway::rechercherContactLocalByIdContact($idUtilisateur);
+        $contactLocal = ContactLocalGateway::rechercherContactLocalByIdContact($idcontact);
         return $contactLocal;
     }
     public static function afficherToutContact(){
@@ -67,13 +67,18 @@ class ModelContactLocal {
     }
 
     public static function rechercherContactLocalByHopital($idHopital){
+        //Fonction réalisée dans la douleure
         $tmpRelation = RelationGateway::rechercherContactLocalByIdHopital($idHopital);
         if ($tmpRelation == false) {
             return false;
         }
         foreach($tmpRelation as $relation){
-            $tmpContact = ContactLocalGateway::rechercherContactLocalByIdContact($relation['idUtilisateur']);
-            $contactLocal[]=UtilisateurGateway::rechercherUtilisateurId($tmpContact['idUtilisateur']);
+            $tmpContact = self::rechercherContactLocalByIdContact($relation['idUtilisateur']);
+            if (!$tmpContact == false) {
+                $id = $tmpContact->idUtilisateur;
+                $tmp = UtilisateurGateway::rechercheUtilisateurId($id);
+                $contactLocal[] = $tmp;
+            }
         }
         return $contactLocal;
     }

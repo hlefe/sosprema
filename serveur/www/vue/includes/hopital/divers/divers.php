@@ -51,6 +51,3 @@ Les champs suivants sont définis:
         </div>
     </div>
 </div>
-<script>
-    $("[name='my-checkbox']").onText="Test";
-</script>

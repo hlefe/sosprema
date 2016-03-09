@@ -57,8 +57,8 @@ class ContactHopitalGateway {
             return false;
         }
         foreach ($result as $contacthopital) {
-            $contactHopital = new ContacHopital($contacthopital);
+            $contactsHopital[] = new ContactHopital($contacthopital);
         }
-        return $contacthopital;
+        return $contactsHopital;
     }
 }

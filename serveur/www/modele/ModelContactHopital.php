@@ -2,14 +2,14 @@
 
 class ModelContactHopital {
     
-    public static function ajouterContactLocal($idHopital, $nom, $prenom, $profession)
+    public static function ajouterContactHopital($idHopital)
     {
-        $idHopital = VariableExterne::verifChampObligatoire('idHopital', 'idHopital');
-        $nom = VariableExterne::verifChampObligatoire('nom','nom');
-        $prenom = VariableExterne::verifChampObligatoire('prénom', 'prenom');
-        $profession = VariableExterne::verifChampObligatoire('profession','profession');
-        
+        $nom = VariableExterne::verifChampOptionnel('nom','nom');
+        $prenom = VariableExterne::verifChampOptionnel('prénom', 'prenom');
+        $profession = VariableExterne::verifChampOptionnel('profession','profession');
+        if ($nom != NULL && $prenom != NULL && $profession != NULL){
         ContactHopitalGateway::ajouterContactHopital($idHopital, $nom, $prenom, $profession);
+        }
     }
     
     public static function rechercherContactHopital($idContactHopital){
