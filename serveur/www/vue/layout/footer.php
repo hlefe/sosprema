@@ -13,34 +13,48 @@
         </div>
         <strong> Réalisé dans le cadre d'un projet étudiant avec l'IUT de Clermont-Ferrand.</strong>
     </footer>
-    
-    <!-- Scripts divers et variés pour bootstrap -->
-        <!-- jQuery -->
-        <script src="vue/style/plugins/bootstrap-switch-master/docs/js/jquery.min.js"></script>
-        <!-- bootstrap -->
-        <script src="vue/style/plugins/bootstrap-switch-master/docs/js/bootstrap.min.js"></script>
+
+    <!-- Scripts divers et variés  -->
+        <!-- Configuration du plugin fileInput  --> 
+        <script>
+            $("#file").fileinput({
+                showClose: false,
+                language: 'fr',
+                showUpload: false,
+                showCaption: false,
+                browseClass: "btn btn-primary",
+                fileType: "image",
+                previewFileType: "image",
+                defaultPreviewContent: '<img style="max-height: 100px" src="<?php  if(isset($utilisateur)) echo $utilisateur->avatar; ?>">',
+                browseLabel: '',
+                removeLabel: '',
+                maxFileSize: 1500,
+
+                previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+                allowedFileExtensions: ["jpg", "png", "gif"]
+            });
+        </script>    
         <!-- boottrapSwitch -->
         <script src="vue/style/plugins/bootstrap-switch-master/dist/js/bootstrap-switch.js"></script>
         <!-- boottrapSwitch run -->
         <script>
-        $(function(argument) {
-        $('[type="checkbox"]').bootstrapSwitch();
-        })
+            $(function(argument) {
+            $('[type="checkbox"]').bootstrapSwitch();
+            })
         </script>
-        <!-- boottrapPopover -->
-            <script>
-                $(document).ready(function(){
-                   $('*[data-poload]').hover(function() {
-                        var e=$(this);
-                        e.off('hover');
-                        $.get(e.data('poload'),function(d) {
-                            e.popover({content: d, html: true, placement: 'left'}).popover('show');
-                        });
+        <!-- bootstrapPopover -->
+        <script>
+            $(document).ready(function(){
+               $('*[data-poload]').hover(function() {
+                    var e=$(this);
+                    e.off('hover');
+                    $.get(e.data('poload'),function(d) {
+                        e.popover({content: d, html: true, placement: 'left'}).popover('show');
                     });
-                });  
-                                                        
-            </script>
-            <script>
+                });
+            });                                             
+        </script>
+        <script>
             $('body').on('click', function (e) {
                 $('*[data-poload]').each(function () {
                     //the 'is' for buttons that trigger popups
@@ -50,20 +64,14 @@
                     }
                 });
             });     
-            </script>       
-        
-        
-    
-        <!-- jQuery 2.1.4 -->
-        <!-- <script src="vue/style/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        </script> 
+
         <!-- jQuery UI 1.11.4 -->
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
         $.widget.bridge('uibutton', $.ui.button);
         </script>
-        <!-- Bootstrap 3.3.5 -->
-        <!-- <script src="vue/style/bootstrap/js/bootstrap.min.js"></script>
         <!-- Morris.js charts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
         <script src="vue/style/plugins/morris/morris.min.js"></script>

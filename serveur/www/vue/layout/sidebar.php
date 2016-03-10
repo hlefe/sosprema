@@ -15,7 +15,9 @@ $listePages = ModelPage::obtenirTout($utilisateurConnecter);
 <section class="sidebar">
     <!-- LOGO -->
     <div class="sosP-logo">
-        
+        <div class="pull-left favicon ">
+                <img src="vue/images/favicon.png">
+        </div>
         <!-- Logo Sos Préma -->
         <div class="pull-left logo">
             <img src="vue/images/logo.png" title="Sos Préma">

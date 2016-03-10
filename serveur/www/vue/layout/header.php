@@ -27,6 +27,11 @@ $pageActuelle =  ModelPage::rechercherPage($_GET['action']);
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     
     <!-- Chargement des éléments de Bootstrap -->
+         <!-- jQuery -->
+        <script src="vue/style/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <!-- bootstrap js -->
+        <script src="vue/style/plugins/bootstrap-switch-master/docs/js/bootstrap.min.js"></script>
+
         <!-- Bootstrap 3.3.5 -->
         <link rel="stylesheet" href="vue/style/bootstrap/css/bootstrap.min.css">
         <!-- Font Awesome -->
