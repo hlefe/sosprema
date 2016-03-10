@@ -20,7 +20,7 @@ class HopitalGateway {
         
     }
     
-    public static function rechercherHopital($idHopital){      
+    public static function rechercherHopital($idHopital){    
         $querry = 'SELECT * FROM hopital WHERE idHopital=:idHopital';
         Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_STR)));
         $result = Connexion::getResult();

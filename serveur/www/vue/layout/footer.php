@@ -34,7 +34,7 @@
                         var e=$(this);
                         e.off('hover');
                         $.get(e.data('poload'),function(d) {
-                            e.popover({content: d, html: true}).popover('show');
+                            e.popover({content: d, html: true, placement: 'left'}).popover('show');
                         });
                     });
                 });  

@@ -3,6 +3,7 @@
 class ModelGestionHopital {
     
     public static function rechercherHopital($idHopital){
+        
         $hopital = HopitalGateway::rechercherHopital($idHopital);
         $contactLocal = ModelContactLocal::rechercherContactLocalByHopital($idHopital);
         if($contactLocal != false || $contactLocal != NULL){

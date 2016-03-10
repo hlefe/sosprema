@@ -10,7 +10,7 @@ class niveau {
 	}
 
 	public function __get($property){
-		return $this->$property
+		return $this->$property;
 	}
 
 	public function __set($property, $value){

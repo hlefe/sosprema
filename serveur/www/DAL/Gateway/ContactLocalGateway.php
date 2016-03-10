@@ -24,7 +24,7 @@ class ContactLocalGateway {
         if($result==false){
             return false;
         }
-        return new Contactlocal($result);
+        return new ContactLocal($result);
     }
 
     public static function rechercherContactLocalByIdContact($idcontact){
@@ -34,7 +34,7 @@ class ContactLocalGateway {
         if($result==false){
             return false;
         }
-        $contact = new Contactlocal($result);
+        $contact = new ContactLocal($result);
         return $contact;
     }
     

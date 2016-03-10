@@ -5,7 +5,15 @@ class FrontControleur {
     public static function init() {
         require_once 'metier/Utilisateur.php';
         require_once 'metier/Adresse.php';
+        require_once 'metier/ContactHopital.php';
+        require_once 'metier/ContactLocal.php';
         require_once 'metier/Telephone.php'; 
+        require_once 'metier/Hopital.php';
+        require_once 'metier/Niveau.php';
+        require_once 'metier/Page.php';
+        require_once 'metier/Telephone.php';
+        
+        
         session_start();
 
         if(!isset($_REQUEST['action'])){
