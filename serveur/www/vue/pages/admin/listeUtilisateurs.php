@@ -86,8 +86,7 @@
                             <tr>
                                 <td class="hidden-xs hidden-sm id"><?php echo $user["idUtilisateur"]; ?></td>
                                 <td class="hidden-xs hidden-sm">
-                                    <?php echo $contact->email; ?>
-                                </td>
+                                    <?php echo $contact->email; ?></td>
                                 <td class="hidden-xs hidden-sm"><?php echo $contact->nom; ?></td>
                                 <td class="hidden-xs hidden-sm"><?php echo $contact->prenom; ?></td>
                                 <td class="hidden-md hidden-lg">
