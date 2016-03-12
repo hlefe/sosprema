@@ -43,8 +43,8 @@ Les champs suivants sont définis:
             <input class="form-control" required type="text" name="visitesBenevoles" value="<?php if(isset($utilisateur)) echo $utilisateur->contactLocal->visitesBenevoles;?>" />
     </div>
     <div class="form-group">
-            <label for="dateSenior">ConventionHopital</label>
-            <input class="form-control" required type="text" name="dateSenior" value="<?php if(isset($utilisateur)) echo $utilisateur->contactLocal->dateSenior;?>" />
+            <label for="dateSenior">Convention Hopital</label>
+            <input class="form-control" required type="text" name="conventionHopital" value="<?php if(isset($utilisateur)) echo $utilisateur->contactLocal->conventionHopital;?>" />
     </div>
     <div class="form-group">
             <label for="conventionCAMSP">Convention CAMSP</label>

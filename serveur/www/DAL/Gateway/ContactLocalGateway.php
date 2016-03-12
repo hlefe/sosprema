@@ -52,8 +52,7 @@ class ContactLocalGateway {
     
     public static function modifierContact($idContact, $datePremierEngagement, $dateRenouvellement, $dateSenior, $visitesBenevoles, $conventionHopital, $conventionCAMSP, $conventionPMI, $charteVisiteur)
     {
-        $querry = 'UPDATE contactlocal SET  idContact = :idContact,
-                                            datePremierEngagement = :datePremierEngagement,
+        $querry = 'UPDATE contactlocal SET  datePremierEngagement = :datePremierEngagement,
                                             dateRenouvellement = :dateRenouvellement,
                                             dateSenior = :dateSenior,
                                             visitesBenevoles = :visitesBenevoles,
@@ -61,7 +60,7 @@ class ContactLocalGateway {
                                             conventionCAMSP = :conventionCAMSP,
                                             conventionPMI = :conventionPMI,
                                             charteVisiteur = :charteVisiteur
-                                     WHERE  idcontact = :idcontact';
+                                     WHERE  idContact = :idContact';
         
         Connexion::executeQuerry($querry, array(':idContact'=>array($idContact, PDO::PARAM_INT),
                                                 ':datePremierEngagement'=>array($datePremierEngagement, PDO::PARAM_INT),

@@ -63,6 +63,9 @@ class ModelGestionUtilisateur {
         }
         
         $idAdresse = ModelGestionLieu::gestionAjoutModifAdresse();
+        if($utilisateurModifie->contactLocal != null){
+            ModelContactLocal::modifierContact($utilisateurModifie->contactLocal->idContact);
+        }
 
         UtilisateurGateway::modifierUtilisateur($utilisateurModifie->userId,$email,$nom,$prenom,$dateDeNaissance,
         $profession,$divers,$avatar,$idNiveau,$idAdresse);
