@@ -19,10 +19,10 @@
                 <table class="table table-hover" align=center>
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th class="hidden-xs hidden-sm">#</th>
                             <th>Nom</th>
-                            <th>Service</th>
-                            <th>Nombre de lits</th>
+                            <th class="hidden-xs hidden-sm">Service</th>
+                            <th class="hidden-xs hidden-sm">Nombre de lits</th>
                              <?php if($utilisateurConnecter->idNiveau <2 ){ ?>
                              <th>Consultation</th>
                              <?php } else{ ?>
@@ -39,12 +39,12 @@
                         ?>
 
                             <tr>
-                                <td class="id"><?php echo $hopital["idHopital"]; ?></td>
+                                <td class="id hidden-xs hidden-sm"><?php echo $hopital["idHopital"]; ?></td>
                                 <td>
                                     <?php echo $hopital["nomHopital"]; ?>
                                 </td>
-                                <td><?php echo $hopital["service"]; ?></td>
-                                <td><?php echo $hopital["nbLits"]; ?></td>
+                                <td class="hidden-xs hidden-sm"><?php echo $hopital["service"]; ?></td>
+                                <td class="hidden-xs hidden-sm"><?php echo $hopital["nbLits"]; ?></td>
                                 <?php if($utilisateurConnecter->idNiveau <2 ){ ?>
                                 <td><a href="index.php?action=afficherHopital&id=<?php echo $hopital["idHopital"]; ?>">Afficher</a></td>
                                 <?php } else{ ?>
