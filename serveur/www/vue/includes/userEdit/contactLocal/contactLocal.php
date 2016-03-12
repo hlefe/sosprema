@@ -79,7 +79,6 @@ Les champs suivants sont définis:
             <label for="charteVisiteur">Charte visiteur</label>
             <input class="form-control" data-off-text="Non" data-on-text="Oui" type="checkbox"  name="charteVisiteur" value="<?php if(isset($utilisateur)) echo $utilisateur->contactLocal->charteVisiteur;?>" />
     </div>
-    <a href="index.php?action=userEdit&mailCdelete=<?php echo $utilisateur->email ?>" class="btn bg-red"><i class="fa fa-fw fa-ban"></i> Cet utilisateur n'est plus un contact local</a>
     <?php }else{ ?>
         <a href="index.php?action=userEdit&mailC=<?php echo $utilisateur->email ?>" class="btn bg-purple">Faire de cet utilisateur un contact local</a>
     <?php } ?>
@@ -90,6 +89,11 @@ Les champs suivants sont définis:
     if (isset($test)){ ?>
 <div class="box-footer">
     <!-- bouton enregistrer -->
+    <?php 
+    $test = $utilisateur->contactLocal;
+    if (isset($test)){ ?>
+    <a href="index.php?action=userEdit&mailCdelete=<?php echo $utilisateur->email ?>" class="btn bg-red pull-right"><i class="fa fa-fw fa-ban"></i> Cet utilisateur n'est plus un contact local</a>
+    <?php } ?>
     <button type="submit" class="btn btn-primary" name="enregistrer" value="enregistrer">Enregistrer</button>
 </div>
 <?php } ?>
