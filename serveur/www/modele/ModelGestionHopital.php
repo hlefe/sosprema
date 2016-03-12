@@ -47,8 +47,8 @@ class ModelGestionHopital {
     public static function modifierHopital($idHopital){
         
         $nomHopital = VariableExterne::verifChampObligatoire('nomHopital', 'nomHopital');
-        $niveau = $service;
         $service = VariableExterne::verifChampObligatoire('service', 'service');
+                $niveau = $service;
         $nbLits = VariableExterne::verifChampOptionnel('nbLits');
         $nbPremaParAn = VariableExterne::verifChampOptionnel('nbPremaParAn');
         $cafeParent = VariableExterne::verifChampOptionnel('cafeParent');
