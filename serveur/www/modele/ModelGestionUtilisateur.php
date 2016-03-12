@@ -63,7 +63,7 @@ class ModelGestionUtilisateur {
         }
         
         $idAdresse = ModelGestionLieu::gestionAjoutModifAdresse();
-        if($utilisateurModifie->contactLocal != null){
+        if(($utilisateurModifie->contactLocal != null) && ($modifProfil = true)){
             ModelContactLocal::modifierContact($utilisateurModifie->contactLocal->idContact);
         }
 
@@ -78,7 +78,9 @@ class ModelGestionUtilisateur {
 
     public static function supprimerUtilisateur($emailConnexion) {
         $utilisateur = self::rechercheUtilisateur($emailConnexion);
-        ModelContactLocal::supprimerContactLocalByIdUtilisateur($utilisateur->userId);
+        if($utilisateur->contactLocal != null){
+            ModelContactLocal::supprimerContactLocalByIdUtilisateur($utilisateur->userId);
+        }
         return UtilisateurGateway::supprimerUtilisateur($emailConnexion);
     }
 

@@ -54,6 +54,7 @@ class ControleurAdmin {
                     $_SESSION['utilisateurModifie'] = $utilisateur;
                 }
                 else{
+                    $modifProfil = false;
                     $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
                 }
                 $utilisateur = ModelGestionUtilisateur::rechercheUtilisateur($utilisateur->email);

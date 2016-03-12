@@ -56,6 +56,7 @@ class ControleurBenevol {
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         if(isset($_REQUEST['edit'])){
             try{
+                $modifProfil = true;
                 $_SESSION['utilisateurConnecter'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
                 $utilisateur = $_SESSION['utilisateurConnecter'];
                 $vueConfirmation[] = "L'utilisateur à bien été modifié.";
