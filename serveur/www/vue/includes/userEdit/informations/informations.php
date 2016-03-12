@@ -77,7 +77,9 @@ Les champs suivants sont définis:
             <div class="input-group-addon" style="padding: 0px;">
                 <input class="form-control" type="text" name="intitule" placeholder="Intitulé" style="border: 0px none; height: 30px; width:150px;">
             </div>
-            <input class="form-control" type="text" name="numero" placeholder="Numéro">
+             
+             <!-- c'est avec le onkeyup qu'on remplace le numéro en ajoutant les espaces -->
+             <input class="form-control" type="text" name="numero" placeholder="Numéro" onkeyup="this.value=this.value.replace(/(\d{2})(?=\d)/,'$1 ')">
             <div class="input-group-addon" style="padding: 0px;"> 
                 <button class="btn ">
                         <i class="fa fa-plus "></i>
