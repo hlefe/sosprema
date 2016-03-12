@@ -2,7 +2,7 @@
         <?php if(isset($vueConfirmation)) { ?>
         
             <div class="row">
-                <section class="col-lg-7 connectedSortable">
+                <section class="col-lg-7 ">
                         <div class="box box-success">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Confirmation</h3>

@@ -25,7 +25,7 @@
                 
      
  <div class="nav-tabs-custom" style="cursor: move;">
-    <ul class="nav nav-tabs  ui-sortable-handle" style="cursor: initial; ">
+    <ul class="nav nav-tabs  " style="cursor: initial; ">
         <li class="active"><a aria-expanded="true" href="#tab_1-1" data-toggle="tab">Tous les utilisateurs</a></li>
         <li class=""><a aria-expanded="false" href="#tab_2-2" data-toggle="tab">Contacts locaux</a></li>
     </ul>
@@ -34,10 +34,11 @@
             <table class="table table-hover" align=center>
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Mail</th>
-                            <th>Nom</th>
-                            <th>Prénom</th>
+                            <th class="hidden-xs hidden-sm">#</th>
+                            <th class="hidden-xs hidden-sm">Mail</th>
+                            <th class="hidden-xs hidden-sm">Nom</th>
+                            <th class="hidden-xs hidden-sm">Prénom</th>
+                            <th class="hidden-md hidden-lg">Utilisateur</th>
                             <th>Modifier</th>
                             <th>Supprimer</th>
                         </tr>
@@ -48,12 +49,15 @@
                         ?>
 
                             <tr>
-                                <td class="id"><?php echo $user["idUtilisateur"]; ?></td>
-                                <td>
+                                <td class="hidden-xs hidden-sm id"><?php echo $user["idUtilisateur"]; ?></td>
+                                <td class="hidden-xs hidden-sm">
                                     <?php echo $user["email"]; ?>
                                 </td>
-                                <td><?php echo $user["nom"]; ?></td>
-                                <td><?php echo $user["prenom"]; ?></td>
+                                <td class="hidden-xs hidden-sm"><?php echo $user["nom"]; ?></td>
+                                <td class="hidden-xs hidden-sm"><?php echo $user["prenom"]; ?></td>
+                                <td class="hidden-md hidden-lg">
+                                    <?php echo  $user["prenom"] . " " . $user["nom"]; ?>
+                                </td>
                                 <td><a href="index.php?action=userEdit&mail=<?php echo $user["email"]; ?>">Modifier</a></td>
                                 <td><a href="index.php?action=listeUtilisateurs&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
                             </tr>
@@ -66,12 +70,11 @@
              <table class="table table-hover" align=center>
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Mail</th>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Modifier</th>
-                            <th>Supprimer</th>
+                            <th class="hidden-xs hidden-sm">#</th>
+                            <th class="hidden-xs hidden-sm">Mail</th>
+                            <th class="hidden-xs hidden-sm">Nom</th>
+                            <th class="hidden-xs hidden-sm">Prénom</th>
+                            <th class="hidden-md hidden-lg">Utilisateur</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,12 +84,15 @@
                         ?>
 
                             <tr>
-                                <td class="id"><?php echo $user["idUtilisateur"]; ?></td>
-                                <td>
+                                <td class="hidden-xs hidden-sm id"><?php echo $user["idUtilisateur"]; ?></td>
+                                <td class="hidden-xs hidden-sm">
                                     <?php echo $contact->email; ?>
                                 </td>
-                                <td><?php echo $contact->nom; ?></td>
-                                <td><?php echo $contact->prenom; ?></td>
+                                <td class="hidden-xs hidden-sm"><?php echo $contact->nom; ?></td>
+                                <td class="hidden-xs hidden-sm"><?php echo $contact->prenom; ?></td>
+                                <td class="hidden-md hidden-lg">
+                                    <?php echo  $contact->prenom . " " . $contact->nom; ?>
+                                </td>
                                 <td><a href="index.php?action=userEdit&mail=<?php echo $contact->email; ?>">Modifier compte</a></td>
                                 <td><a href="index.php?action=listeUtilisateurs&mail=<?php echo $contact->email; ?>">Supprimer</a></td>
                             </tr>

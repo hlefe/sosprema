@@ -6,7 +6,7 @@
           <!-- Main row -->
     <div class="row">
         <!-- Colonne de gauche -->
-        <section class="col-lg-7 connectedSortable">
+        <section class="col-lg-7 ">
             
             <div class="box box-danger">
                 <!-- Champs informations -->
@@ -20,7 +20,7 @@
         </section>
         
             <!-- Colonne de droite-->
-        <section class="col-lg-5 connectedSortable">
+        <section class="col-lg-5 ">
         
             <div class="box">
                 <!-- Champs adresse -->

@@ -11,16 +11,16 @@
     ?>
     <li>
         <img src="vue/images/avatar.png" alt="User Image">
-        <a class="users-list-name" href="#"><?php echo $contact->prenom ." ". $contact->nom;?></a>
-        <span class="users-list-date"><?php echo $contact->numero; ?></span>
-        <div class="box-tools">
+        <a class="users-list-name" href="#"><?php echo $contact->prenom ." ". $contact->nom; ?></a>
+        <span class="users-list-date"><i class="fa fa-phone"> </i> <?php echo $contact->numero;  ?></span>
+        <div class="box-tools hidden-xs hidden-sm">
              <a href="index.php?action=modifierHopital&idContactHopital=<?php echo $contact->idContactHopital; ?>"><button type="button" class="btn btn-box-tool bg-red" > <i class="fa fa-times"></i><b> Supprimer</b></button></a>
         </div>
     </li>
     <?php 
             }}
     ?>
-    <li>
+    <li class="hidden-xs hidden-sm">
         <img src="vue/images/users-add-user-icon.png" alt="User Image">
         <a  href="#" data-poload="index.php?action=afficherTousLesContactsHopitaux">Ajouter</a>
     </li>

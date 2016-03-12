@@ -485,6 +485,7 @@ a:focus {
 }
 .sosP-logo > .favicon {
   padding: 8px;
+  display: none;
 }
 .sosP-logo > .favicon > img {
   width: 130%;
@@ -494,7 +495,7 @@ a:focus {
   padding: 5px;
   line-height: 1;
   position: absolute;
-  left: 65px;
+  left: 41px;
 }
 .sosP-logo > .logo > img {
   height: 60px;
@@ -635,6 +636,12 @@ a:focus {
  * Component: Sidebar Mini
  */
 @media (min-width: 768px) {
+  .sidebar-mini.sidebar-collapse .favicon {
+    display: inline!important;
+  }
+  .sidebar-mini.sidebar-collapse .logo {
+    display: none!important;
+  }
   .sidebar-mini.sidebar-collapse .content-wrapper,
   .sidebar-mini.sidebar-collapse .right-side,
   .sidebar-mini.sidebar-collapse .main-footer {
@@ -2938,6 +2945,7 @@ table.text-center th {
   float: left;
   padding: 10px;
   text-align: center;
+  min-width: 150px;
 }
 .users-list > li img {
   border-radius: 50%;
@@ -2961,7 +2969,7 @@ table.text-center th {
 }
 .users-list-date {
   color: #999;
-  font-size: 12px;
+  font-size: 15px;
 }
 /*
  * Component: Carousel
