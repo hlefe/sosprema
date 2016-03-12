@@ -48,6 +48,11 @@ class ControleurAdmin {
                     $utilisateur = ModelGestionUtilisateur::rechercheUtilisateur($utilisateur->email);
                     $_SESSION['utilisateurModifie'] = $utilisateur;
                 }
+                elseif(isset($_GET['mailCdelete'])){
+                    ModelContactLocal::supprimerContact($utilisateur->contactLocal->idContact);
+                    $utilisateur = ModelGestionUtilisateur::rechercheUtilisateur($utilisateur->email);
+                    $_SESSION['utilisateurModifie'] = $utilisateur;
+                }
                 else{
                     $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
                 }
