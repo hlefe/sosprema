@@ -30,7 +30,17 @@ Les champs suivants sont définis:
     </div>
     <div class="form-group">
             <label for="service">Service</label>
-            <input class="form-control" required type="text" name="service" value="<?php if(isset($hopital)) echo $hopital->service;?>" <?php if($_REQUEST['action'] == "afficherHopital") echo "readonly"; ?> />
+            <select class="form-control" name="service" <?php if($_REQUEST['action'] == "afficherHopital") echo "readonly"; ?>>
+                        <option value="1" <?php if(isset($hopital)) {if ($hopital->service == 1){ echo "selected"; } } ?> <?php if($_REQUEST['action'] == "afficherHopital") echo "readonly"; ?>>
+                            Maternité simple (Niveau 1)
+                        </option>
+                        <option value="2"<?php if(isset($hopital)) {if ($hopital->service == 2){ echo "selected"; } } ?> <?php if($_REQUEST['action'] == "afficherHopital") echo "readonly"; ?>>
+                            Réanimation (Niveau 2)
+                        </option>
+                        <option value="3"<?php if(isset($hopital)) {if ($hopital->service == 3){ echo "selected"; } } ?> <?php if($_REQUEST['action'] == "afficherHopital") echo "readonly"; ?>>
+                            Néonatologie (Niveau 3)
+                        </option>
+            </select>
     </div>
     <div class="form-group" style="height:30px">
             <label for="conventionmail">Convention</label>

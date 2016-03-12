@@ -24,8 +24,8 @@ class ModelGestionHopital {
     public static function ajouterHopital(){
        
         $nomHopital = VariableExterne::verifChampObligatoire('nomHopital', 'nomHopital');
-        $niveau = VariableExterne::verifChampObligatoire('niveau', 'niveau');
         $service = VariableExterne::verifChampObligatoire('service', 'service');
+        $niveau = $service;
         $nbLits = VariableExterne::verifChampOptionnel('nbLits');
         $nbPremaParAn = VariableExterne::verifChampOptionnel('nbPremaParAn');
         $cafeParent = VariableExterne::verifChampOptionnel('cafeParent');
@@ -47,7 +47,7 @@ class ModelGestionHopital {
     public static function modifierHopital($idHopital){
         
         $nomHopital = VariableExterne::verifChampObligatoire('nomHopital', 'nomHopital');
-        $niveau = VariableExterne::verifChampOptionnel('niveau', 'niveau');
+        $niveau = $service;
         $service = VariableExterne::verifChampObligatoire('service', 'service');
         $nbLits = VariableExterne::verifChampOptionnel('nbLits');
         $nbPremaParAn = VariableExterne::verifChampOptionnel('nbPremaParAn');
