@@ -69,9 +69,9 @@
                     <thead>
                         <tr>
                             <th class="hidden-xs hidden-sm">#</th>
-                            <th class="hidden-xs hidden-sm">Mail</th>
                             <th class="hidden-xs hidden-sm">Nom</th>
                             <th class="hidden-xs hidden-sm">Prénom</th>
+                            <th class="hidden-xs hidden-sm">Mail</th>
                             <th class="hidden-md hidden-lg">Utilisateur</th>
                         </tr>
                     </thead>
@@ -83,11 +83,9 @@
 
                             <tr>
                                 <td class="hidden-xs hidden-sm id"><?php echo $user["idUtilisateur"]; ?></td>
-                                <td class="hidden-xs hidden-sm">
-                                    <?php echo $contact->email; ?>
-                                </td>
                                 <td class="hidden-xs hidden-sm"><?php echo $contact->nom; ?></td>
                                 <td class="hidden-xs hidden-sm"><?php echo $contact->prenom; ?></td>
+                                <td class="hidden-xs hidden-sm"><?php echo $contact->email; ?></td>
                                 <td class="hidden-md hidden-lg">
                                     <?php echo  $contact->prenom . " " . $contact->nom; ?>
                                 </td>
