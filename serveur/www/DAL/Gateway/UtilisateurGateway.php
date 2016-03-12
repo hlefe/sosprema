@@ -138,8 +138,11 @@ class UtilisateurGateway {
         return true;
     }
 
-    public static function afficherToutUtilisateur(){        
-        $querry = 'SELECT * FROM utilisateur';
+    public static function afficherToutUtilisateur(){
+        //ancienne version non triè. 
+        //$querry = 'SELECT * FROM utilisateur';
+        //Version avec le nom et le prénom triè;
+        $querry = 'SELECT * FROM utilisateur ORDER BY nom, prenom';
         Connexion::executeQuerry($querry, array());
         $result = Connexion::getResults();
         if ($result == false){
