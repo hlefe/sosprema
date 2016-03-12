@@ -8,10 +8,10 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Liste des hôpitaux</h3>
                 <?php if($utilisateurConnecter->idNiveau >=2 ){ ?>
-                <div class="box-tools pull-right">
+                <div class="box-tools pull-right hidden-xs">
                 <!-- Buttons, labels, and many other things can be placed here! -->
                 <!-- Here is a label for example -->
-                <a href="index.php?action=ajouterHopital" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter un hopital</a>
+                <a href="index.php?action=ajouterHopital" class="btn btn-primary "><i class="fa fa-plus"></i> Ajouter un hopital</a>
                 </div><!-- /.box-tools -->
                 <?php } ?>
             </div><!-- /.box-header -->
@@ -27,7 +27,7 @@
                              <th>Consultation</th>
                              <?php } else{ ?>
                              <th>Modifier</th>
-                             <th>Supprimer</th>
+                             <th class="hidden-xs">Supprimer</th>
                              <?php } ?>
                             
                       
@@ -49,13 +49,14 @@
                                 <td><a href="index.php?action=afficherHopital&id=<?php echo $hopital["idHopital"]; ?>">Afficher</a></td>
                                 <?php } else{ ?>
                                 <td><a href="index.php?action=modifierHopital&id=<?php echo $hopital["idHopital"]; ?>">Modifier</a></td>
-                                <td><a href="index.php?action=supprimerHopital&id=<?php echo $hopital["idHopital"]; ?>">Supprimer</a></td>
+                                <td class="hidden-xs"><a href="index.php?action=supprimerHopital&id=<?php echo $hopital["idHopital"]; ?>">Supprimer</a></td>
                                
                                 <?php } ?>
                             </tr>
                         <?php } ?>
                     <tbody>
                 </table>
+                <a href="index.php?action=ajouterHopital" class="btn btn-primary hidden-sm hidden-md hidden-lg "><i class="fa fa-plus"></i> Ajouter un hopital</a>
             </div><!-- /.box-body -->
      </div>
   </div>

@@ -32,7 +32,7 @@ Les champs suivants sont définis:
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                 </div>
-                <input type="text" class="form-control date"  name="datePremierEngagement" value="<?php if(isset($utilisateur)) if($utilisateur->contactLocal->datePremierEngagement != "0000-00-00"){echo date('d/m/Y', strtotime($utilisateur->contactLocal->datePremierEngagement));} ?>"/>
+                <input type="text" class="form-control date" required name="datePremierEngagement" value="<?php if(isset($utilisateur)) if($utilisateur->contactLocal->datePremierEngagement != "0000-00-00"){echo date('d/m/Y', strtotime($utilisateur->contactLocal->datePremierEngagement));} ?>"/>
         </div>
             
     </div>
@@ -43,7 +43,7 @@ Les champs suivants sont définis:
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                 </div>
-                <input type="text" class="form-control date" name="dateRenouvellement" value="<?php if(isset($utilisateur)) if($utilisateur->contactLocal->dateRenouvellement != "0000-00-00"){echo date('d/m/Y', strtotime($utilisateur->contactLocal->dateRenouvellement));} ?>"/>
+                <input type="text" class="form-control date" required name="dateRenouvellement" value="<?php if(isset($utilisateur)) if($utilisateur->contactLocal->dateRenouvellement != "0000-00-00"){echo date('d/m/Y', strtotime($utilisateur->contactLocal->dateRenouvellement));} ?>"/>
             </div>
     </div>
     <div class="form-group">
@@ -52,7 +52,7 @@ Les champs suivants sont définis:
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                 </div>
-                <input type="text" class="form-control date"  name="dateSenior" value="<?php if(isset($utilisateur)) if($utilisateur->contactLocal->dateSenior != "0000-00-00"){echo date('d/m/Y', strtotime($utilisateur->contactLocal->dateSenior));} ?>"/>
+                <input type="text" class="form-control date"  required name="dateSenior" value="<?php if(isset($utilisateur)) if($utilisateur->contactLocal->dateSenior != "0000-00-00"){echo date('d/m/Y', strtotime($utilisateur->contactLocal->dateSenior));} ?>"/>
             </div>
     </div>
     <div class="form-group" style="height:30px">

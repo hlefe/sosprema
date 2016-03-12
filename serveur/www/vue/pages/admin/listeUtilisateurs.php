@@ -6,7 +6,7 @@
   <div class="content body">
      <div class="box">
             <div class="box-header with-border">
-                <div class="box-tools pull-right">
+                <div class="box-tools pull-right hidden-xs">
                 <!-- Buttons, labels, and many other things can be placed here! -->
                 <!-- Here is a label for example -->
                
@@ -40,7 +40,7 @@
                             <th class="hidden-xs hidden-sm">Mail</th>
                             <th class="hidden-md hidden-lg">Utilisateur</th>
                             <th>Modifier</th>
-                            <th>Supprimer</th>
+                            <th class="hidden-xs">Supprimer</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,7 +57,7 @@
                                     <?php echo  $user["prenom"] . " " . $user["nom"]; ?>
                                 </td>
                                 <td><a href="index.php?action=userEdit&mail=<?php echo $user["email"]; ?>">Modifier</a></td>
-                                <td><a href="index.php?action=listeUtilisateurs&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
+                                <td class="hidden-xs"><a href="index.php?action=listeUtilisateurs&mail=<?php echo $user["email"]; ?>">Supprimer</a></td>
                             </tr>
                         <?php } ?>
                     <tbody>
@@ -73,6 +73,8 @@
                             <th class="hidden-xs hidden-sm">Prénom</th>
                             <th class="hidden-xs hidden-sm">Mail</th>
                             <th class="hidden-md hidden-lg">Utilisateur</th>
+                            <th>Modifier</th>
+                            <th class="hidden-xs">Supprimer</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,7 +92,7 @@
                                     <?php echo  $contact->prenom . " " . $contact->nom; ?>
                                 </td>
                                 <td><a href="index.php?action=userEdit&mail=<?php echo $contact->email; ?>">Modifier compte</a></td>
-                                <td><a href="index.php?action=listeUtilisateurs&mail=<?php echo $contact->email; ?>">Supprimer</a></td>
+                                <td class="hidden-xs"><a href="index.php?action=listeUtilisateurs&mail=<?php echo $contact->email; ?>">Supprimer</a></td>
                             </tr>
                         <?php } ?>
                     <tbody>
@@ -98,6 +100,7 @@
             
         </div>
         <!-- /.tab-pane -->
+        <a href="index.php?action=ajoutUtilisateur" class="btn btn-primary hidden-sm hidden-md hidden-lg"><i class="fa fa-plus"></i> Ajouter un utilisateur</a>
     </div>
 <!-- /.tab-content -->
 </div>

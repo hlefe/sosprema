@@ -14,7 +14,7 @@ $listePages = ModelPage::obtenirTout($utilisateurConnecter);
 <!-- sidebar: style dispo dans le fichier sidebar.less -->
 <section class="sidebar">
     <!-- LOGO -->
-    <div class="sosP-logo">
+    <div class="hidden-xs hidden-sm sosP-logo">
         <div class="pull-left favicon ">
                 <img src="vue/images/favicon.png">
         </div>
