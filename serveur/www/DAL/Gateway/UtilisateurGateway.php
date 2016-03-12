@@ -4,6 +4,7 @@ class UtilisateurGateway {
 
     public static function rechercheUtilisateurConnexion($email, $password)
     {   
+        $password = md5($password);
         $querry = 'SELECT * FROM utilisateur WHERE email=:email AND motDePasse=:password';
         Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR),
                                                 ':password'=>array($password,PDO::PARAM_STR)));
@@ -114,7 +115,7 @@ class UtilisateurGateway {
 
     public static function insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,
         $profession,$divers,$avatar,$idNiveau,$idAdresse){
-        
+        $password = md5($password);
         $querry = 'INSERT INTO utilisateur (email,nom,prenom,motDePasse,dateDeNaissance,profession,divers,avatar,idNiveau,idAdresse) 
         VALUES (:email,:nom,:prenom,:motDePasse,:dateDeNaissance,:profession,:divers,:avatar,:idNiveau,:idAdresse)';
 
@@ -179,6 +180,7 @@ class UtilisateurGateway {
     }
 
     public static function modifierMotDePasse($idUser, $newMDP){
+        $newMDP = md5($newMDP);
         $querry = 'UPDATE utilisateur SET motDePasse=:mot_de_passe WHERE idUtilisateur=:id_utilisateur';
         Connexion::executeQuerry($querry, array(':mot_de_passe'=>array($newMDP,PDO::PARAM_STR),
                                                 ':id_utilisateur'=>array($idUser,PDO::PARAM_STR)));

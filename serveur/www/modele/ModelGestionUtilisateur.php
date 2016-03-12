@@ -91,6 +91,7 @@ class ModelGestionUtilisateur {
     public static function modifierMotDePasse($utilisateur){
 
         $oldMDP = VariableExterne::verifChampPassword('ancien mot de passe','oldMDP');
+        $oldMDP = md5($oldMDP);
         if(!$_SESSION['utilisateurConnecter']->verifierMotDePasse($oldMDP)){
             throw new Exception("Erreur de saisie pour votre ancien mot de passe.", 1); 
         }
