@@ -132,7 +132,7 @@ class UtilisateurGateway {
         return self::rechercheUtilisateurEmail($email);
     }
 
-    public static function supprimerUtilisateur($email){        
+    public static function supprimerUtilisateur($email){    
         $querry = 'DELETE FROM utilisateur WHERE email=:email';
         Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
         return true;

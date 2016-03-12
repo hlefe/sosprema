@@ -3,7 +3,7 @@
 class ModelContactLocal {
     
     public static function rechercherContactLocal($idUtilisateur){
-        $contactLocal = ContactLocalGateway::rechercherContacLocalByIdUser($idUtilisateur);
+        $contactLocal = ContactLocalGateway::rechercherContactLocalByIdUser($idUtilisateur);
         return $contactLocal;
     }
     
@@ -34,6 +34,11 @@ class ModelContactLocal {
         RelationGateway::supprimerRelationForContact($idcontact);
     }
     
+    public static function supprimerContactLocalByIdUtilisateur($idUtilisateur){
+        $contactLocal = self::rechercherContactLocal($idUtilisateur);
+        self::supprimerContact($contactLocal->idContact);
+    }
+
     public static function modifierContact($idcontact){
         
         $datePremierEngagement = VariableExterne::verifChampObligatoire('datePremierEngagement', 'datePremierEngagement');

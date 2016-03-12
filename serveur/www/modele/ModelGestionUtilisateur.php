@@ -74,6 +74,8 @@ class ModelGestionUtilisateur {
 
 
     public static function supprimerUtilisateur($emailConnexion) {
+        $utilisateur = self::rechercheUtilisateur($emailConnexion);
+        ModelContactLocal::supprimerContactLocalByIdUtilisateur($utilisateur->userId);
         return UtilisateurGateway::supprimerUtilisateur($emailConnexion);
     }
 

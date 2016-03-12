@@ -20,4 +20,12 @@ class ModelRelation {
 	public static function supprimerRelation($idHopital,$idContactLocal){
 		RelationGateway::supprimerRelation($idHopital, $idContactLocal);
 	}
+
+	public static function supprimerRelationForHopital($idHopital){
+		RelationGateway::supprimerRelationForHopital($idHopital);
+	}
+
+	public static function supprimerRelationForContact($idContact){
+		RelationGateway::supprimerRelationForContact($idContact);
+	}
 }

@@ -35,6 +35,6 @@ class RelationGateway
 
     public static function supprimerRelationForContact($idContact){
         $querry = 'DELETE FROM relation WHERE idUtilisateur = :idUtilisateur';
-        Connexion::executeQuerry($querry, array(':idUtilisateur'=>array($idUtilisateur,PDO::PARAM_INT)));
+        Connexion::executeQuerry($querry, array(':idUtilisateur'=>array($idContact,PDO::PARAM_INT)));
     }
 }
