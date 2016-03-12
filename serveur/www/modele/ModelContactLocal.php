@@ -42,9 +42,17 @@ class ModelContactLocal {
     public static function modifierContact($idcontact){
         
         $datePremierEngagement = VariableExterne::verifChampObligatoire('datePremierEngagement', 'datePremierEngagement');
+        $datePremierEngagement = date('Y-m-d', strtotime(str_replace('/', '-', $datePremierEngagement)));
+        
         $dateRenouvellement = VariableExterne::verifChampOptionnel('dateRenouvellement');
+        $dateRenouvellement = date('Y-m-d', strtotime(str_replace('/', '-', $dateRenouvellement)));
+        
         $dateSenior = VariableExterne::verifChampOptionnel('dateSenior');
-        $visitesBenevoles = VariableExterne::verifChampOptionnel('dateBenevoles');
+        $dateSenior = date('Y-m-d', strtotime(str_replace('/', '-', $dateSenior)));
+        
+        
+        
+        $visitesBenevoles = VariableExterne::verifChampOptionnel('visitesBenevoles');
         $conventionHopital = VariableExterne::verifChampOptionnel('conventionHopital');
         $conventionCAMSP = VariableExterne::verifChampOptionnel('conventionCAMSP');
         $conventionPMI = VariableExterne::verifChampOptionnel('conventionPMI');
