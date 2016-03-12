@@ -33,7 +33,7 @@
                 previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
                 allowedFileExtensions: ["jpg", "png", "gif"]
             });
-        </script>    
+        </script>
         <!-- boottrapSwitch -->
         <script src="vue/style/plugins/bootstrap-switch-master/dist/js/bootstrap-switch.js"></script>
         <!-- boottrapSwitch run -->
@@ -87,6 +87,7 @@
         <script src="vue/style/plugins/daterangepicker/daterangepicker.js"></script>
         <!-- datepicker -->
         <script src="vue/style/plugins/datepicker/bootstrap-datepicker.js"></script>
+        <script src="vue/style/plugins/datepicker/locales/bootstrap-datepicker.fr.js" charset="UTF-8"></script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src="vue/style/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
         <!-- Slimscroll -->
@@ -99,5 +100,14 @@
         <script src="vue/style/dist/js/pages/dashboard.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="vue/style/dist/js/demo.js"></script>
+        <!-- DatePicker --> 
+        <script>   
+        $('[class="form-control date"]').datepicker({
+            autoclose: true,
+            language: 'fr',
+            defaultViewDate: {year:2000, month:0, day:1},
+            todayHighlight: true
+        });
+        </script>
   </body>
 </html>

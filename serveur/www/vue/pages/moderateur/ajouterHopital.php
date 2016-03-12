@@ -12,6 +12,10 @@
                         <!-- Champs informations -->
                         <?php include('vue/includes/hopital/informations/informations.php'); ?>
                     </div>
+                     <div class="box box-primary">
+                        <!-- Champs divers -->
+                        <?php include('vue/includes/hopital/divers/divers.php'); ?>
+                    </div>
                     
                 </section><!-- /.Left col -->
                 <!-- right col (We are only adding the ID to make the widgets )-->
@@ -21,11 +25,6 @@
                          <div class="box-footer">
                             <button type="submit" class="btn btn-primary" name="boutonAjouter" value="ajouterUtilisateur">Ajouter</button>
                          </div>
-                    </div>
-                    
-                    <div class="box box-primary">
-                        <!-- Champs divers -->
-                        <?php include('vue/includes/hopital/divers/divers.php'); ?>
                     </div>
                     <div class="box">
                          <!-- Champs adresse -->
