@@ -35,9 +35,9 @@
                     <thead>
                         <tr>
                             <th class="hidden-xs hidden-sm">#</th>
-                            <th class="hidden-xs hidden-sm">Mail</th>
                             <th class="hidden-xs hidden-sm">Nom</th>
                             <th class="hidden-xs hidden-sm">Prénom</th>
+                            <th class="hidden-xs hidden-sm">Mail</th>
                             <th class="hidden-md hidden-lg">Utilisateur</th>
                             <th>Modifier</th>
                             <th>Supprimer</th>
@@ -50,11 +50,9 @@
 
                             <tr>
                                 <td class="hidden-xs hidden-sm id"><?php echo $user["idUtilisateur"]; ?></td>
-                                <td class="hidden-xs hidden-sm">
-                                    <?php echo $user["email"]; ?>
-                                </td>
                                 <td class="hidden-xs hidden-sm"><?php echo $user["nom"]; ?></td>
                                 <td class="hidden-xs hidden-sm"><?php echo $user["prenom"]; ?></td>
+                                <td class="hidden-xs hidden-sm"><?php echo $user["email"]; ?></td>
                                 <td class="hidden-md hidden-lg">
                                     <?php echo  $user["prenom"] . " " . $user["nom"]; ?>
                                 </td>
