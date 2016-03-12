@@ -7,15 +7,15 @@
         <!-- Main row -->
             <div class="row">
                 <!-- Colonne de gauche -->
-                <section class="col-lg-7 connectedSortable">
+                <section class="col-lg-7 ">
                     <div class="box box-danger">
                         <!-- Champs informations -->
                         <?php include('vue/includes/hopital/informations/informations.php'); ?>
                     </div>
                     
                 </section><!-- /.Left col -->
-                <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                <section class="col-lg-5 connectedSortable">
+                <!-- right col (We are only adding the ID to make the widgets )-->
+                <section class="col-lg-5 ">
                     
                     <div class="box">
                          <div class="box-footer">

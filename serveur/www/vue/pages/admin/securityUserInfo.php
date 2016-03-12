@@ -7,7 +7,7 @@
         <!-- Main row -->
         <div class="row">
             <!-- Left col -->
-            <section class="col-lg-7 connectedSortable">
+            <section class="col-lg-7 ">
                 <div class="box box-danger">
                     <div class="box-header with-border">
                         <h3 class="box-title">Sécurité et droits</h3>

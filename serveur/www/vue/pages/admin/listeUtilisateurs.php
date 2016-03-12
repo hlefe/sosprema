@@ -25,7 +25,7 @@
                 
      
  <div class="nav-tabs-custom" style="cursor: move;">
-    <ul class="nav nav-tabs  ui-sortable-handle" style="cursor: initial; ">
+    <ul class="nav nav-tabs  " style="cursor: initial; ">
         <li class="active"><a aria-expanded="true" href="#tab_1-1" data-toggle="tab">Tous les utilisateurs</a></li>
         <li class=""><a aria-expanded="false" href="#tab_2-2" data-toggle="tab">Contacts locaux</a></li>
     </ul>

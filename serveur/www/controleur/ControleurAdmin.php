@@ -45,6 +45,8 @@ class ControleurAdmin {
                 //modification de cet utilisateur
                 if(isset($_GET['mailC'])){
                     ModelContactLocal::ajouterContactLocal($utilisateur->userId);
+                    $utilisateur = ModelGestionUtilisateur::rechercheUtilisateur($utilisateur->email);
+                    $_SESSION['utilisateurModifie'] = $utilisateur;
                 }
                 else{
                     $_SESSION['utilisateurModifie'] = ModelGestionUtilisateur::modifierUtilisateur($utilisateur);
