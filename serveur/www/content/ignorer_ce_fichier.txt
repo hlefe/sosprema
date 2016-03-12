@@ -1,1 +1,0 @@
-Ce fichier sert juste à syncroniser le dossier courant si il est vide.
