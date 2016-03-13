@@ -115,7 +115,7 @@ class UtilisateurGateway {
 
     public static function insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,
         $profession,$divers,$avatar,$idNiveau,$idAdresse){
-        $password = md5($motDePasse);
+        $motDePasse = md5($motDePasse);
         $querry = 'INSERT INTO utilisateur (email,nom,prenom,motDePasse,dateDeNaissance,profession,divers,avatar,idNiveau,idAdresse) 
         VALUES (:email,:nom,:prenom,:motDePasse,:dateDeNaissance,:profession,:divers,:avatar,:idNiveau,:idAdresse)';
 
