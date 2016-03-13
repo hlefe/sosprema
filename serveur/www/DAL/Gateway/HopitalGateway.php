@@ -51,8 +51,8 @@ class HopitalGateway {
     }
     
     public static function supprimerHopital($idHopital){
-        $querry = 'DELETE FROM hopital WHERE idcontact=:idcontact';
-        Connexion::executeQuerry($querry, array(':idcontact'=>array($idHopital, PDO::PARAM_INT)));
+        $querry = 'DELETE FROM hopital WHERE idHopital=:idHopital';
+        Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital, PDO::PARAM_INT)));
     }
     
     public static function modifierHopital($idHopital,$nomHopital, $idAdresse, $niveau, $service, $nbLits, $nbPremaParAn, $cafeParent, $parkingPayant, $convention, $visiteBenevole){

@@ -86,7 +86,7 @@ class ModelContactLocal {
         }
         foreach($tmpRelation as $relation){
             $tmpContact = self::rechercherContactLocalByIdContact($relation['idUtilisateur']);
-            if (!$tmpContact == false) {
+            if ($tmpContact != false) {
                 $id = $tmpContact->idUtilisateur;
                 $tmp = UtilisateurGateway::rechercheUtilisateurId($id);
                 $contactLocal[] = $tmp;

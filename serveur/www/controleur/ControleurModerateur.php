@@ -68,6 +68,15 @@ class ControleurModerateur {
 
 	public static function supprimerHopital(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+        try {
+            ModelGestionHopital::supprimerHopital($_REQUEST['id']);
+            $hopitaux=ModelGestionHopital::afficherToutHopital();
+        } catch(PDOException $ex){
+            $vueErreur[] = $ex->getMessage();
+        } catch(Exception $e){
+            $vueErreur[]=$e->getMessage();
+        }
+        require_once('vue/pages/hopitaux.php');
 	}
 
     public static function ajouterRelation(){
