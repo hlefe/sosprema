@@ -1,18 +1,18 @@
  <?php 
 /* Utilisation et configuration du plugin fileinput pour la définition de l'avatar. 
-
-La source du plugin se trouve dans le répertoire vue/style/plugins/fileinput/
-
-Si l'on est dans le cas de l'édition de l'utilisateur:
-    La variable '$utilisateur' de type 'Utilisateur' doit être préalablement définie,
-    pour pouvoir compléter les données déjà enregistrées.
-    
-Si on est dans le cas de l'ajout d'un utilisateur, rien à faire.
-
-Les champs suivants sont définis:
-        avatar          Avatar de l'utilisateur
-        
- */
+*
+* La source du plugin se trouve dans le répertoire vue/style/plugins/fileinput/
+*
+* Si l'on est dans le cas de l'édition de l'utilisateur:
+*   La variable '$utilisateur' de type 'Utilisateur' doit être préalablement définie,
+*    pour pouvoir compléter les données déjà enregistrées.
+*    
+* Si on est dans le cas de l'ajout d'un utilisateur, rien à faire.
+*
+* Les champs suivants sont définis:
+*       avatar          Avatar de l'utilisateur
+*        
+*/
 ?> 
 <!-- Appel des différents scripts/styles nécssaires pour l'utilisation du plugin  -->
 <head>

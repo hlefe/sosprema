@@ -1,11 +1,9 @@
 <?php 
 /**
- * Vue: Page principale
+ * Vue accueil
  *
- * Barre horizontale en haut de page, contient des informations relatives au statut de l'utilisateur courant (connecté, déconnecté)
+ * Permet d'afficher les éléments de l'accueil
  * 
- *
- *
  */
 require('vue/layout/header.php');
 ?>

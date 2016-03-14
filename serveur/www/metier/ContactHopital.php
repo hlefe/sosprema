@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ContactHopital
+*
+* Métier de ContactHopital
+*/
 class ContactHopital {
 	private $idContactHopital;
 	private $idHopital;

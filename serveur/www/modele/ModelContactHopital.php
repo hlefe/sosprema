@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ModelContactHopital
+*
+* Modèle pour ContactHopital
+*/
 class ModelContactHopital {
     
     public static function ajouterContactHopital($idHopital)

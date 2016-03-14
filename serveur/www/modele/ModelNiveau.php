@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ModelNiveau
+*
+* Modèle pour Niveau
+*/
 class ModelNiveau {
 	public static function rechercherNom($id_niveau){
 		return NiveauGateway::rechercherNom($id_niveau);	

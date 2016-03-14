@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe DepartementGateway
+*
+* Gateway de Departement (intéragit avec cette table en utilisant PDO)
+*/
 class DepartementGateway {
     
     public static function ajouterDepartement($nomDepartement, $idRegion){

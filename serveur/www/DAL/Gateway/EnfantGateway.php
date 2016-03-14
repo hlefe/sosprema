@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe EnfantGateway
+*
+* Gateway de Enfant (intéragit avec cette table en utilisant PDO)
+*/
 class EnfantGateway {
     
     public static function ajouterEnfant($prenom, $dateNaissance, $termeNaissance, $idContact){

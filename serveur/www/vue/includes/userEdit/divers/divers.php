@@ -1,19 +1,19 @@
  <?php 
 /* Champs divers
-
-Si l'on est dans le cas de l'édition de l'utilisateur:
-    La variable '$utilisateur' de type 'Utilisateur' doit être préalablement définie,
-    pour pouvoir compléter les données déjà enregistrées.
-    
-Si on est dans le cas de l'ajout d'un utilisateur, rien à faire.
-
-Les champs suivants sont définis:
-
-        profession      Profession de l'utilisateur
-        divers          Un champs divers à propos de l'utilisateur
-        avatar          Avatar de l'utilisateur définnit grâce au fichier 'avatar_upload.php'
-        
- */
+*
+* Si l'on est dans le cas de l'édition de l'utilisateur:
+*    La variable '$utilisateur' de type 'Utilisateur' doit être préalablement définie,
+*    pour pouvoir compléter les données déjà enregistrées.
+*    
+* Si on est dans le cas de l'ajout d'un utilisateur, rien à faire.
+*
+* Les champs suivants sont définis:
+*
+*        profession      Profession de l'utilisateur
+*        divers          Un champs divers à propos de l'utilisateur
+*        avatar          Avatar de l'utilisateur définnit grâce au fichier 'avatar_upload.php'
+*        
+*/
 ?> 
 <div class="box-header with-border">
     <h3 class="box-title">Divers</h3>

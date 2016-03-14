@@ -1,9 +1,9 @@
 <?php 
 /**
- * Vue: En tête du site 
- *          + inclusion des classes bootstrap
- *          + vérification du type d'écran, etc...
- *          + appel des menus / sidebar)
+ * Vue En tête du site 
+ *   
+ *  inclusion des classes bootstrap  + vérification du type d'écran, etc...   + appel des menus / sidebar
+ *                   
  */
 $pageActuelle =  ModelPage::rechercherPage($_GET['action']);
 ?>

@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe VilleGateway
+*
+* Gateway de Ville (intéragit avec cette table en utilisant PDO)
+*/
 class VilleGateway {
     
     public static function ajouterVille($nomVille, $codePostal, $idDepartement){

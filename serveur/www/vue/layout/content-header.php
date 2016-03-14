@@ -1,3 +1,10 @@
+<?php  
+/**
+* Vue header content
+*
+* Header barre horizontale se trouvant au dessus du contenu
+*/
+?>
 <header class="main-header">
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">

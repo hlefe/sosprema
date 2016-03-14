@@ -1,11 +1,17 @@
 <?php
 
 /**
- * 
- */
+* Classe ControleurModerateur
+*
+* Controleur moderateur, permet de gérer les actions relatives au moderateur
+*/
 class ControleurModerateur {
     
-    //fonction permettant de vérifier si un utilisateur est moderateur ou non.
+    /**
+    * Fonction verifierDroit
+    *
+    * fonction permettant de vérifier les droits de l'utilisateur
+    */
      public static function verifierDroit(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try{
@@ -21,7 +27,11 @@ class ControleurModerateur {
         }
     }
 
-
+    /**
+    * Fonction ajouterHopital
+    *
+    * permet d'ajouter un hopital
+    */
 	public static function ajouterHopital(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         if(isset($_REQUEST['add'])){
@@ -37,7 +47,11 @@ class ControleurModerateur {
         require_once('vue/pages/moderateur/ajouterHopital.php');
 	}
     
-
+    /**
+    * Fonction modifierHopital
+    *
+    * permet de modifier un hopital
+    */
 	public static function modifierHopital(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         if(isset($_GET['id'])){
@@ -66,6 +80,11 @@ class ControleurModerateur {
         require_once('vue/pages/moderateur/modificationHopital.php');
     }
 
+    /**
+    * Fonction supprimerHopital
+    *
+    * permet de supprimer un hopital
+    */
 	public static function supprimerHopital(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try {
@@ -79,6 +98,11 @@ class ControleurModerateur {
         require_once('vue/pages/hopitaux.php');
 	}
 
+    /**
+    * Fonction ajouterRelation
+    *
+    * permet d'ajouter une relation
+    */
     public static function ajouterRelation(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try {
@@ -93,6 +117,11 @@ class ControleurModerateur {
         require_once('vue/pages/moderateur/modificationHopital.php');
     }
 
+    /**
+    * Fonction supprimerRelation
+    *
+    * permet de supprimer une relation
+    */
     public static function supprimerRelation(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try {
@@ -107,6 +136,11 @@ class ControleurModerateur {
         require_once('vue/pages/moderateur/modificationHopital.php');
     }
 
+    /**
+    * Fonction ajouterContactHopital
+    *
+    * permet d'ajouter un contact hopital
+    */
     public static function ajouterContactHopital(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try {
@@ -121,6 +155,11 @@ class ControleurModerateur {
         require_once('vue/pages/moderateur/modificationHopital.php');
     }
 
+    /**
+    * Fonction supprimerContactHopital
+    *
+    * permet de supprimer un contact hopital
+    */
     public static function supprimerContactHopital(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try {
@@ -135,6 +174,11 @@ class ControleurModerateur {
         require_once('vue/pages/moderateur/modificationHopital.php');
     }
     
+    /**
+    * Fonction afficherTousLesContactsLocaux
+    *
+    * permet d'afficher tous les contacts locaux
+    */
     public static function afficherTousLesContactsLocaux(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         $contacts = ModelContactLocal::afficherToutContact();
@@ -142,6 +186,12 @@ class ControleurModerateur {
          
         require_once('vue/includes/hopital/contacts/ajoutL.php');
 	}
+    
+    /**
+    * Fonction afficherTousLesContactsHopitaux
+    *
+    * permet àd'afficher tous les contacts hopitaux
+    */
     public static function afficherTousLesContactsHopitaux(){
 		$utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         require_once('vue/includes/hopital/contacts/ajoutH.php');

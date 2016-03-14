@@ -1,18 +1,17 @@
  <?php 
 /* Champs informations
-
-Si l'on est dans le cas de l'édition de l'utilisateur:
-    La variable '$utilisateur' de type 'Utilisateur' doit être préalablement définie,
-    pour pouvoir compléter les données déjà enregistrées.
-    
-Si on est dans le cas de l'ajout d'un utilisateur, rien à faire.
-
-Les champs suivants sont définis:
-
-        nom             Nom de l'utilisateur
-        prenom          Prénom de l'utilisateur
-        email           Adresse email de l'utilisateur
-        
+*
+* Si l'on est dans le cas de l'édition de l'utilisateur:
+*    La variable '$utilisateur' de type 'Utilisateur' doit être préalablement définie,
+*    pour pouvoir compléter les données déjà enregistrées.
+*    
+*Si on est dans le cas de l'ajout d'un utilisateur, rien à faire.
+*
+*Les champs suivants sont définis:
+*        nom             Nom de l'utilisateur
+*        prenom          Prénom de l'utilisateur
+*        email           Adresse email de l'utilisateur
+*        
  */
 ?> 
 <div class="box-header with-border">

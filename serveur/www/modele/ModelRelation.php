@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ModelContactHopital
+*
+* Modèle pour Relation
+*/
 class ModelRelation {
 	public static function rechercherContactLocalByIdHopital($idHopital){
 		return RelationGateway::rechercherContactLocalByIdHopital($idHopital);	

@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ContactLocalGateway
+*
+* Gateway de ContactLocal (intéragit avec cette table en utilisant PDO)
+*/
 class ContactLocalGateway {
     
     public static function ajouterContactLocal($idUtilisateur, $datePremierEngagement, $dateRenouvellement, $dateSenior, $visitesBenevoles, $conventionHopital, $conventionCAMSP, $conventionPMI, $charteVisiteur)

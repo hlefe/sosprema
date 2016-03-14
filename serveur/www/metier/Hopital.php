@@ -1,6 +1,10 @@
 <?php
 
-
+/**
+* Classe hopital
+*
+* Métier de hopital
+*/
 class hopital {
 
     private $idHopital;

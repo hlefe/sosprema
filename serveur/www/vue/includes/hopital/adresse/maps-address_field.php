@@ -1,28 +1,28 @@
  <?php 
 /* Champs intéractif de saisie d'une adresse avec l'utilisation de l'autocompletion google maps
-
-La source du plugin se trouve dans le répertoire vue/style/plugins/google-place-autocomplete-gh-pages/
-
-Pour modifier l'API KEY GOOGLE MAPS: 
--Aller dans ce fichier:
-vue/style/plugins/google-place-autocomplete-gh-pages/config.php
-
-Si l'on est dans le cas de l'édition/consultation de l'hopital:
-    La variable '$hopital' doit être préalablement définie,
-    pour pouvoir compléter les données déjà enregistrées.
-    
-Si on est dans le cas de l'ajout d'un hopital, rien à faire.
-
-Les champs suivants sont définis:
-
-        numRue          Numéro de la rue
-        nomRue          Nom de la rue
-        codePostal      Code postal de la rue
-        nomVille        Nom de la ville
-        nomDepartement  Nom du département
-        nomRegion       Nom de la région
-        
- */
+*
+* La source du plugin se trouve dans le répertoire vue/style/plugins/google-place-autocomplete-gh-pages/
+*
+* Pour modifier l'API KEY GOOGLE MAPS: 
+* -Aller dans ce fichier:
+* vue/style/plugins/google-place-autocomplete-gh-pages/config.php
+*
+* Si l'on est dans le cas de l'édition/consultation de l'hopital:
+*    La variable '$hopital' doit être préalablement définie,
+*    pour pouvoir compléter les données déjà enregistrées.
+*    
+* Si on est dans le cas de l'ajout d'un hopital, rien à faire.
+*
+* Les champs suivants sont définis:
+*
+*        numRue          Numéro de la rue
+*        nomRue          Nom de la rue
+*        codePostal      Code postal de la rue
+*        nomVille        Nom de la ville
+*        nomDepartement  Nom du département
+*        nomRegion       Nom de la région
+*        
+*/
 ?> 
  
 <!-- //Appel du plugin permettant l'autocomplétion google maps (Modifier ce fichier pour configurer l'API key google maps) -->

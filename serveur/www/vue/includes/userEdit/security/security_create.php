@@ -1,14 +1,14 @@
  <?php 
 /* Champs permettants de définir les infos de sécurité à la création d'un utilisateur.
-
-La variable '$niveaux' doit être préalablement définie.
-
-Les champs suivants sont définis:
-
-        prenom          Mot de passe de l'utilisateur
-        email           Niveau de l'utilisateur 
-        
- */
+*
+* La variable '$niveaux' doit être préalablement définie.
+*
+* Les champs suivants sont définis:
+*
+*        prenom          Mot de passe de l'utilisateur
+*        email           Niveau de l'utilisateur 
+*       
+*/
 ?> 
 <div class="box-header with-border">
     <h3 class="box-title">Sécurité et droits</h3>

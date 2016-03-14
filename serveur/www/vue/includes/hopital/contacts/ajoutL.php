@@ -1,4 +1,12 @@
-<h4> Associer un contact local à l'hôpital</h4>
+<?php
+/**
+ * Vue ajoutL
+ *             
+ * Permet d'assigner un contact local à un hopital
+ *
+ */
+ ?>
+ <h4> Associer un contact local à l'hôpital</h4>
 <p><b>Créer un contact local</b></br>Transformer d'abord l'utilisateur en contact local via sa fiche: </br><a href="index.php?action=listeUtilisateurs">Accès aux fiches utilisateurs</a></p>
 <p><b>Associer un contact local</b></br>Pour cela, le sélectionner dans la liste ci-dessous puis valider:</p>
 <select class="form-control" name="idContact">

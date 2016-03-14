@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Vue mot de passe
+ *             
+ * Permet de modifier son mot de passe
+ *
+ */
+?>
 <?php require('vue/layout/header.php'); ?>
 <!-- Main content -->
 <section class="content">

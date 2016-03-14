@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Vue profil
+ *             
+ * Permet d'afficher son profil
+ *
+ */
+?>
 <?php require('vue/layout/header.php'); ?>
 <!-- Main content -->
 <section class="content">

@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ModelContactHopital
+*
+* Modèle pour Telephone
+*/
 class ModelTelephone {
 
 	private static function rechercherTelephonesUtilisateur($idContact){

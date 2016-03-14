@@ -1,8 +1,18 @@
 <?php
-
+/**
+ * Classe VariableExterne
+ *
+ * Regroupe toutes les fonctions qui concernent la gestionn des variables à nettoyer/valider
+ */
 class VariableExterne{
-	
-	//permet de vérifier les champs obligatoires d'un formulaire, retourne la variable si elle n'est pas vide ou sinon une exception.
+	/**
+    * Fonction verifChampObligatoire
+    *
+    * Permet de vérifier les champs obligatoires d'un formulaire, retourne la variable si elle n'est pas vide ou sinon une exception.
+    * @param string $nomChamp Le nom du champs
+    * @param strin $nomVariable Le nom de la variable
+    * @return string La chaine nettoyée
+    */
 	public static function verifChampObligatoire ($nomChamp, $nomVariable) {
 		if(!isset($_POST[$nomVariable])|| $_POST[$nomVariable]==""){
             throw new Exception("Veuiller renseigner ".$nomChamp.".", 1);
@@ -11,8 +21,14 @@ class VariableExterne{
             return Nettoyage::nettoyerChaine($_POST[$nomVariable]);
         }
 	}
-
-	//permet de verifier et de nettoyer les champs optionnel d'un formulaire, retourne la valeur de la variable ou null sinon
+    
+    /**
+    * Fonction verifChampOptionnel
+    *
+    * Permet de verifier et de nettoyer les champs optionnel d'un formulaire, retourne la valeur de la variable ou null sinon.
+    * @param string $nomVariable Le nom de la variable
+    * @return string La chaine nettoyée 
+    */
 	public static function verifChampOptionnel ($nomVariable) {
 		if(isset($_POST[$nomVariable]))
             return Nettoyage::nettoyerChaine($_POST[$nomVariable]);
@@ -20,6 +36,15 @@ class VariableExterne{
             return NULL;
 	}
     
+    /**
+    * Fonction verifChampAvatar
+    *
+    * Permet de vérifier le champ avatar 
+    * @param string $nomVariable Le nom de la variable
+    * @paramm string $ancien L'ancien avatar
+    * @return string $ancien L'ancien avatar si ça n'a pas changé
+    * @return string $nom Le nouvel avatar si ça a changé
+    */
     public static function verifChampAvatar($nomVariable, $ancien){
          //Si le champ est une image (avatar par exemple) donc un type $_FILES
          if(isset($_FILES[$nomVariable])) {
@@ -47,6 +72,14 @@ class VariableExterne{
         }
     }
 
+    /**
+    * Fonction verifChampEmail
+    *
+    * 
+    * @param string $nomVariable
+    * @param strin $emailAComparer L'email à vérifier
+    * @return string $email L'email vérifié
+    */
 	//permet de verifier le champ email.
 	public static function verifChampEmail ($nomVariable, $emailAComparer) {
 		if(!isset($_POST[$nomVariable])|| $_POST[$nomVariable]==""){
@@ -70,6 +103,14 @@ class VariableExterne{
        	}
     }
 
+    /**
+    * Fonction verifChampPassword
+    *
+    * Permet de vérifier le champ de mot de passe
+    * @param string $nomChamp Le nom du champ
+    * @param string $nomVariable Le nom de la variable
+    * @return string $_POST[$nomVariable] Le contenu de la variable
+    */
     public static function verifChampPassword ($nomChamp, $nomVariable){
         if($_POST[$nomVariable] != null)
             if(Validation::validerPassword($_POST[$nomVariable])){

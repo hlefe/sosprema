@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Vue d'ajout d'utilisateur
+ *             
+ * Permet d'ajouter des utilisateurs
+ *
+ */
+?>
 <?php require('vue/layout/header.php'); ?>
 <!-- Main content -->
 <section class="content">

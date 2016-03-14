@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Vue ajoutH
+ *             
+ * Permet d'ajouter un contact interne à l'hopital dans un hopital
+ *
+ */
+?>
 <div class="form-group" >
     <label>Nom</label>
     <input class="form-control" name="nom" type="text" >

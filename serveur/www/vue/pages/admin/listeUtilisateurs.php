@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Vue Liste des utilisateurs
+ *             
+ * Permet de voir la liste de tous les utilisateurs
+ *
+ */
+?>
 <?php require('vue/layout/header.php'); ?>
 <!-- Main content -->
 <section class="content">

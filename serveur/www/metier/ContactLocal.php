@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ContactLocal
+*
+* Métier de ContactLocal
+*/
 class ContactLocal {
 
 	private $idContact;

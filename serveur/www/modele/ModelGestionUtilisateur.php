@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ModelGestionUtilisateur
+*
+* Modèle pour GestionUtilisateur
+*/
 class ModelGestionUtilisateur {
 
     public static function rechercheUtilisateur($email) {

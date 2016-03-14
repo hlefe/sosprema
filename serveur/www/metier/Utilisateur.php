@@ -1,6 +1,10 @@
 <?php
 
-
+/**
+* Classe utilisateur
+*
+* Métier de utilisateur
+*/
 class utilisateur {
 
     private $userId;

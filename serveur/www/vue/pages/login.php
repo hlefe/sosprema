@@ -1,8 +1,8 @@
 <?php 
 /**
- * Vue: Page de connexion
+ * Vue login
  *
- *
+ * Permet de se connecter
  */
   require_once('vue/layout/header-connexion.php');
   require_once('vue/includes/erreur.php');

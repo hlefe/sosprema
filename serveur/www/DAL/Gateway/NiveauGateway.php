@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe NiveauGateway
+*
+* Gateway de Niveau (intéragit avec cette table en utilisant PDO)
+*/
 class NiveauGateway
 {
     public static function rechercherNom($idNiveau){

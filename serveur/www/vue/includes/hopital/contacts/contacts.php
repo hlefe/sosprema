@@ -1,5 +1,11 @@
-
-<!-- Custom Tabs (Pulled to the right) -->
+<?php
+/**
+ * Vue contacts
+ *             
+ * Affiche les contacts d'un hopital
+ *
+ */
+ ?>
 <div class="nav-tabs-custom" style="cursor: initial; ">
     <ul class="nav nav-tabs pull-right" style="cursor: initial; ">
         <li class="active"><a aria-expanded="true" href="#tab_1-1" data-toggle="tab">Contacts locaux</a></li>

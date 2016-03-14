@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe AdresseGateway
+*
+* Gateway de l'adresse (intéragit avec cette table en utilisant PDO)
+*/
 class AdresseGateway {
     
     public static function ajouterAdresse($numRue, $nomRue, $idVille){

@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe UtilisateurGateway
+*
+* Gateway de Utilisateur (intéragit avec cette table en utilisant PDO)
+*/
 class UtilisateurGateway {
 
     public static function rechercheUtilisateurConnexion($email, $password)

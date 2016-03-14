@@ -1,3 +1,11 @@
+<?php
+/**
+ * Vue erreur
+ *             
+ * Permet d'afficher une erreur
+ *
+ */
+ ?>
 <?php 
 
 require_once('vue/layout/header.php');

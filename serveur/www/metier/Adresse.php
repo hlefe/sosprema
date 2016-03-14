@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe Adresse
+*
+* Métier de l'Adresse
+*/
 class Adresse {
 	private $nomRue;
 	private $numRue;

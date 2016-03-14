@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ContactHopitalGateway
+*
+* Gateway de ContactHopital (intéragit avec cette table en utilisant PDO)
+*/
 class ContactHopitalGateway {
     
     public static function ajouterContactHopital($idHopital, $nom, $prenom, $profession,$numero)

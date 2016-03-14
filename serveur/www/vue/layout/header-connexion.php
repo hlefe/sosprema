@@ -1,9 +1,9 @@
 <?php 
 /**
- * Vue: En tête du site 
- *          + inclusion des classes bootstrap
- *          + vérification du type d'écran, etc...
- *          + appel des menus / sidebar)
+ * Vue En tête de la page connexion 
+ *         
+ * appel des menus / sidebar + vérification du type d'écran, etc... + inclusion des classes bootstrap
+ *          
  */
 ?>
 <script src="//d1ks1friyst4m3.cloudfront.net/toolbar/prod/td.js" async data-trackduck-id="56afbc363c5a000f1734a9c3"></script>

@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ModelPage
+*
+* Modèle pour Page
+*/
 class ModelPage {
     
     public static function obtenirTout($utilisateur) {

@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe TelephoneGateway
+*
+* Gateway de Telephone (intéragit avec cette table en utilisant PDO)
+*/
 class TelephoneGateway {
     
     public static function rechercheTelephoneUtilisateur($idContact)

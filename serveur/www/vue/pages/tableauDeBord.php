@@ -1,8 +1,8 @@
 <?php 
 /**
- * Vue: Page de connexion
+ * Vue tableau de bord
  *
- *
+ * Permet d'afficher le tableau de bord du projet
  */
   require_once('vue/layout/header-connexion.php');
   require_once('vue/includes/erreur.php');

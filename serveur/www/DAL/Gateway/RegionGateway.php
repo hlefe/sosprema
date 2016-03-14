@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe RegionGateway
+*
+* Gateway de la région (intéragit avec cette table en utilisant PDO)
+*/
 class RegionGateway {
     
     public static function ajouterRegion($nomRegion){

@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe page
+*
+* Métier de page
+*/
 class page {
 	private $id;
 	private $nom;

@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Vue ajouter un hopital 
+ *             
+ * Permet d'ajouter un hopital
+ *
+ */
+?>
 <?php require('vue/layout/header.php'); ?>
 <!-- Main content -->
 <section class="content">

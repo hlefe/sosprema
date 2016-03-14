@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe telephone
+*
+* Métier de telephone
+*/
 class telephone {
 
     private $idTelephone;

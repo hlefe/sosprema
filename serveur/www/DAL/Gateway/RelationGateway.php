@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe RelationGateway
+*
+* Gateway de Relation (intéragit avec cette table en utilisant PDO)
+*/
 class RelationGateway
 {
     public static function rechercherContactLocalByIdHopital($idHopital){

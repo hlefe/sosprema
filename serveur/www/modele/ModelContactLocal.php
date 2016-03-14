@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ModelContactLocal
+*
+* Modèle pour ContactLocal
+*/
 class ModelContactLocal {
     
     public static function rechercherContactLocal($idUtilisateur){
@@ -79,7 +83,6 @@ class ModelContactLocal {
     }
 
     public static function rechercherContactLocalByHopital($idHopital){
-        //Fonction réalisée dans la douleure
         $tmpRelation = RelationGateway::rechercherContactLocalByIdHopital($idHopital);
         if ($tmpRelation == false) {
             return false;
@@ -92,6 +95,8 @@ class ModelContactLocal {
                 $contactLocal[] = $tmp;
             }
         }
+        echo $idHopital;
+        print_r($tmpRelation);
         return $contactLocal;
     }
 }

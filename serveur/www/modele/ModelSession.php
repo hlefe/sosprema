@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ModelContactHopital
+*
+* Modèle pour Session
+*/
 class ModelSession {
 	
 	public static function creationUtilisateurConnecter() {

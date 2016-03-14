@@ -1,8 +1,8 @@
 <?php 
 /**
- * Vue: Pied de page du site 
- *              +Appelle les scripts jquery
- *
+ * Vue Pied de page 
+ *             
+ * Pied de page du site + Appelle les scripts jquery
  *
  */
 ?>

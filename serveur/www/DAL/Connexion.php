@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe Connexion
+*
+* Gateway de Connexion (intéragit avec les tables en utilisant PDO)
+*/
 class Connexion extends PDO
 {    
     static private $pdo;

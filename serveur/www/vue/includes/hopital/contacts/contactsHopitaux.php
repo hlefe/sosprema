@@ -1,3 +1,11 @@
+<?php
+/**
+ * Vue contacts hopitaux
+ *             
+ * Affiche les contacts internes à l'hopital
+ *
+ */
+ ?>
 <div class="box-header with-border" style="cursor: initial; ">
     <h3 class="box-title" style="cursor: initial; ">Contacts internes à l'hôpital</h3>
     <?php if($_REQUEST['action'] != "afficherHopital") { ?>

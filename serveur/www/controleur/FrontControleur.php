@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe FrontControleur
+*
+* Controleur général, permet de renvoyer vers le bon controleur
+*/
 class FrontControleur {
     
     public static function init() {

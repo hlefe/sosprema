@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Chargement du site
+ *
+ * Ce fichier a pour objectif d'appeler les fichiers de conf et l'autoload, et d'appeller le frontControlleur
+ */
 try {
     ini_set('display_errors', 1);
     

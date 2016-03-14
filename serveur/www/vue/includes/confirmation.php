@@ -1,4 +1,11 @@
-
+<?php
+/**
+ * Vue confirmation
+ *             
+ * de confirmer une modification par une infobulle verte en haut de page avant le contenu de la page
+ *
+ */
+ ?>
         <?php if(isset($vueConfirmation)) { ?>
         
             <div class="row">

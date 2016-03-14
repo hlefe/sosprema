@@ -4,8 +4,6 @@
  *
  * Menu de navigation vertical à gauche de la page, contient aussi le logo
  * 
- *
- *
  */
 $listePages = ModelPage::obtenirTout($utilisateurConnecter);
 ?>

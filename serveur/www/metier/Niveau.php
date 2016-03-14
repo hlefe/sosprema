@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe niveau
+*
+* Métier de niveau
+*/
 class niveau {
 	private $idNiveau;
 	private $libelle;

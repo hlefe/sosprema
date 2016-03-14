@@ -1,3 +1,11 @@
+<?php
+/**
+ * Vue contacts locaux
+ *             
+ * Affiche les contacts locaux associés à l'hopital courant
+ *
+ */
+ ?>
 <div class="box-header with-border" style="cursor: initial; ">
     <h3 class="box-title" style="cursor: initial; ">Contacts locaux pour cet hôpital</h3>
 </div>

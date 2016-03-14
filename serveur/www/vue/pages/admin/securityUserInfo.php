@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Vue securityuserinfo
+ *             
+ * Permet d'afficher les informations relatives à la sécurité d'un utilisateur
+ *
+ */
+?>
 <?php require('vue/layout/header.php'); ?>
 <!-- Main content -->
 <section class="content">

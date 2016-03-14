@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe PageGateway
+*
+* Gateway de Page (intéragit avec cette table en utilisant PDO)
+*/
 class PageGateway {
     
     public static function rechercherPage($nomPage){

@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Vue modification d'un hopital
+ *             
+ * Permet de modifier un hopital
+ *
+ */
+?>
 <?php require('vue/layout/header.php'); ?>
 <!-- Main content -->
 <section class="content">

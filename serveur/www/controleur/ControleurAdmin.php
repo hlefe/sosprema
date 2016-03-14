@@ -1,11 +1,16 @@
 <?php
 
 /**
- * 
- */
+* Classe ControleurAdmin
+*
+* Controleur administrateur, permet de gérer les actions relatives à l'administrateur
+*/
 class ControleurAdmin {
-
-    // permet à l'administrateur d'ajouter un utilisateur.
+    /**
+    * Fonction ajoutUtilisateur
+    *
+    * permet à l'administrateur d'ajouter un utilisateur.
+    */
     public static function ajoutUtilisateur() {
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         $niveaux = ModelNiveau::getAll();
@@ -25,8 +30,12 @@ class ControleurAdmin {
         require_once('vue/pages/admin/ajoutUtilisateur.php');
 
     }
-
-    //fonction permettant l'apelle à la vue pour modifier un utilisateur.
+    
+    /**
+    * Fonction userEdit
+    *
+    * fonction permettant l'apelle à la vue pour modifier un utilisateur.
+    */
     public static function userEdit(){
         //Définition utilisateur connecté
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
@@ -67,17 +76,23 @@ class ControleurAdmin {
         }
         require_once('vue/pages/admin/userEdit.php');
     }
-
-    //fonction permettant à un aministrateur de modifier un utilisateur.
+    
+    /**
+    * Fonction adminModifierUtilisateur
+    *
+    * fonction permettant à un aministrateur de modifier un utilisateur.
+    */
     public static function adminModifierUtilisateur(){
         $utilisateur=$_SESSION['utilisateurModifie'];
 
         
     }
-
  
-
-    //fonction permettant de vérifier si un utilisateur est admin ou non.
+    /**
+    * Fonction verifierDroit
+    *
+    * fonction permettant de vérifier si un utilisateur est admin ou non.
+    */
      public static function verifierDroit(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         try{
@@ -93,12 +108,22 @@ class ControleurAdmin {
             require_once('vue/includes/vueErreur.php');
         }
     }
-
+    
+    /**
+    * Fonction gestion
+    *
+    * permet d'accéder à la page gestion
+    */
     public static function gestion(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         require_once('vue/gestion.php');
     }
     
+    /**
+    * Fonction listeUtilisateurs
+    *
+    * permet d'accéder à la liste des utilisateurs
+    */
     public static function listeUtilisateurs(){
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         if(isset($_GET['mail'])){
@@ -115,8 +140,11 @@ class ControleurAdmin {
         require_once('vue/pages/admin/listeUtilisateurs.php');
     }
 
-    
-    //Modifier les informations de sécurité/droit d'un utilisateur ( Mot de passe & niveau)
+    /**
+    * Fonction safeUserInfo
+    *
+    * Modifier les informations de sécurité/droit d'un utilisateur ( Mot de passe & niveau)
+    */
      public static function safeUserInfo(){
         $niveaux = ModelNiveau::getAll();
         $utilisateurModifie = $_SESSION['utilisateurModifie'];
@@ -140,6 +168,11 @@ class ControleurAdmin {
         require_once('vue/pages/admin/securityUserInfo.php');
     }
 
+    /**
+    * Fonction ajouterUtilisateurCommeContact
+    *
+    * Permet de transformer un utilisateur en contact local
+    */
     public static function ajouterUtilisateurCommeContact(){
         if(isset($_GET['mailC'])){
             $utilisateurModifie = ModelGestionUtilisateur::rechercheUtilisateur($_GET['mailC']);
@@ -166,6 +199,11 @@ class ControleurAdmin {
         require_once('vue/includes/userEdit/contactLocal/contactLocal.php');
     }
 
+    /**
+    * Fonction modifierContactLocal
+    *
+    * permet à l'administrateur de modifier un contact local
+    */
     public static function modifierContactLocal(){
         $utilisateurModifie = $_SESSION['utilisateurModifie'];
         if(isset($_SESSION['utilisateurConnecter'])){
@@ -188,6 +226,11 @@ class ControleurAdmin {
         require_once('vue/pages/admin/ajoutContactLocal.php');
     }
 
+    /**
+    * Fonction ajouterTelephoneUtilisteur
+    *
+    * permet à l'administrateur d'ajouter un numéro de télephone à un utilisateur
+    */
     public static function ajouterTelephoneUtilisteur(){
         $utilisateur = $_SESSION['utilisateurModifie'];
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
@@ -205,6 +248,11 @@ class ControleurAdmin {
         require_once('vue/pages/ajoutModifTelephone.php');
     }
 
+    /**
+    * Fonction modifierTelephoneUtilisateur
+    *
+    * permet à l'administrateur de modifier le no de telephone d'un user
+    */
     public static function modifierTelephoneUtilisateur(){
         $utilisateur = $_SESSION['utilisateurModifie'];
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
@@ -223,7 +271,12 @@ class ControleurAdmin {
         require_once('vue/pages/ajoutModifTelephone.php');
     }
     
-     public static function supprimerTelephoneUser(){
+    /**
+    * Fonction supprimerTelephoneUser
+    *
+    * permet à l'administrateur de supprimer un numero de telephone utilisateur
+    */
+    public static function supprimerTelephoneUser(){
         $utilisateur = $_SESSION['utilisateurModifie'];
         $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
         if(isset($_REQUEST['edit'])){

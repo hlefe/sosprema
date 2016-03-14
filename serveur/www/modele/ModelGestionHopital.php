@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ModelGestionHopital
+*
+* Modèle pour GestionHopital
+*/
 class ModelGestionHopital {
     
     public static function rechercherHopital($idHopital){

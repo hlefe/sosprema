@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Vue hopitaux
+ *             
+ * Affiche tous les hopitaux
+ *
+ */
+?>
 <?php require('vue/layout/header.php'); ?>
 <!-- Main content -->
 <section class="content">

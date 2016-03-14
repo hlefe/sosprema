@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Classe ModelGestionLieu
+*
+* Modèle pour GestionLieu
+*/
 class ModelGestionLieu {
 	public static function verifierPresenceVille($nomVille, $codePostal, $idDepartement){
 		$ville=VilleGateway::rechercherVille($nomVille,$codePostal);
