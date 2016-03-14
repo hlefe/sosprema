@@ -4,6 +4,7 @@
 * Classe ControleurAdmin
 *
 * Controleur administrateur, permet de gérer les actions relatives à l'administrateur
+* @package controlleur
 */
 class ControleurAdmin {
     /**

@@ -3,7 +3,7 @@
  * Classe Autoload
  *
  * Cette classe a pour rôle de charger tous les fichiers php possédants des classes, de manière automatique.
-
+ * @package config
  */
 class Autoload {
     

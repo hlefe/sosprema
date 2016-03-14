@@ -3,6 +3,7 @@
 * Classe ModelGestionHopital
 *
 * Modèle pour GestionHopital
+* @package modele
 */
 class ModelGestionHopital {
     

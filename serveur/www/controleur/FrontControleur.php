@@ -3,6 +3,7 @@
 * Classe FrontControleur
 *
 * Controleur général, permet de renvoyer vers le bon controleur
+* @package controlleur
 */
 class FrontControleur {
     

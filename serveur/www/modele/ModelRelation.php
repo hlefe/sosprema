@@ -3,6 +3,7 @@
 * Classe ModelContactHopital
 *
 * Modèle pour Relation
+* @package modele
 */
 class ModelRelation {
 	public static function rechercherContactLocalByIdHopital($idHopital){

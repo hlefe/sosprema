@@ -3,6 +3,7 @@
 * Classe telephone
 *
 * Métier de telephone
+* @package metier
 */
 class telephone {
 

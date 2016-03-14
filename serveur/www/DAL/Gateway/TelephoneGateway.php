@@ -3,6 +3,8 @@
 * Classe TelephoneGateway
 *
 * Gateway de Telephone (intéragit avec cette table en utilisant PDO)
+* @package DAL
+* @subpackage gateway
 */
 class TelephoneGateway {
     

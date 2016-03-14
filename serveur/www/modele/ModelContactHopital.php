@@ -3,6 +3,7 @@
 * Classe ModelContactHopital
 *
 * Modèle pour ContactHopital
+* @package modele
 */
 class ModelContactHopital {
     

@@ -3,6 +3,7 @@
 * Classe ModelContactLocal
 *
 * Modèle pour ContactLocal
+* @package modele
 */
 class ModelContactLocal {
     

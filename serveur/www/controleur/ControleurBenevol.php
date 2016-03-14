@@ -4,6 +4,7 @@
 * Classe ControleurBenevol
 *
 * Controleur benevole, permet de gérer les actions relatives au benevole
+* @package controlleur
 */
 class ControleurBenevol {
     /**

@@ -3,6 +3,7 @@
 * Classe Connexion
 *
 * Gateway de Connexion (intéragit avec les tables en utilisant PDO)
+* @package DAL
 */
 class Connexion extends PDO
 {    

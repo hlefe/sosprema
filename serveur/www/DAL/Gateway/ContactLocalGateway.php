@@ -3,6 +3,8 @@
 * Classe ContactLocalGateway
 *
 * Gateway de ContactLocal (intéragit avec cette table en utilisant PDO)
+* @package DAL
+* @subpackage gateway
 */
 class ContactLocalGateway {
     

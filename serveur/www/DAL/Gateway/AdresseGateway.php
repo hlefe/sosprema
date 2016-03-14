@@ -3,6 +3,8 @@
 * Classe AdresseGateway
 *
 * Gateway de l'adresse (intéragit avec cette table en utilisant PDO)
+* @package DAL
+* @subpackage gateway
 */
 class AdresseGateway {
     

@@ -4,6 +4,7 @@
 * Classe ControleurModerateur
 *
 * Controleur moderateur, permet de gérer les actions relatives au moderateur
+* @package controlleur
 */
 class ControleurModerateur {
     

@@ -3,6 +3,8 @@
 * Classe DepartementGateway
 *
 * Gateway de Departement (intéragit avec cette table en utilisant PDO)
+* @package DAL
+* @subpackage gateway
 */
 class DepartementGateway {
     

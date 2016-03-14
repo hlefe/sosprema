@@ -3,6 +3,7 @@
 * Classe niveau
 *
 * Métier de niveau
+* @package metier
 */
 class niveau {
 	private $idNiveau;

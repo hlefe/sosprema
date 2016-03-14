@@ -3,6 +3,7 @@
  * Classe Nettoyage
  *
  * Regroupe toutes les fonctions qui concernent le nettoyage de variables provenants de champs html
+ * @package config
  */
 class Nettoyage {
     /**

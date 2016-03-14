@@ -3,6 +3,7 @@
  * Classe Validation
  *
  * Contient toutes les fonctions permettant de valider des champs
+ * @package config
  */
 class Validation {
     /**

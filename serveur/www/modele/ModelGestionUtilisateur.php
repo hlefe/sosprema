@@ -3,6 +3,7 @@
 * Classe ModelGestionUtilisateur
 *
 * Modèle pour GestionUtilisateur
+* @package modele
 */
 class ModelGestionUtilisateur {
 

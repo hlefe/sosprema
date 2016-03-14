@@ -3,6 +3,7 @@
 * Classe ContactHopital
 *
 * Métier de ContactHopital
+* @package metier
 */
 class ContactHopital {
 	private $idContactHopital;

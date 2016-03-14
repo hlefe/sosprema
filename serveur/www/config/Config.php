@@ -3,6 +3,7 @@
  * Fichier Config.php
  *
  * Contient les informations de connexion à la base de données
+ * @package config
  */
 $rep=__DIR__.'/../';
 

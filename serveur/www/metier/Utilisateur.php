@@ -4,6 +4,7 @@
 * Classe utilisateur
 *
 * Métier de utilisateur
+* @package metier
 */
 class utilisateur {
 

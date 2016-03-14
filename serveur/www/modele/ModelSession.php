@@ -3,6 +3,7 @@
 * Classe ModelContactHopital
 *
 * Modèle pour Session
+* @package modele
 */
 class ModelSession {
 	

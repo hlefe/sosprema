@@ -3,6 +3,7 @@
 * Classe ModelNiveau
 *
 * Modèle pour Niveau
+* @package modele
 */
 class ModelNiveau {
 	public static function rechercherNom($id_niveau){

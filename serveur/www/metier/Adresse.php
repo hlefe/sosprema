@@ -3,6 +3,7 @@
 * Classe Adresse
 *
 * Métier de l'Adresse
+* @package metier
 */
 class Adresse {
 	private $nomRue;

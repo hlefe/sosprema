@@ -3,6 +3,7 @@
  * Classe VariableExterne
  *
  * Regroupe toutes les fonctions qui concernent la gestionn des variables à nettoyer/valider
+ * @package config
  */
 class VariableExterne{
 	/**

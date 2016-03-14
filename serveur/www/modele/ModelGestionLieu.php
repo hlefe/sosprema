@@ -3,6 +3,7 @@
 * Classe ModelGestionLieu
 *
 * Modèle pour GestionLieu
+* @package modele
 */
 class ModelGestionLieu {
 	public static function verifierPresenceVille($nomVille, $codePostal, $idDepartement){

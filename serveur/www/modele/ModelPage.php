@@ -3,6 +3,7 @@
 * Classe ModelPage
 *
 * Modèle pour Page
+* @package modele
 */
 class ModelPage {
     

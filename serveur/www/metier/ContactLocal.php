@@ -3,6 +3,7 @@
 * Classe ContactLocal
 *
 * Métier de ContactLocal
+* @package metier
 */
 class ContactLocal {
 

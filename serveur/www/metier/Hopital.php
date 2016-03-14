@@ -4,6 +4,7 @@
 * Classe hopital
 *
 * Métier de hopital
+* @package metier
 */
 class hopital {
 

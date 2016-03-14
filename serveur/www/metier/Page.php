@@ -3,6 +3,7 @@
 * Classe page
 *
 * Métier de page
+* @package metier
 */
 class page {
 	private $id;
