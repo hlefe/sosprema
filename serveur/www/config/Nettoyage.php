@@ -17,7 +17,7 @@ class Nettoyage {
 		return filter_var($email, FILTER_SANITIZE_EMAIL);
     }
 
-	/*
+	/**
     * Fonction de nettoyage chaine
     *
     * nettoie une chaine de caractére donné en paramétre, et retourne true si elle est valide ou false sinon. 
@@ -28,18 +28,18 @@ class Nettoyage {
 		return filter_var($chaine, FILTER_SANITIZE_STRING);
 	}
     
-    /*
+    /**
     * Fonction de nettoyage int
     *
 	* nettoie un nombre entier donné en paramétre, et retourne true si il est valide ou false sinon.
-	*@param int $nombre Le INT à nettoyer 
+	* @param int $nombre Le INT à nettoyer 
     * @return int Le INT nettoyé
     */
     public static function nettoyerNombreEntier($nombre){
 		return filter_var($nombre, FILTER_SANITIZE_NUMBER_INT);
 	}
 
-    /*
+    /**
     * Fonction de nettoyage d'URL
     *
 	* nettoie une adresse url donné en paramétre, et retourne true si elle est valide ou false sinon.
@@ -50,7 +50,7 @@ class Nettoyage {
 		return filter_var($url, FILTER_SANITIZE_URL);
 	}
 
-    /*
+    /**
     * Fonction de nettoyage de float
     *
     * nettoie un nombre réel donné en paramétre, et retourne true si il est valide ou false sinon.

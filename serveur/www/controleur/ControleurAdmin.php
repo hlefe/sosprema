@@ -77,17 +77,6 @@ class ControleurAdmin {
         }
         require_once('vue/pages/admin/userEdit.php');
     }
-    
-    /**
-    * Fonction adminModifierUtilisateur
-    *
-    * fonction permettant à un aministrateur de modifier un utilisateur.
-    */
-    public static function adminModifierUtilisateur(){
-        $utilisateur=$_SESSION['utilisateurModifie'];
-
-        
-    }
  
     /**
     * Fonction verifierDroit

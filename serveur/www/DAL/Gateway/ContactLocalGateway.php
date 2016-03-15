@@ -7,7 +7,21 @@
 * @subpackage gateway
 */
 class ContactLocalGateway {
-    
+
+    /**
+    * Fonction d'ajout un contact local.
+    * 
+    * Permet d'ajouter un contact local.
+    * @param idUtilisateur correspond à l'id de l'utilisateur qui est devenue un contact local.
+    * @param datePremierEngagement correspond à la date de première engagement du contac local.
+    * @param dateRenouvellement correspond à la date de renouvellement de contrat du contac hôpital.
+    * @param dateSenior correspond à la date senior du contact hopital.
+    * @param visitesBenevoles permet de savoir si le contact local fait des visites bénévoles ou non.
+    * @param conventionHopital permet de savoir si le contact local possède une convention hôpital.
+    * @param conventionCAMSP permet de savoir si le contact local possède une convention CAMSP.
+    * @param conventionPMI permet de savoir si le contact local possède une convention PMI.
+    * @param charteVisiteur permet de savoir si le contact local possède une charte visiteur.
+    */
     public static function ajouterContactLocal($idUtilisateur, $datePremierEngagement, $dateRenouvellement, $dateSenior, $visitesBenevoles, $conventionHopital, $conventionCAMSP, $conventionPMI, $charteVisiteur)
     {
         $querry = 'INSERT INTO contactlocal (idUtilisateur, datePremierEngagement, dateRenouvellement, dateSenior, visitesBenevoles, conventionHopital, conventionCAMSP, conventionPMI, charteVisiteur)
@@ -23,6 +37,13 @@ class ContactLocalGateway {
                                                 ':charteVisiteur'=>array($charteVisiteur,PDO::PARAM_BOOL)));
     }
     
+    /**
+    * Fonction de recherche d'un contact local par l'id utilisateur.
+    * 
+    * Permet de rechercher un contact local par l'id de l'utilisateur.
+    * @param idUtilisateur correspond à l'id de l'utilisateur qui est devenue un contact local.
+    * @return ContactLocal correspond aux informations du contact local.
+    */
     public static function rechercherContactLocalByIdUser($idUtilisateur){
         $querry = 'SELECT * FROM contactlocal WHERE idUtilisateur=:idUtilisateur';
         Connexion::executeQuerry($querry, array('idUtilisateur'=>array($idUtilisateur,PDO::PARAM_INT)));
@@ -33,6 +54,13 @@ class ContactLocalGateway {
         return new ContactLocal($result);
     }
 
+    /**
+    * Fonction de recherche d'un contact local par l'id du contact.
+    * 
+    * Permet de rechercher un contact local par l'id de contact.
+    * @param idcontact correspond à l'id du contact rechercher.
+    * @return ContactLocal correspond aux informations du contact local rechercher.
+    */
     public static function rechercherContactLocalByIdContact($idcontact){
         $querry = 'SELECT * FROM contactlocal WHERE idContact=:idcontact';
         Connexion::executeQuerry($querry, array('idcontact'=>array($idcontact,PDO::PARAM_INT)));
@@ -44,6 +72,12 @@ class ContactLocalGateway {
         return $contact;
     }
     
+    /**
+    * Fonction de récupération de l'ensemble des contacts locaux.
+    * 
+    * Permet de récupération de l'ensemble des contacts locaux triè par nom et prénom.
+    * @return results correspond à l'ensemble des id utilisateur qui sont contact local triè de façons à pouvoir récupérer les utilisateur triè par nom et prénom.
+    */
     public static function getAll(){
         //ancienne version non triè
         //$querry = 'SELECT * FROM contactlocal';
@@ -54,11 +88,33 @@ class ContactLocalGateway {
         return $results;
     }
     
+    /**
+    * Fonction de supression d'un contact local par l'id du contact.
+    * 
+    * Permet de supprimer un contact local par l'id de contact.
+    * @param idcontact correspond à l'id du contact rechercher.
+    * @return ContactLocal correspond aux informations du contact local rechercher.
+    */
     public static function supprimerContact($idContact){
         $querry = 'DELETE FROM contactlocal WHERE idContact = :idContact';
         Connexion::executeQuerry($querry, array(':idContact'=>array($idContact, PDO::PARAM_INT)));
     }
     
+    /**
+    * Fonction de modifier un contact local.
+    * 
+    * Permet de modifier un contact local.
+    * @param idcontact correspond à l'id du contact.
+    * @param datePremierEngagement correspond à la date de première engagement du contac local.
+    * @param dateRenouvellement correspond à la date de renouvellement de contrat du contac hôpital.
+    * @param dateSenior correspond à la date senior du contact hopital.
+    * @param visitesBenevoles permet de savoir si le contact local fait des visites bénévoles ou non.
+    * @param conventionHopital permet de savoir si le contact local possède une convention hôpital.
+    * @param conventionCAMSP permet de savoir si le contact local possède une convention CAMSP.
+    * @param conventionPMI permet de savoir si le contact local possède une convention PMI.
+    * @param charteVisiteur permet de savoir si le contact local possède une charte visiteur.
+    * @return ContactLocal correspond aux informations du contact local rechercher.
+    */
     public static function modifierContact($idContact, $datePremierEngagement, $dateRenouvellement, $dateSenior, $visitesBenevoles, $conventionHopital, $conventionCAMSP, $conventionPMI, $charteVisiteur)
     {
         $querry = 'UPDATE contactlocal SET  datePremierEngagement = :datePremierEngagement,

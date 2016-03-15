@@ -8,6 +8,14 @@
 */
 class UtilisateurGateway {
 
+    /**
+    * Fonction de recherche de l'utilisateur qui tente de se connecte. 
+    * 
+    * Permet de rechercher l'utilisateur qui tente de se connecte.
+    * @param email de l'utilisateur.
+    * @param password mot de passe de l'utilisateur.
+    * @return utilisateur retourne l'utilisateur qui c'est connecter ou faux sinon.
+    */
     public static function rechercheUtilisateurConnexion($email, $password)
     {   
         $password = md5($password);
@@ -43,6 +51,13 @@ class UtilisateurGateway {
         return $utilisateur;
     }
 
+    /**
+    * Fonction de recherche d'un utilisateur qui tente de se connecte. 
+    * 
+    * Permet de rechercher un  utilisateur qui tente de se connecte.
+    * @param email de l'utilisateur à rechercher.
+    * @return utilisateur retourne l'utilisateur rechercher.
+    */
     public static function rechercheUtilisateurEmail($email){   
         $querry = 'SELECT * FROM utilisateur WHERE email=:email';
         Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
@@ -75,6 +90,13 @@ class UtilisateurGateway {
             return $utilisateur;  
     }
 
+    /**
+    * Fonction de recherche d'utilisateur par le nom. 
+    * 
+    * Permet de rechercher l'utilisateur par son nom.
+    * @param nom de l'utilisateur rechercher.
+    * @return utilisateur retourne l'utilisateur rechercher.
+    */
     public static function rechercheUtilisateurNom($nom)
     {        
         $querry = 'SELECT * FROM utilisateur WHERE nom=:nom';
@@ -86,6 +108,13 @@ class UtilisateurGateway {
         return $utilisateur = new Utilisateur($result);
     }
 
+    /**
+    * Fonction de recherche de l'utilisateur. 
+    * 
+    * Permet de rechercher l'utilisateur par son id.
+    * @param id_utilisateur correspond à l'id d'utilisateur.
+    * @return utilisateur retourne l'utilisateur rechercher.
+    */
     public static function rechercheUtilisateurId($id_utilisateur)
     {        
         $querry = 'SELECT * FROM utilisateur WHERE idUtilisateur=:idUtilisateur';
@@ -119,6 +148,21 @@ class UtilisateurGateway {
         return $utilisateur;
     }
 
+    /**
+    * Fonction d'insertion d'un utilisateur.
+    * 
+    * Permet d'insérer un utilisateur.
+    * @param email correspond à l'email de l'utilisateur.
+    * @param nom correspond au nom de l'utilisateur.
+    * @param prenom correspond au prenom de l'utilisateur.
+    * @param motDePasse correspond au mot de passe de l'utilisateur.
+    * @param dateDeNaissance correspond à la date de naissance de l'utilisateur.
+    * @param profession correspond à la proffesion de l'utilisateur.
+    * @param divers correspond au divers éléments à ajouter pour l'utilisateur.
+    * @param avatar correspond àl'avatar de l'utilisateur (ou le badge).
+    * @param idNiveau correspond à l'id du niveau de droit de l'utilisateur
+    * @param idAdresse correspond à l'id de l'adresse de l'utilisateur.
+    */
     public static function insererUtilisateur($email,$nom,$prenom,$motDePasse,$dateDeNaissance,
         $profession,$divers,$avatar,$idNiveau,$idAdresse){
         $motDePasse = md5($motDePasse);
@@ -139,12 +183,25 @@ class UtilisateurGateway {
         return self::rechercheUtilisateurEmail($email);
     }
 
+    /**
+    * Fonction de supression de l'utilisateur. 
+    * 
+    * Permet de supprimer l'utilisateur par son email.
+    * @param email correspond à l'email de l'utilisateur à supprimer.
+    * @return true pour prévenir que la suppression à réussi.
+    */
     public static function supprimerUtilisateur($email){    
         $querry = 'DELETE FROM utilisateur WHERE email=:email';
         Connexion::executeQuerry($querry, array(':email'=>array($email,PDO::PARAM_STR)));
         return true;
     }
 
+    /**
+    * Fonction de récupération de l'ensemble des utilisateurs. 
+    * 
+    * Permet de récupérer l'ensemble des utilisateurs.
+    * @return result retourne l'ensemble des utilisateur trié par le nom et le prénom.
+    */
     public static function afficherToutUtilisateur(){
         //ancienne version non triè. 
         //$querry = 'SELECT * FROM utilisateur';
@@ -158,6 +215,22 @@ class UtilisateurGateway {
         return $result;
     }
 
+    /**
+    * Fonction de modification d'un utilisateur.
+    * 
+    * Permet de modifier un utilisateur.
+    * @param id_utilisateur id de l'utilisateur à modifier.
+    * @param email correspond à l'email de l'utilisateur.
+    * @param nom correspond au nom de l'utilisateur.
+    * @param prenom correspond au prenom de l'utilisateur.
+    * @param motDePasse correspond au mot de passe de l'utilisateur.
+    * @param dateDeNaissance correspond à la date de naissance de l'utilisateur.
+    * @param profession correspond à la proffesion de l'utilisateur.
+    * @param divers correspond au divers éléments à ajouter pour l'utilisateur.
+    * @param avatar correspond àl'avatar de l'utilisateur (ou le badge).
+    * @param idNiveau correspond à l'id du niveau de droit de l'utilisateur
+    * @param idAdresse correspond à l'id de l'adresse de l'utilisateur.
+    */
     public static function modifierUtilisateur($id_utilisateur, $email, $nom,$prenom,$dateDeNaissance,
         $profession,$divers,$avatar,$idNiveau,$idAdresse){
             
@@ -185,6 +258,13 @@ class UtilisateurGateway {
                                                 ));
     }
 
+    /**
+    * Fonction de modification du mot de passe d'un utilisateurs. 
+    * 
+    * Permet de modifier le mot de passe d'un utilisateurs.
+    * @param idUser correspond à l'id de l'utilisateur auquel on veut modifier le mot de passe.
+    * @param newMDP correspond au nouveau mot de passe à insérer dans la base de données.
+    */
     public static function modifierMotDePasse($idUser, $newMDP){
         $newMDP = md5($newMDP);
         $querry = 'UPDATE utilisateur SET motDePasse=:mot_de_passe WHERE idUtilisateur=:id_utilisateur';
@@ -192,6 +272,14 @@ class UtilisateurGateway {
                                                 ':id_utilisateur'=>array($idUser,PDO::PARAM_STR)));
     }
 
+    /**
+    * Fonction de modification du niveau de droit d'un utilisateurs. 
+    * 
+    * Permet de modifier le niveau de droit d'un utilisateurs.
+    * @param user correspond à l'utilisateur auquel on veut modifier le niveau.
+    * @param newNiveau correspond au nouveau niveau à insérer dans la base de données.
+    * @return result retourne l'utilisateur avec son niveau modifié.
+    */
     public static function modifierNiveau($user, $newNiveau){
         $querry = 'UPDATE utilisateur SET idNiveau=:id_niveau_utilisateur WHERE idUtilisateur=:id_utilisateur';
         Connexion::executeQuerry($querry, array(':id_niveau_utilisateur'=>array($newNiveau,PDO::PARAM_INT),

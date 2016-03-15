@@ -3,6 +3,7 @@
 * Classe Connexion
 *
 * Gateway de Connexion (intéragit avec les tables en utilisant PDO)
+* Permet d'établir la connexion avec la base de données mySQL
 * @package DAL
 */
 class Connexion extends PDO

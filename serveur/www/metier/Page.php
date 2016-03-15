@@ -11,6 +11,12 @@ class page {
     private $url;
     private $droit;
 
+    /**
+    * Fonction de construction de l'objet. 
+    * 
+    * Permet de l'objet avec les bonnes valeurs.
+    * @param param correspond au tableau avec comme clef les propriétés et comme valeur la valeur de la propriétés.
+    */
 	public function __construct($param){
        foreach ($param as $key=>$value){
             if ('id' == $key) {
@@ -28,6 +34,13 @@ class page {
        }
 	}
 
+	/**
+    * Fonction de récupération de la valeur d'une propriété. 
+    * 
+    * Permet de récupérer la valeur d'une propriété.
+    * @param property correspond à la propriété.
+    * @return result retourne la valeur de la proprièté demander.
+    */
 	public function __get($property){
 		if('id'==$property){
 			return $this->id;
@@ -42,6 +55,13 @@ class page {
 		}
 	}
 
+	/**
+    * Fonction de modification de la valeur d'une propriété. 
+    * 
+    * Permet de récupérer la valeur d'une propriété.
+    * @param property correspond à la propriété.
+    * @param value correspond à la nouvelle valeur de la propriété.
+    */
 	public function __set($property, $value){
 		if('id'==$property){
 			$this->id = $value;

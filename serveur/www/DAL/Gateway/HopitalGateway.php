@@ -8,6 +8,21 @@
 */
 class HopitalGateway {
     
+    /**
+    * Fonction d'ajout d'un hôpital. 
+    * 
+    * Permet de rajouter un hôpital dans la table des hôpitaux.
+    * @param nomHopital correspond au nom de l'hopital à ajouter.
+    * @param idAdresse correspond à l'id de l'adresse ou se trouve l'hopital.
+    * @param niveau correspond au niveau de service de l'hopital. 
+    * @param service correspond au principal service de l'hopital.
+    * @param nbLits correspond au nombre de couveuse "lit" de l'hopital.
+    * @param nbPremaParAn correspond au nombre d'enfant né prématuré par an.
+    * @param cafeParent indique si l'hôpital fait oui ou non des café parent.
+    * @param parkingPayant indique si le stationnement et payant ou non aux alentours de l'hôpital.
+    * @param convention permet de savoir si l'hôpital posséde une convention avec l'association ou non.
+    * @param visiteBenevole permet de savoir si l'hôpital organise des visite bénévole.
+    */
     public static function ajouterHopital($nomHopital, $idAdresse, $niveau, $service, $nbLits, $nbPremaParAn, $cafeParent, $parkingPayant, $convention, $visiteBenevole)
     {
         $querry = 'INSERT INTO hopital (nomHopital, idAdresse, niveau, service, nbLits, nbPremaParAn, cafeParent, parkingPayant, convention, visiteBenevole)
@@ -26,6 +41,13 @@ class HopitalGateway {
         
     }
     
+    /**
+    * Fonction de recherche d'un hôpital. 
+    * 
+    * Permet de rechercher un hôpital dans la table des hôpitaux.
+    * @param idHopital correspond à l'id de l'hôpital rechercher.
+    * @return hôpital est l'objet hôpital qui correspond à l'hôpital rechercher.
+    */
     public static function rechercherHopital($idHopital){    
         $querry = 'SELECT * FROM hopital WHERE idHopital=:idHopital';
         Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital,PDO::PARAM_STR)));
@@ -49,6 +71,12 @@ class HopitalGateway {
         return $hopital;
     }
     
+    /**
+    * Fonction permettant de récupérer l'ensemble des hôpitaux. 
+    * 
+    * Permet de récupérer tout les hôpitaux dans la table des hôpitaux.
+    * @return result est un tableaux contenat le résultat de la requête SQL.
+    */
     public static function getAll(){
         $querry = 'SELECT * FROM hopital';
         Connexion::executeQuerry($querry);
@@ -56,11 +84,33 @@ class HopitalGateway {
         return $results;
     }
     
+    /**
+    * Fonction de suppression d'un hôpital. 
+    * 
+    * Permet de supprimer un hôpital dans la table des hôpitaux.
+    * @param idHopital correspond à l'id de l'hôpital rechercher.
+    */
     public static function supprimerHopital($idHopital){
         $querry = 'DELETE FROM hopital WHERE idHopital=:idHopital';
         Connexion::executeQuerry($querry, array(':idHopital'=>array($idHopital, PDO::PARAM_INT)));
     }
     
+    /**
+    * Fonction de modifier un hôpital. 
+    * 
+    * Permet de modifier un hôpital dans la table des hôpitaux.
+    * @param idHopital correspond à l'id de l'hôpital rechercher.
+    * @param nomHopital correspond au nom de l'hopital à ajouter.
+    * @param idAdresse correspond à l'id de l'adresse ou se trouve l'hopital.
+    * @param niveau correspond au niveau de service de l'hopital. 
+    * @param service correspond au principal service de l'hopital.
+    * @param nbLits correspond au nombre de couveuse "lit" de l'hopital.
+    * @param nbPremaParAn correspond au nombre d'enfant né prématuré par an.
+    * @param cafeParent indique si l'hôpital fait oui ou non des café parent.
+    * @param parkingPayant indique si le stationnement et payant ou non aux alentours de l'hôpital.
+    * @param convention permet de savoir si l'hôpital posséde une convention avec l'association ou non.
+    * @param visiteBenevole permet de savoir si l'hôpital organise des visite bénévole.
+    */
     public static function modifierHopital($idHopital,$nomHopital, $idAdresse, $niveau, $service, $nbLits, $nbPremaParAn, $cafeParent, $parkingPayant, $convention, $visiteBenevole){
         $querry = 'UPDATE hopital SET nomHopital = :nomHopital, 
                                       idAdresse = :idAdresse, 
