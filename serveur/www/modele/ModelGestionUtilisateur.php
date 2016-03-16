@@ -7,11 +7,23 @@
 */
 class ModelGestionUtilisateur {
 
+    /**
+    * Fonction de recherche d'un utilisateur. 
+    * 
+    * Permet de rechercher un utilisateur avec son adresse email.
+    * @param email correspond à l'email de l'utilisateur à rechercher.
+    * @return utilisateur retourne l'utilisateur rechercher faux sinon.
+    */
     public static function rechercheUtilisateur($email) {
         $utilisateur = UtilisateurGateway::rechercheUtilisateurEmail($email);
         return $utilisateur;
     }
 
+    /**
+    * Fonction de création d'un utilisateur. 
+    * 
+    * Permet de créer un utilisateur.
+    */
     public static function creerUtilisateur(){
         
         $nom = VariableExterne::verifChampObligatoire('nom','nom');
@@ -43,6 +55,13 @@ class ModelGestionUtilisateur {
         }
     }
 
+    /**
+    * Fonction de modification d'un utilisateur. 
+    * 
+    * Permet de modifier un utilisateur.
+    * @param utilisateurModifie correspond à l'id de l'utilisateur à modifier.
+    * @return utilisateur correspond à l'utilisateur modifié.
+    */
     public static function modifierUtilisateur($utilisateurModifie){
         $nom = VariableExterne::verifChampObligatoire('nom','nom');
         $prenom =VariableExterne::verifChampObligatoire('prenom','prenom');
@@ -80,7 +99,13 @@ class ModelGestionUtilisateur {
         return $utilisateur;
     }
 
-
+    /**
+    * Fonction de supression d'un utilisateur. 
+    * 
+    * Permet de suprimer un utilisateur.
+    * @param emailConnexion correspond à 'lemail de connexion de l'utilisateur à suprimer.
+    * @return retourne le résultat de la supression.
+    */
     public static function supprimerUtilisateur($emailConnexion) {
         $utilisateur = self::rechercheUtilisateur($emailConnexion);
         if($utilisateur->contactLocal != null){
@@ -89,12 +114,25 @@ class ModelGestionUtilisateur {
         return UtilisateurGateway::supprimerUtilisateur($emailConnexion);
     }
 
+    /**
+    * Fonction de récupération de l'ensemble des utilisateur. 
+    * 
+    * Permet de récupérer l'ensemble des utilisateur dans la base.
+    * @return utilisateurs correspond à la liste des utilisateurs.
+    */
     public static function afficherToutUtilisateur() {
         $utilisateurs = UtilisateurGateway::afficherToutUtilisateur();
         return $utilisateurs;
     }
 
 
+    /**
+    * Fonction de modification de mot de passe. 
+    * 
+    * Permet de modifier le mot de passe d'un utilisateur.
+    * @param utilisateur correspond à l'utilisateur dont le mot de passe et modifier.
+    * @return utilisateur est l'utilisateur avec le mot de passe qui à été modifier.
+    */
     public static function modifierMotDePasse($utilisateur){
 
         $oldMDP = VariableExterne::verifChampPassword('ancien mot de passe','oldMDP');
@@ -118,11 +156,26 @@ class ModelGestionUtilisateur {
         return $utilisateur;
     }
 
+    /**
+    * Fonction de modification du niveau de l'utilisateur. 
+    * 
+    * Permet de modifier le niveau de droit de l'utilisateur.
+    * @param user correspond à l'utilisateur.
+    * @param newNiveau correspond au nouveau niveau de l'utilisateur.
+    * @return utilisateur correspond au nouvelle utilisateur avec son niveau modifier.
+    */
     public static function modifierNiveau($user, $newNiveau){
         $utilisateur = UtilisateurGateway::modifierNiveau($user, $newNiveau);
         return $utilisateur;
     }
 
+    /**
+    * Fonction de vérification de la présence l'email en base. 
+    * 
+    * Permet de vérifier si l'adresse email est déjà utiliser ou non.
+    * @param email correspond à l'adresse email à vérifier.
+    * @return retourne vrai si l'adresse est en base faux sinon.
+    */
     public static function verifierEmailNonPresent($email){
         if(UtilisateurGateway::rechercheUtilisateurEmail($email) != false){
             return true;
@@ -130,6 +183,13 @@ class ModelGestionUtilisateur {
         return false;
     }
     
+    /**
+    * Fonction de modification des accés de l'utilisateur. 
+    * 
+    * Permet de modifier les accés de l'utilisateur (niveau et mot de passe).
+    * @param utilisateurModifie correspond à l'utilisateur à modifier.
+    * @return utilisateur est l'utilisateur modifié.
+    */
     public static function modifierSafeUserInfo($utilisateurModifie){
         $vueErreur[] = "Aucun niveau utilisateur correspondant à ce libelle";
          if(isset($_POST['libelle_niveau'])){
@@ -149,6 +209,12 @@ class ModelGestionUtilisateur {
         return $utilisateur;
     }
 
+    /**
+    * Fonction de recherche des utilisateurs qui sont contact local. 
+    * 
+    * Permet de rechercher des utilisateurs qui sont contact local.
+    * @return contactLocal est l'ensemble des utilisateurs qui sont contact locaux.
+    */
     public static function rechercheUtilisateurContactLocal(){
         $tmpContact = ContactLocalGateway::getAll();
         foreach ($tmpContact as $contact) {
@@ -157,6 +223,13 @@ class ModelGestionUtilisateur {
         return $contactLocal;
     }
 
+    /**
+    * Fonction de recherche des utilisateur contact locaux par hôpitaux. 
+    * 
+    * Permet de rechercher les utilisateurs qui sont contact locaux par hôpitaux.
+    * @param idHopital correspond à l'id de l'hôpital dont on recherche les contact locaux.
+    * @return contactLocal est l'ensemble des utilisateurs qui sont contact locaux auprés de l'hôpital.
+    */
     public static function rechercheUtilisateurContactLocalByIdHop($idHopital){
         $tmpContact = ContactLocalGateway::getAll();
         foreach ($tmpContact as $contact) {
