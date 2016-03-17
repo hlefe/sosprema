@@ -22,7 +22,7 @@
         <a class="users-list-name" href="index.php?action=userEdit&mail=<?php echo $contact->email;?>"><?php echo $contact->prenom ." ". $contact->nom; ?></a>
         <span class="users-list-date"><?php if(isset($contact->telephones[0])){ ?> <i class="fa fa-phone"> </i> <?php echo $contact->telephones[0]->numero; } ?></span>
     <div class="box-tools hidden-xs hidden-sm">
-        <a href="index.php?action=modifierHopital&idContactLocal=<?php echo $contact->userId; ?>"><button type="button" class="btn btn-box-tool bg-red" ><i class="fa fa-times"></i><b> Supprimer</b></button></a>
+        <a href="index.php?action=modifierHopital&idContactLocal=<?php echo $contact->contactLocal->idContact; ?>"><button type="button" class="btn btn-box-tool bg-red" ><i class="fa fa-times"></i><b> Supprimer</b></button></a>
     </div>
     </li>
     

@@ -82,7 +82,7 @@ class ContactLocalGateway {
         //ancienne version non triè
         //$querry = 'SELECT * FROM contactlocal';
         //nouvelle version triè par nom et prènom;
-        $querry ='SELECT c.idUtilisateur FROM contactlocal c, utilisateur u WHERE c.idUtilisateur = u.idUtilisateur ORDER BY nom, prenom;';
+        $querry ='SELECT c.idUtilisateur, idContact FROM contactlocal c, utilisateur u WHERE c.idUtilisateur = u.idUtilisateur ORDER BY nom, prenom;';
         Connexion::executeQuerry($querry);
         $results = Connexion::getResults();
         return $results;
