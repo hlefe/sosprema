@@ -40,7 +40,7 @@ class ControleurModerateur {
     			ModelGestionHopital::ajouterHopital();
                 $vueConfirmation[] = "L'hopital à bien été ajouté.";
     		} catch(PDOException $ex){;
-                    $vueErreur[] = $ex->getMessage;
+                    $vueErreur[] = $ex->getMessage();
             } catch(Exception $e){
                 $vueErreur[]=$e->getMessage();
             }
