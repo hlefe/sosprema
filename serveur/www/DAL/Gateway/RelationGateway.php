@@ -13,8 +13,8 @@ class RelationGateway
     * Fonction de recherche de l'id d'un contact local. 
     * 
     * Permet de rechercher l'id d'un contact local.
-    * @param idHopital correspond à l'id de l'hôpital en relation avec les contact hôpital.
-    * @return results correspond à l'ensemble idContact, id Hopital avec l'id de l'hôpital rechercher.
+    * @param idHopital correspond à l'id de l'hôpital en relation avec les contacts hôpitaux.
+    * @return results correspond à l'ensemble idContact, id Hopital avec l'id de l'hôpital recherché.
     */
     public static function rechercherContactLocalByIdHopital($idHopital){
     	$querry = 'SELECT * FROM relation WHERE idHopital=:idHopital';
@@ -29,7 +29,7 @@ class RelationGateway
     * Permet de rechercher l'id d'un contact local.
     * @param idHopital correspond à l'id de l'hôpital.
     * @param idContact correspond à l'id de contact.
-    * @return result correspond à l'ensemble idContact, id Hopital rechercher.
+    * @return result correspond à l'ensemble idContact, id Hopital recherché.
     */
     public static function rechercherContactLocalInHopital($idHopital,$idContact){
     	$querry = 'SELECT * FROM relation WHERE idUtilisateur=:idContact';
@@ -41,7 +41,7 @@ class RelationGateway
     /**
     * Fonction d'ajout d'une relation. 
     * 
-    * Permet d'jouter une reltion entre l'id d'un contact local et l'id d'un hôpital.
+    * Permet d'ajouter une relation entre l'id d'un contact local et l'id d'un hôpital.
     * @param idHopital correspond à l'id de l'hôpital.
     * @param idContact correspond à l'id de contact.
     */
@@ -52,7 +52,7 @@ class RelationGateway
     }
 
     /**
-    * Fonction de supprimer une relation. 
+    * Fonction de suppression une relation. 
     * 
     * Permet de supprimer relation entre un contact local et un hôpital.
     * @param idHopital correspond à l'id de l'hôpital.
@@ -67,7 +67,7 @@ class RelationGateway
     /**
     * Fonction de sppression de toutes les relations d'un hôpital. 
     * 
-    * Permet de supprimer l'ensemble des relations lorsque l'on supprime un hôpital.
+    * Permet de supprimer l'ensemble des relations lorsqu'on supprime un hôpital.
     * @param idHopital correspond à l'id de l'hôpital.
     */
     public static function supprimerRelationForHopital($idHopital){
@@ -78,7 +78,7 @@ class RelationGateway
     /**
     * Fonction de sppression de toutes les relations d'un contact. 
     * 
-    * Permet de supprimer l'ensemble des relations lorsque l'on supprime un contact.
+    * Permet de supprimer l'ensemble des relations lorsqu'on supprime un contact.
     * @param idContact correspond à l'id de contact.
     */
     public static function supprimerRelationForContact($idContact){

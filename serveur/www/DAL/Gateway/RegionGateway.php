@@ -23,8 +23,8 @@ class RegionGateway {
     * Fonction de recherche d'une région. 
     * 
     * Permet de rechercher une région par son nom.
-    * @param nomRegion correspond au nom de la région rechercher.
-    * @return result correspond à la région qui a été rechercher.
+    * @param nomRegion correspond au nom de la région recherchée.
+    * @return result correspond à la région qui a été recherchée.
     */
     public static function rechercherRegion($nomRegion){
         $querry = 'SELECT * FROM region WHERE nomRegion=:nom';
@@ -40,8 +40,8 @@ class RegionGateway {
     * Fonction de recherche d'une région. 
     * 
     * Permet de rechercher une région par son id.
-    * @param idRegion correspond à l'id de la région rechercher.
-    * @return result correspond à la région qui a été rechercher.
+    * @param idRegion correspond à l'id de la région recherchée.
+    * @return result correspond à la région qui a été recherchée.
     */
     public static function rechercherRegionById($idRegion){
         $querry = 'SELECT * FROM region WHERE idRegion=:idRegion';
@@ -57,7 +57,7 @@ class RegionGateway {
     * Fonction de récupérer l'ensemble des régions.
     *
     * Permet de récupération l'ensemble des régions.
-    * @return result correspond à l'ensemble des régions trouvés. 
+    * @return result correspond à l'ensemble des régions trouvéés. 
     */
     public static function getAll(){
         $querry = 'SELECT * FROM region';

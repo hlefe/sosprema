@@ -8,7 +8,7 @@
 class ModelRelation {
 
 	/**
-    * Fonction de recherche les contacts locaux par leurs hôpitaux. 
+    * Fonction de recherche des contacts locaux par leurs hôpitaux. 
     * 
     * Permet de rechercher les contacts locaux par leurs hôpitaux.
     * @param idHopital correspond à l'id de l'hôpital dont on recherche les contacts locaux.
@@ -19,9 +19,9 @@ class ModelRelation {
 	}
     
     /**
-    * Fonction de test afin de savoir si le contact local et en liens avec l'hôpital. 
+    * Fonction de test afin de savoir si le contact local est en lien avec l'hôpital. 
     * 
-    * Permet de tester afin de savoir si le contact local et en liens avec l'hôpital.
+    * Permet de tester afin de savoir si le contact local est en lien avec l'hôpital.
     * @param idHopital correspond à l'id de l'hôpital concerné.
     * @param idContact correspond à l'id du contact local concerné.
     * @return la relation si elle existe.
@@ -36,7 +36,7 @@ class ModelRelation {
     * Permet d'ajouter une relation entre un contact local et un hôpital.
     * @param idHopital correspond à l'id de l'hôpital concerné.
     * @param idContact correspond à l'id du contact local concerné.
-    * @return result permet de savoir si l'ajout à réussi sinon il est null.
+    * @return result permet de savoir si l'ajout a réussi sinon il est null.
     */
 	public static function ajouterRelation($idHopital, $idContactLocal){
         $result=null;
@@ -49,7 +49,7 @@ class ModelRelation {
 	/**
     * Fonction de supression d'une relation entre un cotact local et un hôpital. 
     * 
-    * Permet de suprimer une relation entre un cotact local et un hôpital.
+    * Permet de supprimer une relation entre un cotact local et un hôpital.
     * @param idHopital correspond à l'id de l'hôpital concerné.
     * @param idContact correspond à l'id du contact local concerné.
     */

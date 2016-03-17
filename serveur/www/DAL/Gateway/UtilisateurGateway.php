@@ -9,12 +9,12 @@
 class UtilisateurGateway {
 
     /**
-    * Fonction de recherche de l'utilisateur qui tente de se connecte. 
+    * Fonction de recherche de l'utilisateur qui tente de se connecter. 
     * 
-    * Permet de rechercher l'utilisateur qui tente de se connecte.
+    * Permet de rechercher l'utilisateur qui tente de se connecter.
     * @param email de l'utilisateur.
     * @param password mot de passe de l'utilisateur.
-    * @return utilisateur retourne l'utilisateur qui c'est connecter ou faux sinon.
+    * @return utilisateur retourne l'utilisateur qui s'est connecter ou faux sinon.
     */
     public static function rechercheUtilisateurConnexion($email, $password)
     {   
@@ -52,11 +52,11 @@ class UtilisateurGateway {
     }
 
     /**
-    * Fonction de recherche d'un utilisateur qui tente de se connecte. 
+    * Fonction de recherche d'un utilisateur qui tente de se connecter. 
     * 
-    * Permet de rechercher un  utilisateur qui tente de se connecte.
+    * Permet de rechercher un  utilisateur qui tente de se connecter.
     * @param email de l'utilisateur à rechercher.
-    * @return utilisateur retourne l'utilisateur rechercher.
+    * @return utilisateur retourne l'utilisateur recherché.
     */
     public static function rechercheUtilisateurEmail($email){   
         $querry = 'SELECT * FROM utilisateur WHERE email=:email';
@@ -94,8 +94,8 @@ class UtilisateurGateway {
     * Fonction de recherche d'utilisateur par le nom. 
     * 
     * Permet de rechercher l'utilisateur par son nom.
-    * @param nom de l'utilisateur rechercher.
-    * @return utilisateur retourne l'utilisateur rechercher.
+    * @param nom de l'utilisateur recherché.
+    * @return utilisateur retourne l'utilisateur recherché.
     */
     public static function rechercheUtilisateurNom($nom)
     {        
@@ -113,7 +113,7 @@ class UtilisateurGateway {
     * 
     * Permet de rechercher l'utilisateur par son id.
     * @param id_utilisateur correspond à l'id d'utilisateur.
-    * @return utilisateur retourne l'utilisateur rechercher.
+    * @return utilisateur retourne l'utilisateur recherché.
     */
     public static function rechercheUtilisateurId($id_utilisateur)
     {        
@@ -188,7 +188,7 @@ class UtilisateurGateway {
     * 
     * Permet de supprimer l'utilisateur par son email.
     * @param email correspond à l'email de l'utilisateur à supprimer.
-    * @return true pour prévenir que la suppression à réussi.
+    * @return true pour prévenir que la suppression a réussi.
     */
     public static function supprimerUtilisateur($email){    
         $querry = 'DELETE FROM utilisateur WHERE email=:email';
@@ -200,7 +200,7 @@ class UtilisateurGateway {
     * Fonction de récupération de l'ensemble des utilisateurs. 
     * 
     * Permet de récupérer l'ensemble des utilisateurs.
-    * @return result retourne l'ensemble des utilisateur trié par le nom et le prénom.
+    * @return result retourne l'ensemble des utilisateurs triés par le nom et le prénom.
     */
     public static function afficherToutUtilisateur(){
         //ancienne version non triè. 
@@ -225,9 +225,9 @@ class UtilisateurGateway {
     * @param prenom correspond au prenom de l'utilisateur.
     * @param motDePasse correspond au mot de passe de l'utilisateur.
     * @param dateDeNaissance correspond à la date de naissance de l'utilisateur.
-    * @param profession correspond à la proffesion de l'utilisateur.
-    * @param divers correspond au divers éléments à ajouter pour l'utilisateur.
-    * @param avatar correspond àl'avatar de l'utilisateur (ou le badge).
+    * @param profession correspond à la profession de l'utilisateur.
+    * @param divers correspond aux divers éléments à ajouter pour l'utilisateur.
+    * @param avatar correspond à l'avatar de l'utilisateur (ou le badge).
     * @param idNiveau correspond à l'id du niveau de droit de l'utilisateur
     * @param idAdresse correspond à l'id de l'adresse de l'utilisateur.
     */
@@ -259,7 +259,7 @@ class UtilisateurGateway {
     }
 
     /**
-    * Fonction de modification du mot de passe d'un utilisateurs. 
+    * Fonction de modifier du mot de passe d'un utilisateurs. 
     * 
     * Permet de modifier le mot de passe d'un utilisateurs.
     * @param idUser correspond à l'id de l'utilisateur auquel on veut modifier le mot de passe.
@@ -275,7 +275,7 @@ class UtilisateurGateway {
     /**
     * Fonction de modification du niveau de droit d'un utilisateurs. 
     * 
-    * Permet de modifier le niveau de droit d'un utilisateurs.
+    * Permet de modifier le niveau de droit d'un utilisateur.
     * @param user correspond à l'utilisateur auquel on veut modifier le niveau.
     * @param newNiveau correspond au nouveau niveau à insérer dans la base de données.
     * @return result retourne l'utilisateur avec son niveau modifié.

@@ -12,10 +12,10 @@ class ContactLocalGateway {
     * Fonction d'ajout un contact local.
     * 
     * Permet d'ajouter un contact local.
-    * @param idUtilisateur correspond à l'id de l'utilisateur qui est devenue un contact local.
-    * @param datePremierEngagement correspond à la date de première engagement du contac local.
+    * @param idUtilisateur correspond à l'id de l'utilisateur qui est devenu un contact local.
+    * @param datePremierEngagement correspond à la date de première engagement du contact local.
     * @param dateRenouvellement correspond à la date de renouvellement de contrat du contac hôpital.
-    * @param dateSenior correspond à la date senior du contact hopital.
+    * @param dateSenior correspond à la date senior du contact hôpital.
     * @param visitesBenevoles permet de savoir si le contact local fait des visites bénévoles ou non.
     * @param conventionHopital permet de savoir si le contact local possède une convention hôpital.
     * @param conventionCAMSP permet de savoir si le contact local possède une convention CAMSP.
@@ -41,7 +41,7 @@ class ContactLocalGateway {
     * Fonction de recherche d'un contact local par l'id utilisateur.
     * 
     * Permet de rechercher un contact local par l'id de l'utilisateur.
-    * @param idUtilisateur correspond à l'id de l'utilisateur qui est devenue un contact local.
+    * @param idUtilisateur correspond à l'id de l'utilisateur qui est devenu un contact local.
     * @return ContactLocal correspond aux informations du contact local.
     */
     public static function rechercherContactLocalByIdUser($idUtilisateur){
@@ -59,7 +59,7 @@ class ContactLocalGateway {
     * 
     * Permet de rechercher un contact local par l'id de contact.
     * @param idcontact correspond à l'id du contact rechercher.
-    * @return ContactLocal correspond aux informations du contact local rechercher.
+    * @return ContactLocal correspond aux informations du contact local recherché.
     */
     public static function rechercherContactLocalByIdContact($idcontact){
         $querry = 'SELECT * FROM contactlocal WHERE idContact=:idcontact';
@@ -75,8 +75,8 @@ class ContactLocalGateway {
     /**
     * Fonction de récupération de l'ensemble des contacts locaux.
     * 
-    * Permet de récupération de l'ensemble des contacts locaux triè par nom et prénom.
-    * @return results correspond à l'ensemble des id utilisateur qui sont contact local triè de façons à pouvoir récupérer les utilisateur triè par nom et prénom.
+    * Permet de récupération de l'ensemble des contacts locaux triés par nom et prénom.
+    * @return results correspond à l'ensemble des id utilisateur qui sont contacts locaux triés de façon à pouvoir récupérer les utilisateurs triés par nom et prénom.
     */
     public static function getAll(){
         //ancienne version non triè
@@ -92,8 +92,8 @@ class ContactLocalGateway {
     * Fonction de supression d'un contact local par l'id du contact.
     * 
     * Permet de supprimer un contact local par l'id de contact.
-    * @param idcontact correspond à l'id du contact rechercher.
-    * @return ContactLocal correspond aux informations du contact local rechercher.
+    * @param idcontact correspond à l'id du contact recherché.
+    * @return ContactLocal correspond aux informations du contact local recherché.
     */
     public static function supprimerContact($idContact){
         $querry = 'DELETE FROM contactlocal WHERE idContact = :idContact';
@@ -105,8 +105,8 @@ class ContactLocalGateway {
     * 
     * Permet de modifier un contact local.
     * @param idcontact correspond à l'id du contact.
-    * @param datePremierEngagement correspond à la date de première engagement du contac local.
-    * @param dateRenouvellement correspond à la date de renouvellement de contrat du contac hôpital.
+    * @param datePremierEngagement correspond à la date de première engagement du contact local.
+    * @param dateRenouvellement correspond à la date de renouvellement de contrat du contact hôpital.
     * @param dateSenior correspond à la date senior du contact hopital.
     * @param visitesBenevoles permet de savoir si le contact local fait des visites bénévoles ou non.
     * @param conventionHopital permet de savoir si le contact local possède une convention hôpital.

@@ -47,7 +47,7 @@ class AdresseGateway {
     * Fonction de recheche d'une adresse par l'id de l'adresse.
     * 
     * Recherche une adresse dans la table adresse de la base SQL avec l'id de l'adresse.
-    * Utiliser pour récupérer l'adresse d'un utilisateur.
+    * Utilisé pour récupérer l'adresse d'un utilisateur.
     * @param numRue correspond au numéro de rue de l'adresse.
     * @param nomRue correspond au nom de rue de l'adresse.
     * @param idVille correspond à l'id de la ville dans laquelle se trouve l'adresse.
@@ -66,7 +66,7 @@ class AdresseGateway {
     /**
     * Fonction de récupéreration l'ensemble des adresse.
     * 
-    * Récupére l'ensemble des adresse de la table, cette fonction n'est pas utiliser pour le moment.
+    * Récupère l'ensemble des adresse de la table, cette fonction n'est pas utilisée pour le moment.
     * @return result retourne le résultat de la recherche de l'adresse.
     */
     public static function getAll(){

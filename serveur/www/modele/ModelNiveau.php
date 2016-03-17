@@ -12,7 +12,7 @@ class ModelNiveau {
     * 
     * Permet de le nom du niveau de droit.
     * @param id_niveau correspond au niveau dont on recherche l'intitulé.
-    * @return le nom du niveau ou faux si il n'existe pas.
+    * @return le nom du niveau ou faux s'il n'existe pas.
     */
 	public static function rechercherNom($id_niveau){
 		return NiveauGateway::rechercherNom($id_niveau);	
@@ -23,7 +23,7 @@ class ModelNiveau {
     * 
     * Permet de rechercher l'id d'un niveau par son nom.
     * @param libelle correspond à l'intitulé du niveau.
-    * @return l'id du niveau rechercher.
+    * @return l'id du niveau recherché.
     */
 	public static function rechercherId($libelle){
 		return NiveauGateway::rechercheridNiveau($libelle);
@@ -32,7 +32,7 @@ class ModelNiveau {
 	/**
     * Fonction de récupération de l'ensemble des niveau. 
     * 
-    * Permet de de récupérer l'ensemble des niveau de droit.
+    * Permet de récupérer l'ensemble des niveau de droit.
     * @return l'ensemble des niveau d'utilisateur.
     */
 	public static function getAll(){

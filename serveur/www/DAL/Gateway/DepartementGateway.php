@@ -40,7 +40,7 @@ class DepartementGateway {
     /**
     * Fonction de recherche d'un département par son id.
     * 
-    * Permet de rechercher un département par son id de façon a rechercher à qu'elle département appartient une ville.
+    * Permet de rechercher un département par son id de façon a rechercher à quel département appartient une ville.
     * @param idDepartement correspond à l'id du département.
     * @return result correspond au résultat de la recherche.
     */
@@ -56,9 +56,9 @@ class DepartementGateway {
 
 
      /**
-    * Fonction de récupération de l'ensemble des département.
+    * Fonction de récupération de l'ensemble des départements.
     * 
-    * Permet de récupérer l'ensembles des département.
+    * Permet de récupérer l'ensembles des départements.
     * @return result correspond au résultat de la recherche.
     */
     public static function getAll(){

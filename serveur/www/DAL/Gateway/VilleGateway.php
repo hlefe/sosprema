@@ -12,7 +12,7 @@ class VilleGateway {
     * Fonction d'ajout d'une ville. 
     * 
     * Permet d'ajouter une ville.
-    * @param nomVille correspond au non de la ville.
+    * @param nomVille correspond au nom de la ville.
     * @param codePostal correspond au code postal de la ville.
     * @param idDepartement correspond à l'id du département auquel appartient le département.
     */
@@ -29,7 +29,7 @@ class VilleGateway {
     * Permet de rechercher une ville grâce à son nom et son code postal.
     * @param nomVille correspond au nom de la ville.
     * @param codePostal correspond au code postal de la ville.
-    * @return result retourne le résultat de la recherche faux si la ville n'a pas était trouvé.
+    * @return result retourne le résultat de la recherche faux si la ville n'a pas été trouvée.
     */
     public static function rechercherVille($nomVille, $codePostal){
         $querry = 'SELECT * FROM ville WHERE nomVille=:nom AND codePostal=:codePostal';
@@ -46,8 +46,8 @@ class VilleGateway {
     * Fonction de recherche d'une ville par son id. 
     * 
     * Permet de rechercher une ville par son id.
-    * @param idVille correspond à l'id de la ville rechercher.
-    * @return result retourne la ville rechercher ou faux si elle n'a pas était trouvé.
+    * @param idVille correspond à l'id de la ville recherchée.
+    * @return result retourne la ville rechercher ou faux si elle n'a pas été trouvée.
     */
     public static function rechercherVilleById($idVille){
         $querry = 'SELECT * FROM ville WHERE idVille=:idVille';

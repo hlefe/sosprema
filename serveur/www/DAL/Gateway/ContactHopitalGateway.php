@@ -15,7 +15,7 @@ class ContactHopitalGateway {
     * @param idHopital correspond à l'id de l'hôpital à laquelle il appartient.
     * @param nom correspond au nom du contact de l'hôpital.
     * @param prenom correspond au prenom du contact de l'hôpital.
-    * @param numero au numéro du contact de l'hôpital.
+    * @param numero numéro du contact de l'hôpital.
     * @return result retourne le résultat de la recherche de l'adresse.
     */
     public static function ajouterContactHopital($idHopital, $nom, $prenom, $profession,$numero)
@@ -33,8 +33,8 @@ class ContactHopitalGateway {
     * Fonction de recherche de contact hopital.
     * 
     * Permet de rechercher un contact hôpital grâce à son id.
-    * @param idContactHopital correspond à l'id du contact local rechercher.
-    * @return ContactHopital correspondant au contact hopital rechercher.
+    * @param idContactHopital correspond à l'id du contact local recherché.
+    * @return ContactHopital correspondant au contact hopital recherché.
     */
     public static function rechercherContactHopital($idContactHopital){
         $querry = 'SELECT * FROM contacthopital WHERE idContactHopital=:idContactHopital';
@@ -49,8 +49,8 @@ class ContactHopitalGateway {
     /**
     * Fonction de récupération de l'ensemble des contact hôpital.
     * 
-    * Permet récupération de l'ensemble des contact hôpital.
-    * @return result ensemble des lgne récupérer dans la base de données.
+    * Permet la récupération de l'ensemble des contact hôpital.
+    * @return result ensemble des lignes récupérées dans la base de données.
     */
     public static function getAll(){
         $querry = 'SELECT * FROM contacthopital';
@@ -60,11 +60,11 @@ class ContactHopitalGateway {
     }
     
     /**
-    * Fonction se suppression d'un contact hopital.
+    * Fonction de suppression d'un contact hopital.
     * 
     * Permet de rechercher un contact hôpital grâce à son id.
-    * @param idContactHopital correspond à l'id du contact local rechercher.
-    * @return ContactHopital correspondant au contact hopital rechercher.
+    * @param idContactHopital correspond à l'id du contact local recherché.
+    * @return ContactHopital correspondant au contact hopital recherché.
     */
     public static function supprimerContact($idContactHopital){
         $querry = 'DELETE FROM contacthopital WHERE idContactHopital = :idContactHopital';
@@ -72,15 +72,15 @@ class ContactHopitalGateway {
     }
     
     /**
-    * Fonction de modification d'un contact hopital.
+    * Fonction de modification d'un contact hôpital.
     * 
-    * Permet de modification d'un contact hôpital, n'est pas utiliser.
-    * @param idContactHopital correspond à l'id du contact local rechercher.
-    * @param idHopital correspond à l'id de l'hopital auquel est lié le contact hopital.
+    * Permet de modification d'un contact hôpital, n'est pas utilisée.
+    * @param idContactHopital correspond à l'id du contact local recherché.
+    * @param idHopital correspond à l'id de l'hôpital auquel est lié le contact hôpital.
     * @param nom correspond au nom du contact de l'hôpital.
     * @param prenom correspond au prenom du contact de l'hôpital.
     * @param numero au numéro du contact de l'hôpital.
-    * @return ContactHopital correspondant au contact hopital rechercher.
+    * @return ContactHopital correspondant au contact hôpital recherché.
     */
     public static function modifierContact($idContactHopital, $idHopital, $nom, $prenom, $profession)
     {
@@ -98,11 +98,11 @@ class ContactHopitalGateway {
     }
 
     /**
-    * Fonction de recherche des contacts hôpital liè à un hôpital.
+    * Fonction de recherche des contacts hôpitaux liés à un hôpital.
     * 
-    * Permet de modification d'un contact hôpital, n'est pas utiliser.
-    * @param idHopital correspond à l'id de l'hopital auquel sont lié les contacts hôpital.
-    * @return ContactsHopital correspondant à l'ensemble des contacts hopital liè à l'hôpital.
+    * Permet de modifier un contact hôpital, n'est pas utilisée.
+    * @param idHopital correspond à l'id de l'hopital auquel sont liés les contacts hôpitaux.
+    * @return ContactsHopital correspondant à l'ensemble des contacts hopitaux liés à l'hôpital.
     */
     public static function rechercherContactHopitalByHopital($idHopital){
         $querry = 'SELECT * FROM contacthopital WHERE idHopital=:idHopital';

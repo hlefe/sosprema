@@ -10,11 +10,11 @@ class ModelGestionLieu {
 	/**
     * Fonction de vérification de la présence d'une ville en base. 
     * 
-    * Permet de vérifier si la ville est en base ou nom pour ne pas l'ajouter plusieur fois.
-    * @param nomVille correspond au nom de la ville rechercher.
+    * Permet de vérifier si la ville est en base ou nom pour ne pas l'ajouter plusieurs fois.
+    * @param nomVille correspond au nom de la ville recherchée.
     * @param codePostal correspond au code postal de la ville à rechercher.
-    * @param idDepartement correspond à l'id du département ou se trouve la ville.
-    * @return retourne l'id de la ville trouver ou si elle n'est pas trouvé, l'ajoute en base.
+    * @param idDepartement correspond à l'id du département où se trouve la ville.
+    * @return retourne l'id de la ville trouvée ou si elle n'est pas trouvée, l'ajoute en base.
     */
 	public static function verifierPresenceVille($nomVille, $codePostal, $idDepartement){
 		$ville=VilleGateway::rechercherVille($nomVille,$codePostal);
@@ -29,10 +29,10 @@ class ModelGestionLieu {
 	/**
     * Fonction de vérification de la présence d'un département en base. 
     * 
-    * Permet de vérifier si le département est en base ou nom pour ne pas l'ajouter plusieur fois.
-    * @param nomDepartement correspond au nom de la rechercher.
-    * @param idRegion correspond à l'id de la région ou se trouve le département.
-    * @return retourne l'id du département trouver ou si il n'est pas trouvé, l'ajoute en base.
+    * Permet de vérifier si le département est en base ou nom pour ne pas l'ajouter plusieurs fois.
+    * @param nomDepartement correspond au nom de la recherche.
+    * @param idRegion correspond à l'id de la région où se trouve le département.
+    * @return retourne l'id du département trouvé ou s'il n'est pas trouvé, l'ajoute en base.
     */
 	public static function verifierPresenceDepartement($nomDepartement, $idRegion){
 		$departement = DepartementGateway::rechercherDepartement($nomDepartement);
@@ -48,8 +48,8 @@ class ModelGestionLieu {
     * Fonction de vérification de la présence d'une région en base. 
     * 
     * Permet de vérifier si la région est en base ou nom pour ne pas l'ajouter plusieur fois.
-    * @param nomRegion correspond au nom de la région de la rechercher.
-    * @return retourne l'id de la région trouver ou si elle n'est pas trouvé, l'ajoute en base.
+    * @param nomRegion correspond au nom de la région de la recherche.
+    * @return retourne l'id de la région trouvée ou si elle n'est pas trouvée, l'ajoute en base.
     */
 	public static function verifierPresenceRegion($nomRegion){
 		$region = RegionGateway::rechercherRegion($nomRegion);
@@ -64,11 +64,11 @@ class ModelGestionLieu {
 	/**
     * Fonction de vérification de la présence d'une adresse en base. 
     * 
-    * Permet de vérifier si l'adresse est en base ou nom pour ne pas l'ajouter plusieur fois.
-    * @param numRue correspond au numèro de la rue de la nouvelle adresse.
-    * @param nomRue correspond au nom de la rue rechercher.
+    * Permet de vérifier si l'adresse est en base ou non pour ne pas l'ajouter plusieurs fois.
+    * @param numRue correspond au numéro de la rue de la nouvelle adresse.
+    * @param nomRue correspond au nom de la rue recherchée.
     * @param idVille correspond à l'id de la ville à rechercher.
-    * @return retourne l'id de l'adresse trouver ou si elle n'est pas trouvé, l'ajoute en base.
+    * @return retourne l'id de l'adresse trouvée ou si elle n'est pas trouvée, l'ajoute en base.
     */
 	public static function verifierPresenceAdresse($numRue, $nomRue, $idVille){
 		$adresse = AdresseGateway::rechercherAdresse($numRue, $nomRue, $idVille);
@@ -83,8 +83,8 @@ class ModelGestionLieu {
 	/**
     * Fonction de gestion de l'ajout d'une adresse. 
     * 
-    * Permet de l'ajout et la modification de la nouvelle adresse.
-    * @return idAdresse retourne l'id de l'adresse ajouter ou rechercher.
+    * Permet l'ajout et la modification de la nouvelle adresse.
+    * @return idAdresse retourne l'id de l'adresse ajoutée ou recherchée.
     */
 	public static function gestionAjoutModifAdresse(){
 		$numRue=VariableExterne::verifChampOptionnel('numRue');

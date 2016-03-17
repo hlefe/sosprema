@@ -16,7 +16,7 @@ class EnfantGateway {
     * Permet d'ajouter un enfant pour un contact local.
     * @param prenom correspond au prenom de l'enfant à ajouter.
     * @param dateDeNaissance correspond à la date de naissance de l'enfant.
-    * @param termeNaissance correspond à la terme de la naissance de l'enfant si prema ou non.
+    * @param termeNaissance correspond au terme de la naissance de l'enfant si prema ou non.
     * @param idContact correspond à l'id du contact à qui appartient l'enfant.
     */
     public static function ajouterEnfant($prenom, $dateNaissance, $termeNaissance, $idContact){
@@ -34,7 +34,7 @@ class EnfantGateway {
     * 
     * Permet de rechercher un enfant pour un contact local dont on possède l'id.
     * @param idContact correspond à l'id du contact à qui appartient l'enfant.
-    * @return resuls est l'ensemble des du contact local.
+    * @return results est l'ensemble des résultats du contact local.
     */
     public static function rechercherEnfants($idContact){
         $querry = 'SELECT * FROM enfant WHERE idContact=:idContact';

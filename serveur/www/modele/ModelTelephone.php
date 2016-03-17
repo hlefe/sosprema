@@ -34,7 +34,7 @@ class ModelTelephone {
 	* Fonction d'ajout du numéro de téléphone d'un utilisateur. 
     * 
     * Permet d'ajouter un numéro de téléphone d'un utilisateur.
-    * @param utilisateur correspond à l'utilisateur à qui l'on vas ajouter le numéro.
+    * @param utilisateur correspond à l'utilisateur à qui on va ajouter le numéro.
     * @return utilisateur correspond à l'utilisateur modifié avec le nouveau numéro.
     */
 	public static function ajouterTelephone($utilisateur){
@@ -60,10 +60,10 @@ class ModelTelephone {
 	}
 
 	/**
-	* Fonction de supression du numéro de téléphone d'un utilisateur. 
+	* Fonction de suppression du numéro de téléphone d'un utilisateur. 
     * 
-    * Permet de suprimer un numéro de téléphone.
-    * @param idTelephone correspond à l'id du téléphone qui va être suprimer.
+    * Permet de supprimer un numéro de téléphone.
+    * @param idTelephone correspond à l'id du téléphone qui va être supprimé.
     */
 	public static function supprimerTelephone($idTelephone){
 		TelephoneGateway::supprimerTelephone($idTelephone);

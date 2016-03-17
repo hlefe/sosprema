@@ -102,9 +102,9 @@ class ModelGestionUtilisateur {
     /**
     * Fonction de supression d'un utilisateur. 
     * 
-    * Permet de suprimer un utilisateur.
-    * @param emailConnexion correspond à 'lemail de connexion de l'utilisateur à suprimer.
-    * @return retourne le résultat de la supression.
+    * Permet de supprimer un utilisateur.
+    * @param emailConnexion correspond à l'email de connexion de l'utilisateur à supprimer.
+    * @return retourne le résultat de la suppression.
     */
     public static function supprimerUtilisateur($emailConnexion) {
         $utilisateur = self::rechercheUtilisateur($emailConnexion);
@@ -115,9 +115,9 @@ class ModelGestionUtilisateur {
     }
 
     /**
-    * Fonction de récupération de l'ensemble des utilisateur. 
+    * Fonction de récupération de l'ensemble des utilisateurs. 
     * 
-    * Permet de récupérer l'ensemble des utilisateur dans la base.
+    * Permet de récupérer l'ensemble des utilisateurs dans la base.
     * @return utilisateurs correspond à la liste des utilisateurs.
     */
     public static function afficherToutUtilisateur() {
@@ -130,8 +130,8 @@ class ModelGestionUtilisateur {
     * Fonction de modification de mot de passe. 
     * 
     * Permet de modifier le mot de passe d'un utilisateur.
-    * @param utilisateur correspond à l'utilisateur dont le mot de passe et modifier.
-    * @return utilisateur est l'utilisateur avec le mot de passe qui à été modifier.
+    * @param utilisateur correspond à l'utilisateur dont le mot de passe est modifié.
+    * @return utilisateur est l'utilisateur avec le mot de passe qui à été modifié.
     */
     public static function modifierMotDePasse($utilisateur){
 
@@ -162,7 +162,7 @@ class ModelGestionUtilisateur {
     * Permet de modifier le niveau de droit de l'utilisateur.
     * @param user correspond à l'utilisateur.
     * @param newNiveau correspond au nouveau niveau de l'utilisateur.
-    * @return utilisateur correspond au nouvelle utilisateur avec son niveau modifier.
+    * @return utilisateur correspond au nouvel utilisateur avec son niveau modifié.
     */
     public static function modifierNiveau($user, $newNiveau){
         $utilisateur = UtilisateurGateway::modifierNiveau($user, $newNiveau);
@@ -172,9 +172,9 @@ class ModelGestionUtilisateur {
     /**
     * Fonction de vérification de la présence l'email en base. 
     * 
-    * Permet de vérifier si l'adresse email est déjà utiliser ou non.
+    * Permet de vérifier si l'adresse email est déjà utilisée ou non.
     * @param email correspond à l'adresse email à vérifier.
-    * @return retourne vrai si l'adresse est en base faux sinon.
+    * @return retourne vrai si l'adresse est en base, faux sinon.
     */
     public static function verifierEmailNonPresent($email){
         if(UtilisateurGateway::rechercheUtilisateurEmail($email) != false){
@@ -212,8 +212,8 @@ class ModelGestionUtilisateur {
     /**
     * Fonction de recherche des utilisateurs qui sont contact local. 
     * 
-    * Permet de rechercher des utilisateurs qui sont contact local.
-    * @return contactLocal est l'ensemble des utilisateurs qui sont contact locaux.
+    * Permet de rechercher des utilisateurs qui sont contacts locaux.
+    * @return contactLocal est l'ensemble des utilisateurs qui sont contacts locaux.
     */
     public static function rechercheUtilisateurContactLocal(){
         $tmpContact = ContactLocalGateway::getAll();
@@ -224,11 +224,11 @@ class ModelGestionUtilisateur {
     }
 
     /**
-    * Fonction de recherche des utilisateur contact locaux par hôpitaux. 
+    * Fonction de recherche des utilisateurs contacts locaux par hôpitaux. 
     * 
     * Permet de rechercher les utilisateurs qui sont contact locaux par hôpitaux.
     * @param idHopital correspond à l'id de l'hôpital dont on recherche les contact locaux.
-    * @return contactLocal est l'ensemble des utilisateurs qui sont contact locaux auprés de l'hôpital.
+    * @return contactLocal est l'ensemble des utilisateurs qui sont contacts locaux auprés de l'hôpital.
     */
     public static function rechercheUtilisateurContactLocalByIdHop($idHopital){
         $tmpContact = ContactLocalGateway::getAll();

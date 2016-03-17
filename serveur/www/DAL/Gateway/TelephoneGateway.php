@@ -33,7 +33,7 @@ class TelephoneGateway {
     * Fonction d'ajout d'un téléphones. 
     * 
     * Permet d'ajouter un téléphone à un utilisateur.
-    * @param intitule correspond à l'intitule du téléphone.
+    * @param intitule correspond à l'intitulé du téléphone.
     * @param numero correspond au numero de téléphone à ajouter.
     * @param userId correspond à l'id de l'utilisateur du numéro de téléphone.
     */

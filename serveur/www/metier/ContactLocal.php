@@ -23,7 +23,7 @@ class ContactLocal {
     * 
     * Permet de récupérer la valeur d'une propriété.
     * @param property correspond à la propriété.
-    * @return result retourne la valeur de la proprièté demander.
+    * @return result retourne la valeur de la propriété demandée.
     */
 	public function __get($property) {
         return $this->$property;
@@ -43,8 +43,8 @@ class ContactLocal {
     /**
     * Fonction de construction de l'objet. 
     * 
-    * Permet de l'objet avec les bonnes valeurs.
-    * @param param correspond au tableau avec comme clef les propriétés et comme valeur la valeur de la propriétés.
+    * Permet  construire l'objet avec les bonnes valeurs.
+    * @param param correspond au tableau avec comme clef les propriétés et comme valeur la valeur de la propriété.
     */
     public function __construct($param) {
             foreach ($param as $key => $value){

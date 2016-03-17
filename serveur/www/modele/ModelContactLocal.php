@@ -35,7 +35,7 @@ class ModelContactLocal {
     * Fonction de récupération de l'ensemble des contacts locaux. 
     * 
     * Permet de récupérer l'ensemble des contacts locaux.
-    * @return contacts l'ensemble des contatc locaux trouvé.
+    * @return contacts l'ensemble des contacts locaux trouvé.
     */
     public static function afficherToutContact(){
         $contacts = ContactLocalGateway::getAll();

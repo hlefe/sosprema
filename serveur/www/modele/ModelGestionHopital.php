@@ -12,7 +12,7 @@ class ModelGestionHopital {
     * 
     * Permet de rechercher un hôpital.
     * @param idHopital corespond à l'id de l'hopital à rechercher.
-    * @return hopital correspond à l'hôpital rechercher.
+    * @return hopital correspond à l'hôpital recherché.
     */
     public static function rechercherHopital($idHopital){
         
@@ -42,7 +42,7 @@ class ModelGestionHopital {
     /**
     * Fonction d'ajout d'un hôpital. 
     * 
-    * Permet d'ajouter un hôpital fait.
+    * Permet d'ajouter un hôpital.
     */
     public static function ajouterHopital(){
        
@@ -66,7 +66,7 @@ class ModelGestionHopital {
     * Fonction de supression d'un hôpital. 
     * 
     * Permet de suprimer un hôpital par son id.
-    * @param idHopital correspond à l'id de l'hôpital à suprmer.
+    * @param idHopital correspond à l'id de l'hôpital à supprimer.
     */
     public static function supprimerHopital($idHopital){
         HopitalGateway::supprimerHopital($idHopital);

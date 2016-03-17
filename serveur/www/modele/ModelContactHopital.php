@@ -38,7 +38,7 @@ class ModelContactHopital {
     /**
     * Fonction de récupération de l'ensemble des contact hôpitaux. 
     * 
-    * Permet de récupérer l'ensemble des contact hôpitaux'.
+    * Permet de récupérer l'ensemble des contact hôpitaux.
     * @return retourne le résultat de la récupération.
     */
     public static function getAll(){
@@ -48,7 +48,7 @@ class ModelContactHopital {
     /**
     * Fonction de suppression d'un contact hôpital. 
     * 
-    * Permet de suprimer un contact hôpita.
+    * Permet de suprimer un contact hôpital.
     * @param idContactHopital correspond à l'id du contact hôpital à supprimer.
     */
     public static function supprimerContactHopital($idContactHopital){
@@ -77,7 +77,7 @@ class ModelContactHopital {
     }
 
     /**
-    * Fonction de récupération des contacts hôpital d'un hôpital donné. 
+    * Fonction de récupération des contacts hôpitaux d'un hôpital donné. 
     * 
     * Permet de récupérer les contact hôpital d'un hôpital.
     * @param idHopital correspond à l'id de l'hôpital.

@@ -13,7 +13,7 @@ class NiveauGateway
     * Fonction de recherche du nom du niveau utilisateur. 
     * 
     * Permet de rechercher le nom du niveau utilisateur correspondant à l'id du niveau.
-    * @param idNiveau correspond à l'id du niveau utilisateur rechercher.
+    * @param idNiveau correspond à l'id du niveau utilisateur recherché.
     * @return nom correspond au nom qui identifie le niveau d'utilisateur (ex: administrateur).
     */
     public static function rechercherNom($idNiveau){
@@ -48,7 +48,7 @@ class NiveauGateway
     /**
     * Fonction de récupération de l'ensembl des niveaux utilisateurs. 
     * 
-    * Permet de récupérer de l'ensembl des niveaux utilisateurs.
+    * Permet de récupérer de l'ensemble des niveaux utilisateurs.
     * @return result est un tableau correspondant au résultat de la requête SQL.
     */
     public static function getAll(){
