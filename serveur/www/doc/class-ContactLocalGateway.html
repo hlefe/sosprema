@@ -132,7 +132,7 @@
 		
 		<b>Package:</b> <a href="package-DAL.html">DAL</a>\<a href="package-DAL.gateway.html">gateway</a><br>
 
-			<b>Located at</b> <a href="source-class-ContactLocalGateway.html#2-84" title="Go to source code">DAL/Gateway/ContactLocalGateway.php</a>
+			<b>Located at</b> <a href="source-class-ContactLocalGateway.html#2-140" title="Go to source code">DAL/Gateway/ContactLocalGateway.php</a>
 		<br>
 	</div>
 
@@ -152,16 +152,39 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterContactLocal">#</a>
-		<code><a href="source-class-ContactLocalGateway.html#11-24" title="Go to source code">ajouterContactLocal</a>( <span> <var>$idUtilisateur</var></span>, <span> <var>$datePremierEngagement</var></span>, <span> <var>$dateRenouvellement</var></span>, <span> <var>$dateSenior</var></span>, <span> <var>$visitesBenevoles</var></span>, <span> <var>$conventionHopital</var></span>, <span> <var>$conventionCAMSP</var></span>, <span> <var>$conventionPMI</var></span>, <span> <var>$charteVisiteur</var></span> )</code>
+		<code><a href="source-class-ContactLocalGateway.html#11-38" title="Go to source code">ajouterContactLocal</a>( <span>idUtilisateur <var>$idUtilisateur</var></span>, <span>datePremierEngagement <var>$datePremierEngagement</var></span>, <span>dateRenouvellement <var>$dateRenouvellement</var></span>, <span>dateSenior <var>$dateSenior</var></span>, <span>visitesBenevoles <var>$visitesBenevoles</var></span>, <span>conventionHopital <var>$conventionHopital</var></span>, <span>conventionCAMSP <var>$conventionCAMSP</var></span>, <span>conventionPMI <var>$conventionPMI</var></span>, <span>charteVisiteur <var>$charteVisiteur</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout un contact local.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout un contact local.</p>
+
+<p>Permet d'ajouter un contact local.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idUtilisateur</var></dt>
+					<dd>à l'id de l'utilisateur qui est devenu un contact local.</dd>
+					<dt><var>$datePremierEngagement</var></dt>
+					<dd>à la date de première engagement du contact local.</dd>
+					<dt><var>$dateRenouvellement</var></dt>
+					<dd>à la date de renouvellement de contrat du contac hôpital.</dd>
+					<dt><var>$dateSenior</var></dt>
+					<dd>à la date senior du contact hôpital.</dd>
+					<dt><var>$visitesBenevoles</var></dt>
+					<dd>de savoir si le contact local fait des visites bénévoles ou non.</dd>
+					<dt><var>$conventionHopital</var></dt>
+					<dd>de savoir si le contact local possède une convention hôpital.</dd>
+					<dt><var>$conventionCAMSP</var></dt>
+					<dd>de savoir si le contact local possède une convention CAMSP.</dd>
+					<dt><var>$conventionPMI</var></dt>
+					<dd>de savoir si le contact local possède une convention PMI.</dd>
+					<dt><var>$charteVisiteur</var></dt>
+					<dd>de savoir si le contact local possède une charte visiteur.</dd>
+				</dl></div>
 
 
 
@@ -175,24 +198,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-ContactLocal.html">ContactLocal</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactLocalByIdUser">#</a>
-		<code><a href="source-class-ContactLocalGateway.html#26-34" title="Go to source code">rechercherContactLocalByIdUser</a>( <span> <var>$idUtilisateur</var></span> )</code>
+		<code><a href="source-class-ContactLocalGateway.html#40-55" title="Go to source code">rechercherContactLocalByIdUser</a>( <span>idUtilisateur <var>$idUtilisateur</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'un contact local par l'id utilisateur.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'un contact local par l'id utilisateur.</p>
+
+<p>Permet de rechercher un contact local par l'id de l'utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idUtilisateur</var></dt>
+					<dd>à l'id de l'utilisateur qui est devenu un contact local.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-ContactLocal.html">ContactLocal</a></code><br>correspond aux informations du contact local.
+				</div>
 
 
 
@@ -205,24 +239,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-ContactLocal.html">ContactLocal</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactLocalByIdContact">#</a>
-		<code><a href="source-class-ContactLocalGateway.html#36-45" title="Go to source code">rechercherContactLocalByIdContact</a>( <span> <var>$idcontact</var></span> )</code>
+		<code><a href="source-class-ContactLocalGateway.html#57-73" title="Go to source code">rechercherContactLocalByIdContact</a>( <span>idcontact <var>$idcontact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'un contact local par l'id du contact.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'un contact local par l'id du contact.</p>
+
+<p>Permet de rechercher un contact local par l'id de contact.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idcontact</var></dt>
+					<dd>à l'id du contact rechercher.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-ContactLocal.html">ContactLocal</a></code><br>correspond aux informations du contact local recherché.
+				</div>
 
 
 
@@ -235,24 +280,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			results
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAll">#</a>
-		<code><a href="source-class-ContactLocalGateway.html#47-55" title="Go to source code">getAll</a>( )</code>
+		<code><a href="source-class-ContactLocalGateway.html#75-89" title="Go to source code">getAll</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensemble des contacts locaux.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensemble des contacts locaux.</p>
+
+<p>Permet de récupération de l'ensemble des contacts locaux triés par nom et prénom.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					results<br>correspond à l'ensemble des id utilisateur qui sont contacts locaux triés de façon à pouvoir récupérer les utilisateurs triés par nom et prénom.
+				</div>
 
 
 
@@ -265,24 +316,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-ContactLocal.html">ContactLocal</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerContact">#</a>
-		<code><a href="source-class-ContactLocalGateway.html#57-60" title="Go to source code">supprimerContact</a>( <span> <var>$idContact</var></span> )</code>
+		<code><a href="source-class-ContactLocalGateway.html#91-101" title="Go to source code">supprimerContact</a>( <span>idcontact <var>$idContact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de supression d'un contact local par l'id du contact.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de supression d'un contact local par l'id du contact.</p>
+
+<p>Permet de supprimer un contact local par l'id de contact.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContact</var></dt>
+					<dd>à l'id du contact recherché.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-ContactLocal.html">ContactLocal</a></code><br>correspond aux informations du contact local recherché.
+				</div>
 
 
 
@@ -295,24 +357,51 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-ContactLocal.html">ContactLocal</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierContact">#</a>
-		<code><a href="source-class-ContactLocalGateway.html#62-83" title="Go to source code">modifierContact</a>( <span> <var>$idContact</var></span>, <span> <var>$datePremierEngagement</var></span>, <span> <var>$dateRenouvellement</var></span>, <span> <var>$dateSenior</var></span>, <span> <var>$visitesBenevoles</var></span>, <span> <var>$conventionHopital</var></span>, <span> <var>$conventionCAMSP</var></span>, <span> <var>$conventionPMI</var></span>, <span> <var>$charteVisiteur</var></span> )</code>
+		<code><a href="source-class-ContactLocalGateway.html#103-139" title="Go to source code">modifierContact</a>( <span>idcontact <var>$idContact</var></span>, <span>datePremierEngagement <var>$datePremierEngagement</var></span>, <span>dateRenouvellement <var>$dateRenouvellement</var></span>, <span>dateSenior <var>$dateSenior</var></span>, <span>visitesBenevoles <var>$visitesBenevoles</var></span>, <span>conventionHopital <var>$conventionHopital</var></span>, <span>conventionCAMSP <var>$conventionCAMSP</var></span>, <span>conventionPMI <var>$conventionPMI</var></span>, <span>charteVisiteur <var>$charteVisiteur</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modifier un contact local.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modifier un contact local.</p>
+
+<p>Permet de modifier un contact local.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContact</var></dt>
+					<dd>à l'id du contact.</dd>
+					<dt><var>$datePremierEngagement</var></dt>
+					<dd>à la date de première engagement du contact local.</dd>
+					<dt><var>$dateRenouvellement</var></dt>
+					<dd>à la date de renouvellement de contrat du contact hôpital.</dd>
+					<dt><var>$dateSenior</var></dt>
+					<dd>à la date senior du contact hopital.</dd>
+					<dt><var>$visitesBenevoles</var></dt>
+					<dd>de savoir si le contact local fait des visites bénévoles ou non.</dd>
+					<dt><var>$conventionHopital</var></dt>
+					<dd>de savoir si le contact local possède une convention hôpital.</dd>
+					<dt><var>$conventionCAMSP</var></dt>
+					<dd>de savoir si le contact local possède une convention CAMSP.</dd>
+					<dt><var>$conventionPMI</var></dt>
+					<dd>de savoir si le contact local possède une convention PMI.</dd>
+					<dt><var>$charteVisiteur</var></dt>
+					<dd>de savoir si le contact local possède une charte visiteur.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-ContactLocal.html">ContactLocal</a></code><br>correspond aux informations du contact local rechercher.
+				</div>
 
 
 

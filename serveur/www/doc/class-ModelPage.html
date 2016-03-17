@@ -129,7 +129,7 @@
 		
 		<b>Package:</b> <a href="package-modele.html">modele</a><br>
 
-			<b>Located at</b> <a href="source-class-ModelPage.html#2-19" title="Go to source code">modele/ModelPage.php</a>
+			<b>Located at</b> <a href="source-class-ModelPage.html#2-33" title="Go to source code">modele/ModelPage.php</a>
 		<br>
 	</div>
 
@@ -142,24 +142,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			l&#039;ensemble
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_obtenirTout">#</a>
-		<code><a href="source-class-ModelPage.html#10-13" title="Go to source code">obtenirTout</a>( <span> <var>$utilisateur</var></span> )</code>
+		<code><a href="source-class-ModelPage.html#10-20" title="Go to source code">obtenirTout</a>( <span><code><a href="class-utilisateur.html">utilisateur</a></code> <var>$utilisateur</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensemble des pages.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensemble des pages.</p>
+
+<p>Permet de récupérer l'ensemble des pages de la base.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$utilisateur</var></dt>
+					<dd>à l'utilisateur connecté, on l'utilise pour vérifier ses droits.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					l&#039;ensemble<br>des pages trouvées.
+				</div>
 
 
 
@@ -172,24 +183,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-page.html">page</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherPage">#</a>
-		<code><a href="source-class-ModelPage.html#15-18" title="Go to source code">rechercherPage</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-ModelPage.html#22-32" title="Go to source code">rechercherPage</a>( <span>id <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'une page.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'une page.</p>
+
+<p>Permet de rechercher une page grâce à son id.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>à l'id de la page recherchée.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-page.html">page</a></code><br>est la page trouver correspondant à l'id.
+				</div>
 
 
 

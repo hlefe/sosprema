@@ -132,7 +132,7 @@
 		
 		<b>Package:</b> <a href="package-DAL.html">DAL</a>\<a href="package-DAL.gateway.html">gateway</a><br>
 
-			<b>Located at</b> <a href="source-class-RelationGateway.html#2-46" title="Go to source code">DAL/Gateway/RelationGateway.php</a>
+			<b>Located at</b> <a href="source-class-RelationGateway.html#2-88" title="Go to source code">DAL/Gateway/RelationGateway.php</a>
 		<br>
 	</div>
 
@@ -145,24 +145,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			results
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactLocalByIdHopital">#</a>
-		<code><a href="source-class-RelationGateway.html#11-16" title="Go to source code">rechercherContactLocalByIdHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-RelationGateway.html#12-24" title="Go to source code">rechercherContactLocalByIdHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche de l'id d'un contact local.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche de l'id d'un contact local.</p>
+
+<p>Permet de rechercher l'id d'un contact local.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital en relation avec les contacts hôpitaux.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					results<br>correspond à l'ensemble idContact, id Hopital avec l'id de l'hôpital recherché.
+				</div>
 
 
 
@@ -175,24 +186,37 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactLocalInHopital">#</a>
-		<code><a href="source-class-RelationGateway.html#18-23" title="Go to source code">rechercherContactLocalInHopital</a>( <span> <var>$idHopital</var></span>, <span> <var>$idContact</var></span> )</code>
+		<code><a href="source-class-RelationGateway.html#26-39" title="Go to source code">rechercherContactLocalInHopital</a>( <span>idHopital <var>$idHopital</var></span>, <span>idContact <var>$idContact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche de l'id d'un contact local.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche de l'id d'un contact local.</p>
+
+<p>Permet de rechercher l'id d'un contact local.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital.</dd>
+					<dt><var>$idContact</var></dt>
+					<dd>à l'id de contact.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>correspond à l'ensemble idContact, id Hopital recherché.
+				</div>
 
 
 
@@ -212,16 +236,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterRelation">#</a>
-		<code><a href="source-class-RelationGateway.html#25-29" title="Go to source code">ajouterRelation</a>( <span> <var>$idHopital</var></span>, <span> <var>$idContact</var></span> )</code>
+		<code><a href="source-class-RelationGateway.html#41-52" title="Go to source code">ajouterRelation</a>( <span>idHopital <var>$idHopital</var></span>, <span>idContact <var>$idContact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'une relation.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'une relation.</p>
+
+<p>Permet d'ajouter une relation entre l'id d'un contact local et l'id d'un hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital.</dd>
+					<dt><var>$idContact</var></dt>
+					<dd>à l'id de contact.</dd>
+				</dl></div>
 
 
 
@@ -242,16 +275,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerRelation">#</a>
-		<code><a href="source-class-RelationGateway.html#31-35" title="Go to source code">supprimerRelation</a>( <span> <var>$idHopital</var></span>, <span> <var>$idContact</var></span> )</code>
+		<code><a href="source-class-RelationGateway.html#54-65" title="Go to source code">supprimerRelation</a>( <span>idHopital <var>$idHopital</var></span>, <span>idContact <var>$idContact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de suppression une relation.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de suppression une relation.</p>
+
+<p>Permet de supprimer relation entre un contact local et un hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital.</dd>
+					<dt><var>$idContact</var></dt>
+					<dd>à l'id de contact.</dd>
+				</dl></div>
 
 
 
@@ -272,16 +314,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerRelationForHopital">#</a>
-		<code><a href="source-class-RelationGateway.html#37-40" title="Go to source code">supprimerRelationForHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-RelationGateway.html#67-76" title="Go to source code">supprimerRelationForHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de sppression de toutes les relations d'un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de sppression de toutes les relations d'un hôpital.</p>
+
+<p>Permet de supprimer l'ensemble des relations lorsqu'on supprime un hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital.</dd>
+				</dl></div>
 
 
 
@@ -302,16 +351,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerRelationForContact">#</a>
-		<code><a href="source-class-RelationGateway.html#42-45" title="Go to source code">supprimerRelationForContact</a>( <span> <var>$idContact</var></span> )</code>
+		<code><a href="source-class-RelationGateway.html#78-87" title="Go to source code">supprimerRelationForContact</a>( <span>idContact <var>$idContact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de sppression de toutes les relations d'un contact.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de sppression de toutes les relations d'un contact.</p>
+
+<p>Permet de supprimer l'ensemble des relations lorsqu'on supprime un contact.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContact</var></dt>
+					<dd>à l'id de contact.</dd>
+				</dl></div>
 
 
 

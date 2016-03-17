@@ -132,7 +132,7 @@
 		
 		<b>Package:</b> <a href="package-DAL.html">DAL</a>\<a href="package-DAL.gateway.html">gateway</a><br>
 
-			<b>Located at</b> <a href="source-class-NiveauGateway.html#2-39" title="Go to source code">DAL/Gateway/NiveauGateway.php</a>
+			<b>Located at</b> <a href="source-class-NiveauGateway.html#2-60" title="Go to source code">DAL/Gateway/NiveauGateway.php</a>
 		<br>
 	</div>
 
@@ -145,24 +145,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			nom
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherNom">#</a>
-		<code><a href="source-class-NiveauGateway.html#11-20" title="Go to source code">rechercherNom</a>( <span> <var>$idNiveau</var></span> )</code>
+		<code><a href="source-class-NiveauGateway.html#12-28" title="Go to source code">rechercherNom</a>( <span>idNiveau <var>$idNiveau</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche du nom du niveau utilisateur.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche du nom du niveau utilisateur.</p>
+
+<p>Permet de rechercher le nom du niveau utilisateur correspondant à l'id du niveau.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idNiveau</var></dt>
+					<dd>à l'id du niveau utilisateur recherché.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					nom<br>correspond au nom qui identifie le niveau d'utilisateur (ex: administrateur).
+				</div>
 
 
 
@@ -175,24 +186,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			idNiveau
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercheridNiveau">#</a>
-		<code><a href="source-class-NiveauGateway.html#22-31" title="Go to source code">rechercheridNiveau</a>( <span> <var>$nom</var></span> )</code>
+		<code><a href="source-class-NiveauGateway.html#30-46" title="Go to source code">rechercheridNiveau</a>( <span>nom <var>$nom</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche l'id du niveau utilisateur.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche l'id du niveau utilisateur.</p>
+
+<p>Permet de rechercher l'id du niveau utilisateur correspondant au nom du niveau.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$nom</var></dt>
+					<dd>au nom qui identifie le niveau d'utilisateur (ex: administrateur).</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					idNiveau<br>correspond à l'id du niveau utilisateur.
+				</div>
 
 
 
@@ -205,24 +227,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAll">#</a>
-		<code><a href="source-class-NiveauGateway.html#33-38" title="Go to source code">getAll</a>( )</code>
+		<code><a href="source-class-NiveauGateway.html#48-59" title="Go to source code">getAll</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensembl des niveaux utilisateurs.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensembl des niveaux utilisateurs.</p>
+
+<p>Permet de récupérer de l'ensemble des niveaux utilisateurs.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>est un tableau correspondant au résultat de la requête SQL.
+				</div>
 
 
 

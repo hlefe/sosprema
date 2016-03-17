@@ -132,7 +132,7 @@
 		
 		<b>Package:</b> <a href="package-DAL.html">DAL</a>\<a href="package-DAL.gateway.html">gateway</a><br>
 
-			<b>Located at</b> <a href="source-class-TelephoneGateway.html#2-46" title="Go to source code">DAL/Gateway/TelephoneGateway.php</a>
+			<b>Located at</b> <a href="source-class-TelephoneGateway.html#2-77" title="Go to source code">DAL/Gateway/TelephoneGateway.php</a>
 		<br>
 	</div>
 
@@ -145,24 +145,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			telephones
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercheTelephoneUtilisateur">#</a>
-		<code><a href="source-class-TelephoneGateway.html#11-23" title="Go to source code">rechercheTelephoneUtilisateur</a>( <span> <var>$idContact</var></span> )</code>
+		<code><a href="source-class-TelephoneGateway.html#11-30" title="Go to source code">rechercheTelephoneUtilisateur</a>( <span>idHopital <var>$idContact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche de l'ensemble des téléphones.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche de l'ensemble des téléphones.</p>
+
+<p>Permet de rechercher l'ensemble des téléphones d'un utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContact</var></dt>
+					<dd>à l'id de l'hôpital.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					telephones<br>l'ensemble des téléphones d'un utilisateur.
+				</div>
 
 
 
@@ -182,16 +193,27 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterTelephone">#</a>
-		<code><a href="source-class-TelephoneGateway.html#25-30" title="Go to source code">ajouterTelephone</a>( <span> <var>$intitule</var></span>, <span> <var>$numero</var></span>, <span> <var>$userId</var></span> )</code>
+		<code><a href="source-class-TelephoneGateway.html#32-45" title="Go to source code">ajouterTelephone</a>( <span>intitule <var>$intitule</var></span>, <span>numero <var>$numero</var></span>, <span>userId <var>$userId</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'un téléphones.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'un téléphones.</p>
+
+<p>Permet d'ajouter un téléphone à un utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$intitule</var></dt>
+					<dd>à l'intitulé du téléphone.</dd>
+					<dt><var>$numero</var></dt>
+					<dd>au numero de téléphone à ajouter.</dd>
+					<dt><var>$userId</var></dt>
+					<dd>à l'id de l'utilisateur du numéro de téléphone.</dd>
+				</dl></div>
 
 
 
@@ -212,16 +234,27 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierTelephone">#</a>
-		<code><a href="source-class-TelephoneGateway.html#32-40" title="Go to source code">modifierTelephone</a>( <span> <var>$idTelephone</var></span>, <span> <var>$intitule</var></span>, <span> <var>$numero</var></span> )</code>
+		<code><a href="source-class-TelephoneGateway.html#47-63" title="Go to source code">modifierTelephone</a>( <span>idTelephone <var>$idTelephone</var></span>, <span>intitule <var>$intitule</var></span>, <span>numero <var>$numero</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modification d'un téléphones.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modification d'un téléphones.</p>
+
+<p>Permet de modifier un téléphone à un utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idTelephone</var></dt>
+					<dd>à l'id du téléphone à modifier.</dd>
+					<dt><var>$intitule</var></dt>
+					<dd>à l'intitule du téléphone.</dd>
+					<dt><var>$numero</var></dt>
+					<dd>au numero de téléphone à modifier.</dd>
+				</dl></div>
 
 
 
@@ -242,16 +275,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerTelephone">#</a>
-		<code><a href="source-class-TelephoneGateway.html#42-45" title="Go to source code">supprimerTelephone</a>( <span> <var>$idTelephone</var></span> )</code>
+		<code><a href="source-class-TelephoneGateway.html#65-76" title="Go to source code">supprimerTelephone</a>( <span>idTelephone <var>$idTelephone</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de supression d'un téléphones.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de supression d'un téléphones.</p>
+
+<p>Permet de supprimer le téléphone d'un utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idTelephone</var></dt>
+					<dd>à l'id du téléphone à modifier.</dd>
+				</dl></div>
 
 
 

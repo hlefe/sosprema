@@ -132,7 +132,7 @@
 		
 		<b>Package:</b> <a href="package-DAL.html">DAL</a>\<a href="package-DAL.gateway.html">gateway</a><br>
 
-			<b>Located at</b> <a href="source-class-VilleGateway.html#2-45" title="Go to source code">DAL/Gateway/VilleGateway.php</a>
+			<b>Located at</b> <a href="source-class-VilleGateway.html#2-74" title="Go to source code">DAL/Gateway/VilleGateway.php</a>
 		<br>
 	</div>
 
@@ -152,16 +152,27 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterVille">#</a>
-		<code><a href="source-class-VilleGateway.html#11-16" title="Go to source code">ajouterVille</a>( <span> <var>$nomVille</var></span>, <span> <var>$codePostal</var></span>, <span> <var>$idDepartement</var></span> )</code>
+		<code><a href="source-class-VilleGateway.html#11-24" title="Go to source code">ajouterVille</a>( <span>nomVille <var>$nomVille</var></span>, <span>codePostal <var>$codePostal</var></span>, <span>idDepartement <var>$idDepartement</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'une ville.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'une ville.</p>
+
+<p>Permet d'ajouter une ville.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$nomVille</var></dt>
+					<dd>au nom de la ville.</dd>
+					<dt><var>$codePostal</var></dt>
+					<dd>au code postal de la ville.</dd>
+					<dt><var>$idDepartement</var></dt>
+					<dd>à l'id du département auquel appartient le département.</dd>
+				</dl></div>
 
 
 
@@ -175,24 +186,37 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherVille">#</a>
-		<code><a href="source-class-VilleGateway.html#18-27" title="Go to source code">rechercherVille</a>( <span> <var>$nomVille</var></span>, <span> <var>$codePostal</var></span> )</code>
+		<code><a href="source-class-VilleGateway.html#26-43" title="Go to source code">rechercherVille</a>( <span>nomVille <var>$nomVille</var></span>, <span>codePostal <var>$codePostal</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'une ville.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'une ville.</p>
+
+<p>Permet de rechercher une ville grâce à son nom et son code postal.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$nomVille</var></dt>
+					<dd>au nom de la ville.</dd>
+					<dt><var>$codePostal</var></dt>
+					<dd>au code postal de la ville.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>retourne le résultat de la recherche faux si la ville n'a pas été trouvée.
+				</div>
 
 
 
@@ -205,24 +229,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherVilleById">#</a>
-		<code><a href="source-class-VilleGateway.html#29-37" title="Go to source code">rechercherVilleById</a>( <span> <var>$idVille</var></span> )</code>
+		<code><a href="source-class-VilleGateway.html#45-60" title="Go to source code">rechercherVilleById</a>( <span>idVille <var>$idVille</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'une ville par son id.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'une ville par son id.</p>
+
+<p>Permet de rechercher une ville par son id.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idVille</var></dt>
+					<dd>à l'id de la ville recherchée.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>retourne la ville rechercher ou faux si elle n'a pas été trouvée.
+				</div>
 
 
 
@@ -235,24 +270,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			results
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAll">#</a>
-		<code><a href="source-class-VilleGateway.html#39-44" title="Go to source code">getAll</a>( )</code>
+		<code><a href="source-class-VilleGateway.html#62-73" title="Go to source code">getAll</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensemble des villes.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensemble des villes.</p>
+
+<p>Permet de récupérer l'ensemble des villes.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					results<br>retourne toutes les villes ou faux sinon.
+				</div>
 
 
 

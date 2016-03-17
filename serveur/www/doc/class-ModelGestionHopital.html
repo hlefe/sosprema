@@ -129,7 +129,7 @@
 		
 		<b>Package:</b> <a href="package-modele.html">modele</a><br>
 
-			<b>Located at</b> <a href="source-class-ModelGestionHopital.html#2-74" title="Go to source code">modele/ModelGestionHopital.php</a>
+			<b>Located at</b> <a href="source-class-ModelGestionHopital.html#2-105" title="Go to source code">modele/ModelGestionHopital.php</a>
 		<br>
 	</div>
 
@@ -142,24 +142,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-hopital.html">hopital</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherHopital">#</a>
-		<code><a href="source-class-ModelGestionHopital.html#10-22" title="Go to source code">rechercherHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-ModelGestionHopital.html#10-29" title="Go to source code">rechercherHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'un hôpital.</p>
+
+<p>Permet de rechercher un hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hopital à rechercher.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-hopital.html">hopital</a></code><br>correspond à l'hôpital recherché.
+				</div>
 
 
 
@@ -172,24 +183,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			hopitaux
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_afficherToutHopital">#</a>
-		<code><a href="source-class-ModelGestionHopital.html#24-27" title="Go to source code">afficherToutHopital</a>( )</code>
+		<code><a href="source-class-ModelGestionHopital.html#31-40" title="Go to source code">afficherToutHopital</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensemble des hôpitaux.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensemble des hôpitaux.</p>
+
+<p>Permet de récupérer l'ensemble des hôpitaux.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					hopitaux<br>correspond à l'ensemble des hôpitaux trouver dans la table.
+				</div>
 
 
 
@@ -209,14 +226,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterHopital">#</a>
-		<code><a href="source-class-ModelGestionHopital.html#29-45" title="Go to source code">ajouterHopital</a>( )</code>
+		<code><a href="source-class-ModelGestionHopital.html#42-63" title="Go to source code">ajouterHopital</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'un hôpital.</p>
+
+<p>Permet d'ajouter un hôpital.</p>
 
 
 
@@ -239,16 +258,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerHopital">#</a>
-		<code><a href="source-class-ModelGestionHopital.html#47-50" title="Go to source code">supprimerHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-ModelGestionHopital.html#65-74" title="Go to source code">supprimerHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de supression d'un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de supression d'un hôpital.</p>
+
+<p>Permet de suprimer un hôpital par son id.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital à supprimer.</dd>
+				</dl></div>
 
 
 
@@ -262,24 +288,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			retourne
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierHopital">#</a>
-		<code><a href="source-class-ModelGestionHopital.html#52-73" title="Go to source code">modifierHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-ModelGestionHopital.html#76-104" title="Go to source code">modifierHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modification d'un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modification d'un hôpital.</p>
+
+<p>Permet de modifier un hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital à modifier.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					retourne<br>l'hôpital modifier.
+				</div>
 
 
 

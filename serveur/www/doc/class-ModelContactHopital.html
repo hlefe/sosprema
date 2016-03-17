@@ -129,7 +129,7 @@
 		
 		<b>Package:</b> <a href="package-modele.html">modele</a><br>
 
-			<b>Located at</b> <a href="source-class-ModelContactHopital.html#2-46" title="Go to source code">modele/ModelContactHopital.php</a>
+			<b>Located at</b> <a href="source-class-ModelContactHopital.html#2-89" title="Go to source code">modele/ModelContactHopital.php</a>
 		<br>
 	</div>
 
@@ -149,16 +149,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterContactHopital">#</a>
-		<code><a href="source-class-ModelContactHopital.html#10-19" title="Go to source code">ajouterContactHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-ModelContactHopital.html#10-25" title="Go to source code">ajouterContactHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'un contact hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'un contact hôpital.</p>
+
+<p>Permet d'ajouter un contact hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital auquel est rattaché le contact hôpital.</dd>
+				</dl></div>
 
 
 
@@ -172,24 +179,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			le
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactHopital">#</a>
-		<code><a href="source-class-ModelContactHopital.html#21-23" title="Go to source code">rechercherContactHopital</a>( <span> <var>$idContactHopital</var></span> )</code>
+		<code><a href="source-class-ModelContactHopital.html#27-36" title="Go to source code">rechercherContactHopital</a>( <span>idContactHopital <var>$idContactHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'un contact hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'un contact hôpital.</p>
+
+<p>Permet de rechercher un contact hôpital par son id.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContactHopital</var></dt>
+					<dd>à l'id du contact hôpital rechercher.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					le<br>resultat de la recherche.
+				</div>
 
 
 
@@ -202,24 +220,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			retourne
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAll">#</a>
-		<code><a href="source-class-ModelContactHopital.html#25-27" title="Go to source code">getAll</a>( )</code>
+		<code><a href="source-class-ModelContactHopital.html#38-46" title="Go to source code">getAll</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensemble des contact hôpitaux.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensemble des contact hôpitaux.</p>
+
+<p>Permet de récupérer l'ensemble des contact hôpitaux.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					retourne<br>le résultat de la récupération.
+				</div>
 
 
 
@@ -239,16 +263,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerContactHopital">#</a>
-		<code><a href="source-class-ModelContactHopital.html#29-31" title="Go to source code">supprimerContactHopital</a>( <span> <var>$idContactHopital</var></span> )</code>
+		<code><a href="source-class-ModelContactHopital.html#48-56" title="Go to source code">supprimerContactHopital</a>( <span>idContactHopital <var>$idContactHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de suppression d'un contact hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de suppression d'un contact hôpital.</p>
+
+<p>Permet de suprimer un contact hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContactHopital</var></dt>
+					<dd>à l'id du contact hôpital à supprimer.</dd>
+				</dl></div>
 
 
 
@@ -262,24 +293,43 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			retourne
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierContact">#</a>
-		<code><a href="source-class-ModelContactHopital.html#33-41" title="Go to source code">modifierContact</a>( <span> <var>$idContactHopital</var></span>, <span> <var>$idHopital</var></span>, <span> <var>$nom</var></span>, <span> <var>$prenom</var></span>, <span> <var>$profession</var></span> )</code>
+		<code><a href="source-class-ModelContactHopital.html#58-77" title="Go to source code">modifierContact</a>( <span>idContactHopital <var>$idContactHopital</var></span>, <span>idHopital <var>$idHopital</var></span>, <span>nom <var>$nom</var></span>, <span>prenom <var>$prenom</var></span>, <span>profession <var>$profession</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modification d'un contact.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modification d'un contact.</p>
+
+<p>Permet de modifier un contact hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContactHopital</var></dt>
+					<dd>à l'id du contact hopital à modifier.</dd>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital du contact hôpital.</dd>
+					<dt><var>$nom</var></dt>
+					<dd>au nom du contact hôpital.</dd>
+					<dt><var>$prenom</var></dt>
+					<dd>au prénom du contact hôpital.</dd>
+					<dt><var>$profession</var></dt>
+					<dd>à la profession du contact.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					retourne<br>le résultat de la modification.
+				</div>
 
 
 
@@ -292,24 +342,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			retourne
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactHopitalByHopital">#</a>
-		<code><a href="source-class-ModelContactHopital.html#43-45" title="Go to source code">rechercherContactHopitalByHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-ModelContactHopital.html#79-88" title="Go to source code">rechercherContactHopitalByHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération des contacts hôpitaux d'un hôpital donné.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération des contacts hôpitaux d'un hôpital donné.</p>
+
+<p>Permet de récupérer les contact hôpital d'un hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					retourne<br>le résultat de la récupération.
+				</div>
 
 
 

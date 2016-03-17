@@ -103,7 +103,8 @@
 	<div class="description">
 	<p>Classe Connexion</p>
 
-<p>Gateway de Connexion (intéragit avec les tables en utilisant PDO)</p>
+<p>Gateway de Connexion (intéragit avec les tables en utilisant PDO)
+Permet d'établir la connexion avec la base de données mySQL</p>
 	</div>
 
 	<dl class="tree">
@@ -133,7 +134,7 @@ PDO
 		
 		<b>Package:</b> <a href="package-DAL.html">DAL</a><br>
 
-			<b>Located at</b> <a href="source-class-Connexion.html#2-39" title="Go to source code">DAL/Connexion.php</a>
+			<b>Located at</b> <a href="source-class-Connexion.html#2-66" title="Go to source code">DAL/Connexion.php</a>
 		<br>
 	</div>
 
@@ -153,14 +154,16 @@ PDO
 
 		<td class="name"><div>
 		<a class="anchor" href="#_connect">#</a>
-		<code><a href="source-class-Connexion.html#13-18" title="Go to source code">connect</a>( <span> <var>$dsn</var></span>, <span> <var>$user</var></span>, <span> <var>$pswd</var></span> )</code>
+		<code><a href="source-class-Connexion.html#14-24" title="Go to source code">connect</a>( <span> <var>$dsn</var></span>, <span> <var>$user</var></span>, <span> <var>$pswd</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction permettant de se connecter à la base données.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction permettant de se connecter à la base données.</p>
+
+<p>Permet de se connecter à la base de données.</p>
 
 
 
@@ -176,24 +179,37 @@ PDO
 		<td class="attributes"><code>
 			 public static
 
-			
+			retourne
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_executeQuerry">#</a>
-		<code><a href="source-class-Connexion.html#20-27" title="Go to source code">executeQuerry</a>( <span> <var>$querry</var></span>, <span>array <var>$parameters</var> = []</span> )</code>
+		<code><a href="source-class-Connexion.html#26-41" title="Go to source code">executeQuerry</a>( <span>querry <var>$querry</var></span>, <span>array <var>$parameters</var> = []</span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction permettant d'exécuter une requête SQL.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction permettant d'exécuter une requête SQL.</p>
+
+<p>Permet d'exécuter une requête SQL.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$querry</var></dt>
+					<dd>à exécuter</dd>
+					<dt><var>$parameters</var></dt>
+					<dd>de la requête SQL</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					retourne<br>le résultat de la requête.
+				</div>
 
 
 
@@ -206,24 +222,30 @@ PDO
 		<td class="attributes"><code>
 			 public static
 
-			
+			retourne
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getResult">#</a>
-		<code><a href="source-class-Connexion.html#29-32" title="Go to source code">getResult</a>( )</code>
+		<code><a href="source-class-Connexion.html#44-53" title="Go to source code">getResult</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction permettant de récupérer le résultat de la requête.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction permettant de récupérer le résultat de la requête.</p>
+
+<p>Permet de récupérer le résultat de la requête.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					retourne<br>le résultat de la requête.
+				</div>
 
 
 
@@ -236,24 +258,30 @@ PDO
 		<td class="attributes"><code>
 			 public static
 
-			
+			results
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getResults">#</a>
-		<code><a href="source-class-Connexion.html#35-38" title="Go to source code">getResults</a>( )</code>
+		<code><a href="source-class-Connexion.html#56-65" title="Go to source code">getResults</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensemble des résultats de la requête.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensemble des résultats de la requête.</p>
+
+<p>Permet de récupérer l'ensemble des résultats de la requête.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					results<br>retourne l'ensemble des résultats de la requête.
+				</div>
 
 
 

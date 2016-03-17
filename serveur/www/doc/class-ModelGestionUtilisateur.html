@@ -129,7 +129,7 @@
 		
 		<b>Package:</b> <a href="package-modele.html">modele</a><br>
 
-			<b>Located at</b> <a href="source-class-ModelGestionUtilisateur.html#2-167" title="Go to source code">modele/ModelGestionUtilisateur.php</a>
+			<b>Located at</b> <a href="source-class-ModelGestionUtilisateur.html#2-240" title="Go to source code">modele/ModelGestionUtilisateur.php</a>
 		<br>
 	</div>
 
@@ -142,24 +142,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-utilisateur.html">utilisateur</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercheUtilisateur">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#10-13" title="Go to source code">rechercheUtilisateur</a>( <span> <var>$email</var></span> )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#10-20" title="Go to source code">rechercheUtilisateur</a>( <span>email <var>$email</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'un utilisateur.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'un utilisateur.</p>
+
+<p>Permet de rechercher un utilisateur avec son adresse email.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$email</var></dt>
+					<dd>à l'email de l'utilisateur à rechercher.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-utilisateur.html">utilisateur</a></code><br>retourne l'utilisateur rechercher faux sinon.
+				</div>
 
 
 
@@ -179,14 +190,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_creerUtilisateur">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#15-44" title="Go to source code">creerUtilisateur</a>( )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#22-56" title="Go to source code">creerUtilisateur</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de création d'un utilisateur.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de création d'un utilisateur.</p>
+
+<p>Permet de créer un utilisateur.</p>
 
 
 
@@ -202,24 +215,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-utilisateur.html">utilisateur</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierUtilisateur">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#46-81" title="Go to source code">modifierUtilisateur</a>( <span> <var>$utilisateurModifie</var></span> )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#58-100" title="Go to source code">modifierUtilisateur</a>( <span>utilisateurModifie <var>$utilisateurModifie</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modification d'un utilisateur.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modification d'un utilisateur.</p>
+
+<p>Permet de modifier un utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$utilisateurModifie</var></dt>
+					<dd>à l'id de l'utilisateur à modifier.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-utilisateur.html">utilisateur</a></code><br>correspond à l'utilisateur modifié.
+				</div>
 
 
 
@@ -232,24 +256,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			retourne
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerUtilisateur">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#84-90" title="Go to source code">supprimerUtilisateur</a>( <span> <var>$emailConnexion</var></span> )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#102-115" title="Go to source code">supprimerUtilisateur</a>( <span>emailConnexion <var>$emailConnexion</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de supression d'un utilisateur.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de supression d'un utilisateur.</p>
+
+<p>Permet de supprimer un utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$emailConnexion</var></dt>
+					<dd>à l'email de connexion de l'utilisateur à supprimer.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					retourne<br>le résultat de la suppression.
+				</div>
 
 
 
@@ -262,24 +297,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			utilisateurs
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_afficherToutUtilisateur">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#92-95" title="Go to source code">afficherToutUtilisateur</a>( )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#117-126" title="Go to source code">afficherToutUtilisateur</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensemble des utilisateurs.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensemble des utilisateurs.</p>
+
+<p>Permet de récupérer l'ensemble des utilisateurs dans la base.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					utilisateurs<br>correspond à la liste des utilisateurs.
+				</div>
 
 
 
@@ -292,24 +333,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-utilisateur.html">utilisateur</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierMotDePasse">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#98-119" title="Go to source code">modifierMotDePasse</a>( <span> <var>$utilisateur</var></span> )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#129-157" title="Go to source code">modifierMotDePasse</a>( <span><code><a href="class-utilisateur.html">utilisateur</a></code> <var>$utilisateur</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modification de mot de passe.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modification de mot de passe.</p>
+
+<p>Permet de modifier le mot de passe d'un utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$utilisateur</var></dt>
+					<dd>à l'utilisateur dont le mot de passe est modifié.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-utilisateur.html">utilisateur</a></code><br>est l'utilisateur avec le mot de passe qui à été modifié.
+				</div>
 
 
 
@@ -322,24 +374,37 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-utilisateur.html">utilisateur</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierNiveau">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#121-124" title="Go to source code">modifierNiveau</a>( <span> <var>$user</var></span>, <span> <var>$newNiveau</var></span> )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#159-170" title="Go to source code">modifierNiveau</a>( <span>user <var>$user</var></span>, <span>newNiveau <var>$newNiveau</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modification du niveau de l'utilisateur.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modification du niveau de l'utilisateur.</p>
+
+<p>Permet de modifier le niveau de droit de l'utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user</var></dt>
+					<dd>à l'utilisateur.</dd>
+					<dt><var>$newNiveau</var></dt>
+					<dd>au nouveau niveau de l'utilisateur.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-utilisateur.html">utilisateur</a></code><br>correspond au nouvel utilisateur avec son niveau modifié.
+				</div>
 
 
 
@@ -352,24 +417,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			retourne
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_verifierEmailNonPresent">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#126-131" title="Go to source code">verifierEmailNonPresent</a>( <span> <var>$email</var></span> )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#172-184" title="Go to source code">verifierEmailNonPresent</a>( <span>email <var>$email</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de vérification de la présence l'email en base.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de vérification de la présence l'email en base.</p>
+
+<p>Permet de vérifier si l'adresse email est déjà utilisée ou non.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$email</var></dt>
+					<dd>à l'adresse email à vérifier.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					retourne<br>vrai si l'adresse est en base, faux sinon.
+				</div>
 
 
 
@@ -382,24 +458,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-utilisateur.html">utilisateur</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierSafeUserInfo">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#133-150" title="Go to source code">modifierSafeUserInfo</a>( <span> <var>$utilisateurModifie</var></span> )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#186-210" title="Go to source code">modifierSafeUserInfo</a>( <span>utilisateurModifie <var>$utilisateurModifie</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modification des accés de l'utilisateur.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modification des accés de l'utilisateur.</p>
+
+<p>Permet de modifier les accés de l'utilisateur (niveau et mot de passe).</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$utilisateurModifie</var></dt>
+					<dd>à l'utilisateur à modifier.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-utilisateur.html">utilisateur</a></code><br>est l'utilisateur modifié.
+				</div>
 
 
 
@@ -412,24 +499,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			contactLocal
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercheUtilisateurContactLocal">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#152-158" title="Go to source code">rechercheUtilisateurContactLocal</a>( )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#212-224" title="Go to source code">rechercheUtilisateurContactLocal</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche des utilisateurs qui sont contact local.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche des utilisateurs qui sont contact local.</p>
+
+<p>Permet de rechercher des utilisateurs qui sont contacts locaux.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					contactLocal<br>est l'ensemble des utilisateurs qui sont contacts locaux.
+				</div>
 
 
 
@@ -442,24 +535,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			contactLocal
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercheUtilisateurContactLocalByIdHop">#</a>
-		<code><a href="source-class-ModelGestionUtilisateur.html#160-166" title="Go to source code">rechercheUtilisateurContactLocalByIdHop</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-ModelGestionUtilisateur.html#226-239" title="Go to source code">rechercheUtilisateurContactLocalByIdHop</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche des utilisateurs contacts locaux par hôpitaux.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche des utilisateurs contacts locaux par hôpitaux.</p>
+
+<p>Permet de rechercher les utilisateurs qui sont contact locaux par hôpitaux.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital dont on recherche les contact locaux.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					contactLocal<br>est l'ensemble des utilisateurs qui sont contacts locaux auprés de l'hôpital.
+				</div>
 
 
 

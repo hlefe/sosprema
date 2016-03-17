@@ -129,7 +129,7 @@
 		
 		<b>Package:</b> <a href="package-modele.html">modele</a><br>
 
-			<b>Located at</b> <a href="source-class-ModelRelation.html#2-36" title="Go to source code">modele/ModelRelation.php</a>
+			<b>Located at</b> <a href="source-class-ModelRelation.html#2-79" title="Go to source code">modele/ModelRelation.php</a>
 		<br>
 	</div>
 
@@ -142,24 +142,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			l&#039;ensemble
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactLocalByIdHopital">#</a>
-		<code><a href="source-class-ModelRelation.html#9-11" title="Go to source code">rechercherContactLocalByIdHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-ModelRelation.html#10-19" title="Go to source code">rechercherContactLocalByIdHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche des contacts locaux par leurs hôpitaux.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche des contacts locaux par leurs hôpitaux.</p>
+
+<p>Permet de rechercher les contacts locaux par leurs hôpitaux.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital dont on recherche les contacts locaux.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					l&#039;ensemble<br>des contacts locaux de l'hôpital.
+				</div>
 
 
 
@@ -172,24 +183,37 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			la
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactLocalInHopital">#</a>
-		<code><a href="source-class-ModelRelation.html#13-15" title="Go to source code">rechercherContactLocalInHopital</a>( <span> <var>$idHopital</var></span>, <span> <var>$idContact</var></span> )</code>
+		<code><a href="source-class-ModelRelation.html#21-31" title="Go to source code">rechercherContactLocalInHopital</a>( <span>idHopital <var>$idHopital</var></span>, <span>idContact <var>$idContact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de test afin de savoir si le contact local est en lien avec l'hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de test afin de savoir si le contact local est en lien avec l'hôpital.</p>
+
+<p>Permet de tester afin de savoir si le contact local est en lien avec l'hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital concerné.</dd>
+					<dt><var>$idContact</var></dt>
+					<dd>à l'id du contact local concerné.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					la<br>relation si elle existe.
+				</div>
 
 
 
@@ -202,24 +226,37 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterRelation">#</a>
-		<code><a href="source-class-ModelRelation.html#17-23" title="Go to source code">ajouterRelation</a>( <span> <var>$idHopital</var></span>, <span> <var>$idContactLocal</var></span> )</code>
+		<code><a href="source-class-ModelRelation.html#33-47" title="Go to source code">ajouterRelation</a>( <span>idHopital <var>$idHopital</var></span>, <span>idContact <var>$idContactLocal</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'une relation entre un contact local et un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'une relation entre un contact local et un hôpital.</p>
+
+<p>Permet d'ajouter une relation entre un contact local et un hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital concerné.</dd>
+					<dt><var>$idContactLocal</var></dt>
+					<dd>à l'id du contact local concerné.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>permet de savoir si l'ajout a réussi sinon il est null.
+				</div>
 
 
 
@@ -239,16 +276,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerRelation">#</a>
-		<code><a href="source-class-ModelRelation.html#25-27" title="Go to source code">supprimerRelation</a>( <span> <var>$idHopital</var></span>, <span> <var>$idContactLocal</var></span> )</code>
+		<code><a href="source-class-ModelRelation.html#49-58" title="Go to source code">supprimerRelation</a>( <span>idHopital <var>$idHopital</var></span>, <span>idContact <var>$idContactLocal</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de supression d'une relation entre un cotact local et un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de supression d'une relation entre un cotact local et un hôpital.</p>
+
+<p>Permet de supprimer une relation entre un cotact local et un hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital concerné.</dd>
+					<dt><var>$idContactLocal</var></dt>
+					<dd>à l'id du contact local concerné.</dd>
+				</dl></div>
 
 
 
@@ -269,16 +315,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerRelationForHopital">#</a>
-		<code><a href="source-class-ModelRelation.html#29-31" title="Go to source code">supprimerRelationForHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-ModelRelation.html#60-68" title="Go to source code">supprimerRelationForHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de supression de l'ensemble des relation concernant un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de supression de l'ensemble des relation concernant un hôpital.</p>
+
+<p>Permet de suprimer l'ensemble des relations concernant un hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital concerné.</dd>
+				</dl></div>
 
 
 
@@ -299,16 +352,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerRelationForContact">#</a>
-		<code><a href="source-class-ModelRelation.html#33-35" title="Go to source code">supprimerRelationForContact</a>( <span> <var>$idContact</var></span> )</code>
+		<code><a href="source-class-ModelRelation.html#70-78" title="Go to source code">supprimerRelationForContact</a>( <span>idContact <var>$idContact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de supression de l'ensemble des relation concernant un contact local.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de supression de l'ensemble des relation concernant un contact local.</p>
+
+<p>Permet de suprimer l'ensemble des relations concernant un contact local.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContact</var></dt>
+					<dd>à l'id du contact local concerné.</dd>
+				</dl></div>
 
 
 

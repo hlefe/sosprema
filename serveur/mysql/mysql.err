@@ -673,3 +673,10 @@ InnoDB: buffer...
 160317 11:14:10 [Note] Event Scheduler: Loaded 0 events
 160317 11:14:10 [Note] C:\UniServerZ\core\mysql\bin\mysqld_z.exe: ready for connections.
 Version: '5.5.46'  socket: ''  port: 3306  MySQL Community Server (GPL)
+160317 11:20:45 [Note] C:\UniServerZ\core\mysql\bin\mysqld_z.exe: Normal shutdown
+
+160317 11:20:45 [Note] Event Scheduler: Purging the queue. 0 events
+160317 11:20:45  InnoDB: Starting shutdown...
+160317 11:20:46  InnoDB: Shutdown completed; log sequence number 3114443
+160317 11:20:46 [Note] C:\UniServerZ\core\mysql\bin\mysqld_z.exe: Shutdown complete
+

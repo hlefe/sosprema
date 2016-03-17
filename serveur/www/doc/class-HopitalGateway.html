@@ -132,7 +132,7 @@
 		
 		<b>Package:</b> <a href="package-DAL.html">DAL</a>\<a href="package-DAL.gateway.html">gateway</a><br>
 
-			<b>Located at</b> <a href="source-class-HopitalGateway.html#2-89" title="Go to source code">DAL/Gateway/HopitalGateway.php</a>
+			<b>Located at</b> <a href="source-class-HopitalGateway.html#2-139" title="Go to source code">DAL/Gateway/HopitalGateway.php</a>
 		<br>
 	</div>
 
@@ -152,16 +152,41 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterHopital">#</a>
-		<code><a href="source-class-HopitalGateway.html#11-27" title="Go to source code">ajouterHopital</a>( <span> <var>$nomHopital</var></span>, <span> <var>$idAdresse</var></span>, <span> <var>$niveau</var></span>, <span> <var>$service</var></span>, <span> <var>$nbLits</var></span>, <span> <var>$nbPremaParAn</var></span>, <span> <var>$cafeParent</var></span>, <span> <var>$parkingPayant</var></span>, <span> <var>$convention</var></span>, <span> <var>$visiteBenevole</var></span> )</code>
+		<code><a href="source-class-HopitalGateway.html#11-42" title="Go to source code">ajouterHopital</a>( <span>nomHopital <var>$nomHopital</var></span>, <span>idAdresse <var>$idAdresse</var></span>, <span><code><a href="class-niveau.html">niveau</a></code> <var>$niveau</var></span>, <span>service <var>$service</var></span>, <span>nbLits <var>$nbLits</var></span>, <span>nbPremaParAn <var>$nbPremaParAn</var></span>, <span>cafeParent <var>$cafeParent</var></span>, <span>parkingPayant <var>$parkingPayant</var></span>, <span>convention <var>$convention</var></span>, <span>visiteBenevole <var>$visiteBenevole</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'un hôpital.</p>
+
+<p>Permet de rajouter un hôpital dans la table des hôpitaux.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$nomHopital</var></dt>
+					<dd>au nom de l'hôpital à ajouter.</dd>
+					<dt><var>$idAdresse</var></dt>
+					<dd>à l'id de l'adresse où se trouve l'hôpital.</dd>
+					<dt><var>$niveau</var></dt>
+					<dd>au niveau de service de l'hôpital.</dd>
+					<dt><var>$service</var></dt>
+					<dd>au principal service de l'hôpital.</dd>
+					<dt><var>$nbLits</var></dt>
+					<dd>au nombre de couveuse "lit" de l'hôpital.</dd>
+					<dt><var>$nbPremaParAn</var></dt>
+					<dd>au nombre d'enfants nés prématurés par an.</dd>
+					<dt><var>$cafeParent</var></dt>
+					<dd>si l'hôpital fait oui ou non des café parent.</dd>
+					<dt><var>$parkingPayant</var></dt>
+					<dd>si le stationnement est payant ou non aux alentours de l'hôpital.</dd>
+					<dt><var>$convention</var></dt>
+					<dd>de savoir si l'hôpital possède une convention avec l'association ou non.</dd>
+					<dt><var>$visiteBenevole</var></dt>
+					<dd>de savoir si l'hôpital organise des visites bénévoles.</dd>
+				</dl></div>
 
 
 
@@ -175,24 +200,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			hôpital
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherHopital">#</a>
-		<code><a href="source-class-HopitalGateway.html#29-50" title="Go to source code">rechercherHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-HopitalGateway.html#44-72" title="Go to source code">rechercherHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'un hôpital.</p>
+
+<p>Permet de rechercher un hôpital dans la table des hôpitaux.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital recherché.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					hôpital<br>est l'objet hôpital qui correspond à l'hôpital recherché.
+				</div>
 
 
 
@@ -205,24 +241,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAll">#</a>
-		<code><a href="source-class-HopitalGateway.html#52-57" title="Go to source code">getAll</a>( )</code>
+		<code><a href="source-class-HopitalGateway.html#74-85" title="Go to source code">getAll</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction permettant de récupérer l'ensemble des hôpitaux.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction permettant de récupérer l'ensemble des hôpitaux.</p>
+
+<p>Permet de récupérer tous les hôpitaux dans la table des hôpitaux.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>est un tableaux contenant le résultat de la requête SQL.
+				</div>
 
 
 
@@ -242,16 +284,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerHopital">#</a>
-		<code><a href="source-class-HopitalGateway.html#59-62" title="Go to source code">supprimerHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-HopitalGateway.html#87-96" title="Go to source code">supprimerHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de suppression d'un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de suppression d'un hôpital.</p>
+
+<p>Permet de supprimer un hôpital dans la table des hôpitaux.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital recherché.</dd>
+				</dl></div>
 
 
 
@@ -272,16 +321,43 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierHopital">#</a>
-		<code><a href="source-class-HopitalGateway.html#64-88" title="Go to source code">modifierHopital</a>( <span> <var>$idHopital</var></span>, <span> <var>$nomHopital</var></span>, <span> <var>$idAdresse</var></span>, <span> <var>$niveau</var></span>, <span> <var>$service</var></span>, <span> <var>$nbLits</var></span>, <span> <var>$nbPremaParAn</var></span>, <span> <var>$cafeParent</var></span>, <span> <var>$parkingPayant</var></span>, <span> <var>$convention</var></span>, <span> <var>$visiteBenevole</var></span> )</code>
+		<code><a href="source-class-HopitalGateway.html#98-138" title="Go to source code">modifierHopital</a>( <span>idHopital <var>$idHopital</var></span>, <span>nomHopital <var>$nomHopital</var></span>, <span>idAdresse <var>$idAdresse</var></span>, <span><code><a href="class-niveau.html">niveau</a></code> <var>$niveau</var></span>, <span>service <var>$service</var></span>, <span>nbLits <var>$nbLits</var></span>, <span>nbPremaParAn <var>$nbPremaParAn</var></span>, <span>cafeParent <var>$cafeParent</var></span>, <span>parkingPayant <var>$parkingPayant</var></span>, <span>convention <var>$convention</var></span>, <span>visiteBenevole <var>$visiteBenevole</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modifier un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modifier un hôpital.</p>
+
+<p>Permet de modifier un hôpital dans la table des hôpitaux.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital recherché.</dd>
+					<dt><var>$nomHopital</var></dt>
+					<dd>au nom de l'hôpital à ajouter.</dd>
+					<dt><var>$idAdresse</var></dt>
+					<dd>à l'id de l'adresse où se trouve l'hôpital.</dd>
+					<dt><var>$niveau</var></dt>
+					<dd>au niveau de service de l'hôpital.</dd>
+					<dt><var>$service</var></dt>
+					<dd>au principal service de l'hôpital.</dd>
+					<dt><var>$nbLits</var></dt>
+					<dd>au nombre de couveuses "lit" de l'hôpital.</dd>
+					<dt><var>$nbPremaParAn</var></dt>
+					<dd>au nombre d'enfants nés prématurés par an.</dd>
+					<dt><var>$cafeParent</var></dt>
+					<dd>si l'hôpital fait oui ou non des cafés parents.</dd>
+					<dt><var>$parkingPayant</var></dt>
+					<dd>si le stationnement est payant ou non aux alentours de l'hôpital.</dd>
+					<dt><var>$convention</var></dt>
+					<dd>de savoir si l'hôpital possède une convention avec l'association ou non.</dd>
+					<dt><var>$visiteBenevole</var></dt>
+					<dd>de savoir si l'hôpital organise des visites bénévoles.</dd>
+				</dl></div>
 
 
 

@@ -132,7 +132,7 @@
 		
 		<b>Package:</b> <a href="package-DAL.html">DAL</a>\<a href="package-DAL.gateway.html">gateway</a><br>
 
-			<b>Located at</b> <a href="source-class-ContactHopitalGateway.html#2-71" title="Go to source code">DAL/Gateway/ContactHopitalGateway.php</a>
+			<b>Located at</b> <a href="source-class-ContactHopitalGateway.html#2-119" title="Go to source code">DAL/Gateway/ContactHopitalGateway.php</a>
 		<br>
 	</div>
 
@@ -145,24 +145,43 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterContactHopital">#</a>
-		<code><a href="source-class-ContactHopitalGateway.html#11-20" title="Go to source code">ajouterContactHopital</a>( <span> <var>$idHopital</var></span>, <span> <var>$nom</var></span>, <span> <var>$prenom</var></span>, <span> <var>$profession</var></span>, <span> <var>$numero</var></span> )</code>
+		<code><a href="source-class-ContactHopitalGateway.html#11-30" title="Go to source code">ajouterContactHopital</a>( <span>idHopital <var>$idHopital</var></span>, <span>nom <var>$nom</var></span>, <span>prenom <var>$prenom</var></span>, <span>numero <var>$profession</var></span>, <span> <var>$numero</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'un contact hopital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'un contact hopital.</p>
+
+<p>Permet d'ajouter un contact hopital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital à laquelle il appartient.</dd>
+					<dt><var>$nom</var></dt>
+					<dd>au nom du contact de l'hôpital.</dd>
+					<dt><var>$prenom</var></dt>
+					<dd>au prenom du contact de l'hôpital.</dd>
+					<dt><var>$profession</var></dt>
+					<dd>du contact de l'hôpital.</dd>
+					<dt><var>$numero</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>retourne le résultat de la recherche de l'adresse.
+				</div>
 
 
 
@@ -175,24 +194,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-ContactHopital.html">ContactHopital</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactHopital">#</a>
-		<code><a href="source-class-ContactHopitalGateway.html#22-30" title="Go to source code">rechercherContactHopital</a>( <span> <var>$idContactHopital</var></span> )</code>
+		<code><a href="source-class-ContactHopitalGateway.html#32-47" title="Go to source code">rechercherContactHopital</a>( <span>idContactHopital <var>$idContactHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche de contact hopital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche de contact hopital.</p>
+
+<p>Permet de rechercher un contact hôpital grâce à son id.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContactHopital</var></dt>
+					<dd>à l'id du contact local recherché.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-ContactHopital.html">ContactHopital</a></code><br>correspondant au contact hopital recherché.
+				</div>
 
 
 
@@ -205,24 +235,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAll">#</a>
-		<code><a href="source-class-ContactHopitalGateway.html#32-37" title="Go to source code">getAll</a>( )</code>
+		<code><a href="source-class-ContactHopitalGateway.html#49-60" title="Go to source code">getAll</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensemble des contact hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensemble des contact hôpital.</p>
+
+<p>Permet la récupération de l'ensemble des contact hôpital.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>ensemble des lignes récupérées dans la base de données.
+				</div>
 
 
 
@@ -235,24 +271,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-ContactHopital.html">ContactHopital</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerContact">#</a>
-		<code><a href="source-class-ContactHopitalGateway.html#39-42" title="Go to source code">supprimerContact</a>( <span> <var>$idContactHopital</var></span> )</code>
+		<code><a href="source-class-ContactHopitalGateway.html#62-72" title="Go to source code">supprimerContact</a>( <span>idContactHopital <var>$idContactHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de suppression d'un contact hopital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de suppression d'un contact hopital.</p>
+
+<p>Permet de rechercher un contact hôpital grâce à son id.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContactHopital</var></dt>
+					<dd>à l'id du contact local recherché.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-ContactHopital.html">ContactHopital</a></code><br>correspondant au contact hopital recherché.
+				</div>
 
 
 
@@ -265,24 +312,43 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-ContactHopital.html">ContactHopital</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierContact">#</a>
-		<code><a href="source-class-ContactHopitalGateway.html#44-57" title="Go to source code">modifierContact</a>( <span> <var>$idContactHopital</var></span>, <span> <var>$idHopital</var></span>, <span> <var>$nom</var></span>, <span> <var>$prenom</var></span>, <span> <var>$profession</var></span> )</code>
+		<code><a href="source-class-ContactHopitalGateway.html#74-98" title="Go to source code">modifierContact</a>( <span>idContactHopital <var>$idContactHopital</var></span>, <span>idHopital <var>$idHopital</var></span>, <span>nom <var>$nom</var></span>, <span>prenom <var>$prenom</var></span>, <span>numero <var>$profession</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modification d'un contact hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modification d'un contact hôpital.</p>
+
+<p>Permet de modification d'un contact hôpital, n'est pas utilisée.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContactHopital</var></dt>
+					<dd>à l'id du contact local recherché.</dd>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital auquel est lié le contact hôpital.</dd>
+					<dt><var>$nom</var></dt>
+					<dd>au nom du contact de l'hôpital.</dd>
+					<dt><var>$prenom</var></dt>
+					<dd>au prenom du contact de l'hôpital.</dd>
+					<dt><var>$profession</var></dt>
+					<dd>numéro du contact de l'hôpital.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-ContactHopital.html">ContactHopital</a></code><br>correspondant au contact hôpital recherché.
+				</div>
 
 
 
@@ -295,24 +361,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			ContactsHopital
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactHopitalByHopital">#</a>
-		<code><a href="source-class-ContactHopitalGateway.html#59-70" title="Go to source code">rechercherContactHopitalByHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-ContactHopitalGateway.html#100-118" title="Go to source code">rechercherContactHopitalByHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche des contacts hôpitaux liés à un hôpital.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche des contacts hôpitaux liés à un hôpital.</p>
+
+<p>Permet de modifier un contact hôpital, n'est pas utilisée.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hopital auquel sont liés les contacts hôpitaux.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					ContactsHopital<br>correspondant à l'ensemble des contacts hopitaux liés à l'hôpital.
+				</div>
 
 
 

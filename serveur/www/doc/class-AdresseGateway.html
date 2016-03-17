@@ -132,7 +132,7 @@
 		
 		<b>Package:</b> <a href="package-DAL.html">DAL</a>\<a href="package-DAL.gateway.html">gateway</a><br>
 
-			<b>Located at</b> <a href="source-class-AdresseGateway.html#2-45" title="Go to source code">DAL/Gateway/AdresseGateway.php</a>
+			<b>Located at</b> <a href="source-class-AdresseGateway.html#2-78" title="Go to source code">DAL/Gateway/AdresseGateway.php</a>
 		<br>
 	</div>
 
@@ -145,24 +145,39 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterAdresse">#</a>
-		<code><a href="source-class-AdresseGateway.html#11-17" title="Go to source code">ajouterAdresse</a>( <span> <var>$numRue</var></span>, <span> <var>$nomRue</var></span>, <span> <var>$idVille</var></span> )</code>
+		<code><a href="source-class-AdresseGateway.html#10-25" title="Go to source code">ajouterAdresse</a>( <span>numRue <var>$numRue</var></span>, <span>nomRue <var>$nomRue</var></span>, <span>idVille <var>$idVille</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'une adresse</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'une adresse</p>
+
+<p>Ajouter une adresse dans la table adresse de la base SQL.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$numRue</var></dt>
+					<dd>au numéro de rue de l'adresse.</dd>
+					<dt><var>$nomRue</var></dt>
+					<dd>au nom de rue de l'adresse.</dd>
+					<dt><var>$idVille</var></dt>
+					<dd>à l'id de la ville dans laquelle se trouve l'adresse.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>retourne le résultat de l'ajout de l'adresse.
+				</div>
 
 
 
@@ -175,24 +190,39 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherAdresse">#</a>
-		<code><a href="source-class-AdresseGateway.html#19-27" title="Go to source code">rechercherAdresse</a>( <span> <var>$numRue</var></span>, <span> <var>$nomRue</var></span>, <span> <var>$idVille</var></span> )</code>
+		<code><a href="source-class-AdresseGateway.html#27-44" title="Go to source code">rechercherAdresse</a>( <span>numRue <var>$numRue</var></span>, <span>nomRue <var>$nomRue</var></span>, <span>idVille <var>$idVille</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'une adresse.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'une adresse.</p>
+
+<p>rechercher une adresse dans la table adresse de la base SQL.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$numRue</var></dt>
+					<dd>au numéro de rue de l'adresse.</dd>
+					<dt><var>$nomRue</var></dt>
+					<dd>au nom de rue de l'adresse.</dd>
+					<dt><var>$idVille</var></dt>
+					<dd>à l'id de la ville dans laquelle se trouve l'adresse.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>retourne le résultat de la recherche de l'adresse.
+				</div>
 
 
 
@@ -205,24 +235,36 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherAdresseById">#</a>
-		<code><a href="source-class-AdresseGateway.html#29-37" title="Go to source code">rechercherAdresseById</a>( <span> <var>$idAdresse</var></span> )</code>
+		<code><a href="source-class-AdresseGateway.html#46-64" title="Go to source code">rechercherAdresseById</a>( <span>numRue <var>$idAdresse</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recheche d'une adresse par l'id de l'adresse.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recheche d'une adresse par l'id de l'adresse.</p>
+
+<p>Recherche une adresse dans la table adresse de la base SQL avec l'id de l'adresse.
+Utilisé pour récupérer l'adresse d'un utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idAdresse</var></dt>
+					<dd>au numéro de rue de l'adresse.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>retourne le résultat de la recherche de l'adresse.
+				</div>
 
 
 
@@ -235,24 +277,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAll">#</a>
-		<code><a href="source-class-AdresseGateway.html#39-44" title="Go to source code">getAll</a>( )</code>
+		<code><a href="source-class-AdresseGateway.html#66-77" title="Go to source code">getAll</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupéreration l'ensemble des adresse.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupéreration l'ensemble des adresse.</p>
+
+<p>Récupère l'ensemble des adresse de la table, cette fonction n'est pas utilisée pour le moment.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>retourne le résultat de la recherche de l'adresse.
+				</div>
 
 
 

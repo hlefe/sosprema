@@ -129,7 +129,7 @@
 		
 		<b>Package:</b> <a href="package-modele.html">modele</a><br>
 
-			<b>Located at</b> <a href="source-class-ModelContactLocal.html#2-103" title="Go to source code">modele/ModelContactLocal.php</a>
+			<b>Located at</b> <a href="source-class-ModelContactLocal.html#2-171" title="Go to source code">modele/ModelContactLocal.php</a>
 		<br>
 	</div>
 
@@ -142,24 +142,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			contactLocal
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactLocal">#</a>
-		<code><a href="source-class-ModelContactLocal.html#10-13" title="Go to source code">rechercherContactLocal</a>( <span> <var>$idUtilisateur</var></span> )</code>
+		<code><a href="source-class-ModelContactLocal.html#10-20" title="Go to source code">rechercherContactLocal</a>( <span>idUtilisateur <var>$idUtilisateur</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche des données d'un contact local.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche des données d'un contact local.</p>
+
+<p>Permet de rechercher les données d'un contact local par l'id utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idUtilisateur</var></dt>
+					<dd>à l'id de l'utilisateur auquel on veut récupérer ses données contact local.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					contactLocal<br>retourne l'objet avec les données du contact local.
+				</div>
 
 
 
@@ -172,24 +183,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			contactLocal
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactLocalByIdContact">#</a>
-		<code><a href="source-class-ModelContactLocal.html#15-18" title="Go to source code">rechercherContactLocalByIdContact</a>( <span> <var>$idcontact</var></span> )</code>
+		<code><a href="source-class-ModelContactLocal.html#22-32" title="Go to source code">rechercherContactLocalByIdContact</a>( <span>idContact <var>$idcontact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche des données d'un contact local.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche des données d'un contact local.</p>
+
+<p>Permet de rechercher les données d'un contact local par l'id du contact.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idcontact</var></dt>
+					<dd>à l'id du contact auquel on veut récupérer ses données contact local.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					contactLocal<br>retourne l'objet avec les données du contact local.
+				</div>
 
 
 
@@ -202,24 +224,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			contacts
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_afficherToutContact">#</a>
-		<code><a href="source-class-ModelContactLocal.html#19-22" title="Go to source code">afficherToutContact</a>( )</code>
+		<code><a href="source-class-ModelContactLocal.html#34-43" title="Go to source code">afficherToutContact</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensemble des contacts locaux.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensemble des contacts locaux.</p>
+
+<p>Permet de récupérer l'ensemble des contacts locaux.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					contacts<br>l'ensemble des contacts locaux trouvé.
+				</div>
 
 
 
@@ -239,16 +267,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterContactLocal">#</a>
-		<code><a href="source-class-ModelContactLocal.html#24-35" title="Go to source code">ajouterContactLocal</a>( <span> <var>$idUtilisateur</var></span> )</code>
+		<code><a href="source-class-ModelContactLocal.html#45-62" title="Go to source code">ajouterContactLocal</a>( <span>idUtilisateur <var>$idUtilisateur</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'un contact local.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'un contact local.</p>
+
+<p>Permet d'ajouter un contact local.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idUtilisateur</var></dt>
+					<dd>à l'id de l'utilisateur que l'on veut rendre contact local.</dd>
+				</dl></div>
 
 
 
@@ -269,16 +304,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerContact">#</a>
-		<code><a href="source-class-ModelContactLocal.html#37-40" title="Go to source code">supprimerContact</a>( <span> <var>$idcontact</var></span> )</code>
+		<code><a href="source-class-ModelContactLocal.html#64-73" title="Go to source code">supprimerContact</a>( <span>idcontact <var>$idcontact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de suppression d'un contact.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de suppression d'un contact.</p>
+
+<p>Permet de suprimer un contact et les relations qui en dépende.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idcontact</var></dt>
+					<dd>à l'id du contact à suprimer.</dd>
+				</dl></div>
 
 
 
@@ -299,16 +341,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerContactLocalByIdUtilisateur">#</a>
-		<code><a href="source-class-ModelContactLocal.html#42-45" title="Go to source code">supprimerContactLocalByIdUtilisateur</a>( <span> <var>$idUtilisateur</var></span> )</code>
+		<code><a href="source-class-ModelContactLocal.html#75-84" title="Go to source code">supprimerContactLocalByIdUtilisateur</a>( <span>idUtilisateur <var>$idUtilisateur</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de supression d'un contact local par son id utilisateur.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de supression d'un contact local par son id utilisateur.</p>
+
+<p>Permet de suprimer un contact local par son id utilisateur.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idUtilisateur</var></dt>
+					<dd>à l'id de l'utilisateur que l'on veut suprimer.</dd>
+				</dl></div>
 
 
 
@@ -329,16 +378,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierContact">#</a>
-		<code><a href="source-class-ModelContactLocal.html#47-67" title="Go to source code">modifierContact</a>( <span> <var>$idcontact</var></span> )</code>
+		<code><a href="source-class-ModelContactLocal.html#86-112" title="Go to source code">modifierContact</a>( <span>idcontact <var>$idcontact</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modification d'un contact local.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modification d'un contact local.</p>
+
+<p>Permet de modifier un contact local.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idcontact</var></dt>
+					<dd>à l'id du contact à modifier.</dd>
+				</dl></div>
 
 
 
@@ -359,16 +415,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_supprimerEnfant">#</a>
-		<code><a href="source-class-ModelContactLocal.html#69-71" title="Go to source code">supprimerEnfant</a>( <span> <var>$idEnfant</var></span> )</code>
+		<code><a href="source-class-ModelContactLocal.html#114-122" title="Go to source code">supprimerEnfant</a>( <span>idEnfant <var>$idEnfant</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de supression d'un enfant.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de supression d'un enfant.</p>
+
+<p>Permet de supprimer un enfant.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idEnfant</var></dt>
+					<dd>à l'id de l'enfant à suprimer.</dd>
+				</dl></div>
 
 
 
@@ -389,16 +452,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterEnfant">#</a>
-		<code><a href="source-class-ModelContactLocal.html#73-75" title="Go to source code">ajouterEnfant</a>( <span> <var>$idContactLocal</var></span> )</code>
+		<code><a href="source-class-ModelContactLocal.html#124-132" title="Go to source code">ajouterEnfant</a>( <span>idContactLocal <var>$idContactLocal</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'un enfant.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'un enfant.</p>
+
+<p>Permet d'ajouter un enfant pour un contact local.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idContactLocal</var></dt>
+					<dd>à l'id d'un contact local.</dd>
+				</dl></div>
 
 
 
@@ -419,16 +489,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modifierEnfant">#</a>
-		<code><a href="source-class-ModelContactLocal.html#77-84" title="Go to source code">modifierEnfant</a>( <span> <var>$idEnfant</var></span> )</code>
+		<code><a href="source-class-ModelContactLocal.html#134-147" title="Go to source code">modifierEnfant</a>( <span>idEnfant <var>$idEnfant</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de modification d'un enfant.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de modification d'un enfant.</p>
+
+<p>Permet de modifier un enfant d'un contact local.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idEnfant</var></dt>
+					<dd>à l'id de l'enfant à modifier.</dd>
+				</dl></div>
 
 
 
@@ -442,24 +519,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			contactLocal
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherContactLocalByHopital">#</a>
-		<code><a href="source-class-ModelContactLocal.html#86-102" title="Go to source code">rechercherContactLocalByHopital</a>( <span> <var>$idHopital</var></span> )</code>
+		<code><a href="source-class-ModelContactLocal.html#149-170" title="Go to source code">rechercherContactLocalByHopital</a>( <span>idHopital <var>$idHopital</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche des contact locaux par hôpitaux.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche des contact locaux par hôpitaux.</p>
+
+<p>Permet de rechercher les contact locaux par un hôpital.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idHopital</var></dt>
+					<dd>à l'id de l'hôpital dont on recherche les contacts locaux.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					contactLocal<br>retourne l'ensemble des contact locaux de l'hôpital.
+				</div>
 
 
 

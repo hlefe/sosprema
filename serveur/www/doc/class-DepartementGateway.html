@@ -132,7 +132,7 @@
 		
 		<b>Package:</b> <a href="package-DAL.html">DAL</a>\<a href="package-DAL.gateway.html">gateway</a><br>
 
-			<b>Located at</b> <a href="source-class-DepartementGateway.html#2-43" title="Go to source code">DAL/Gateway/DepartementGateway.php</a>
+			<b>Located at</b> <a href="source-class-DepartementGateway.html#2-70" title="Go to source code">DAL/Gateway/DepartementGateway.php</a>
 		<br>
 	</div>
 
@@ -152,16 +152,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajouterDepartement">#</a>
-		<code><a href="source-class-DepartementGateway.html#11-15" title="Go to source code">ajouterDepartement</a>( <span> <var>$nomDepartement</var></span>, <span> <var>$idRegion</var></span> )</code>
+		<code><a href="source-class-DepartementGateway.html#11-22" title="Go to source code">ajouterDepartement</a>( <span>nomDepartement <var>$nomDepartement</var></span>, <span>idRegion <var>$idRegion</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction d'ajout d'un département.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction d'ajout d'un département.</p>
+
+<p>Permet d'ajouter un département.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$nomDepartement</var></dt>
+					<dd>au nom du département.</dd>
+					<dt><var>$idRegion</var></dt>
+					<dd>à l'id de la région qui possède le département.</dd>
+				</dl></div>
 
 
 
@@ -175,24 +184,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherDepartement">#</a>
-		<code><a href="source-class-DepartementGateway.html#17-25" title="Go to source code">rechercherDepartement</a>( <span> <var>$nomDepartement</var></span> )</code>
+		<code><a href="source-class-DepartementGateway.html#23-38" title="Go to source code">rechercherDepartement</a>( <span>nomDepartement <var>$nomDepartement</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'un département par son nom.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'un département par son nom.</p>
+
+<p>Permet de rechercher un département par son nom.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$nomDepartement</var></dt>
+					<dd>au nom du département.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>correspond au résultat de la recherche.
+				</div>
 
 
 
@@ -205,24 +225,35 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rechercherDepartementById">#</a>
-		<code><a href="source-class-DepartementGateway.html#27-35" title="Go to source code">rechercherDepartementById</a>( <span> <var>$idDepartement</var></span> )</code>
+		<code><a href="source-class-DepartementGateway.html#40-55" title="Go to source code">rechercherDepartementById</a>( <span>idDepartement <var>$idDepartement</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de recherche d'un département par son id.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de recherche d'un département par son id.</p>
+
+<p>Permet de rechercher un département par son id de façon a rechercher à quel département appartient une ville.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$idDepartement</var></dt>
+					<dd>à l'id du département.</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>correspond au résultat de la recherche.
+				</div>
 
 
 
@@ -235,24 +266,30 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			result
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAll">#</a>
-		<code><a href="source-class-DepartementGateway.html#37-42" title="Go to source code">getAll</a>( )</code>
+		<code><a href="source-class-DepartementGateway.html#58-69" title="Go to source code">getAll</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Fonction de récupération de l'ensemble des départements.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Fonction de récupération de l'ensemble des départements.</p>
+
+<p>Permet de récupérer l'ensembles des départements.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					result<br>correspond au résultat de la recherche.
+				</div>
 
 
 
