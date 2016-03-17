@@ -1,210 +1,129 @@
 <?php 
 /**
- * Vue tableau de bord
+ * Vue: Page de connexion
  *
- * Permet d'afficher le tableau de bord du projet
+ *
  */
-  require_once('vue/layout/header-connexion.php');
-  require_once('vue/includes/erreur.php');
+  require_once('vue/layout/header.php');
   ?>
-<body class="hold-transition login-page">
-<div class="col-lg-1">
-    <a href="index.php" class="btn btn-app">
-                <i class="fa fa-home"></i>Retour</a>
+     <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-e3dd2ae433414e240167f740f90ff2599e28804648787933de7c0183fae81c29.css" integrity="sha256-490q5DNBTiQBZ/dA+Q/yWZ4ogEZIeHkz3nwBg/roHCk=" media="all" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-fd8d48abb9063f51f186b0da98caa88d32b7ca8baecaa10d8a91c18a6f129b7f.css" integrity="sha256-/Y1Iq7kGP1HxhrDamMqojTK3youuyqENipHBim8Sm38=" media="all" rel="stylesheet">
     
-</div>  
-<div class="col-lg-3" style="padding: 20px;">
-    <div class="box box-primary">
-            <div class="box-header with-border">
-                    <h3 class="box-title">À faire</h3>
+<section class="content">
+    <div class="row">
+        <div class="row"> 
+            <div class="col-lg-1">
             </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding" >
-                    <ul class="timeline" style="margin: 20px;">
-                        <li class="time-label">
-                            <span class="bg-red">
-                                Avant le 19 mars
-                            </span>
-                        </li>
-                        <li>
-                            <i class="fa fa-puzzle-piece bg-blue"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Gestionnaire des contacts</h3>
-                                <div class="timeline-body">
-                                    Réalisation d'un annuaire des différents contacts locaux.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-puzzle-piece bg-blue"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Soutenance</h3>
-                                <div class="timeline-body">
-                                    Réalisation du compte rendu + préparation soutenance
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-            </div>
-            <!-- /.box-body -->
-    </div>
-</div>   
-            
-<div class="col-lg-3" style="padding: 20px;">
-    <div class="box box-warning">
-            <div class="box-header with-border">
-                    <h3 class="box-title">En cours</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding" >
-                    <ul class="timeline" style="margin: 20px;">
-                        <li class="time-label">
-                            <span class="bg-red">
-                                Pour le 5 février
-                            </span>
-                        </li>
-                         <li>
-                            <i class="fa fa-pencil bg-orange"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Interface de personnalisation</h3>
-                                <div class="timeline-body">
-                                    Interface donnant la possibilité de modifier des éléments de style et de design.
-                                </div>
-                                <div class="progress progress-sm active">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                    <span class="sr-only">40% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-pencil bg-orange"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Simplification du modèle</h3>
-                                <div class="timeline-body">
-                                    Travail pour simplifier des éléments de programmation.
-                                </div>
-                                <div class="progress progress-sm active">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                    <span class="sr-only">60% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="time-label">
-                            <span class="bg-red">
-                                Pour le 7 février
-                            </span>
-                        </li>
-                        <li>
-                            <i class="fa fa-pencil bg-orange"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Commenter le code</h3>
-                                <div class="timeline-body">
-                                    Réaliser les commentaires du code pour simplifier la documentation
-                                </div>
-                                <div class="progress progress-sm active">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-                                    <span class="sr-only">10% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="time-label">
-                            <span class="bg-red">
-                                Pour le 8 février
-                            </span>
-                        </li>
-                        <li>
-                            <i class="fa fa-pencil bg-orange"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Gestionnaire des hôpitaux</h3>
-                                <div class="timeline-body">
-                                    Création d'un gestionnaire des différents hôpitaux en relation avec l'association.
-                                </div>
-                                <div class="progress progress-sm active">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
-                                    <span class="sr-only">5% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        
-                    </ul>
-            </div>
-            <!-- /.box-body -->
-    </div>
-</div>
+            <div class="col-lg-5" style="padding: 20px;">
+                 <div class="box box-warning">
+                        <div class="box-header with-border">
+                                <h3 class="box-title">Développeurs</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding attachment-block clearfix" >
+                                <ul class="timeline" style="margin: 20px;">
+                                    <li>
+                                        <i class="fa fa-graduation-cap bg-orange"></i>
+                                        <div class="timeline-item">
+                                            <h3 class="timeline-header">Rapport de projet</h3>
+                                            <div class="timeline-body">
+                                                <a target="_blank" href="content/rapport.pdf"> Accès au rapport de projet</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-book bg-orange"></i>
+                                        <div class="timeline-item">
+                                            <h3 class="timeline-header">Documentation</h3>
+                                            <div class="timeline-body">
+                                                <a target="_blank" href="/doc"> Accès à la documentation</a>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-code-fork bg-orange"></i>
+                                        <div class="timeline-item">
+                                            <h3 class="timeline-header">Github</h3>
+                                            <div class="timeline-body">
+                                                <a target="_blank" href="https://github.com/hlefe/sosprema"> Accès au projet sur Github</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    
+                                </ul>
+                        </div>
+                        <!-- /.box-body -->
+                </div>
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                            <h3 class="box-title">Retours utilisateurs</h3>
+                    </div>
 
-<div class="col-lg-3" style="padding: 20px;">
-    <div class="box box-success">
-            <div class="box-header with-border">
-                    <h3 class="box-title">Terminé</h3>
+                    <!-- /.box-header -->
+                    <div class="box-body attachment-block clearfix" >
+                        <a href="/index.php?action=retours_utilisateurs" class="btn pull-right">Accès aux retours utilisateurs</a>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                
+                
             </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding" >
-                    <ul class="timeline" style="margin: 20px;">
-                        <li class="time-label">
-                            <span class="bg-red">
-                                Aujourd'hui
-                            </span>
-                        </li>
-                        <li>
-                            <i class="fa fa-check bg-green"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Analyse initiale</h3>
-                                <div class="timeline-body">
-                                   Réalisation du cahier des charges.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-check bg-green"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Interface de connexion</h3>
-                                <div class="timeline-body">
-                                   Réalisation de l'interface de connexion et des contrôleurs utilisateurs
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-check bg-green"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Finalisation interface de connexion</h3>
-
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-check bg-green"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Mise en place serveur web</h3>
-                                <div class="timeline-body">
-                                   Installation d'un serveur git pour simplifier la communication.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-check bg-green"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Gestionnaire des utilisateurs</h3>
-                                <div class="timeline-body">
-                                   Réalistion d'un gestionnaire utilisateurs pour permettre la modifications des données utilisateurs.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-check bg-green"></i>
-                            <div class="timeline-item">
-                                <h3 class="timeline-header">Mise en place du framework bootstrap</h3>
-                                <div class="timeline-body">
-                                   Pour simplifier la mise en place de belles interfaces.
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="col-lg-5" style="padding: 20px;">
+                <div class="box box-primary">
+                        <div class="box-header with-border">
+                                <h3 class="box-title">À propos</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding attachment-block clearfix" >
+                                <ul class="timeline" style="margin: 20px;">
+                                    
+                                     <li>
+                                        <i class="fa fa-graduation-cap bg-blue"></i>
+                                        <div class="timeline-item">
+                                            <h3 class="timeline-header">Réalisation</h3>
+                                            <div class="timeline-body">
+                                                Réalisé par <b>Hugo Lefèvre</b>,<b> Nicolas Chaduc</b> & <b>Nicolas Audinat</b> dans le cadre d'un projet étudiant à l'<b>IUT de Clermont-Ferrand</b>.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-users bg-blue"></i>
+                                        <div class="timeline-item">
+                                            <h3 class="timeline-header">MOA</h3>
+                                            <div class="timeline-body">
+                                                <b>Vincent DESDOIT</b> Responsable logistique à SosPréma
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-user bg-blue"></i>
+                                        <div class="timeline-item">
+                                            <h3 class="timeline-header">MOE</h3>
+                                            <div class="timeline-body">
+                                                <b>Harketti BENDAOUD</b> Tuteur de projet, <b>IUT de Clermont-Ferrand</b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-puzzle-piece bg-blue"></i>
+                                        <div class="timeline-item">
+                                            <h3 class="timeline-header">Numéro de version</h3>
+                                            <div class="timeline-body">
+                                                <b>0.52</b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                        </div>
+                        <!-- /.box-body -->
+                </div>
+               
             </div>
-            <!-- /.box-body -->
     </div>
-</div>
-
-</body>
+       
+    </div>   
+</section>
+<?php require_once('vue/layout/footer.php'); ?>

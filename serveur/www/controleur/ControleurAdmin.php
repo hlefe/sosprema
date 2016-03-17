@@ -283,4 +283,13 @@ class ControleurAdmin {
         }
         require_once('vue/pages/admin/userEdit.php');
     }
+    
+    public static function developpers(){
+            $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+            require_once ('vue/pages/tableauDeBord.php');
+    }   
+    public static function retours_utilisateurs(){
+            $utilisateurConnecter = $_SESSION['utilisateurConnecter'];
+            require_once ('vue/pages/retours-utilisateurs.php');
+    }   
 }

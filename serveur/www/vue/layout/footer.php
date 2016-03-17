@@ -9,7 +9,7 @@
         </div><!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 0.51
+            <b>Version</b> 0.52
         </div>
         <strong> Réalisé dans le cadre d'un projet étudiant avec l'IUT de Clermont-Ferrand.</strong>
     </footer>

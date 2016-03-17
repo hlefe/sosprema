@@ -24,10 +24,7 @@ class FrontControleur {
         if(!isset($_REQUEST['action'])){
         	require_once('vue/pages/login.php');
         	return;
-        }elseif($_REQUEST['action'] == 'tableau_de_bord'){
-            require_once ('vue/pages/tableauDeBord.php');
-            return;
-        }   
+        }
         elseif((!isset($_SESSION['utilisateurConnecter'])&& $_REQUEST['action']!= 'connexion')){
         	require_once('vue/pages/login.php');
         	return;

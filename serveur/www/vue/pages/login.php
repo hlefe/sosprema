@@ -34,24 +34,6 @@
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
     <div class="col-sm-1"></div>
-    <div class="col-sm-4">
-        <div class="box">
-            <div class="box-header with-border">
-            <h3 class="box-title">Avancée du projet</h3>
-            </div>
-            <div style="display: block;" class="box-body">
-            Tableau de bord du projet
-            </div>
-            <!-- /.box-body -->
-            <div style="display: block;" class="box-footer">
-            <form method="post" action="index.php?action=tableau_de_bord">
-                <button type="submit" class="btn btn-block btn-warning">Cliquer-ici pour accéder au tableau de bord</button>
-            </form>
-            </div>
-            <!-- /.box-footer-->
-        </div>
-    </div>
-    <div class="col-sm-1"></div>
     <div class="col-sm-2">
         <div class="box">
             <div class="box-header with-border">
